@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Gradle: com.tencent.tauth:qqopensdk:3.53.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.tencent.tauth/qqopensdk/3.53.0/5ff59a28717ac9776faa25ee7b1ccffa47056615/qqopensdk-3.53.0.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.tencent.tauth/qqopensdk/3.53.0/bde70b8a492020c4eb3aa5174ca763ad72b88c28/qqopensdk-3.53.0-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.tencent.tauth/qqopensdk/3.53.0/6d241d713e86f5a5116ad0fb4402cd5fefb47c6/qqopensdk-3.53.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Hang</string>
+    <string name="title_learn">学习</string>
+    <string name="title_recommend">推荐</string>
+    <string name="title_communicate">发现</string>
+    <string name="title_mine">我的</string>
+</resources>

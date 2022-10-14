@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CustomViewStub">
+        <!-- 布局 id -->
+        <attr name="android:layout"/>
+    </declare-styleable>
+    <declare-styleable name="DrawableTextView">
+        <!-- Drawable 宽度 -->
+        <attr format="dimension" name="drawableWidth"/>
+        <!-- Drawable 高度 -->
+        <attr format="dimension" name="drawableHeight"/>
+    </declare-styleable>
+    <declare-styleable name="PlayButton">
+        <!-- 线条颜色 -->
+        <attr format="color" name="pb_lineColor"/>
+        <!-- 线条大小 -->
+        <attr format="integer" name="pb_lineSize"/>
+        <!-- 动画时间 -->
+        <attr format="integer" name="pb_animDuration"/>
+    </declare-styleable>
+    <declare-styleable name="RatioFrameLayout">
+        <!-- 宽高比例 -->
+        <attr format="string" name="sizeRatio"/>
+    </declare-styleable>
+    <declare-styleable name="RegexEditText">
+        <!-- 正则输入限制 -->
+        <attr format="string" name="inputRegex"/>
+        <!-- 常用正则类型 -->
+        <attr name="regexType">
+            <!-- 手机号（只能以 1 开头）-->
+            <enum name="mobile" value="0x01"/>
+            <!-- 中文（普通的中文字符）-->
+            <enum name="chinese" value="0x02"/>
+            <!-- 英文（大写和小写的英文）-->
+            <enum name="english" value="0x03"/>
+            <!-- 数字（只允许输入纯数字）-->
+            <enum name="number" value="0x04"/>
+            <!-- 整数（非 0 开头的数字）-->
+            <enum name="count" value="0x05"/>
+            <!-- 用户名（中文、英文、数字）-->
+            <enum name="name" value="0x06"/>
+            <!-- 非空格字符 -->
+            <enum name="nonnull" value="0x07"/>
+        </attr>
+    </declare-styleable>
+    <declare-styleable name="ScaleImageView">
+        <!-- 缩放比例 -->
+        <attr format="float" name="scaleRatio"/>
+    </declare-styleable>
+    <declare-styleable name="SettingBar">
+        <!-- 左边 -->
+        <attr format="string" name="bar_leftText"/>
+        <attr format="color" name="bar_leftTextColor"/>
+        <attr format="dimension" name="bar_leftTextSize"/>
+        <attr format="string" name="bar_leftTextHint"/>
+        <attr format="reference" name="bar_leftDrawable"/>
+        <attr format="dimension" name="bar_leftDrawablePadding"/>
+        <attr format="dimension" name="bar_leftDrawableSize"/>
+        <attr format="color" name="bar_leftDrawableTint"/>
+        <!-- 右边 -->
+        <attr format="string" name="bar_rightText"/>
+        <attr format="color" name="bar_rightTextColor"/>
+        <attr format="dimension" name="bar_rightTextSize"/>
+        <attr format="string" name="bar_rightTextHint"/>
+        <attr format="reference" name="bar_rightDrawable"/>
+        <attr format="dimension" name="bar_rightDrawablePadding"/>
+        <attr format="dimension" name="bar_rightDrawableSize"/>
+        <attr format="color" name="bar_rightDrawableTint"/>
+        <!-- 分割线 -->
+        <attr format="boolean" name="bar_lineVisible"/>
+        <attr format="reference|color" name="bar_lineDrawable"/>
+        <attr format="dimension" name="bar_lineSize"/>
+        <attr format="dimension" name="bar_lineMargin"/>
+    </declare-styleable>
+    <declare-styleable name="SimpleRatingBar">
+        <!-- 当前星等级 -->
+        <attr format="float" name="grade"/>
+        <!-- 星星总数量 -->
+        <attr format="integer" name="gradeCount"/>
+        <!-- 星星的宽度 -->
+        <attr format="dimension" name="gradeWidth"/>
+        <!-- 星星的高度 -->
+        <attr format="dimension" name="gradeHeight"/>
+        <!-- 星星之间的间隔 -->
+        <attr format="dimension" name="gradeSpace"/>
+        <!-- 星星选择跨度 -->
+        <attr format="enum" name="gradeStep">
+            <!-- 半颗星 -->
+            <enum name="half" value="0x00"/>
+            <!-- 一颗星 -->
+            <enum name="one" value="0x01"/>
+        </attr>
+        <!-- 默认的星星图标 -->
+        <attr format="reference" name="normalDrawable"/>
+        <!-- 半颗的星星图标 -->
+        <attr format="reference" name="halfDrawable"/>
+        <!-- 选中的星星图标 -->
+        <attr format="reference" name="fillDrawable"/>
+    </declare-styleable>
+    <declare-styleable name="SlantedTextView">
+        <attr name="android:text"/>
+        <attr name="android:textSize"/>
+        <attr name="android:textColor"/>
+        <attr name="android:textStyle"/>
+        <attr name="android:gravity"/>
+        <attr name="android:colorBackground"/>
+        <attr name="android:paddingVertical"/>
+        <attr name="android:paddingHorizontal"/>
+        <!-- 显示成三角形 -->
+        <attr format="boolean" name="triangle"/>
+    </declare-styleable>
+    <declare-styleable name="SubmitButton">
+        <!-- 进度按钮颜色 -->
+        <attr format="color" name="progressColor"/>
+        <!-- 成功按钮颜色 -->
+        <attr format="color" name="succeedColor"/>
+        <!-- 出错按钮颜色 -->
+        <attr format="color" name="errorColor"/>
+        <!-- 进度条样式 -->
+        <attr format="enum" name="progressStyle">
+            <!-- 无进度 -->
+            <enum name="loading" value="0x00"/>
+            <!-- 带进度 -->
+            <enum name="progress" value="0x01"/>
+        </attr>
+    </declare-styleable>
+    <declare-styleable name="SwitchButton">
+        <!-- 是否选中 -->
+        <attr name="android:checked"/>
+        <!-- 是否禁用 -->
+        <attr name="android:enabled"/>
+    </declare-styleable>
+</resources>

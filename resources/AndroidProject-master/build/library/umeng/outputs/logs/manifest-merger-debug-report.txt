@@ -1,0 +1,149 @@
+-- Merging decision tree log ---
+meta-data#UM_KEY
+INJECTED from C:\Users\ylhappy\Desktop\AndroidProject-master\library\umeng\src\main\AndroidManifest.xml:20:9-22:41
+	android:value
+		INJECTED from C:\Users\ylhappy\Desktop\AndroidProject-master\library\umeng\src\main\AndroidManifest.xml
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\library\umeng\src\main\AndroidManifest.xml:22:13-38
+	android:name
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\library\umeng\src\main\AndroidManifest.xml:21:13-34
+meta-data#QQ_ID
+INJECTED from C:\Users\ylhappy\Desktop\AndroidProject-master\library\umeng\src\main\AndroidManifest.xml:25:9-27:40
+	android:value
+		INJECTED from C:\Users\ylhappy\Desktop\AndroidProject-master\library\umeng\src\main\AndroidManifest.xml
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\library\umeng\src\main\AndroidManifest.xml:27:13-37
+	android:name
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\library\umeng\src\main\AndroidManifest.xml:26:13-33
+meta-data#QQ_SECRET
+INJECTED from C:\Users\ylhappy\Desktop\AndroidProject-master\library\umeng\src\main\AndroidManifest.xml:29:9-31:44
+	android:value
+		INJECTED from C:\Users\ylhappy\Desktop\AndroidProject-master\library\umeng\src\main\AndroidManifest.xml
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\library\umeng\src\main\AndroidManifest.xml:31:13-41
+	android:name
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\library\umeng\src\main\AndroidManifest.xml:30:13-37
+meta-data#WX_ID
+INJECTED from C:\Users\ylhappy\Desktop\AndroidProject-master\library\umeng\src\main\AndroidManifest.xml:34:9-36:40
+	android:value
+		INJECTED from C:\Users\ylhappy\Desktop\AndroidProject-master\library\umeng\src\main\AndroidManifest.xml
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\library\umeng\src\main\AndroidManifest.xml:36:13-37
+	android:name
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\library\umeng\src\main\AndroidManifest.xml:35:13-33
+meta-data#WX_SECRET
+INJECTED from C:\Users\ylhappy\Desktop\AndroidProject-master\library\umeng\src\main\AndroidManifest.xml:38:9-40:44
+	android:value
+		INJECTED from C:\Users\ylhappy\Desktop\AndroidProject-master\library\umeng\src\main\AndroidManifest.xml
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\library\umeng\src\main\AndroidManifest.xml:40:13-41
+	android:name
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\library\umeng\src\main\AndroidManifest.xml:39:13-37
+data
+INJECTED from C:\Users\ylhappy\Desktop\AndroidProject-master\library\umeng\src\main\AndroidManifest.xml:56:17-58
+	android:scheme
+		INJECTED from C:\Users\ylhappy\Desktop\AndroidProject-master\library\umeng\src\main\AndroidManifest.xml
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\library\umeng\src\main\AndroidManifest.xml:56:23-55
+manifest
+ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\library\umeng\src\main\AndroidManifest.xml:1:1-76:12
+INJECTED from C:\Users\ylhappy\Desktop\AndroidProject-master\library\umeng\src\main\AndroidManifest.xml:1:1-76:12
+INJECTED from C:\Users\ylhappy\Desktop\AndroidProject-master\library\umeng\src\main\AndroidManifest.xml:1:1-76:12
+INJECTED from C:\Users\ylhappy\Desktop\AndroidProject-master\library\umeng\src\main\AndroidManifest.xml:1:1-76:12
+INJECTED from C:\Users\ylhappy\Desktop\AndroidProject-master\library\umeng\src\main\AndroidManifest.xml:1:1-76:12
+INJECTED from C:\Users\ylhappy\Desktop\AndroidProject-master\library\umeng\src\main\AndroidManifest.xml:1:1-76:12
+INJECTED from C:\Users\ylhappy\Desktop\AndroidProject-master\library\umeng\src\main\AndroidManifest.xml:1:1-76:12
+	package
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\library\umeng\src\main\AndroidManifest.xml:3:5-28
+		INJECTED from C:\Users\ylhappy\Desktop\AndroidProject-master\library\umeng\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\ylhappy\Desktop\AndroidProject-master\library\umeng\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from C:\Users\ylhappy\Desktop\AndroidProject-master\library\umeng\src\main\AndroidManifest.xml
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\library\umeng\src\main\AndroidManifest.xml:1:1-76:12
+		INJECTED from C:\Users\ylhappy\Desktop\AndroidProject-master\library\umeng\src\main\AndroidManifest.xml
+	xmlns:tools
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\library\umeng\src\main\AndroidManifest.xml:2:5-51
+	android:versionCode
+		INJECTED from C:\Users\ylhappy\Desktop\AndroidProject-master\library\umeng\src\main\AndroidManifest.xml
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\library\umeng\src\main\AndroidManifest.xml:1:1-76:12
+		INJECTED from C:\Users\ylhappy\Desktop\AndroidProject-master\library\umeng\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\library\umeng\src\main\AndroidManifest.xml:1:11-69
+uses-permission#android.permission.INTERNET
+ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\library\umeng\src\main\AndroidManifest.xml:6:5-67
+	android:name
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\library\umeng\src\main\AndroidManifest.xml:6:22-64
+uses-permission#android.permission.ACCESS_WIFI_STATE
+ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\library\umeng\src\main\AndroidManifest.xml:7:5-76
+	android:name
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\library\umeng\src\main\AndroidManifest.xml:7:22-73
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\library\umeng\src\main\AndroidManifest.xml:8:5-79
+	android:name
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\library\umeng\src\main\AndroidManifest.xml:8:22-76
+uses-permission#android.permission.READ_PHONE_STATE
+ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\library\umeng\src\main\AndroidManifest.xml:11:5-75
+	android:name
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\library\umeng\src\main\AndroidManifest.xml:11:22-72
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\library\umeng\src\main\AndroidManifest.xml:14:5-80
+	android:name
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\library\umeng\src\main\AndroidManifest.xml:14:22-77
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\library\umeng\src\main\AndroidManifest.xml:15:5-81
+	android:name
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\library\umeng\src\main\AndroidManifest.xml:15:22-78
+application
+ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\library\umeng\src\main\AndroidManifest.xml:17:5-66:19
+activity#com.tencent.tauth.AuthActivity
+ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\library\umeng\src\main\AndroidManifest.xml:45:9-58:20
+	tools:node
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\library\umeng\src\main\AndroidManifest.xml:49:13-33
+	android:launchMode
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\library\umeng\src\main\AndroidManifest.xml:47:13-44
+	android:noHistory
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\library\umeng\src\main\AndroidManifest.xml:48:13-37
+	android:name
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\library\umeng\src\main\AndroidManifest.xml:46:13-58
+intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+category:name:android.intent.category.DEFAULT+data:scheme:tencent101828096
+ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\library\umeng\src\main\AndroidManifest.xml:50:13-57:29
+action#android.intent.action.VIEW
+ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\library\umeng\src\main\AndroidManifest.xml:51:17-69
+	android:name
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\library\umeng\src\main\AndroidManifest.xml:51:25-66
+category#android.intent.category.DEFAULT
+ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\library\umeng\src\main\AndroidManifest.xml:53:17-76
+	android:name
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\library\umeng\src\main\AndroidManifest.xml:53:27-73
+category#android.intent.category.BROWSABLE
+ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\library\umeng\src\main\AndroidManifest.xml:54:17-78
+	android:name
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\library\umeng\src\main\AndroidManifest.xml:54:27-75
+activity#com.tencent.connect.common.AssistActivity
+ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\library\umeng\src\main\AndroidManifest.xml:60:9-64:36
+	tools:node
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\library\umeng\src\main\AndroidManifest.xml:64:13-33
+	android:configChanges
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\library\umeng\src\main\AndroidManifest.xml:62:13-63
+	android:theme
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\library\umeng\src\main\AndroidManifest.xml:63:13-72
+	android:name
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\library\umeng\src\main\AndroidManifest.xml:61:13-69
+queries
+ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\library\umeng\src\main\AndroidManifest.xml:69:5-74:15
+package#com.tencent.mobileqq
+ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\library\umeng\src\main\AndroidManifest.xml:71:9-56
+	android:name
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\library\umeng\src\main\AndroidManifest.xml:71:18-53
+package#com.tencent.mm
+ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\library\umeng\src\main\AndroidManifest.xml:73:9-50
+	android:name
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\library\umeng\src\main\AndroidManifest.xml:73:18-47
+uses-sdk
+INJECTED from C:\Users\ylhappy\Desktop\AndroidProject-master\library\umeng\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Users\ylhappy\Desktop\AndroidProject-master\library\umeng\src\main\AndroidManifest.xml
+INJECTED from C:\Users\ylhappy\Desktop\AndroidProject-master\library\umeng\src\main\AndroidManifest.xml
+INJECTED from C:\Users\ylhappy\Desktop\AndroidProject-master\library\umeng\src\main\AndroidManifest.xml
+INJECTED from C:\Users\ylhappy\Desktop\AndroidProject-master\library\umeng\src\main\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from C:\Users\ylhappy\Desktop\AndroidProject-master\library\umeng\src\main\AndroidManifest.xml
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\library\umeng\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\ylhappy\Desktop\AndroidProject-master\library\umeng\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from C:\Users\ylhappy\Desktop\AndroidProject-master\library\umeng\src\main\AndroidManifest.xml
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\library\umeng\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\ylhappy\Desktop\AndroidProject-master\library\umeng\src\main\AndroidManifest.xml

@@ -1,0 +1,879 @@
+-- Merging decision tree log ---
+application
+INJECTED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:28:5-240:19
+MERGED from [com.squareup.leakcanary:leakcanary-android:2.7] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\4e968efa94381bf0c699d4b0878d09da\jetified-leakcanary-android-2.7\AndroidManifest.xml:22:5-26:19
+MERGED from [com.squareup.leakcanary:leakcanary-android:2.7] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\4e968efa94381bf0c699d4b0878d09da\jetified-leakcanary-android-2.7\AndroidManifest.xml:22:5-26:19
+MERGED from [:library:umeng] C:\Users\ylhappy\Desktop\AndroidProject-master\build\library\umeng\intermediates\library_manifest\debug\AndroidManifest.xml:33:5-81:19
+MERGED from [:library:umeng] C:\Users\ylhappy\Desktop\AndroidProject-master\build\library\umeng\intermediates\library_manifest\debug\AndroidManifest.xml:33:5-81:19
+MERGED from [com.google.android.material:material:1.4.0] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\7d4b260f3a1f2708d793b462bfe93420\material-1.4.0\AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.material:material:1.4.0] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\7d4b260f3a1f2708d793b462bfe93420\material-1.4.0\AndroidManifest.xml:22:5-20
+MERGED from [com.airbnb.android:lottie:4.1.0] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\fd9c5714cf72e13104a73bd15b4471aa\jetified-lottie-4.1.0\AndroidManifest.xml:9:5-20
+MERGED from [com.airbnb.android:lottie:4.1.0] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\fd9c5714cf72e13104a73bd15b4471aa\jetified-lottie-4.1.0\AndroidManifest.xml:9:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\5445e3c00e485883ff82c70219185e26\constraintlayout-2.0.1\AndroidManifest.xml:9:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\5445e3c00e485883ff82c70219185e26\constraintlayout-2.0.1\AndroidManifest.xml:9:5-20
+MERGED from [com.github.bumptech.glide:glide:4.12.0] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\727bb72b491df6df596e9de9d1f9a303\jetified-glide-4.12.0\AndroidManifest.xml:10:5-20
+MERGED from [com.github.bumptech.glide:glide:4.12.0] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\727bb72b491df6df596e9de9d1f9a303\jetified-glide-4.12.0\AndroidManifest.xml:10:5-20
+MERGED from [com.jakewharton.timber:timber:4.7.1] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\ccb1fd6d8340c085687566d03e084e28\jetified-timber-4.7.1\AndroidManifest.xml:7:5-20
+MERGED from [com.jakewharton.timber:timber:4.7.1] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\ccb1fd6d8340c085687566d03e084e28\jetified-timber-4.7.1\AndroidManifest.xml:7:5-20
+MERGED from [com.squareup.leakcanary:leakcanary-android-core:2.7] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\211067c2645a010a442bee614db37349\jetified-leakcanary-android-core-2.7\AndroidManifest.xml:28:5-74:19
+MERGED from [com.squareup.leakcanary:leakcanary-android-core:2.7] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\211067c2645a010a442bee614db37349\jetified-leakcanary-android-core-2.7\AndroidManifest.xml:28:5-74:19
+MERGED from [com.squareup.leakcanary:leakcanary-object-watcher-android:2.7] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\bfc2c7ca61394a699b5a7fe3c005482e\jetified-leakcanary-object-watcher-android-2.7\AndroidManifest.xml:7:5-13:19
+MERGED from [com.squareup.leakcanary:leakcanary-object-watcher-android:2.7] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\bfc2c7ca61394a699b5a7fe3c005482e\jetified-leakcanary-object-watcher-android-2.7\AndroidManifest.xml:7:5-13:19
+MERGED from [com.squareup.leakcanary:plumber-android:2.7] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\88600037fea94161ce8a820935bffed6\jetified-plumber-android-2.7\AndroidManifest.xml:7:5-13:19
+MERGED from [com.squareup.leakcanary:plumber-android:2.7] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\88600037fea94161ce8a820935bffed6\jetified-plumber-android-2.7\AndroidManifest.xml:7:5-13:19
+MERGED from [androidx.core:core:1.5.0] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\cc1bc1189a305040b44c2acc85649dd4\core-1.5.0\AndroidManifest.xml:24:5-89
+MERGED from [androidx.core:core:1.5.0] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\cc1bc1189a305040b44c2acc85649dd4\core-1.5.0\AndroidManifest.xml:24:5-89
+MERGED from [com.github.bumptech.glide:gifdecoder:4.12.0] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\d20e07b97451d6633a24f128ea10d5e8\jetified-gifdecoder-4.12.0\AndroidManifest.xml:9:5-20
+MERGED from [com.github.bumptech.glide:gifdecoder:4.12.0] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\d20e07b97451d6633a24f128ea10d5e8\jetified-gifdecoder-4.12.0\AndroidManifest.xml:9:5-20
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\d3490651523b73c083e166729959dae6\versionedparcelable-1.1.1\AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\d3490651523b73c083e166729959dae6\versionedparcelable-1.1.1\AndroidManifest.xml:24:5-25:19
+MERGED from [com.umeng.umsdk:share-core:7.1.5] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\1f705d0e0c03dee7477e06b973d3c3cb\jetified-share-core-7.1.5\AndroidManifest.xml:13:5-14:19
+MERGED from [com.umeng.umsdk:share-core:7.1.5] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\1f705d0e0c03dee7477e06b973d3c3cb\jetified-share-core-7.1.5\AndroidManifest.xml:13:5-14:19
+MERGED from [com.umeng.umsdk:share-wx:7.1.5] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\8c5d2010b6a56ba7fc80b302ffcc3af4\jetified-share-wx-7.1.5\AndroidManifest.xml:11:5-17:19
+MERGED from [com.umeng.umsdk:share-wx:7.1.5] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\8c5d2010b6a56ba7fc80b302ffcc3af4\jetified-share-wx-7.1.5\AndroidManifest.xml:11:5-17:19
+MERGED from [com.umeng.umsdk:share-qq:7.1.5] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\273e15e83539cc21454af7e41fa2da5b\jetified-share-qq-7.1.5\AndroidManifest.xml:11:5-30:19
+MERGED from [com.umeng.umsdk:share-qq:7.1.5] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\273e15e83539cc21454af7e41fa2da5b\jetified-share-qq-7.1.5\AndroidManifest.xml:11:5-30:19
+	android:requestLegacyExternalStorage
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:34:9-52
+	tools:ignore
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:40:9-61
+	android:roundIcon
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:36:9-48
+	android:icon
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:31:9-43
+	android:networkSecurityConfig
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:33:9-69
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.5.0] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\cc1bc1189a305040b44c2acc85649dd4\core-1.5.0\AndroidManifest.xml:24:18-86
+	android:supportsRtl
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:37:9-36
+	android:label
+		INJECTED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:32:9-36
+	android:resizeableActivity
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:35:9-42
+	tools:targetApi
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:42:9-28
+	android:allowBackup
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:30:9-36
+	android:theme
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:38:9-40
+	tools:replace
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:41:9-64
+	android:usesCleartextTraffic
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:39:9-44
+	android:name
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:29:9-43
+provider#androidx.core.content.FileProvider
+INJECTED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:50:9-59:20
+	android:grantUriPermissions
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:54:13-47
+	android:authorities
+		INJECTED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:52:13-60
+	android:exported
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:53:13-37
+	android:name
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:51:13-62
+manifest
+ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:3:1-280:12
+INJECTED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:3:1-280:12
+INJECTED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:3:1-280:12
+INJECTED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:3:1-280:12
+MERGED from [com.squareup.leakcanary:leakcanary-android:2.7] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\4e968efa94381bf0c699d4b0878d09da\jetified-leakcanary-android-2.7\AndroidManifest.xml:17:1-28:12
+MERGED from [:library:widget] C:\Users\ylhappy\Desktop\AndroidProject-master\build\library\widget\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-11:12
+MERGED from [:library:base] C:\Users\ylhappy\Desktop\AndroidProject-master\build\library\base\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-11:12
+MERGED from [:library:umeng] C:\Users\ylhappy\Desktop\AndroidProject-master\build\library\umeng\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-83:12
+MERGED from [com.github.getActivity:ShapeView:6.0] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\b5bf47d204387ee8522e367c259364b7\jetified-ShapeView-6.0\AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.material:material:1.4.0] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\7d4b260f3a1f2708d793b462bfe93420\material-1.4.0\AndroidManifest.xml:17:1-24:12
+MERGED from [com.github.Baseflow:PhotoView:2.3.0] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\d185ae7607517cb6163f8336fa04d965\jetified-PhotoView-2.3.0\AndroidManifest.xml:2:1-11:12
+MERGED from [com.airbnb.android:lottie:4.1.0] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\fd9c5714cf72e13104a73bd15b4471aa\jetified-lottie-4.1.0\AndroidManifest.xml:2:1-11:12
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\5445e3c00e485883ff82c70219185e26\constraintlayout-2.0.1\AndroidManifest.xml:2:1-11:12
+MERGED from [androidx.appcompat:appcompat:1.3.1] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\65d101a87e027eacf3ce899e1268fec7\appcompat-1.3.1\AndroidManifest.xml:17:1-24:12
+MERGED from [com.github.getActivity:XXPermissions:12.3] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\fde1b2ab0a8e800cb189fbece6e05345\jetified-XXPermissions-12.3\AndroidManifest.xml:2:1-9:12
+MERGED from [com.github.getActivity:TitleBar:9.2] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\bda9c2b3effa4952218fe0bbe3347e9b\jetified-TitleBar-9.2\AndroidManifest.xml:2:1-9:12
+MERGED from [com.github.getActivity:ToastUtils:9.5] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\3a02e08f73638760c95b588fa9cf2af6\jetified-ToastUtils-9.5\AndroidManifest.xml:2:1-9:12
+MERGED from [com.github.getActivity:EasyHttp:10.2] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\c820a6ab91ea65cc2309d61959291b60\jetified-EasyHttp-10.2\AndroidManifest.xml:2:1-9:12
+MERGED from [com.github.getActivity:GsonFactory:5.2] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\fe83ba037b756271ad4c3e4680fec9da\jetified-GsonFactory-5.2\AndroidManifest.xml:2:1-9:12
+MERGED from [com.github.bumptech.glide:glide:4.12.0] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\727bb72b491df6df596e9de9d1f9a303\jetified-glide-4.12.0\AndroidManifest.xml:2:1-12:12
+MERGED from [com.gyf.immersionbar:immersionbar:3.0.0] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\33485d73bdf9d4146701ea823cd7fc6a\jetified-immersionbar-3.0.0\AndroidManifest.xml:2:1-9:12
+MERGED from [com.tencent.bugly:crashreport:3.4.4] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\3129ebecd850c4a222604abd6d6eff15\jetified-crashreport-3.4.4\AndroidManifest.xml:2:1-9:12
+MERGED from [com.tencent.bugly:nativecrashreport:3.9.2] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\72ccefc3034e6a40223ed9cbc92e8f6e\jetified-nativecrashreport-3.9.2\AndroidManifest.xml:2:1-9:12
+MERGED from [com.scwang.smart:refresh-layout-kernel:2.0.3] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\e786329c2396cb66377c37ac52585361\jetified-refresh-layout-kernel-2.0.3\AndroidManifest.xml:2:1-11:12
+MERGED from [com.scwang.smart:refresh-header-material:2.0.3] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\d088f57da71660839bc5fa46d4f636cc\jetified-refresh-header-material-2.0.3\AndroidManifest.xml:2:1-11:12
+MERGED from [com.jakewharton.timber:timber:4.7.1] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\ccb1fd6d8340c085687566d03e084e28\jetified-timber-4.7.1\AndroidManifest.xml:2:1-9:12
+MERGED from [me.relex:circleindicator:2.1.6] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\89aa75ed827b765a2c36949664e37acb\jetified-circleindicator-2.1.6\AndroidManifest.xml:2:1-11:12
+MERGED from [com.tencent:mmkv-static:1.2.10] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\d8e072a24126e361f005f1d62989fb14\jetified-mmkv-static-1.2.10\AndroidManifest.xml:2:1-9:12
+MERGED from [com.squareup.leakcanary:leakcanary-android-core:2.7] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\211067c2645a010a442bee614db37349\jetified-leakcanary-android-core-2.7\AndroidManifest.xml:17:1-76:12
+MERGED from [com.squareup.leakcanary:leakcanary-object-watcher-android-androidx:2.7] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\ea480e1af3d5aa90eff3bacf9773d6fa\jetified-leakcanary-object-watcher-android-androidx-2.7\AndroidManifest.xml:2:1-7:12
+MERGED from [com.squareup.leakcanary:leakcanary-object-watcher-android-support-fragments:2.7] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\043b67214d18833d3bdecd6f376466df\jetified-leakcanary-object-watcher-android-support-fragments-2.7\AndroidManifest.xml:2:1-7:12
+MERGED from [com.squareup.leakcanary:leakcanary-object-watcher-android:2.7] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\bfc2c7ca61394a699b5a7fe3c005482e\jetified-leakcanary-object-watcher-android-2.7\AndroidManifest.xml:2:1-15:12
+MERGED from [com.squareup.leakcanary:plumber-android:2.7] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\88600037fea94161ce8a820935bffed6\jetified-plumber-android-2.7\AndroidManifest.xml:2:1-15:12
+MERGED from [com.squareup.leakcanary:leakcanary-android-utils:2.7] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\84e1ba013be4735617cc8096a7f79743\jetified-leakcanary-android-utils-2.7\AndroidManifest.xml:2:1-7:12
+MERGED from [com.squareup.curtains:curtains:1.0.1] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\4856b2aec54fe2a2ac3b9b4c2c60280b\jetified-curtains-1.0.1\AndroidManifest.xml:2:1-9:12
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\f00ed913a12492e2778878e0551dd805\jetified-viewpager2-1.0.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.fragment:fragment:1.3.6] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\e4207225514636662becae14e3e7a73b\fragment-1.3.6\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.activity:activity:1.2.4] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\be0e2b1a530186e18b499251b6194cfd\jetified-activity-1.2.4\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.appcompat:appcompat-resources:1.3.1] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\0462b7c56aa3de43e36083a84a813928\jetified-appcompat-resources-1.3.1\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\f037c6e26a82207655c5178164820ca7\drawerlayout-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\83bf82d8a7ab152700f80c7358f83d1b\coordinatorlayout-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\7f2a0bd1bed16d716ac38f725bd48a00\dynamicanimation-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.transition:transition:1.2.0] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\7d2a85284be32ebd6fa287cafbc3c801\transition-1.2.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\42ecd430a895dba6c1c3a58091b61cf6\vectordrawable-animated-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\d32b759ffa76ee4ed025f0f6cb96ec28\vectordrawable-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\b786431811a4b3bb3c0cd138b5e44d5f\viewpager-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\c1333dcf331c48989d963c9ada3b22d5\legacy-support-core-utils-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\da98de8fd0a18f242c26fe609bebc6f1\loader-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\bbd8c4d9b0d9e5763ad627653ec100ea\recyclerview-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.customview:customview:1.0.0] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\341aa9111e3811163eeb489db74be5f8\customview-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core:1.5.0] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\cc1bc1189a305040b44c2acc85649dd4\core-1.5.0\AndroidManifest.xml:17:1-26:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\a9bad47240d7619375e9722a4e257b79\cursoradapter-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.1] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\214b37799163ba9db1fe6aee5cc23179\jetified-lifecycle-viewmodel-savedstate-2.3.1\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.savedstate:savedstate:1.1.0] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\fb97e81e50d7729bfc2764a1ea460999\jetified-savedstate-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.3.1] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\598f1845542043e47a29c91d149ce8eb\lifecycle-runtime-2.3.1\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.3.1] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\1a6190d1a48457198b261b9937cff697\lifecycle-viewmodel-2.3.1\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\25b1fa700e97c5b6f71196ba46c3ffaa\cardview-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.github.bumptech.glide:gifdecoder:4.12.0] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\d20e07b97451d6633a24f128ea10d5e8\jetified-gifdecoder-4.12.0\AndroidManifest.xml:2:1-11:12
+MERGED from [androidx.exifinterface:exifinterface:1.2.0] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\1fdcf1c573ac3797977dc5600e89d448\exifinterface-1.2.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\d3490651523b73c083e166729959dae6\versionedparcelable-1.1.1\AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\bf31d43b768dea39fe637fcbf560c6de\jetified-tracing-1.0.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\13bb6c094ccdd5f50883e0c2c4880deb\lifecycle-livedata-2.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.3.1] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\54cdbc8c2b79b9ae91650b537d8712ad\lifecycle-livedata-core-2.3.1\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.arch.core:core-runtime:2.1.0] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\d53a96eb8db685c996a2347d4e9a99c8\core-runtime-2.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\f1dccd372b19ee21c462e78f11ecee29\interpolator-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\a7111c310971c34f7bae78410f7c64c8\documentfile-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\7a60474fa5594341405a258acf9ded4f\localbroadcastmanager-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.print:print:1.0.0] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\20861e5ab550708ac3d4055bbd8f0ef2\print-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.annotation:annotation-experimental:1.0.0] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\84c10f1f32815ebd152c4f25ff27fc91\jetified-annotation-experimental-1.0.0\AndroidManifest.xml:17:1-24:12
+MERGED from [com.umeng.umsdk:asms:1.2.3] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\1a3414a8da56590ef9189be6b8e6765f\jetified-asms-1.2.3\AndroidManifest.xml:2:1-11:12
+MERGED from [com.umeng.umsdk:share-core:7.1.5] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\1f705d0e0c03dee7477e06b973d3c3cb\jetified-share-core-7.1.5\AndroidManifest.xml:2:1-16:12
+MERGED from [com.umeng.umsdk:share-wx:7.1.5] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\8c5d2010b6a56ba7fc80b302ffcc3af4\jetified-share-wx-7.1.5\AndroidManifest.xml:2:1-19:12
+MERGED from [com.umeng.umsdk:share-qq:7.1.5] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\273e15e83539cc21454af7e41fa2da5b\jetified-share-qq-7.1.5\AndroidManifest.xml:2:1-32:12
+MERGED from [com.tencent.mm.opensdk:wechat-sdk-android-without-mta:6.7.9] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\a1941e6ff3d0ca0d15f1f8553f36ed2f\jetified-wechat-sdk-android-without-mta-6.7.9\AndroidManifest.xml:2:1-9:12
+INJECTED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:3:1-280:12
+INJECTED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:3:1-280:12
+INJECTED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:3:1-280:12
+	package
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:5:5-27
+		INJECTED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:3:1-280:12
+		INJECTED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml
+	xmlns:tools
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:4:5-51
+	android:versionCode
+		INJECTED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:3:1-280:12
+		INJECTED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:3:11-69
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:8:5-79
+MERGED from [:library:umeng] C:\Users\ylhappy\Desktop\AndroidProject-master\build\library\umeng\intermediates\library_manifest\debug\AndroidManifest.xml:15:5-79
+MERGED from [:library:umeng] C:\Users\ylhappy\Desktop\AndroidProject-master\build\library\umeng\intermediates\library_manifest\debug\AndroidManifest.xml:15:5-79
+	android:name
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:8:22-76
+uses-permission#android.permission.ACCESS_WIFI_STATE
+ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:9:5-76
+MERGED from [:library:umeng] C:\Users\ylhappy\Desktop\AndroidProject-master\build\library\umeng\intermediates\library_manifest\debug\AndroidManifest.xml:14:5-76
+MERGED from [:library:umeng] C:\Users\ylhappy\Desktop\AndroidProject-master\build\library\umeng\intermediates\library_manifest\debug\AndroidManifest.xml:14:5-76
+MERGED from [com.umeng.umsdk:share-core:7.1.5] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\1f705d0e0c03dee7477e06b973d3c3cb\jetified-share-core-7.1.5\AndroidManifest.xml:11:5-76
+MERGED from [com.umeng.umsdk:share-core:7.1.5] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\1f705d0e0c03dee7477e06b973d3c3cb\jetified-share-core-7.1.5\AndroidManifest.xml:11:5-76
+	android:name
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:9:22-73
+uses-permission#android.permission.INTERNET
+ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:10:5-67
+MERGED from [:library:umeng] C:\Users\ylhappy\Desktop\AndroidProject-master\build\library\umeng\intermediates\library_manifest\debug\AndroidManifest.xml:13:5-67
+MERGED from [:library:umeng] C:\Users\ylhappy\Desktop\AndroidProject-master\build\library\umeng\intermediates\library_manifest\debug\AndroidManifest.xml:13:5-67
+	android:name
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:10:22-64
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:13:5-80
+MERGED from [:library:umeng] C:\Users\ylhappy\Desktop\AndroidProject-master\build\library\umeng\intermediates\library_manifest\debug\AndroidManifest.xml:21:5-80
+MERGED from [:library:umeng] C:\Users\ylhappy\Desktop\AndroidProject-master\build\library\umeng\intermediates\library_manifest\debug\AndroidManifest.xml:21:5-80
+MERGED from [com.squareup.leakcanary:leakcanary-android-core:2.7] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\211067c2645a010a442bee614db37349\jetified-leakcanary-android-core-2.7\AndroidManifest.xml:23:5-80
+MERGED from [com.squareup.leakcanary:leakcanary-android-core:2.7] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\211067c2645a010a442bee614db37349\jetified-leakcanary-android-core-2.7\AndroidManifest.xml:23:5-80
+	android:name
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:13:22-77
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:14:5-110
+MERGED from [:library:umeng] C:\Users\ylhappy\Desktop\AndroidProject-master\build\library\umeng\intermediates\library_manifest\debug\AndroidManifest.xml:22:5-81
+MERGED from [:library:umeng] C:\Users\ylhappy\Desktop\AndroidProject-master\build\library\umeng\intermediates\library_manifest\debug\AndroidManifest.xml:22:5-81
+MERGED from [com.squareup.leakcanary:leakcanary-android-core:2.7] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\211067c2645a010a442bee614db37349\jetified-leakcanary-android-core-2.7\AndroidManifest.xml:24:5-81
+MERGED from [com.squareup.leakcanary:leakcanary-android-core:2.7] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\211067c2645a010a442bee614db37349\jetified-leakcanary-android-core-2.7\AndroidManifest.xml:24:5-81
+	tools:ignore
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:14:79-107
+	android:name
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:14:22-78
+uses-permission#android.permission.CAMERA
+ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:17:5-65
+	android:name
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:17:22-62
+uses-permission#android.permission.REQUEST_INSTALL_PACKAGES
+ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:20:5-83
+	android:name
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:20:22-80
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:23:5-79
+	android:name
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:23:22-76
+uses-permission#android.permission.ACCESS_COARSE_LOCATION
+ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:24:5-81
+	android:name
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:24:22-78
+queries
+ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:243:5-278:15
+MERGED from [:library:umeng] C:\Users\ylhappy\Desktop\AndroidProject-master\build\library\umeng\intermediates\library_manifest\debug\AndroidManifest.xml:25:5-31:15
+MERGED from [:library:umeng] C:\Users\ylhappy\Desktop\AndroidProject-master\build\library\umeng\intermediates\library_manifest\debug\AndroidManifest.xml:25:5-31:15
+intent#action:name:android.media.action.IMAGE_CAPTURE
+ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:245:9-247:18
+action#android.media.action.IMAGE_CAPTURE
+ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:246:13-73
+	android:name
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:246:21-70
+intent#action:name:android.media.action.VIDEO_CAPTURE
+ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:250:9-252:18
+action#android.media.action.VIDEO_CAPTURE
+ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:251:13-73
+	android:name
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:251:21-70
+intent#action:name:com.android.camera.action.CROP
+ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:255:9-257:18
+action#com.android.camera.action.CROP
+ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:256:13-69
+	android:name
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:256:21-66
+intent#action:name:android.intent.action.DIAL
+ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:260:9-262:18
+action#android.intent.action.DIAL
+ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:261:13-65
+	android:name
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:261:21-62
+intent#action:name:android.intent.action.SEND
+ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:265:9-267:18
+action#android.intent.action.SEND
+ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:266:13-65
+	android:name
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:266:21-62
+intent#action:name:android.intent.action.VIEW
+ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:270:9-272:18
+action#android.intent.action.VIEW
+ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:271:13-65
+	android:name
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:271:21-62
+intent#action:name:android.intent.action.GET_CONTENT
+ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:275:9-277:18
+action#android.intent.action.GET_CONTENT
+ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:276:13-72
+	android:name
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:276:21-69
+uses-sdk
+INJECTED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml
+MERGED from [com.squareup.leakcanary:leakcanary-android:2.7] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\4e968efa94381bf0c699d4b0878d09da\jetified-leakcanary-android-2.7\AndroidManifest.xml:20:5-44
+MERGED from [com.squareup.leakcanary:leakcanary-android:2.7] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\4e968efa94381bf0c699d4b0878d09da\jetified-leakcanary-android-2.7\AndroidManifest.xml:20:5-44
+MERGED from [:library:widget] C:\Users\ylhappy\Desktop\AndroidProject-master\build\library\widget\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:library:widget] C:\Users\ylhappy\Desktop\AndroidProject-master\build\library\widget\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:library:base] C:\Users\ylhappy\Desktop\AndroidProject-master\build\library\base\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:library:base] C:\Users\ylhappy\Desktop\AndroidProject-master\build\library\base\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:library:umeng] C:\Users\ylhappy\Desktop\AndroidProject-master\build\library\umeng\intermediates\library_manifest\debug\AndroidManifest.xml:8:5-10:41
+MERGED from [:library:umeng] C:\Users\ylhappy\Desktop\AndroidProject-master\build\library\umeng\intermediates\library_manifest\debug\AndroidManifest.xml:8:5-10:41
+MERGED from [com.github.getActivity:ShapeView:6.0] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\b5bf47d204387ee8522e367c259364b7\jetified-ShapeView-6.0\AndroidManifest.xml:7:5-44
+MERGED from [com.github.getActivity:ShapeView:6.0] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\b5bf47d204387ee8522e367c259364b7\jetified-ShapeView-6.0\AndroidManifest.xml:7:5-44
+MERGED from [com.google.android.material:material:1.4.0] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\7d4b260f3a1f2708d793b462bfe93420\material-1.4.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.material:material:1.4.0] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\7d4b260f3a1f2708d793b462bfe93420\material-1.4.0\AndroidManifest.xml:20:5-44
+MERGED from [com.github.Baseflow:PhotoView:2.3.0] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\d185ae7607517cb6163f8336fa04d965\jetified-PhotoView-2.3.0\AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.Baseflow:PhotoView:2.3.0] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\d185ae7607517cb6163f8336fa04d965\jetified-PhotoView-2.3.0\AndroidManifest.xml:7:5-9:41
+MERGED from [com.airbnb.android:lottie:4.1.0] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\fd9c5714cf72e13104a73bd15b4471aa\jetified-lottie-4.1.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.airbnb.android:lottie:4.1.0] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\fd9c5714cf72e13104a73bd15b4471aa\jetified-lottie-4.1.0\AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\5445e3c00e485883ff82c70219185e26\constraintlayout-2.0.1\AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\5445e3c00e485883ff82c70219185e26\constraintlayout-2.0.1\AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.appcompat:appcompat:1.3.1] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\65d101a87e027eacf3ce899e1268fec7\appcompat-1.3.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat:1.3.1] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\65d101a87e027eacf3ce899e1268fec7\appcompat-1.3.1\AndroidManifest.xml:20:5-22:41
+MERGED from [com.github.getActivity:XXPermissions:12.3] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\fde1b2ab0a8e800cb189fbece6e05345\jetified-XXPermissions-12.3\AndroidManifest.xml:7:5-44
+MERGED from [com.github.getActivity:XXPermissions:12.3] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\fde1b2ab0a8e800cb189fbece6e05345\jetified-XXPermissions-12.3\AndroidManifest.xml:7:5-44
+MERGED from [com.github.getActivity:TitleBar:9.2] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\bda9c2b3effa4952218fe0bbe3347e9b\jetified-TitleBar-9.2\AndroidManifest.xml:7:5-44
+MERGED from [com.github.getActivity:TitleBar:9.2] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\bda9c2b3effa4952218fe0bbe3347e9b\jetified-TitleBar-9.2\AndroidManifest.xml:7:5-44
+MERGED from [com.github.getActivity:ToastUtils:9.5] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\3a02e08f73638760c95b588fa9cf2af6\jetified-ToastUtils-9.5\AndroidManifest.xml:7:5-44
+MERGED from [com.github.getActivity:ToastUtils:9.5] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\3a02e08f73638760c95b588fa9cf2af6\jetified-ToastUtils-9.5\AndroidManifest.xml:7:5-44
+MERGED from [com.github.getActivity:EasyHttp:10.2] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\c820a6ab91ea65cc2309d61959291b60\jetified-EasyHttp-10.2\AndroidManifest.xml:7:5-44
+MERGED from [com.github.getActivity:EasyHttp:10.2] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\c820a6ab91ea65cc2309d61959291b60\jetified-EasyHttp-10.2\AndroidManifest.xml:7:5-44
+MERGED from [com.github.getActivity:GsonFactory:5.2] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\fe83ba037b756271ad4c3e4680fec9da\jetified-GsonFactory-5.2\AndroidManifest.xml:7:5-44
+MERGED from [com.github.getActivity:GsonFactory:5.2] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\fe83ba037b756271ad4c3e4680fec9da\jetified-GsonFactory-5.2\AndroidManifest.xml:7:5-44
+MERGED from [com.github.bumptech.glide:glide:4.12.0] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\727bb72b491df6df596e9de9d1f9a303\jetified-glide-4.12.0\AndroidManifest.xml:6:5-8:41
+MERGED from [com.github.bumptech.glide:glide:4.12.0] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\727bb72b491df6df596e9de9d1f9a303\jetified-glide-4.12.0\AndroidManifest.xml:6:5-8:41
+MERGED from [com.gyf.immersionbar:immersionbar:3.0.0] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\33485d73bdf9d4146701ea823cd7fc6a\jetified-immersionbar-3.0.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.gyf.immersionbar:immersionbar:3.0.0] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\33485d73bdf9d4146701ea823cd7fc6a\jetified-immersionbar-3.0.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.tencent.bugly:crashreport:3.4.4] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\3129ebecd850c4a222604abd6d6eff15\jetified-crashreport-3.4.4\AndroidManifest.xml:5:5-7:41
+MERGED from [com.tencent.bugly:crashreport:3.4.4] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\3129ebecd850c4a222604abd6d6eff15\jetified-crashreport-3.4.4\AndroidManifest.xml:5:5-7:41
+MERGED from [com.tencent.bugly:nativecrashreport:3.9.2] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\72ccefc3034e6a40223ed9cbc92e8f6e\jetified-nativecrashreport-3.9.2\AndroidManifest.xml:5:5-7:41
+MERGED from [com.tencent.bugly:nativecrashreport:3.9.2] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\72ccefc3034e6a40223ed9cbc92e8f6e\jetified-nativecrashreport-3.9.2\AndroidManifest.xml:5:5-7:41
+MERGED from [com.scwang.smart:refresh-layout-kernel:2.0.3] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\e786329c2396cb66377c37ac52585361\jetified-refresh-layout-kernel-2.0.3\AndroidManifest.xml:7:5-9:41
+MERGED from [com.scwang.smart:refresh-layout-kernel:2.0.3] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\e786329c2396cb66377c37ac52585361\jetified-refresh-layout-kernel-2.0.3\AndroidManifest.xml:7:5-9:41
+MERGED from [com.scwang.smart:refresh-header-material:2.0.3] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\d088f57da71660839bc5fa46d4f636cc\jetified-refresh-header-material-2.0.3\AndroidManifest.xml:7:5-9:41
+MERGED from [com.scwang.smart:refresh-header-material:2.0.3] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\d088f57da71660839bc5fa46d4f636cc\jetified-refresh-header-material-2.0.3\AndroidManifest.xml:7:5-9:41
+MERGED from [com.jakewharton.timber:timber:4.7.1] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\ccb1fd6d8340c085687566d03e084e28\jetified-timber-4.7.1\AndroidManifest.xml:5:5-43
+MERGED from [com.jakewharton.timber:timber:4.7.1] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\ccb1fd6d8340c085687566d03e084e28\jetified-timber-4.7.1\AndroidManifest.xml:5:5-43
+MERGED from [me.relex:circleindicator:2.1.6] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\89aa75ed827b765a2c36949664e37acb\jetified-circleindicator-2.1.6\AndroidManifest.xml:7:5-9:41
+MERGED from [me.relex:circleindicator:2.1.6] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\89aa75ed827b765a2c36949664e37acb\jetified-circleindicator-2.1.6\AndroidManifest.xml:7:5-9:41
+MERGED from [com.tencent:mmkv-static:1.2.10] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\d8e072a24126e361f005f1d62989fb14\jetified-mmkv-static-1.2.10\AndroidManifest.xml:5:5-7:41
+MERGED from [com.tencent:mmkv-static:1.2.10] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\d8e072a24126e361f005f1d62989fb14\jetified-mmkv-static-1.2.10\AndroidManifest.xml:5:5-7:41
+MERGED from [com.squareup.leakcanary:leakcanary-android-core:2.7] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\211067c2645a010a442bee614db37349\jetified-leakcanary-android-core-2.7\AndroidManifest.xml:20:5-44
+MERGED from [com.squareup.leakcanary:leakcanary-android-core:2.7] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\211067c2645a010a442bee614db37349\jetified-leakcanary-android-core-2.7\AndroidManifest.xml:20:5-44
+MERGED from [com.squareup.leakcanary:leakcanary-object-watcher-android-androidx:2.7] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\ea480e1af3d5aa90eff3bacf9773d6fa\jetified-leakcanary-object-watcher-android-androidx-2.7\AndroidManifest.xml:5:5-44
+MERGED from [com.squareup.leakcanary:leakcanary-object-watcher-android-androidx:2.7] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\ea480e1af3d5aa90eff3bacf9773d6fa\jetified-leakcanary-object-watcher-android-androidx-2.7\AndroidManifest.xml:5:5-44
+MERGED from [com.squareup.leakcanary:leakcanary-object-watcher-android-support-fragments:2.7] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\043b67214d18833d3bdecd6f376466df\jetified-leakcanary-object-watcher-android-support-fragments-2.7\AndroidManifest.xml:5:5-44
+MERGED from [com.squareup.leakcanary:leakcanary-object-watcher-android-support-fragments:2.7] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\043b67214d18833d3bdecd6f376466df\jetified-leakcanary-object-watcher-android-support-fragments-2.7\AndroidManifest.xml:5:5-44
+MERGED from [com.squareup.leakcanary:leakcanary-object-watcher-android:2.7] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\bfc2c7ca61394a699b5a7fe3c005482e\jetified-leakcanary-object-watcher-android-2.7\AndroidManifest.xml:5:5-44
+MERGED from [com.squareup.leakcanary:leakcanary-object-watcher-android:2.7] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\bfc2c7ca61394a699b5a7fe3c005482e\jetified-leakcanary-object-watcher-android-2.7\AndroidManifest.xml:5:5-44
+MERGED from [com.squareup.leakcanary:plumber-android:2.7] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\88600037fea94161ce8a820935bffed6\jetified-plumber-android-2.7\AndroidManifest.xml:5:5-44
+MERGED from [com.squareup.leakcanary:plumber-android:2.7] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\88600037fea94161ce8a820935bffed6\jetified-plumber-android-2.7\AndroidManifest.xml:5:5-44
+MERGED from [com.squareup.leakcanary:leakcanary-android-utils:2.7] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\84e1ba013be4735617cc8096a7f79743\jetified-leakcanary-android-utils-2.7\AndroidManifest.xml:5:5-44
+MERGED from [com.squareup.leakcanary:leakcanary-android-utils:2.7] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\84e1ba013be4735617cc8096a7f79743\jetified-leakcanary-android-utils-2.7\AndroidManifest.xml:5:5-44
+MERGED from [com.squareup.curtains:curtains:1.0.1] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\4856b2aec54fe2a2ac3b9b4c2c60280b\jetified-curtains-1.0.1\AndroidManifest.xml:5:5-7:41
+MERGED from [com.squareup.curtains:curtains:1.0.1] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\4856b2aec54fe2a2ac3b9b4c2c60280b\jetified-curtains-1.0.1\AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\f00ed913a12492e2778878e0551dd805\jetified-viewpager2-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\f00ed913a12492e2778878e0551dd805\jetified-viewpager2-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.3.6] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\e4207225514636662becae14e3e7a73b\fragment-1.3.6\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.3.6] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\e4207225514636662becae14e3e7a73b\fragment-1.3.6\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.2.4] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\be0e2b1a530186e18b499251b6194cfd\jetified-activity-1.2.4\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.2.4] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\be0e2b1a530186e18b499251b6194cfd\jetified-activity-1.2.4\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat-resources:1.3.1] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\0462b7c56aa3de43e36083a84a813928\jetified-appcompat-resources-1.3.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat-resources:1.3.1] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\0462b7c56aa3de43e36083a84a813928\jetified-appcompat-resources-1.3.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\f037c6e26a82207655c5178164820ca7\drawerlayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\f037c6e26a82207655c5178164820ca7\drawerlayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\83bf82d8a7ab152700f80c7358f83d1b\coordinatorlayout-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\83bf82d8a7ab152700f80c7358f83d1b\coordinatorlayout-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\7f2a0bd1bed16d716ac38f725bd48a00\dynamicanimation-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\7f2a0bd1bed16d716ac38f725bd48a00\dynamicanimation-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.transition:transition:1.2.0] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\7d2a85284be32ebd6fa287cafbc3c801\transition-1.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.transition:transition:1.2.0] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\7d2a85284be32ebd6fa287cafbc3c801\transition-1.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\42ecd430a895dba6c1c3a58091b61cf6\vectordrawable-animated-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\42ecd430a895dba6c1c3a58091b61cf6\vectordrawable-animated-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\d32b759ffa76ee4ed025f0f6cb96ec28\vectordrawable-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\d32b759ffa76ee4ed025f0f6cb96ec28\vectordrawable-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\b786431811a4b3bb3c0cd138b5e44d5f\viewpager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\b786431811a4b3bb3c0cd138b5e44d5f\viewpager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\c1333dcf331c48989d963c9ada3b22d5\legacy-support-core-utils-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\c1333dcf331c48989d963c9ada3b22d5\legacy-support-core-utils-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\da98de8fd0a18f242c26fe609bebc6f1\loader-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\da98de8fd0a18f242c26fe609bebc6f1\loader-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\bbd8c4d9b0d9e5763ad627653ec100ea\recyclerview-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\bbd8c4d9b0d9e5763ad627653ec100ea\recyclerview-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.customview:customview:1.0.0] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\341aa9111e3811163eeb489db74be5f8\customview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\341aa9111e3811163eeb489db74be5f8\customview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.5.0] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\cc1bc1189a305040b44c2acc85649dd4\core-1.5.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.5.0] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\cc1bc1189a305040b44c2acc85649dd4\core-1.5.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\a9bad47240d7619375e9722a4e257b79\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\a9bad47240d7619375e9722a4e257b79\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.1] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\214b37799163ba9db1fe6aee5cc23179\jetified-lifecycle-viewmodel-savedstate-2.3.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.1] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\214b37799163ba9db1fe6aee5cc23179\jetified-lifecycle-viewmodel-savedstate-2.3.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.1.0] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\fb97e81e50d7729bfc2764a1ea460999\jetified-savedstate-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.1.0] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\fb97e81e50d7729bfc2764a1ea460999\jetified-savedstate-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.3.1] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\598f1845542043e47a29c91d149ce8eb\lifecycle-runtime-2.3.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.3.1] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\598f1845542043e47a29c91d149ce8eb\lifecycle-runtime-2.3.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.3.1] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\1a6190d1a48457198b261b9937cff697\lifecycle-viewmodel-2.3.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.3.1] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\1a6190d1a48457198b261b9937cff697\lifecycle-viewmodel-2.3.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\25b1fa700e97c5b6f71196ba46c3ffaa\cardview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\25b1fa700e97c5b6f71196ba46c3ffaa\cardview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.github.bumptech.glide:gifdecoder:4.12.0] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\d20e07b97451d6633a24f128ea10d5e8\jetified-gifdecoder-4.12.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.github.bumptech.glide:gifdecoder:4.12.0] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\d20e07b97451d6633a24f128ea10d5e8\jetified-gifdecoder-4.12.0\AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.exifinterface:exifinterface:1.2.0] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\1fdcf1c573ac3797977dc5600e89d448\exifinterface-1.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.exifinterface:exifinterface:1.2.0] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\1fdcf1c573ac3797977dc5600e89d448\exifinterface-1.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\d3490651523b73c083e166729959dae6\versionedparcelable-1.1.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\d3490651523b73c083e166729959dae6\versionedparcelable-1.1.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\bf31d43b768dea39fe637fcbf560c6de\jetified-tracing-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\bf31d43b768dea39fe637fcbf560c6de\jetified-tracing-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\13bb6c094ccdd5f50883e0c2c4880deb\lifecycle-livedata-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\13bb6c094ccdd5f50883e0c2c4880deb\lifecycle-livedata-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.3.1] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\54cdbc8c2b79b9ae91650b537d8712ad\lifecycle-livedata-core-2.3.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.3.1] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\54cdbc8c2b79b9ae91650b537d8712ad\lifecycle-livedata-core-2.3.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.1.0] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\d53a96eb8db685c996a2347d4e9a99c8\core-runtime-2.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.1.0] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\d53a96eb8db685c996a2347d4e9a99c8\core-runtime-2.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\f1dccd372b19ee21c462e78f11ecee29\interpolator-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\f1dccd372b19ee21c462e78f11ecee29\interpolator-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\a7111c310971c34f7bae78410f7c64c8\documentfile-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\a7111c310971c34f7bae78410f7c64c8\documentfile-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\7a60474fa5594341405a258acf9ded4f\localbroadcastmanager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\7a60474fa5594341405a258acf9ded4f\localbroadcastmanager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\20861e5ab550708ac3d4055bbd8f0ef2\print-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\20861e5ab550708ac3d4055bbd8f0ef2\print-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.0.0] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\84c10f1f32815ebd152c4f25ff27fc91\jetified-annotation-experimental-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.annotation:annotation-experimental:1.0.0] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\84c10f1f32815ebd152c4f25ff27fc91\jetified-annotation-experimental-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [com.umeng.umsdk:asms:1.2.3] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\1a3414a8da56590ef9189be6b8e6765f\jetified-asms-1.2.3\AndroidManifest.xml:7:5-9:41
+MERGED from [com.umeng.umsdk:asms:1.2.3] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\1a3414a8da56590ef9189be6b8e6765f\jetified-asms-1.2.3\AndroidManifest.xml:7:5-9:41
+MERGED from [com.umeng.umsdk:share-core:7.1.5] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\1f705d0e0c03dee7477e06b973d3c3cb\jetified-share-core-7.1.5\AndroidManifest.xml:7:5-9:41
+MERGED from [com.umeng.umsdk:share-core:7.1.5] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\1f705d0e0c03dee7477e06b973d3c3cb\jetified-share-core-7.1.5\AndroidManifest.xml:7:5-9:41
+MERGED from [com.umeng.umsdk:share-wx:7.1.5] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\8c5d2010b6a56ba7fc80b302ffcc3af4\jetified-share-wx-7.1.5\AndroidManifest.xml:7:5-9:41
+MERGED from [com.umeng.umsdk:share-wx:7.1.5] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\8c5d2010b6a56ba7fc80b302ffcc3af4\jetified-share-wx-7.1.5\AndroidManifest.xml:7:5-9:41
+MERGED from [com.umeng.umsdk:share-qq:7.1.5] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\273e15e83539cc21454af7e41fa2da5b\jetified-share-qq-7.1.5\AndroidManifest.xml:7:5-9:41
+MERGED from [com.umeng.umsdk:share-qq:7.1.5] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\273e15e83539cc21454af7e41fa2da5b\jetified-share-qq-7.1.5\AndroidManifest.xml:7:5-9:41
+MERGED from [com.tencent.mm.opensdk:wechat-sdk-android-without-mta:6.7.9] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\a1941e6ff3d0ca0d15f1f8553f36ed2f\jetified-wechat-sdk-android-without-mta-6.7.9\AndroidManifest.xml:5:5-7:41
+MERGED from [com.tencent.mm.opensdk:wechat-sdk-android-without-mta:6.7.9] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\a1941e6ff3d0ca0d15f1f8553f36ed2f\jetified-wechat-sdk-android-without-mta-6.7.9\AndroidManifest.xml:5:5-7:41
+INJECTED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml
+meta-data#ScopedStorage
+ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:45:9-47:36
+	android:value
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:47:13-33
+	android:name
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:46:13-41
+meta-data#android.support.FILE_PROVIDER_PATHS
+ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:56:13-58:54
+	android:resource
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:58:17-51
+	android:name
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:57:17-67
+activity#com.hjq.demo.ui.activity.SplashActivity
+ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:62:9-76:20
+	android:screenOrientation
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:65:13-49
+	android:launchMode
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:64:13-43
+	android:theme
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:66:13-47
+	android:name
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:63:13-55
+intent-filter#action:name:android.intent.action.MAIN+action:name:android.intent.action.VIEW+category:name:android.intent.category.LAUNCHER
+ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:69:13-74:29
+action#android.intent.action.MAIN
+ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:70:17-69
+	android:name
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:70:25-66
+category#android.intent.category.LAUNCHER
+ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:73:17-77
+	android:name
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:73:27-74
+activity#com.hjq.demo.ui.activity.GuideActivity
+ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:79:9-82:52
+	android:screenOrientation
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:82:13-49
+	android:launchMode
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:81:13-43
+	android:name
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:80:13-54
+activity#com.hjq.demo.ui.activity.HomeActivity
+ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:85:9-89:55
+	android:screenOrientation
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:88:13-49
+	android:launchMode
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:87:13-44
+	android:windowSoftInputMode
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:89:13-52
+	android:name
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:86:13-53
+activity#com.hjq.demo.ui.activity.LoginActivity
+ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:92:9-96:57
+	android:screenOrientation
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:95:13-49
+	android:launchMode
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:94:13-43
+	android:windowSoftInputMode
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:96:13-54
+	android:name
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:93:13-54
+activity#com.hjq.demo.ui.activity.RegisterActivity
+ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:99:9-103:57
+	android:screenOrientation
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:102:13-49
+	android:launchMode
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:101:13-43
+	android:windowSoftInputMode
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:103:13-54
+	android:name
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:100:13-57
+activity#com.hjq.demo.ui.activity.CrashActivity
+ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:106:9-110:53
+	android:screenOrientation
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:110:13-50
+	android:process
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:109:13-37
+	android:launchMode
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:108:13-43
+	android:name
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:107:13-54
+activity#com.hjq.demo.ui.activity.RestartActivity
+ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:113:9-116:42
+	android:process
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:116:13-39
+	android:launchMode
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:115:13-43
+	android:name
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:114:13-56
+activity#com.hjq.demo.ui.activity.SettingActivity
+ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:119:9-123:52
+	android:screenOrientation
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:123:13-49
+	android:label
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:121:13-50
+	android:launchMode
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:122:13-43
+	android:name
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:120:13-56
+activity#com.hjq.demo.ui.activity.PasswordForgetActivity
+ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:126:9-131:57
+	android:screenOrientation
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:130:13-49
+	android:label
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:128:13-58
+	android:launchMode
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:129:13-43
+	android:windowSoftInputMode
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:131:13-54
+	android:name
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:127:13-63
+activity#com.hjq.demo.ui.activity.PasswordResetActivity
+ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:134:9-139:57
+	android:screenOrientation
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:138:13-49
+	android:label
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:136:13-57
+	android:launchMode
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:137:13-43
+	android:windowSoftInputMode
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:139:13-54
+	android:name
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:135:13-62
+activity#com.hjq.demo.ui.activity.PhoneResetActivity
+ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:142:9-147:57
+	android:screenOrientation
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:146:13-49
+	android:label
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:144:13-54
+	android:launchMode
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:145:13-43
+	android:windowSoftInputMode
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:147:13-54
+	android:name
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:143:13-59
+activity#com.hjq.demo.ui.activity.AboutActivity
+ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:150:9-154:52
+	android:screenOrientation
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:154:13-49
+	android:label
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:152:13-48
+	android:launchMode
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:153:13-43
+	android:name
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:151:13-54
+activity#com.hjq.demo.ui.activity.PersonalDataActivity
+ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:157:9-161:52
+	android:screenOrientation
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:161:13-49
+	android:label
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:159:13-56
+	android:launchMode
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:160:13-43
+	android:name
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:158:13-61
+activity#com.hjq.demo.ui.activity.BrowserActivity
+ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:164:9-168:52
+	android:screenOrientation
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:168:13-49
+	android:label
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:166:13-46
+	android:launchMode
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:167:13-43
+	android:name
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:165:13-56
+activity#com.hjq.demo.ui.activity.CameraActivity
+ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:171:9-174:52
+	android:screenOrientation
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:174:13-49
+	android:launchMode
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:173:13-43
+	android:name
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:172:13-55
+activity#com.hjq.demo.ui.activity.ImageCropActivity
+ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:177:9-180:52
+	android:screenOrientation
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:180:13-49
+	android:launchMode
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:179:13-43
+	android:name
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:178:13-58
+activity#com.hjq.demo.ui.activity.ImageSelectActivity
+ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:183:9-187:52
+	android:screenOrientation
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:187:13-49
+	android:label
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:185:13-55
+	android:launchMode
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:186:13-43
+	android:name
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:184:13-60
+activity#com.hjq.demo.ui.activity.ImagePreviewActivity
+ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:190:9-193:52
+	android:screenOrientation
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:193:13-49
+	android:launchMode
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:192:13-43
+	android:name
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:191:13-61
+activity#com.hjq.demo.ui.activity.VideoPlayActivity
+ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:196:9-199:54
+	android:launchMode
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:198:13-43
+	android:theme
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:199:13-51
+	android:name
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:197:13-58
+activity#com.hjq.demo.ui.activity.VideoPlayActivity$Portrait
+ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:202:9-206:54
+	android:screenOrientation
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:205:13-49
+	android:launchMode
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:204:13-43
+	android:theme
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:206:13-51
+	android:name
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:203:13-67
+activity#com.hjq.demo.ui.activity.VideoPlayActivity$Landscape
+ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:209:9-213:54
+	android:screenOrientation
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:212:13-50
+	android:launchMode
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:211:13-43
+	android:theme
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:213:13-51
+	android:name
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:210:13-68
+activity#com.hjq.demo.ui.activity.VideoSelectActivity
+ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:216:9-219:52
+	android:screenOrientation
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:219:13-49
+	android:launchMode
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:218:13-43
+	android:name
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:217:13-60
+activity#com.hjq.demo.ui.activity.DialogActivity
+ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:222:9-225:52
+	android:screenOrientation
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:225:13-49
+	android:launchMode
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:224:13-43
+	android:name
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:223:13-55
+activity#com.hjq.demo.ui.activity.StatusActivity
+ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:228:9-231:52
+	android:screenOrientation
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:231:13-49
+	android:launchMode
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:230:13-43
+	android:name
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:229:13-55
+activity#com.hjq.demo.wxapi.WXEntryActivity
+ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:234:9-238:75
+	android:exported
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:237:13-36
+	android:configChanges
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:236:13-74
+	android:theme
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:238:13-72
+	android:name
+		ADDED from C:\Users\ylhappy\Desktop\AndroidProject-master\app\src\main\AndroidManifest.xml:235:13-50
+service#leakcanary.internal.HeapAnalyzerService
+ADDED from [com.squareup.leakcanary:leakcanary-android:2.7] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\4e968efa94381bf0c699d4b0878d09da\jetified-leakcanary-android-2.7\AndroidManifest.xml:23:9-25:40
+	android:exported
+		ADDED from [com.squareup.leakcanary:leakcanary-android:2.7] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\4e968efa94381bf0c699d4b0878d09da\jetified-leakcanary-android-2.7\AndroidManifest.xml:25:13-37
+	android:name
+		ADDED from [com.squareup.leakcanary:leakcanary-android:2.7] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\4e968efa94381bf0c699d4b0878d09da\jetified-leakcanary-android-2.7\AndroidManifest.xml:24:13-67
+uses-permission#android.permission.READ_PHONE_STATE
+ADDED from [:library:umeng] C:\Users\ylhappy\Desktop\AndroidProject-master\build\library\umeng\intermediates\library_manifest\debug\AndroidManifest.xml:18:5-75
+	android:name
+		ADDED from [:library:umeng] C:\Users\ylhappy\Desktop\AndroidProject-master\build\library\umeng\intermediates\library_manifest\debug\AndroidManifest.xml:18:22-72
+package#com.tencent.mobileqq
+ADDED from [:library:umeng] C:\Users\ylhappy\Desktop\AndroidProject-master\build\library\umeng\intermediates\library_manifest\debug\AndroidManifest.xml:28:9-56
+	android:name
+		ADDED from [:library:umeng] C:\Users\ylhappy\Desktop\AndroidProject-master\build\library\umeng\intermediates\library_manifest\debug\AndroidManifest.xml:28:18-53
+package#com.tencent.mm
+ADDED from [:library:umeng] C:\Users\ylhappy\Desktop\AndroidProject-master\build\library\umeng\intermediates\library_manifest\debug\AndroidManifest.xml:30:9-50
+	android:name
+		ADDED from [:library:umeng] C:\Users\ylhappy\Desktop\AndroidProject-master\build\library\umeng\intermediates\library_manifest\debug\AndroidManifest.xml:30:18-47
+meta-data#UM_KEY
+ADDED from [:library:umeng] C:\Users\ylhappy\Desktop\AndroidProject-master\build\library\umeng\intermediates\library_manifest\debug\AndroidManifest.xml:36:9-38:56
+	android:value
+		ADDED from [:library:umeng] C:\Users\ylhappy\Desktop\AndroidProject-master\build\library\umeng\intermediates\library_manifest\debug\AndroidManifest.xml:38:13-53
+	android:name
+		ADDED from [:library:umeng] C:\Users\ylhappy\Desktop\AndroidProject-master\build\library\umeng\intermediates\library_manifest\debug\AndroidManifest.xml:37:13-34
+meta-data#QQ_ID
+ADDED from [:library:umeng] C:\Users\ylhappy\Desktop\AndroidProject-master\build\library\umeng\intermediates\library_manifest\debug\AndroidManifest.xml:41:9-43:41
+	android:value
+		ADDED from [:library:umeng] C:\Users\ylhappy\Desktop\AndroidProject-master\build\library\umeng\intermediates\library_manifest\debug\AndroidManifest.xml:43:13-38
+	android:name
+		ADDED from [:library:umeng] C:\Users\ylhappy\Desktop\AndroidProject-master\build\library\umeng\intermediates\library_manifest\debug\AndroidManifest.xml:42:13-33
+meta-data#QQ_SECRET
+ADDED from [:library:umeng] C:\Users\ylhappy\Desktop\AndroidProject-master\build\library\umeng\intermediates\library_manifest\debug\AndroidManifest.xml:45:9-47:64
+	android:value
+		ADDED from [:library:umeng] C:\Users\ylhappy\Desktop\AndroidProject-master\build\library\umeng\intermediates\library_manifest\debug\AndroidManifest.xml:47:13-61
+	android:name
+		ADDED from [:library:umeng] C:\Users\ylhappy\Desktop\AndroidProject-master\build\library\umeng\intermediates\library_manifest\debug\AndroidManifest.xml:46:13-37
+meta-data#WX_ID
+ADDED from [:library:umeng] C:\Users\ylhappy\Desktop\AndroidProject-master\build\library\umeng\intermediates\library_manifest\debug\AndroidManifest.xml:50:9-52:50
+	android:value
+		ADDED from [:library:umeng] C:\Users\ylhappy\Desktop\AndroidProject-master\build\library\umeng\intermediates\library_manifest\debug\AndroidManifest.xml:52:13-47
+	android:name
+		ADDED from [:library:umeng] C:\Users\ylhappy\Desktop\AndroidProject-master\build\library\umeng\intermediates\library_manifest\debug\AndroidManifest.xml:51:13-33
+meta-data#WX_SECRET
+ADDED from [:library:umeng] C:\Users\ylhappy\Desktop\AndroidProject-master\build\library\umeng\intermediates\library_manifest\debug\AndroidManifest.xml:54:9-56:64
+	android:value
+		ADDED from [:library:umeng] C:\Users\ylhappy\Desktop\AndroidProject-master\build\library\umeng\intermediates\library_manifest\debug\AndroidManifest.xml:56:13-61
+	android:name
+		ADDED from [:library:umeng] C:\Users\ylhappy\Desktop\AndroidProject-master\build\library\umeng\intermediates\library_manifest\debug\AndroidManifest.xml:55:13-37
+activity#com.tencent.tauth.AuthActivity
+ADDED from [:library:umeng] C:\Users\ylhappy\Desktop\AndroidProject-master\build\library\umeng\intermediates\library_manifest\debug\AndroidManifest.xml:62:9-75:20
+REJECTED from [com.umeng.umsdk:share-qq:7.1.5] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\273e15e83539cc21454af7e41fa2da5b\jetified-share-qq-7.1.5\AndroidManifest.xml:12:9-24:20
+	tools:node
+		ADDED from [:library:umeng] C:\Users\ylhappy\Desktop\AndroidProject-master\build\library\umeng\intermediates\library_manifest\debug\AndroidManifest.xml:66:13-33
+	android:launchMode
+		ADDED from [:library:umeng] C:\Users\ylhappy\Desktop\AndroidProject-master\build\library\umeng\intermediates\library_manifest\debug\AndroidManifest.xml:64:13-44
+	android:noHistory
+		ADDED from [:library:umeng] C:\Users\ylhappy\Desktop\AndroidProject-master\build\library\umeng\intermediates\library_manifest\debug\AndroidManifest.xml:65:13-37
+	android:name
+		ADDED from [:library:umeng] C:\Users\ylhappy\Desktop\AndroidProject-master\build\library\umeng\intermediates\library_manifest\debug\AndroidManifest.xml:63:13-58
+intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+category:name:android.intent.category.DEFAULT+data:scheme:tencent101828096
+ADDED from [:library:umeng] C:\Users\ylhappy\Desktop\AndroidProject-master\build\library\umeng\intermediates\library_manifest\debug\AndroidManifest.xml:67:13-74:29
+category#android.intent.category.DEFAULT
+ADDED from [:library:umeng] C:\Users\ylhappy\Desktop\AndroidProject-master\build\library\umeng\intermediates\library_manifest\debug\AndroidManifest.xml:70:17-76
+	android:name
+		ADDED from [:library:umeng] C:\Users\ylhappy\Desktop\AndroidProject-master\build\library\umeng\intermediates\library_manifest\debug\AndroidManifest.xml:70:27-73
+category#android.intent.category.BROWSABLE
+ADDED from [:library:umeng] C:\Users\ylhappy\Desktop\AndroidProject-master\build\library\umeng\intermediates\library_manifest\debug\AndroidManifest.xml:71:17-78
+	android:name
+		ADDED from [:library:umeng] C:\Users\ylhappy\Desktop\AndroidProject-master\build\library\umeng\intermediates\library_manifest\debug\AndroidManifest.xml:71:27-75
+data
+ADDED from [:library:umeng] C:\Users\ylhappy\Desktop\AndroidProject-master\build\library\umeng\intermediates\library_manifest\debug\AndroidManifest.xml:73:17-59
+	android:scheme
+		ADDED from [:library:umeng] C:\Users\ylhappy\Desktop\AndroidProject-master\build\library\umeng\intermediates\library_manifest\debug\AndroidManifest.xml:73:23-56
+activity#com.tencent.connect.common.AssistActivity
+ADDED from [:library:umeng] C:\Users\ylhappy\Desktop\AndroidProject-master\build\library\umeng\intermediates\library_manifest\debug\AndroidManifest.xml:76:9-80:36
+REJECTED from [com.umeng.umsdk:share-qq:7.1.5] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\273e15e83539cc21454af7e41fa2da5b\jetified-share-qq-7.1.5\AndroidManifest.xml:25:9-29:75
+	tools:node
+		ADDED from [:library:umeng] C:\Users\ylhappy\Desktop\AndroidProject-master\build\library\umeng\intermediates\library_manifest\debug\AndroidManifest.xml:80:13-33
+	android:configChanges
+		ADDED from [:library:umeng] C:\Users\ylhappy\Desktop\AndroidProject-master\build\library\umeng\intermediates\library_manifest\debug\AndroidManifest.xml:78:13-63
+	android:theme
+		ADDED from [:library:umeng] C:\Users\ylhappy\Desktop\AndroidProject-master\build\library\umeng\intermediates\library_manifest\debug\AndroidManifest.xml:79:13-72
+	android:name
+		ADDED from [:library:umeng] C:\Users\ylhappy\Desktop\AndroidProject-master\build\library\umeng\intermediates\library_manifest\debug\AndroidManifest.xml:77:13-69
+uses-permission#android.permission.FOREGROUND_SERVICE
+ADDED from [com.squareup.leakcanary:leakcanary-android-core:2.7] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\211067c2645a010a442bee614db37349\jetified-leakcanary-android-core-2.7\AndroidManifest.xml:26:5-77
+	android:name
+		ADDED from [com.squareup.leakcanary:leakcanary-android-core:2.7] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\211067c2645a010a442bee614db37349\jetified-leakcanary-android-core-2.7\AndroidManifest.xml:26:22-74
+provider#leakcanary.internal.LeakCanaryFileProvider
+ADDED from [com.squareup.leakcanary:leakcanary-android-core:2.7] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\211067c2645a010a442bee614db37349\jetified-leakcanary-android-core-2.7\AndroidManifest.xml:29:9-37:20
+	android:grantUriPermissions
+		ADDED from [com.squareup.leakcanary:leakcanary-android-core:2.7] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\211067c2645a010a442bee614db37349\jetified-leakcanary-android-core-2.7\AndroidManifest.xml:33:13-47
+	android:authorities
+		ADDED from [com.squareup.leakcanary:leakcanary-android-core:2.7] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\211067c2645a010a442bee614db37349\jetified-leakcanary-android-core-2.7\AndroidManifest.xml:31:13-88
+	android:exported
+		ADDED from [com.squareup.leakcanary:leakcanary-android-core:2.7] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\211067c2645a010a442bee614db37349\jetified-leakcanary-android-core-2.7\AndroidManifest.xml:32:13-37
+	android:name
+		ADDED from [com.squareup.leakcanary:leakcanary-android-core:2.7] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\211067c2645a010a442bee614db37349\jetified-leakcanary-android-core-2.7\AndroidManifest.xml:30:13-70
+activity#leakcanary.internal.activity.LeakActivity
+ADDED from [com.squareup.leakcanary:leakcanary-android-core:2.7] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\211067c2645a010a442bee614db37349\jetified-leakcanary-android-core-2.7\AndroidManifest.xml:39:9-44:66
+	android:label
+		ADDED from [com.squareup.leakcanary:leakcanary-android-core:2.7] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\211067c2645a010a442bee614db37349\jetified-leakcanary-android-core-2.7\AndroidManifest.xml:42:13-71
+	android:icon
+		ADDED from [com.squareup.leakcanary:leakcanary-android-core:2.7] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\211067c2645a010a442bee614db37349\jetified-leakcanary-android-core-2.7\AndroidManifest.xml:41:13-52
+	android:theme
+		ADDED from [com.squareup.leakcanary:leakcanary-android-core:2.7] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\211067c2645a010a442bee614db37349\jetified-leakcanary-android-core-2.7\AndroidManifest.xml:44:13-63
+	android:taskAffinity
+		ADDED from [com.squareup.leakcanary:leakcanary-android-core:2.7] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\211067c2645a010a442bee614db37349\jetified-leakcanary-android-core-2.7\AndroidManifest.xml:43:13-76
+	android:name
+		ADDED from [com.squareup.leakcanary:leakcanary-android-core:2.7] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\211067c2645a010a442bee614db37349\jetified-leakcanary-android-core-2.7\AndroidManifest.xml:40:13-69
+activity-alias#leakcanary.internal.activity.LeakLauncherActivity
+ADDED from [com.squareup.leakcanary:leakcanary-android-core:2.7] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\211067c2645a010a442bee614db37349\jetified-leakcanary-android-core-2.7\AndroidManifest.xml:46:9-63:26
+	android:enabled
+		ADDED from [com.squareup.leakcanary:leakcanary-android-core:2.7] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\211067c2645a010a442bee614db37349\jetified-leakcanary-android-core-2.7\AndroidManifest.xml:49:13-66
+	android:label
+		ADDED from [com.squareup.leakcanary:leakcanary-android-core:2.7] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\211067c2645a010a442bee614db37349\jetified-leakcanary-android-core-2.7\AndroidManifest.xml:52:13-71
+	android:exported
+		ADDED from [com.squareup.leakcanary:leakcanary-android-core:2.7] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\211067c2645a010a442bee614db37349\jetified-leakcanary-android-core-2.7\AndroidManifest.xml:50:13-36
+	android:targetActivity
+		ADDED from [com.squareup.leakcanary:leakcanary-android-core:2.7] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\211067c2645a010a442bee614db37349\jetified-leakcanary-android-core-2.7\AndroidManifest.xml:53:13-79
+	android:icon
+		ADDED from [com.squareup.leakcanary:leakcanary-android-core:2.7] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\211067c2645a010a442bee614db37349\jetified-leakcanary-android-core-2.7\AndroidManifest.xml:51:13-52
+	android:banner
+		ADDED from [com.squareup.leakcanary:leakcanary-android-core:2.7] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\211067c2645a010a442bee614db37349\jetified-leakcanary-android-core-2.7\AndroidManifest.xml:48:13-59
+	android:theme
+		ADDED from [com.squareup.leakcanary:leakcanary-android-core:2.7] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\211067c2645a010a442bee614db37349\jetified-leakcanary-android-core-2.7\AndroidManifest.xml:55:13-63
+	android:taskAffinity
+		ADDED from [com.squareup.leakcanary:leakcanary-android-core:2.7] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\211067c2645a010a442bee614db37349\jetified-leakcanary-android-core-2.7\AndroidManifest.xml:54:13-76
+	android:name
+		ADDED from [com.squareup.leakcanary:leakcanary-android-core:2.7] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\211067c2645a010a442bee614db37349\jetified-leakcanary-android-core-2.7\AndroidManifest.xml:47:13-77
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER+category:name:android.intent.category.LEANBACK_LAUNCHER
+ADDED from [com.squareup.leakcanary:leakcanary-android-core:2.7] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\211067c2645a010a442bee614db37349\jetified-leakcanary-android-core-2.7\AndroidManifest.xml:56:13-62:29
+category#android.intent.category.LEANBACK_LAUNCHER
+ADDED from [com.squareup.leakcanary:leakcanary-android-core:2.7] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\211067c2645a010a442bee614db37349\jetified-leakcanary-android-core-2.7\AndroidManifest.xml:61:17-86
+	android:name
+		ADDED from [com.squareup.leakcanary:leakcanary-android-core:2.7] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\211067c2645a010a442bee614db37349\jetified-leakcanary-android-core-2.7\AndroidManifest.xml:61:27-83
+activity#leakcanary.internal.RequestStoragePermissionActivity
+ADDED from [com.squareup.leakcanary:leakcanary-android-core:2.7] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\211067c2645a010a442bee614db37349\jetified-leakcanary-android-core-2.7\AndroidManifest.xml:65:9-71:68
+	android:label
+		ADDED from [com.squareup.leakcanary:leakcanary-android-core:2.7] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\211067c2645a010a442bee614db37349\jetified-leakcanary-android-core-2.7\AndroidManifest.xml:69:13-82
+	android:excludeFromRecents
+		ADDED from [com.squareup.leakcanary:leakcanary-android-core:2.7] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\211067c2645a010a442bee614db37349\jetified-leakcanary-android-core-2.7\AndroidManifest.xml:67:13-46
+	android:icon
+		ADDED from [com.squareup.leakcanary:leakcanary-android-core:2.7] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\211067c2645a010a442bee614db37349\jetified-leakcanary-android-core-2.7\AndroidManifest.xml:68:13-52
+	android:theme
+		ADDED from [com.squareup.leakcanary:leakcanary-android-core:2.7] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\211067c2645a010a442bee614db37349\jetified-leakcanary-android-core-2.7\AndroidManifest.xml:71:13-65
+	android:taskAffinity
+		ADDED from [com.squareup.leakcanary:leakcanary-android-core:2.7] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\211067c2645a010a442bee614db37349\jetified-leakcanary-android-core-2.7\AndroidManifest.xml:70:13-76
+	android:name
+		ADDED from [com.squareup.leakcanary:leakcanary-android-core:2.7] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\211067c2645a010a442bee614db37349\jetified-leakcanary-android-core-2.7\AndroidManifest.xml:66:13-80
+receiver#leakcanary.internal.NotificationReceiver
+ADDED from [com.squareup.leakcanary:leakcanary-android-core:2.7] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\211067c2645a010a442bee614db37349\jetified-leakcanary-android-core-2.7\AndroidManifest.xml:73:9-77
+	android:name
+		ADDED from [com.squareup.leakcanary:leakcanary-android-core:2.7] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\211067c2645a010a442bee614db37349\jetified-leakcanary-android-core-2.7\AndroidManifest.xml:73:19-74
+provider#leakcanary.internal.AppWatcherInstaller$MainProcess
+ADDED from [com.squareup.leakcanary:leakcanary-object-watcher-android:2.7] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\bfc2c7ca61394a699b5a7fe3c005482e\jetified-leakcanary-object-watcher-android-2.7\AndroidManifest.xml:8:9-12:40
+	android:enabled
+		ADDED from [com.squareup.leakcanary:leakcanary-object-watcher-android:2.7] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\bfc2c7ca61394a699b5a7fe3c005482e\jetified-leakcanary-object-watcher-android-2.7\AndroidManifest.xml:11:13-69
+	android:authorities
+		ADDED from [com.squareup.leakcanary:leakcanary-object-watcher-android:2.7] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\bfc2c7ca61394a699b5a7fe3c005482e\jetified-leakcanary-object-watcher-android-2.7\AndroidManifest.xml:10:13-72
+	android:exported
+		ADDED from [com.squareup.leakcanary:leakcanary-object-watcher-android:2.7] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\bfc2c7ca61394a699b5a7fe3c005482e\jetified-leakcanary-object-watcher-android-2.7\AndroidManifest.xml:12:13-37
+	android:name
+		ADDED from [com.squareup.leakcanary:leakcanary-object-watcher-android:2.7] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\bfc2c7ca61394a699b5a7fe3c005482e\jetified-leakcanary-object-watcher-android-2.7\AndroidManifest.xml:9:13-79
+provider#leakcanary.internal.PlumberInstaller
+ADDED from [com.squareup.leakcanary:plumber-android:2.7] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\88600037fea94161ce8a820935bffed6\jetified-plumber-android-2.7\AndroidManifest.xml:8:9-12:40
+	android:enabled
+		ADDED from [com.squareup.leakcanary:plumber-android:2.7] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\88600037fea94161ce8a820935bffed6\jetified-plumber-android-2.7\AndroidManifest.xml:11:13-69
+	android:authorities
+		ADDED from [com.squareup.leakcanary:plumber-android:2.7] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\88600037fea94161ce8a820935bffed6\jetified-plumber-android-2.7\AndroidManifest.xml:10:13-69
+	android:exported
+		ADDED from [com.squareup.leakcanary:plumber-android:2.7] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\88600037fea94161ce8a820935bffed6\jetified-plumber-android-2.7\AndroidManifest.xml:12:13-37
+	android:name
+		ADDED from [com.squareup.leakcanary:plumber-android:2.7] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\88600037fea94161ce8a820935bffed6\jetified-plumber-android-2.7\AndroidManifest.xml:9:13-64
+activity#${applicationId}.wxapi.WXEntryActivity
+ADDED from [com.umeng.umsdk:share-wx:7.1.5] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\8c5d2010b6a56ba7fc80b302ffcc3af4\jetified-share-wx-7.1.5\AndroidManifest.xml:12:9-16:75
+	android:exported
+		ADDED from [com.umeng.umsdk:share-wx:7.1.5] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\8c5d2010b6a56ba7fc80b302ffcc3af4\jetified-share-wx-7.1.5\AndroidManifest.xml:15:13-36
+	android:configChanges
+		ADDED from [com.umeng.umsdk:share-wx:7.1.5] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\8c5d2010b6a56ba7fc80b302ffcc3af4\jetified-share-wx-7.1.5\AndroidManifest.xml:14:13-74
+	android:theme
+		ADDED from [com.umeng.umsdk:share-wx:7.1.5] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\8c5d2010b6a56ba7fc80b302ffcc3af4\jetified-share-wx-7.1.5\AndroidManifest.xml:16:13-72
+	android:name
+		ADDED from [com.umeng.umsdk:share-wx:7.1.5] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\8c5d2010b6a56ba7fc80b302ffcc3af4\jetified-share-wx-7.1.5\AndroidManifest.xml:13:13-66
+activity#com.hjq.demo.debug.wxapi.WXEntryActivity
+ADDED from [com.umeng.umsdk:share-wx:7.1.5] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\8c5d2010b6a56ba7fc80b302ffcc3af4\jetified-share-wx-7.1.5\AndroidManifest.xml:12:9-16:75
+	android:exported
+		ADDED from [com.umeng.umsdk:share-wx:7.1.5] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\8c5d2010b6a56ba7fc80b302ffcc3af4\jetified-share-wx-7.1.5\AndroidManifest.xml:15:13-36
+	android:configChanges
+		ADDED from [com.umeng.umsdk:share-wx:7.1.5] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\8c5d2010b6a56ba7fc80b302ffcc3af4\jetified-share-wx-7.1.5\AndroidManifest.xml:14:13-74
+	android:theme
+		ADDED from [com.umeng.umsdk:share-wx:7.1.5] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\8c5d2010b6a56ba7fc80b302ffcc3af4\jetified-share-wx-7.1.5\AndroidManifest.xml:16:13-72
+	android:name
+		ADDED from [com.umeng.umsdk:share-wx:7.1.5] C:\Users\ylhappy\.gradle\caches\transforms-2\files-2.1\8c5d2010b6a56ba7fc80b302ffcc3af4\jetified-share-wx-7.1.5\AndroidManifest.xml:13:13-66

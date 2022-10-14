@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.getActivity:GsonFactory:5.2@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/fe83ba037b756271ad4c3e4680fec9da/jetified-GsonFactory-5.2/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/fe83ba037b756271ad4c3e4680fec9da/jetified-GsonFactory-5.2/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/fe83ba037b756271ad4c3e4680fec9da/jetified-GsonFactory-5.2/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.getActivity/GsonFactory/5.2/554e70983205c46d1c80e04451505eeb7dbd71fa/GsonFactory-5.2-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.getActivity/GsonFactory/5.2/58d3975761340f1bac7aaf8ed5871fcd6d13234d/GsonFactory-5.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

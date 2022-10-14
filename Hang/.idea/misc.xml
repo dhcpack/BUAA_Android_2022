@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/ylhappy/Desktop/BUAA_Android_2022/Hang/app/src/main/res/drawable/ic_dashboard_black_24dp.xml" value="0.116" />
+        <entry key="..\:/Users/ylhappy/Desktop/BUAA_Android_2022/Hang/app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.116" />
+        <entry key="..\:/Users/ylhappy/Desktop/BUAA_Android_2022/Hang/app/src/main/res/drawable/ic_mine_black_24dp.xml" value="0.116" />
+        <entry key="..\:/Users/ylhappy/Desktop/BUAA_Android_2022/Hang/app/src/main/res/drawable/ic_recommend_black_24dp.xml" value="0.116" />
+        <entry key="..\:/Users/ylhappy/Desktop/BUAA_Android_2022/Hang/app/src/main/res/menu/bottom_nav_menu.xml" value="0.1" />
+        <entry key="..\:/Users/ylhappy/Desktop/Hang/app/src/main/res/drawable/ic_dashboard_black_24dp.xml" value="0.1" />
+        <entry key="..\:/Users/ylhappy/Desktop/Hang/app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.1" />
+        <entry key="..\:/Users/ylhappy/Desktop/Hang/app/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.1" />
+        <entry key="..\:/Users/ylhappy/Desktop/Hang/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/ylhappy/Desktop/Hang/app/src/main/res/layout/bottom_nav_menu.xml" value="0.2171875" />
+        <entry key="..\:/Users/ylhappy/Desktop/Hang/app/src/main/res/layout/fragment_communicate.xml" value="0.1" />
+        <entry key="..\:/Users/ylhappy/Desktop/Hang/app/src/main/res/layout/fragment_learn.xml" value="0.1" />
+        <entry key="..\:/Users/ylhappy/Desktop/Hang/app/src/main/res/layout/fragment_mine.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/ylhappy/Desktop/Hang/app/src/main/res/layout/fragment_recommend.xml" value="0.20697463768115942" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
