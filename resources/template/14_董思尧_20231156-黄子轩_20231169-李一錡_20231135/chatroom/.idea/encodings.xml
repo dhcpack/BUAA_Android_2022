@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" native2AsciiForPropertiesFiles="true" defaultCharsetForPropertiesFiles="GBK" addBOMForNewFiles="with BOM">
+    <file url="file://$PROJECT_DIR$/src/多用户通信系统/GUI/AWT1/TestBorderLayout.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/多用户通信系统/GUI/AWT1/TestDemo.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/多用户通信系统/GUI/AWT1/TestFlowLayout.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/多用户通信系统/GUI/AWT1/TestFrame.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/多用户通信系统/GUI/AWT1/TestFrame2.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/多用户通信系统/GUI/AWT1/TestGridLayout.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/多用户通信系统/GUI/AWT1/TestPanel.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/多用户通信系统/GUI/AWT2/TestAction2.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/多用户通信系统/GUI/AWT2/TestActionEvent.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/多用户通信系统/GUI/AWT2/TestCalc.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/多用户通信系统/GUI/AWT2/TestText1.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/多用户通信系统/GUI/SWING1/DialogDemo.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/多用户通信系统/GUI/SWING1/IconDemo.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/多用户通信系统/GUI/SWING1/ImageIconDemo.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/多用户通信系统/GUI/SWING1/JButtonDemo1.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/多用户通信系统/GUI/SWING1/JFrameDemo.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/多用户通信系统/GUI/SWING1/JPanelDemo.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/多用户通信系统/GUI/SWING1/JScrollDemo.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/多用户通信系统/GUI/SWING1/TestComboboxDemo1.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/多用户通信系统/QQClient/clientUtils/Utility.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/多用户通信系统/QQClient/service/GroupClientService.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/多用户通信系统/QQClient/view/ChatFrame.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/多用户通信系统/QQClient/view/ClientChatGui.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/多用户通信系统/QQClient/view/ClientLoginGui.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/多用户通信系统/QQClient/view/GroupFrame.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/多用户通信系统/QQClient/view/PopDialog.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/多用户通信系统/QQClient/view/PopService.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/多用户通信系统/QQClient/view/QQView.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/多用户通信系统/QQFrame/qqFrame.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/多用户通信系统/myJDBC/linkMySQL.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/多用户通信系统/utils/Utility.java" charset="GBK" />
+  </component>
+</project>

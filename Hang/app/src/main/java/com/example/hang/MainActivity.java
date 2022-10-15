@@ -2,9 +2,6 @@ package com.example.hang;
 
 import android.os.Bundle;
 
-import com.example.hang.database.UserDatabase;
-import com.example.hang.database.dao.UserDao;
-import com.example.hang.database.entities.User;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,11 +9,8 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
-import androidx.room.Room;
 
 import com.example.hang.databinding.ActivityMainBinding;
-
-import java.util.List;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -57,6 +51,9 @@ public class MainActivity extends AppCompatActivity {
             }
             System.out.println("end print");
         */
+
+        // 操作mysql
+
     }
 
 
