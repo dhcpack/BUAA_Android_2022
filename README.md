@@ -14,13 +14,23 @@ BUAA_Android_2022
 
 用户表user_table
 
-| 属性名    | 类型        |                              |
-| --------- | ----------- | ---------------------------- |
-| id        | int         | 主键，数据库自动生成         |
-| nick_name | varchar(64) | 不重复，通过nickname添加好友 |
-| password  | varchar(64) |                              |
-| pic       | varchar(64) | 头像路径                     |
-| days      | int         | 打卡天数                     |
+| 属性名    | 类型        |                                             |
+| --------- | ----------- | ------------------------------------------- |
+| id        | int         | 主键，数据库自动生成                        |
+| nickname  | varchar(64) | 不重复，通过nickname添加好友                |
+| password  | varchar(64) |                                             |
+| pic       | varchar(64) | 头像路径                                    |
+| days      | int         | 打卡天数                                    |
+| target    | varchar(64) | 学习方向（也可以像level弄成int 选择）       |
+| level     | int         | 小学生1 初中生2 高中生2 本科生3 研究生4 ... |
+| stuId     | varchar(16) | 学号                                        |
+| institute | varchar(64) | 学院                                        |
+| major     | varchar(64) | 专业                                        |
+| grade     | varchar(16) | 年级                                        |
+
+
+
+
 
 
 
@@ -35,13 +45,13 @@ BUAA_Android_2022
 
 记忆本表 book_table
 
-| 属性名 | 类型        |                      |
-| ------ | ----------- | -------------------- |
-| id     | int         | 主键，数据库自动生成 |
-| userId | int         | user_table(id) 外键  |
-| pic    | varchar(64) | 封面路径             |
-| tag    | varchar(64) | 记忆本标签           |
-| public | bool        | 是否公开             |
+| 属性名 | 类型        |                            |
+| ------ | ----------- | -------------------------- |
+| id     | int         | 主键，数据库自动生成       |
+| userId | int         | user_table(id) 外键        |
+| pic    | varchar(64) | 封面路径                   |
+| tag    | varchar(64) | 记忆本标签                 |
+| public | bool        | 是否公开，默认不公开 false |
 
 
 
@@ -96,7 +106,7 @@ BUAA_Android_2022
 | userId1 | int           | user_table(id) 外键  申请者 |
 | userId2 | int           | user_table(id) 外键  被申请 |
 | time    | timestamp     | 请求发出时间                |
-| text    | varchar(1024) | 申请理由                    |
+| msg     | varchar(1024) | 申请理由                    |
 
 
 
@@ -110,48 +120,41 @@ BUAA_Android_2022
 | sender   | int           | user_table(id) 外键  |
 | receiver | int           | user_table(id) 外键  |
 | time     | timestamp     | 时间                 |
-| text     | varchar(1024) | 内容                 |
+| msg      | varchar(1024) | 内容                 |
 
 
 
 帖子表 post_table
 
-| 属性名  | 类型          |                      |
-| ------- | ------------- | -------------------- |
-| id      | int           | 主键，数据库自动生成 |
-| userId  | int           | 作者                 |
-| time    | time          | 发帖时间             |
-| favour  | int           | 点赞数               |
-| comment | int           | 评论数               |
-| title   | varchar(128)  | 题目                 |
-| content | varchar(4096) | 内容                 |
+| 属性名  | 类型           |                      |
+| ------- | -------------- | -------------------- |
+| id      | int            | 主键，数据库自动生成 |
+| userId  | int            | 作者                 |
+| time    | time           | 发帖时间             |
+| favour  | int            | 点赞数               |
+| title   | varchar(1024)  | 题目                 |
+| content | varchar(16383) | 内容                 |
 
 
 
 评论表 comment_table
 
-| 属性名 | 类型          |                             |
-| ------ | ------------- | --------------------------- |
-| id     | int           | 主键，数据库自动生成        |
-| postId | int           | post_table(id) 外键         |
-| userId | int           | user_table(id) 外键  评论者 |
-| time   | timestamp     | 时间                        |
-| text   | varchar(1024) | 内容                        |
+| 属性名  | 类型          |                             |
+| ------- | ------------- | --------------------------- |
+| id      | int           | 主键，数据库自动生成        |
+| postId  | int           | post_table(id) 外键         |
+| userId  | int           | user_table(id) 外键  评论者 |
+| time    | timestamp     | 时间                        |
+| comment | varchar(1024) | 内容                        |
 
 
 
-
-
-ORM框架：Room [使用 Room 将数据保存到本地数据库  | Android 开发者  | Android Developers](https://developer.android.com/training/data-storage/room#groovy)
-
-可视化数据库：[(195条消息) Android Studio 打开 Room 可视化查看器（Database Inspector）_Eyeswap的博客-CSDN博客_android room 查看](https://blog.csdn.net/h20101988/article/details/124169208?utm_medium=distribute.pc_relevant.none-task-blog-2~default~baidujs_baidulandingword~default-1-124169208-blog-108011311.pc_relevant_layerdownloadsortv1&spm=1001.2101.3001.4242.2&utm_relevant_index=4)
-
-服务器mysql数据库：
-
-[Android数据库框架该如何选？ - 掘金 (juejin.cn)](https://juejin.cn/post/7020223144082276383)
+访问服务器： [(195条消息) 网络通信——HTTP接口访问——POST方式调用HTTP接口_小白龙白龙马的博客-CSDN博客](https://blog.csdn.net/m0_61442607/article/details/127341715)
 
 
 
 图标库：[iconmonstr - Free simple icons for your next project](https://iconmonstr.com/)
+
+图片网站：[Librestock Photos - Free Stock Photo Search Engine](https://librestock.com/)
 
 模板：https://github.com/getActivity/AndroidProject

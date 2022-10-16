@@ -1,7 +1,10 @@
 package com.example.hang;
 
 import android.os.Bundle;
+import android.os.StrictMode;
 
+import com.example.hang.ports.HttpUtil;
+import com.example.hang.ports.Ports;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,6 +14,13 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import com.example.hang.databinding.ActivityMainBinding;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -52,8 +62,22 @@ public class MainActivity extends AppCompatActivity {
             System.out.println("end print");
         */
 
-        // 操作mysql
+        // 发送http请求
 
+//        String nickname = "test";
+//        String password = "1234";
+//        System.out.println(HttpUtil.get(Ports.signInUrl + nickname + "/" + password + "/", new HashMap<>()));
+        ArrayList<String> signIn = new ArrayList<>();
+        signIn.add("test");
+        signIn.add("123");
+        JSONObject jsonObject = null;
+        try {
+            jsonObject = HttpUtil.httpGet(Ports.signInUrl, signIn);
+            System.out.println(jsonObject.getString("nickname"));
+            System.out.println(jsonObject.getString("institute"));
+        } catch (IOException | JSONException e) {
+            e.printStackTrace();
+        }
     }
 
 
