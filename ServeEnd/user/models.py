@@ -1,9 +1,10 @@
 from django.db import models
+from django.utils import timezone
 
 
 # Create your models here.
 class User(models.Model):
-    nickname = models.CharField(max_length=64)
+    nickname = models.CharField(max_length=64, primary_key=True)
     password = models.CharField(max_length=64)
     pic = models.CharField(max_length=64, default="/static/default/userPic.png")
     days = models.IntegerField(default=0)
@@ -16,12 +17,12 @@ class User(models.Model):
 
 
 class Check(models.Model):
-    userId = models.ForeignKey('User', on_delete=models.CASCADE)
+    nickname = models.ForeignKey('User', on_delete=models.CASCADE)
     time = models.DateTimeField(auto_now=True)
 
 
 class Book(models.Model):
-    userId = models.ForeignKey('User', on_delete=models.CASCADE)
+    nickname = models.ForeignKey('User', on_delete=models.CASCADE)
     pic = models.CharField(max_length=64, default="/static/default/bookPic.png")
     tag = models.CharField(max_length=64, default="未分类")
     public = models.BooleanField(default=False)
@@ -38,14 +39,14 @@ class Ques(models.Model):
 
 
 class LearnRecord(models.Model):
-    userId = models.ForeignKey('User', on_delete=models.CASCADE)
+    nickname = models.ForeignKey('User', on_delete=models.CASCADE)
     time = models.DateTimeField(auto_now=True)
     bookId = models.ForeignKey('Book', on_delete=models.CASCADE)
 
 
 class Friends(models.Model):
-    userId1 = models.ForeignKey('User', on_delete=models.CASCADE, related_name='userId1')
-    userId2 = models.ForeignKey('User', on_delete=models.CASCADE, related_name='userId2')
+    nickname1 = models.ForeignKey('User', on_delete=models.CASCADE, related_name='nickname1')
+    nickname2 = models.ForeignKey('User', on_delete=models.CASCADE, related_name='nickname2')
     time = models.DateTimeField(auto_now=True)
 
 
@@ -64,7 +65,7 @@ class ChatRecord(models.Model):
 
 
 class Post(models.Model):
-    userId = models.ForeignKey('User', on_delete=models.CASCADE)
+    nickname = models.ForeignKey('User', on_delete=models.CASCADE)
     time = models.DateTimeField(auto_now=True)
     favor = models.IntegerField(default=0)
     title = models.CharField(max_length=1024, default="Title")
@@ -73,6 +74,6 @@ class Post(models.Model):
 
 class Comment(models.Model):
     postId = models.ForeignKey('Post', on_delete=models.CASCADE)
-    userId = models.ForeignKey('User', on_delete=models.CASCADE)
+    nickname = models.ForeignKey('User', on_delete=models.CASCADE)
     time = models.DateTimeField(auto_now=True)
     content = models.CharField(max_length=1024, default="content")

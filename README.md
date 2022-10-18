@@ -16,7 +16,6 @@ BUAA_Android_2022
 
 | 属性名    | 类型        |                                             |
 | --------- | ----------- | ------------------------------------------- |
-| id        | int         | 主键，数据库自动生成                        |
 | nickname  | varchar(64) | 不重复，通过nickname添加好友                |
 | password  | varchar(64) |                                             |
 | pic       | varchar(64) | 头像路径                                    |
@@ -30,16 +29,12 @@ BUAA_Android_2022
 
 
 
-
-
-
-
 打卡表 check_table
 
-| 属性名 | 类型     |                               |
-| ------ | -------- | ----------------------------- |
-| userId | int      | user_table(id) 外键           |
-| time   | datetime | 打卡时间 判断当日是否打卡完成 |
+| 属性名   | 类型        |                               |
+| -------- | ----------- | ----------------------------- |
+| nickname | varchar(64) | user_table(nickname) 外键     |
+| time     | datetime    | 打卡时间 判断当日是否打卡完成 |
 
 
 

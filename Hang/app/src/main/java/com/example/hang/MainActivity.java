@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         /*
-        * Room操作数据库示例
+        * Room操作数据库示例 Unused
             UserDatabase db = Room.databaseBuilder(getApplicationContext(),
                     UserDatabase.class, "database-name").allowMainThreadQueries().build();
             UserDao userDao = db.userDao();
@@ -62,22 +62,60 @@ public class MainActivity extends AppCompatActivity {
             System.out.println("end print");
         */
 
-        // 发送http请求
-
-//        String nickname = "test";
-//        String password = "1234";
-//        System.out.println(HttpUtil.get(Ports.signInUrl + nickname + "/" + password + "/", new HashMap<>()));
+        /* GET
         ArrayList<String> signIn = new ArrayList<>();
         signIn.add("test");
         signIn.add("123");
         JSONObject jsonObject = null;
         try {
             jsonObject = HttpUtil.httpGet(Ports.signInUrl, signIn);
-            System.out.println(jsonObject.getString("nickname"));
-            System.out.println(jsonObject.getString("institute"));
-        } catch (IOException | JSONException e) {
+            System.out.println(jsonObject);
+        } catch (IOException) {
             e.printStackTrace();
         }
+        */
+
+        /*
+        * POST
+        HashMap<String, String> params = new HashMap<>();
+        params.put("nickname", "porttest");
+        params.put("password", "123456");
+        params.put("target", "形式语言");
+        params.put("stuId", "20231164");
+        params.put("institute", "高工");
+        params.put("major", "6");
+        params.put("grade", "3");
+        JSONObject jsonObject = null;
+        try {
+            jsonObject = HttpUtil.httpPost(Ports.signUpUrl, params);
+            System.out.println(jsonObject);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        */
+
+        HashMap<String, String> params = new HashMap<>();
+        params.put("nickname", "porttest");
+        JSONObject jsonObject = null;
+        try {
+            jsonObject = HttpUtil.httpPost(Ports.checkUrl, params);
+            System.out.println(jsonObject);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        ArrayList<String> checkDetail = new ArrayList<>();
+        checkDetail.add("porttest");
+        try {
+            jsonObject = HttpUtil.httpGet(Ports.checkDetail, checkDetail);
+            System.out.println(jsonObject);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+
+
     }
 
 
