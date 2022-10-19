@@ -144,6 +144,14 @@ BUAA_Android_2022
 
 
 
+想到的新功能
+
+可以展示根据学生注册选择的学院展示校徽
+
+
+
+
+
 访问服务器： [(195条消息) 网络通信——HTTP接口访问——POST方式调用HTTP接口_小白龙白龙马的博客-CSDN博客](https://blog.csdn.net/m0_61442607/article/details/127341715)
 
 

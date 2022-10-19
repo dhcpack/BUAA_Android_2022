@@ -45,6 +45,45 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupWithNavController(binding.navView, navController);
 
 
+
+        /*
+        * 修改用户信息
+        * */
+        HashMap<String, String> params = new HashMap<>();
+        params.put("nickname", "porttest");
+        params.put("password", "123456");
+        params.put("target", "形式语言");
+        params.put("stuId", "20231164");
+        params.put("institute", "未来/高工学院");
+        params.put("major", "6");
+        params.put("grade", "3");
+        JSONObject jsonObject = null;
+        try {
+            jsonObject = HttpUtil.httpPut(Ports.signUpUrl, params);
+            System.out.println(jsonObject);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        HashMap<String, String> notexist = new HashMap<>();
+        params.put("nickname", "notexist");
+        params.put("password", "123456");
+        params.put("target", "形式语言");
+        params.put("stuId", "20231164");
+        params.put("institute", "沈元学院");
+        params.put("major", "6");
+        params.put("grade", "3");
+        jsonObject = null;
+        try {
+            jsonObject = HttpUtil.httpPut(Ports.signUpUrl, params);
+            System.out.println(jsonObject);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+
+
         /*
         * Room操作数据库示例 Unused
             UserDatabase db = Room.databaseBuilder(getApplicationContext(),
@@ -62,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
             System.out.println("end print");
         */
 
-        /* GET
+        /* GET 登录
         ArrayList<String> signIn = new ArrayList<>();
         signIn.add("test");
         signIn.add("123");
@@ -76,7 +115,7 @@ public class MainActivity extends AppCompatActivity {
         */
 
         /*
-        * POST
+        * POST 注册
         HashMap<String, String> params = new HashMap<>();
         params.put("nickname", "porttest");
         params.put("password", "123456");
@@ -94,6 +133,8 @@ public class MainActivity extends AppCompatActivity {
         }
         */
 
+        /*
+        * 打卡
         HashMap<String, String> params = new HashMap<>();
         params.put("nickname", "porttest");
         JSONObject jsonObject = null;
@@ -112,6 +153,7 @@ public class MainActivity extends AppCompatActivity {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        */
 
 
 
