@@ -1,5 +1,4 @@
 from django.db import models
-from django.utils import timezone
 
 
 # Create your models here.
@@ -14,6 +13,7 @@ class User(models.Model):
     institute = models.CharField(max_length=64)
     major = models.CharField(max_length=64)
     grade = models.CharField(max_length=16)
+    sex = models.BooleanField(default=True)
 
 
 class Check(models.Model):
@@ -22,6 +22,7 @@ class Check(models.Model):
 
 
 class Book(models.Model):
+    bookname = models.CharField(max_length=128, primary_key=True, default="未命名记忆本")
     nickname = models.ForeignKey('User', on_delete=models.CASCADE)
     pic = models.CharField(max_length=64, default="/static/default/bookPic.png")
     tag = models.CharField(max_length=64, default="未分类")
@@ -29,7 +30,8 @@ class Book(models.Model):
 
 
 class Ques(models.Model):
-    bookId = models.ForeignKey('Book', on_delete=models.CASCADE)
+    nickname = models.ForeignKey('User', on_delete=models.CASCADE)
+    bookname = models.ForeignKey('Book', on_delete=models.CASCADE)
     type = models.IntegerField()
     ques = models.CharField(max_length=1024)
     ans1 = models.CharField(max_length=1024, null=True)
@@ -41,7 +43,7 @@ class Ques(models.Model):
 class LearnRecord(models.Model):
     nickname = models.ForeignKey('User', on_delete=models.CASCADE)
     time = models.DateTimeField(auto_now=True)
-    bookId = models.ForeignKey('Book', on_delete=models.CASCADE)
+    bookname = models.ForeignKey('Book', on_delete=models.CASCADE)
 
 
 class Friends(models.Model):
@@ -70,6 +72,7 @@ class Post(models.Model):
     favor = models.IntegerField(default=0)
     title = models.CharField(max_length=1024, default="Title")
     content = models.CharField(max_length=4096, default="content")
+    tag = models.CharField(max_length=32, default="未分类")
 
 
 class Comment(models.Model):

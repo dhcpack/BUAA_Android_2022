@@ -1,6 +1,7 @@
 package com.example.hang.ports;
 
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -20,8 +21,8 @@ public class HttpUtil {
     /*
      * GET
      * */
-    public static JSONObject httpGet(String url, ArrayList<String> params) throws IOException {
-        GetRunnable getRunnable = new GetRunnable(url, params);
+    public static Object httpGet(String url, ArrayList<String> params, boolean isArray) throws IOException {
+        GetRunnable getRunnable = new GetRunnable(url, params, isArray);
         Thread thread = new Thread(getRunnable, "getThread");
         thread.start();
         try {
@@ -29,22 +30,29 @@ public class HttpUtil {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        return getRunnable.jsonObject;
+        if (isArray) {
+            return getRunnable.jsonArray;
+        } else {
+            return getRunnable.jsonObject;
+        }
     }
 
     static final class GetRunnable implements Runnable {
         private final OkHttpClient okHttpClient;
         private final String getUrl;
+        private final boolean isArray;
         private JSONObject jsonObject;
+        private JSONArray jsonArray;
 
 
-        public GetRunnable(String url, ArrayList<String> params) {
+        public GetRunnable(String url, ArrayList<String> params, boolean isArray) {
             okHttpClient = new OkHttpClient();
             StringBuilder getUrl = new StringBuilder(url);
             for (String s : params) {
                 getUrl.append(s).append('/');
             }
             this.getUrl = getUrl.toString();
+            this.isArray = isArray;
         }
 
         @Override
@@ -57,7 +65,11 @@ public class HttpUtil {
             try {
                 response = okHttpClient.newCall(request).execute();
                 System.out.println(response.message());
-                this.jsonObject = new JSONObject(response.body().string());
+                if (isArray) {
+                    this.jsonArray = new JSONArray(response.body().string());
+                } else {
+                    this.jsonObject = new JSONObject(response.body().string());
+                }
             } catch (IOException | JSONException e) {
                 e.printStackTrace();
             }
@@ -110,9 +122,9 @@ public class HttpUtil {
     }
 
     /*
-    * PUT
-    * */
-    public static JSONObject httpPut(String url, HashMap<String, String> params) throws IOException{
+     * PUT
+     * */
+    public static JSONObject httpPut(String url, HashMap<String, String> params) throws IOException {
         PutRunnable putRunnable = new PutRunnable(url, params);
         Thread thread = new Thread(putRunnable, "putThread");
         thread.start();
@@ -156,8 +168,8 @@ public class HttpUtil {
 
 
     /*
-    * DELETE // TODO: test
-    * */
+     * DELETE // TODO: test
+     * */
     public static JSONObject httpDelete(String url, ArrayList<String> params) throws IOException {
         DeleteRunnable deleteRunnable = new DeleteRunnable(url, params);
         Thread thread = new Thread(deleteRunnable, "deleteThread");

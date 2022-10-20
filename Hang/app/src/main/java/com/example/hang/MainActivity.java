@@ -15,6 +15,7 @@ import androidx.navigation.ui.NavigationUI;
 
 import com.example.hang.databinding.ActivityMainBinding;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -47,8 +48,66 @@ public class MainActivity extends AppCompatActivity {
 
 
         /*
+         * 新建 查询 修改 删除记忆本
+        ArrayList<String> user = new ArrayList<>();
+        user.add("testport");
+        HashMap<String, String> userBook1 = new HashMap<>();
+        userBook1.put("nickname", "testport");
+        userBook1.put("bookname", "算法设计与分析");
+        userBook1.put("public", "False");
+        userBook1.put("tag", "算法");
+        HashMap<String, String> userBook2 = new HashMap<>();
+        userBook2.put("nickname", "testport");
+        userBook2.put("bookname", "Android");
+        userBook2.put("public", "True");
+        JSONObject response = null;
+        JSONArray jsonArray = null;
+        try {
+            response = HttpUtil.httpPost(Ports.addBookUrl, userBook1);
+            System.out.println(response);
+            Thread.sleep(2000);    //延时2秒
+
+            response = HttpUtil.httpPost(Ports.addBookUrl, userBook2);
+            System.out.println(response);
+            Thread.sleep(2000);    //延时2秒
+
+            response = HttpUtil.httpPost(Ports.addBookUrl, userBook1);
+            System.out.println(response);
+            Thread.sleep(2000);    //延时2秒
+
+            jsonArray = (JSONArray) HttpUtil.httpGet(Ports.getBooksUrl, user, true);
+            System.out.println(jsonArray);
+            Thread.sleep(2000);    //延时2秒
+
+            userBook2.put("public", "False");
+            response = HttpUtil.httpPut(Ports.modifyBookUrl, userBook2);
+            System.out.println(response);
+            Thread.sleep(2000);    //延时2秒
+
+            jsonArray = (JSONArray) HttpUtil.httpGet(Ports.getBooksUrl, user, true);
+            System.out.println(jsonArray);
+            Thread.sleep(2000);    //延时2秒
+
+            user.add("Android");
+            response = HttpUtil.httpDelete(Ports.deleteBookUrl, user);
+            System.out.println(response);
+            Thread.sleep(2000);    //延时2秒
+
+            user.remove("Android");
+            jsonArray = (JSONArray) HttpUtil.httpGet(Ports.getBooksUrl, user, true);
+            System.out.println(jsonArray);
+            Thread.sleep(2000);    //延时2秒
+        } catch (IOException | InterruptedException e) {
+            e.printStackTrace();
+        }
+       */
+
+
+
+
+
+        /*
         * 修改用户信息
-        * */
         HashMap<String, String> params = new HashMap<>();
         params.put("nickname", "porttest");
         params.put("password", "123456");
@@ -59,7 +118,7 @@ public class MainActivity extends AppCompatActivity {
         params.put("grade", "3");
         JSONObject jsonObject = null;
         try {
-            jsonObject = HttpUtil.httpPut(Ports.signUpUrl, params);
+            jsonObject = HttpUtil.httpPut(Ports.modifyDetailUrl, params);
             System.out.println(jsonObject);
         } catch (IOException e) {
             e.printStackTrace();
@@ -75,12 +134,12 @@ public class MainActivity extends AppCompatActivity {
         params.put("grade", "3");
         jsonObject = null;
         try {
-            jsonObject = HttpUtil.httpPut(Ports.signUpUrl, params);
+            jsonObject = HttpUtil.httpPut(Ports.modifyDetailUrl, params);
             System.out.println(jsonObject);
         } catch (IOException e) {
             e.printStackTrace();
         }
-
+        * */
 
 
 
@@ -154,8 +213,6 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
         */
-
-
 
 
     }
