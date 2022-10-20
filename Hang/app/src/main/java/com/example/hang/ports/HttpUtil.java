@@ -168,7 +168,7 @@ public class HttpUtil {
 
 
     /*
-     * DELETE // TODO: test
+     * DELETE
      * */
     public static JSONObject httpDelete(String url, ArrayList<String> params) throws IOException {
         DeleteRunnable deleteRunnable = new DeleteRunnable(url, params);

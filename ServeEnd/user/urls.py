@@ -21,12 +21,12 @@ urlpatterns = [
                   re_path("^deletebook/(?P<nickname>[_a-zA-Z0-9]+)/(?P<bookname>[\u4e00-\u9fa5_a-zA-Z0-9]+)/$",
                           BookView.as_view()),
 
-                  re_path("^getques/(?P<nickname>[_a-zA-Z0-9]+)/(?P<bookname>[\u4e00-\u9fa5_a-zA-Z0-9]+)/$",
+                  re_path("^getques/(?P<book_id>[\u4e00-\u9fa5_a-zA-Z0-9]+)/$",
                           QuesView.as_view()),
                   re_path("^addques/$", QuesView.as_view()),
                   re_path("^modifyques/$", QuesView.as_view()),
                   re_path(
-                      "^deleteques/(?P<nickname>[_a-zA-Z0-9]+)/(?P<bookname>[\u4e00-\u9fa5_a-zA-Z0-9]+)/(?P<quesid>[0-9]+)/$",
+                      "^deleteques/(?P<nickname>[_a-zA-Z0-9]+)/(?P<bookid>[\u4e00-\u9fa5_a-zA-Z0-9]+)/(?P<quesid>[0-9]+)/$",
                       QuesView.as_view()),
 
                   re_path("^getrequests/(?P<nickname>[_a-zA-Z0-9]+)/send/$", RequestView.as_view()),
@@ -44,7 +44,16 @@ urlpatterns = [
                   re_path("^a/(?P<postid>[0-9]+)/oppose/$", FavourView.as_view()),
                   re_path("^a/(?P<postid>[0-9]+)/favour/$", FavourView.as_view()),
 
-                  re_path(
-                      "^searchuser/(?P<column>[_a-zA-Z0-9]+)/(?P<cond>[\u4e00-\u9fa5_a-zA-Z0-9]+)/$",SearchUserView.as_view()),
+                  re_path("^searchuser/(?P<column>[_a-zA-Z0-9]+)/(?P<cond>[\u4e00-\u9fa5_a-zA-Z0-9]+)/$",
+                          SearchUserView.as_view()),
+                  re_path("^searchbook/(?P<column>[_a-zA-Z0-9]+)/(?P<cond>[\u4e00-\u9fa5_a-zA-Z0-9]+)/$",
+                          SearchBookView.as_view()),
+                  re_path("^searchpost/(?P<column>[_a-zA-Z0-9]+)/(?P<cond>[\u4e00-\u9fa5_a-zA-Z0-9]+)/$",
+                          SearchPostView.as_view()),
+                  re_path("^searchcomment/(?P<postid>[0-9]+)/$", SearchCommentView.as_view()),
+
+                  re_path("^importbook/(?P<nickname>[_a-zA-Z0-9]+)/(?P<bookid>[0-9]+)/$", ImportBookView.as_view()),
+
+                  # re_path("^getimage/(?P<path>[_a-zA-Z0-9.]+)/$", GetImageView.as_view()),
 
               ] + router.urls

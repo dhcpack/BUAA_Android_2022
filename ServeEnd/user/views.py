@@ -1,6 +1,6 @@
 import json
 
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponse
 from django.views import View
 from rest_framework.status import *
 from rest_framework.viewsets import ModelViewSet
@@ -120,19 +120,15 @@ class BookView(View):
 
 
 class QuesView(View):
-    def get(self, request, nickname, bookname):
+    def get(self, request, book_id):
         try:
-            User.objects.get(nickname=nickname)
-        except User.DoesNotExist:
-            return JsonResponse({'error': '用户不存在'}, status=HTTP_404_NOT_FOUND)
-        try:
-            Book.objects.filter(nickname=nickname).get(bookname=bookname)
+            book = Book.objects.get(id=book_id)
         except Book.DoesNotExist:
             return JsonResponse({'error': '记忆本不存在'}, status=HTTP_404_NOT_FOUND)
-        questions = Ques.objects.filter(nickname=nickname).filter(bookname=bookname)
+        questions = Ques.objects.filter(book=book_id)
         # add to learn record table
-        LearnRecord.objects.create(nickname=User.objects.get(nickname=nickname),
-                                   bookname=Book.objects.get(bookname=bookname))
+        LearnRecord.objects.create(nickname=book.nickname,
+                                   book=Book.objects.get(id=book_id))
         return JsonResponse(data=QuesModelSerializer(instance=questions, many=True).data, status=HTTP_200_OK,
                             safe=False)
 
@@ -144,7 +140,7 @@ class QuesView(View):
         serializer.save()  # 传入data调用create，传入instance调用update
         # add to learn record table
         LearnRecord.objects.create(nickname=User.objects.get(nickname=data['nickname']),
-                                   bookname=Book.objects.get(bookname=data['bookname']))
+                                   book=Book.objects.get(id=data['book']))
         return JsonResponse(serializer.data, status=HTTP_201_CREATED)
 
     def put(self, request):
@@ -159,12 +155,12 @@ class QuesView(View):
         serializer.save()  # 传入data调用create，传入instance调用update
         # add to learn record table
         LearnRecord.objects.create(nickname=User.objects.get(nickname=data['nickname']),
-                                   bookname=Book.objects.get(bookname=data['bookname']))
+                                   book=Book.objects.get(id=data['book']))
         return JsonResponse(serializer.data, status=HTTP_201_CREATED)
 
-    def delete(self, request, nickname, bookname, quesid):
+    def delete(self, request, nickname, bookid, quesid):
         try:
-            ques = Ques.objects.filter(nickname=nickname, bookname=bookname).get(id=quesid)
+            ques = Ques.objects.filter(nickname=nickname, book=bookid).get(id=quesid)
         except Ques.DoesNotExist:
             return JsonResponse({'msg': '成功删除'}, status=HTTP_201_CREATED)
         ques.delete()
@@ -278,7 +274,6 @@ class FavourView(View):
 
 class SearchUserView(View):
     def get(self, request, column, cond):
-        print(column, cond)
         if column == "nickname":
             try:
                 user = User.objects.get(nickname=cond)
@@ -297,6 +292,65 @@ class SearchUserView(View):
         elif column == "sex":
             users = User.objects.filter(sex=cond)
             return JsonResponse(UserModelSerializer(instance=users, many=True).data, status=HTTP_200_OK, safe=False)
+        elif column == "all":
+            users = User.objects.all()
+            return JsonResponse(UserModelSerializer(instance=users, many=True).data, status=HTTP_200_OK, safe=False)
+
+
+class SearchBookView(View):
+    def get(self, request, column, cond):
+        if column == "tag":
+            books = Book.objects.filter(public=True).filter(tag=cond)
+            return JsonResponse(BookModelSerializer(instance=books, many=True).data, status=HTTP_200_OK, safe=False)
+        else:
+            books = Book.objects.filter(public=True)
+            return JsonResponse(BookModelSerializer(instance=books, many=True).data, status=HTTP_200_OK, safe=False)
+
+
+class SearchPostView(View):
+    def get(self, request, column, cond):
+        if column == "tag":
+            posts = Post.objects.filter(tag=cond)
+            return JsonResponse(PostModelSerializer(instance=posts, many=True).data, status=HTTP_200_OK, safe=False)
+        else:
+            posts = Post.objects.all()
+            return JsonResponse(PostModelSerializer(instance=posts, many=True).data, status=HTTP_200_OK, safe=False)
+
+
+class SearchCommentView(View):
+    def get(self, request, postid):
+        try:
+            Post.objects.get(id=postid)
+        except Post.DoesNotExist:
+            return JsonResponse({"error": "帖子不存在"}, status=HTTP_404_NOT_FOUND)
+        comments = Comment.objects.filter(postId=postid)
+        return JsonResponse(CommentModelSerializer(instance=comments, many=True).data, status=HTTP_200_OK, safe=False)
+
+
+class ImportBookView(View):
+    def get(self, request, nickname, bookid):
+        try:
+            user = User.objects.get(nickname=nickname)
+            book = Book.objects.get(id=bookid)
+        except User.DoesNotExist or Book.DoesNotExist:
+            return JsonResponse({"error": "用户或记忆本不存在"}, status=HTTP_404_NOT_FOUND)
+        if book.nickname == user:
+            return JsonResponse({"msg": "已导入"}, status=HTTP_200_OK)
+        if Book.objects.filter(nickname=user.nickname, bookname=book.bookname).exists():
+            return JsonResponse({"error": "导入失败，已存在同名记忆本"}, status=HTTP_401_UNAUTHORIZED)
+        nbook = Book.objects.create(bookname=book.bookname, pic=book.pic, tag=book.tag, nickname=user)
+        ques = Ques.objects.filter(book=book)
+        for q in ques:
+            Ques.objects.create(type=q.type, ans1=q.ans1, ans2=q.ans2, ans3=q.ans3, ans4=q.ans4, book=nbook,
+                                nickname=user)
+        return JsonResponse({"msg": "已导入"}, status=HTTP_200_OK)
+
+
+# class GetImageView(View):
+#     def get(self, request, path):
+#         with open("./static/" + path, 'rb') as f:
+#             image = f.read()
+#         return HttpResponse(image, content_type="image/png")
 #
-# class SearchBookView(View):
-# class PostView(View):
+#     def post(self, request):
+
