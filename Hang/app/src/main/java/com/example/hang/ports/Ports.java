@@ -167,4 +167,14 @@ public class Ports {
      * isArray: false
      * */
     public static String importBookUrl = api + "importbook/";
+    /*
+     * 导入公开记忆本：GET
+     * url + imagePath
+     * isArray: false
+     * */
+    public static String getPicUrl = api + "getimage/";
+    /*
+     * 上传图片：POST
+     * */
+    public static String postPicUrl = api + "postimage/";
 }

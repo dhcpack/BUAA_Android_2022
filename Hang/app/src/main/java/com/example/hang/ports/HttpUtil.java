@@ -52,6 +52,7 @@ public class HttpUtil {
                 getUrl.append(s).append('/');
             }
             this.getUrl = getUrl.toString();
+            System.out.println(this.getUrl);
             this.isArray = isArray;
         }
 
@@ -100,6 +101,7 @@ public class HttpUtil {
         public PostRunnable(String url, HashMap<String, String> params) {
             okHttpClient = new OkHttpClient();
             this.url = url;
+            System.out.println(this.url);
             this.jsonBody = new JSONObject(params);
         }
 
@@ -145,6 +147,7 @@ public class HttpUtil {
         public PutRunnable(String url, HashMap<String, String> params) {
             okHttpClient = new OkHttpClient();
             this.url = url;
+            System.out.println(this.url);
             this.jsonBody = new JSONObject(params);
         }
 
@@ -195,6 +198,7 @@ public class HttpUtil {
                 deleteUrl.append(s).append('/');
             }
             this.deleteUrl = deleteUrl.toString();
+            System.out.println(this.deleteUrl);
         }
 
         @Override

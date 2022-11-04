@@ -54,6 +54,7 @@ urlpatterns = [
 
                   re_path("^importbook/(?P<nickname>[_a-zA-Z0-9]+)/(?P<bookid>[0-9]+)/$", ImportBookView.as_view()),
 
-                  # re_path("^getimage/(?P<path>[_a-zA-Z0-9.]+)/$", GetImageView.as_view()),
+                  re_path("^getimage/(?P<path>[_a-zA-Z0-9.]+)$", GetImageView.as_view()),
+                  re_path("^postimage/$", GetImageView.as_view()),
 
               ] + router.urls

@@ -1,3 +1,4 @@
+import datetime
 import json
 
 from django.http import JsonResponse, HttpResponse
@@ -76,7 +77,7 @@ class BookView(View):
         try:
             User.objects.get(nickname=nickname)
         except User.DoesNotExist:
-            return JsonResponse({'error': '用户不存在'}, status=HTTP_404_NOT_FOUND)
+            return JsonResponse([{'error': '用户不存在'}], status=HTTP_404_NOT_FOUND, safe=False)
         books = Book.objects.filter(nickname=nickname)
         return JsonResponse(data=BookModelSerializer(instance=books, many=True).data, status=HTTP_200_OK, safe=False)
 
@@ -124,7 +125,7 @@ class QuesView(View):
         try:
             book = Book.objects.get(id=book_id)
         except Book.DoesNotExist:
-            return JsonResponse({'error': '记忆本不存在'}, status=HTTP_404_NOT_FOUND)
+            return JsonResponse([{'error': '记忆本不存在'}], status=HTTP_404_NOT_FOUND, safe=False)
         questions = Ques.objects.filter(book=book_id)
         # add to learn record table
         LearnRecord.objects.create(nickname=book.nickname,
@@ -346,11 +347,16 @@ class ImportBookView(View):
         return JsonResponse({"msg": "已导入"}, status=HTTP_200_OK)
 
 
-# class GetImageView(View):
-#     def get(self, request, path):
-#         with open("./static/" + path, 'rb') as f:
-#             image = f.read()
-#         return HttpResponse(image, content_type="image/png")
-#
-#     def post(self, request):
+class GetImageView(View):
+    def get(self, request, path):
+        with open("./static/" + path, 'rb') as f:
+            image = f.read()
+        return HttpResponse(image, content_type="image/png")
 
+    def post(self, request):
+        picture = request.FILES['pic']
+        backEndName = datetime.datetime.now().strftime('%Y%m%d%H%I%S') + ".png"
+        with open("./static/" + backEndName, 'wb') as f:
+            for content in picture.chunks():
+                f.write(content)
+        return JsonResponse({"path": backEndName}, status=HTTP_201_CREATED)

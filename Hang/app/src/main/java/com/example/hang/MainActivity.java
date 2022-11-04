@@ -45,8 +45,49 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
 
+        ArrayList<String> bookid = new ArrayList<>();
+        bookid.add("2");
+        ArrayList<String> notExist = new ArrayList<>();
+        notExist.add("999");
+        try {
+            JSONArray jsonArray = (JSONArray) HttpUtil.httpGet(Ports.getQuestionUrl, bookid, true);
+            System.out.println(jsonArray);
+            jsonArray = (JSONArray) HttpUtil.httpGet(Ports.getQuestionUrl, notExist, true);
+            System.out.println(jsonArray);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
 
+        /*
+        ArrayList<String> user = new ArrayList<>();
+        user.add("test");
+        try {
+            JSONArray jsonArray = (JSONArray) HttpUtil.httpGet(Ports.getBooksUrl, user, true);
+            System.out.println(jsonArray);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        try {
+            Thread.sleep(2000);    //延时2秒
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        ArrayList<String> notexist = new ArrayList<>();
+        notexist.add("test1");
+        try {
+            JSONArray jsonArray = (JSONArray) HttpUtil.httpGet(Ports.getBooksUrl, notexist, true);
+            System.out.println(jsonArray);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        */
+
+
+
+        // 下面的代码不一定对
         /*
          * 新建 查询 修改 删除记忆本
         ArrayList<String> user = new ArrayList<>();

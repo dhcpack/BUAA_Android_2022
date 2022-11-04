@@ -30,7 +30,7 @@ public class linkMySQL
         //2.将用户名和密码放入到Properties对象
         Properties properties=new Properties();
         properties.setProperty("user","root");
-        properties.setProperty("password","Dsy20010907");    //"hzx1887415157"
+        properties.setProperty("password","123456");    //"hzx1887415157"  123456
         //3.获取连接
         Connection connect=driver.connect(url,properties);
         //4.执行sql
@@ -66,7 +66,7 @@ public class linkMySQL
         //2.将用户名和密码放入到Properties对象
         Properties properties=new Properties();
         properties.setProperty("user","root");
-        properties.setProperty("password","Dsy20010907");
+        properties.setProperty("password","123456");
         //3.获取连接
         Connection connect=driver.connect(url,properties);
         //4.执行sql
@@ -104,7 +104,7 @@ public class linkMySQL
         //2.将用户名和密码放入到Properties对象
         Properties properties=new Properties();
         properties.setProperty("user","root");
-        properties.setProperty("password","Dsy20010907");
+        properties.setProperty("password","123456");
         //3.获取连接
         Connection connect=driver.connect(url,properties);
         //4.执行sql
@@ -140,7 +140,7 @@ public class linkMySQL
         //2.将用户名和密码放入到Properties对象
         Properties properties=new Properties();
         properties.setProperty("user","root");
-        properties.setProperty("password","Dsy20010907");
+        properties.setProperty("password","123456");
         //3.获取连接
         Connection connect=driver.connect(url,properties);
         //4.执行sql
@@ -169,7 +169,7 @@ public class linkMySQL
         //2.将用户名和密码放入到Properties对象
         Properties properties=new Properties();
         properties.setProperty("user","root");
-        properties.setProperty("password","Dsy20010907");
+        properties.setProperty("password","123456");
         //3.获取连接
         Connection connect=driver.connect(url,properties);
         //4.执行sql
@@ -203,7 +203,7 @@ public class linkMySQL
         //2.将用户名和密码放入到Properties对象
         Properties properties=new Properties();
         properties.setProperty("user","root");
-        properties.setProperty("password","Dsy20010907");
+        properties.setProperty("password","123456");
         //3.获取连接
         Connection connect=driver.connect(url,properties);
         //4.执行sql
@@ -242,7 +242,7 @@ public class linkMySQL
         //2.将用户名和密码放入到Properties对象
         Properties properties=new Properties();
         properties.setProperty("user","root");
-        properties.setProperty("password","Dsy20010907");
+        properties.setProperty("password","123456");
         //3.获取连接
         Connection connect=driver.connect(url,properties);
         //4.执行sql
@@ -268,7 +268,7 @@ public class linkMySQL
         //2.将用户名和密码放入到Properties对象
         Properties properties=new Properties();
         properties.setProperty("user","root");
-        properties.setProperty("password","Dsy20010907");
+        properties.setProperty("password","123456");
         //3.获取连接
         Connection connect=driver.connect(url,properties);
         //4.执行sql
@@ -310,7 +310,7 @@ public class linkMySQL
         //2.将用户名和密码放入到Properties对象
         Properties properties=new Properties();
         properties.setProperty("user","root");
-        properties.setProperty("password","Dsy20010907");
+        properties.setProperty("password","123456");
         //3.获取连接
         Connection connect=driver.connect(url,properties);
         //4.执行sql
@@ -325,7 +325,7 @@ public class linkMySQL
         //2.将用户名和密码放入到Properties对象
         Properties properties1=new Properties();
         properties1.setProperty("user","root");
-        properties1.setProperty("password","Dsy20010907");
+        properties1.setProperty("password","123456");
         //3.获取连接
         Connection connect1=driver.connect(url1,properties1);
         //4.执行sql
@@ -353,7 +353,7 @@ public class linkMySQL
         //2.将用户名和密码放入到Properties对象
         Properties properties=new Properties();
         properties.setProperty("user","root");
-        properties.setProperty("password","Dsy20010907");
+        properties.setProperty("password","123456");
         //3.获取连接
         Connection connect=driver.connect(url,properties);
         //4.执行sql
@@ -387,7 +387,7 @@ public class linkMySQL
         //2.将用户名和密码放入到Properties对象
         Properties properties=new Properties();
         properties.setProperty("user","root");
-        properties.setProperty("password","Dsy20010907");
+        properties.setProperty("password","123456");
         //3.获取连接
         Connection connect=driver.connect(url,properties);
         //4.执行sql
@@ -420,7 +420,7 @@ public class linkMySQL
         //2.将用户名和密码放入到Properties对象
         Properties properties=new Properties();
         properties.setProperty("user","root");
-        properties.setProperty("password","Dsy20010907");
+        properties.setProperty("password","123456");
         //3.获取连接
         Connection connect=driver.connect(url,properties);
         //4.执行sql
@@ -458,7 +458,7 @@ public class linkMySQL
         //2.将用户名和密码放入到Properties对象
         Properties properties=new Properties();
         properties.setProperty("user","root");
-        properties.setProperty("password","Dsy20010907");
+        properties.setProperty("password","123456");
         //3.获取连接
         Connection connect=driver.connect(url,properties);
         //4.执行sql
@@ -473,7 +473,7 @@ public class linkMySQL
         //2.将用户名和密码放入到Properties对象
         Properties properties1=new Properties();
         properties1.setProperty("user","root");
-        properties1.setProperty("password","Dsy20010907");
+        properties1.setProperty("password","123456");
         //3.获取连接
         Connection connect1=driver.connect(url1,properties1);
         //4.执行sql
