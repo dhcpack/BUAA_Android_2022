@@ -45,6 +45,9 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
 
+
+
+        /*
         ArrayList<String> bookid = new ArrayList<>();
         bookid.add("2");
         ArrayList<String> notExist = new ArrayList<>();
@@ -57,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        */
 
 
         /*
