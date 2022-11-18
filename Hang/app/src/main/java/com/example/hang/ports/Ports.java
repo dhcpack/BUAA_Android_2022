@@ -1,7 +1,7 @@
 package com.example.hang.ports;
 
 public class Ports {
-    public static String api = "http://43.143.166.142:8002/api/";
+    public static String api = "http://43.143.166.142:8003/api/";
     // POST和PUT详细格式见postman(表单是Json格式)
     // GET和DELETE的url在下面已经列出，可以在postman测试
     // TODO: 图片、视频、音频相关的接口还没写，能不能直接存在安卓项目中呢？

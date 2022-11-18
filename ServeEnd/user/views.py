@@ -1,5 +1,6 @@
 import datetime
 import json
+import mimetypes
 
 from django.http import JsonResponse, HttpResponse
 from django.views import View
@@ -347,16 +348,23 @@ class ImportBookView(View):
         return JsonResponse({"msg": "已导入"}, status=HTTP_200_OK)
 
 
-class GetImageView(View):
-    def get(self, request, path):
-        with open("./static/" + path, 'rb') as f:
-            image = f.read()
-        return HttpResponse(image, content_type="image/png")
+class FileView(View):
+    def get(self, request, path, type):
+        file_path = "./static/" + path + '.' + type
+        with open(file_path, 'rb') as f:
+            file = f.read()
+        content_type = mimetypes.guess_type(file_path)[0]
+        return HttpResponse(file, content_type=content_type)
 
-    def post(self, request):
-        picture = request.FILES['pic']
-        backEndName = datetime.datetime.now().strftime('%Y%m%d%H%I%S') + ".png"
+    def post(self, request, type):
+        file = request.FILES['file']
+        if type == 'pic':
+            backEndName = datetime.datetime.now().strftime('%Y%m%d%H%I%S') + ".png"
+        elif type == 'mp3':
+            backEndName = datetime.datetime.now().strftime('%Y%m%d%H%I%S') + ".mp3"
+        elif type == 'mp4':
+            backEndName = datetime.datetime.now().strftime('%Y%m%d%H%I%S') + ".mp4"
         with open("./static/" + backEndName, 'wb') as f:
-            for content in picture.chunks():
+            for content in file.chunks():
                 f.write(content)
         return JsonResponse({"path": backEndName}, status=HTTP_201_CREATED)
