@@ -3,6 +3,6 @@
 
 
 // 访问接口工具类 ports.HttpUtil.java
-封装实现了GET POST （PUT，DELETE）
+//封装实现了GET POST （PUT，DELETE）
 ```
 
