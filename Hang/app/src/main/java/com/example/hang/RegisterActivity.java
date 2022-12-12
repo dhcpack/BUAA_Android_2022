@@ -57,7 +57,7 @@ public class RegisterActivity extends AppCompatActivity {
                 if (view == mCountdownView) {
                     if (mPhoneView.getText().toString().length() != 11) {
                         //mPhoneView.startAnimation(AnimationUtils.loadAnimation(getContext(), R.anim.shake_anim));
-                        toast(R.string.common_phone_input_error);
+                        toast(String.valueOf(R.string.common_phone_input_error));
                         return;
                     }
 
