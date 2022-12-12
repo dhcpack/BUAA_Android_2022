@@ -41,8 +41,6 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         initView();
-
-        mSecondPassword.setOnEditorActionListener(this);
     }
 
     protected void initView() {
@@ -58,7 +56,7 @@ public class RegisterActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if (view == mCountdownView) {
                     if (mPhoneView.getText().toString().length() != 11) {
-                        mPhoneView.startAnimation(AnimationUtils.loadAnimation(getContext(), R.anim.shake_anim));
+                        //mPhoneView.startAnimation(AnimationUtils.loadAnimation(getContext(), R.anim.shake_anim));
                         toast(R.string.common_phone_input_error);
                         return;
                     }
