@@ -56,6 +56,10 @@ public class LoginActivity extends AppCompatActivity {
                     Toast.makeText(LoginActivity.this, "请输入密码", Toast.LENGTH_SHORT).show();
                     return;
                 } else {
+                    if (!HttpUtil.checkConnectNetwork(getApplicationContext())) {
+                        Toast.makeText(LoginActivity.this, "请检查网络设置", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
                     ArrayList<String> signIn = new ArrayList<>();
                     signIn.add(userName);
                     signIn.add(password);

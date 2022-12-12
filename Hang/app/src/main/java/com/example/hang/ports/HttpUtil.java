@@ -1,6 +1,10 @@
 package com.example.hang.ports;
 
 
+import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -17,6 +21,13 @@ import okhttp3.Response;
 
 
 public class HttpUtil {
+
+    //判断是否联网
+    public static boolean checkConnectNetwork(Context context) {
+        ConnectivityManager conn = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo net = conn.getActiveNetworkInfo();
+        return net != null && net.isConnected();
+    }
 
     /*
      * GET
