@@ -23,6 +23,7 @@ import java.util.ArrayList;
 
 public class LoginActivity extends AppCompatActivity {
     private Button btn_login;//登录按钮
+    private Button btn_register;//注册按钮
     private String userName, password, spPsw;//获取的用户名，密码，加密密码
     private EditText user_input, password_input;//编辑框
 
@@ -38,6 +39,7 @@ public class LoginActivity extends AppCompatActivity {
     private void init() {
 
         btn_login = findViewById(R.id.btn_login);
+        btn_register = findViewById(R.id.btn_register);
         user_input = findViewById(R.id.user_input);
         password_input = findViewById(R.id.password_input);
 
@@ -98,6 +100,15 @@ public class LoginActivity extends AppCompatActivity {
 
 
                 }
+            }
+        });
+        btn_register.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //销毁登录界面
+                LoginActivity.this.finish();
+                //跳转到主界面，登录成功的状态传递到 RegisterActivity 中
+                startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
             }
         });
     }

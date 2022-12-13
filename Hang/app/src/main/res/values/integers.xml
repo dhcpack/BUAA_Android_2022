@@ -5,4 +5,7 @@
 
     <!-- 短信验证码的长度 -->
     <integer name="sms_code_length">4</integer>
+
+    <!-- layout_fall_down_item -->
+    <integer name="window_anim_duration">400</integer>
 </resources>

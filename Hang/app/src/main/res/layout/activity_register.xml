@@ -31,7 +31,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dp_20"
             android:text="@string/register_hint"
-            android:textColor="@color/black20"
+            android:textColor="#757575"
             android:textSize="@dimen/sp_14" />
 
         <LinearLayout
@@ -53,7 +53,9 @@
                     android:layout_height="wrap_content"
                     android:hint="@string/common_phone_input_hint"
                     android:inputType="textVisiblePassword"
+                    android:minHeight="48dp"
                     android:singleLine="true"
+                    android:textColorHint="#757575"
                     app:regexType="mobile" />
 
                 <View
@@ -63,7 +65,9 @@
 
             <com.example.hang.ui.mine.utils.view.CountdownView
                 android:id="@+id/cv_register_countdown"
-                style="@style/CountdownViewStyle" />
+                style="@style/CountdownViewStyle"
+                android:textColor="#1976D2"
+                tools:ignore="TextContrastCheck,TextContrastCheck" />
         </LinearLayout>
 
         <com.example.hang.ui.mine.utils.view.RegexEditText
@@ -77,6 +81,7 @@
             android:maxLength="@integer/sms_code_length"
             android:minHeight="48dp"
             android:singleLine="true"
+            android:textColorHint="#757575"
             app:regexType="number" />
 
         <View style="@style/HorizontalLineStyle" />
@@ -90,7 +95,8 @@
             android:hint="@string/register_password_hint1"
             android:maxLength="20"
             android:minHeight="48dp"
-            android:singleLine="true" />
+            android:singleLine="true"
+            android:textColorHint="#757575" />
 
         <View style="@style/HorizontalLineStyle" />
 
@@ -104,7 +110,8 @@
             android:imeOptions="actionDone"
             android:maxLength="20"
             android:minHeight="48dp"
-            android:singleLine="true" />
+            android:singleLine="true"
+            android:textColorHint="#757575" />
 
         <View style="@style/HorizontalLineStyle" />
 
@@ -114,7 +121,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginVertical="@dimen/dp_30"
-            android:text="@string/register_title" />
+            android:text="@string/register_title"
+            android:textColor="#212121"
+            tools:ignore="TextContrastCheck" />
 
     </LinearLayout>
 
