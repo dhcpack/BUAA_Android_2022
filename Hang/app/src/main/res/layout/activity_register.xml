@@ -51,12 +51,12 @@
                     style="@style/EditTextStyle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/common_phone_input_hint"
+                    android:hint="@string/common_name_input_hint"
                     android:inputType="textVisiblePassword"
                     android:minHeight="48dp"
                     android:singleLine="true"
                     android:textColorHint="#757575"
-                    app:regexType="mobile" />
+                    app:regexType="name" />
 
                 <View
                     style="@style/HorizontalLineStyle"
