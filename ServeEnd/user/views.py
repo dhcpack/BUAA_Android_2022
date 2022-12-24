@@ -164,7 +164,7 @@ class QuesView(View):
         try:
             ques = Ques.objects.filter(nickname=nickname, book=bookid).get(id=quesid)
         except Ques.DoesNotExist:
-            return JsonResponse({'msg': '成功删除'}, status=HTTP_201_CREATED)
+            return JsonResponse({'error': '题目不存在'}, status=HTTP_201_CREATED)
         ques.delete()
         return JsonResponse({'msg': '成功删除'}, status=HTTP_201_CREATED)
 
@@ -224,9 +224,12 @@ class FriendsView(View):
             user2 = User.objects.get(nickname=nickname2)
         except User.DoesNotExist:
             return JsonResponse({'error': '用户不存在'}, status=HTTP_404_NOT_FOUND)
-        Friends.objects.get(nickname1=user1, nickname2=user2).delete()
-        Friends.objects.get(nickname1=user2, nickname2=user1).delete()
-        ChatRecord.objects.create(sender=user1, receiver=user2, msg="已将你移除好友列表")
+        try:
+            Friends.objects.get(nickname1=user1, nickname2=user2).delete()
+            Friends.objects.get(nickname1=user2, nickname2=user1).delete()
+            ChatRecord.objects.create(sender=user1, receiver=user2, msg="已将你移除好友列表")
+        except Friends.DoesNotExist:
+            return JsonResponse({'error': '你们还不是好友'}, status=HTTP_404_NOT_FOUND)
         return JsonResponse(data={'msg': '成功删除好友'}, status=HTTP_201_CREATED)
 
 
