@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.mine.PersonalDataActivity">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/personal_data_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_20"
+        android:gravity="center_horizontal"
+        android:text="@string/personal_data_title"
+        android:textColor="@color/black60"
+        android:textSize="@dimen/sp_23" />
+
+    <com.example.hang.ui.mine.utils.layout.SettingBar
+        android:id="@+id/fl_person_data_avatar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/white_selector"
+        app:bar_leftText="@string/personal_data_head">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_person_data_avatar"
+            android:layout_width="@dimen/dp_110"
+            android:layout_height="@dimen/dp_110"
+            android:layout_gravity="end|center_vertical"
+            android:layout_margin="@dimen/dp_20"
+            android:scaleType="centerCrop"
+            tools:src="@drawable/avatar_placeholder_ic" />
+    </com.example.hang.ui.mine.utils.layout.SettingBar>
+
+    <com.example.hang.ui.mine.utils.layout.SettingBar
+        android:id="@+id/personal_data_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_10"
+        android:background="@color/white"
+        app:bar_leftText="@string/personal_data_id"
+        tools:bar_rightText="20373300" />
+
+    <com.example.hang.ui.mine.utils.layout.SettingBar
+        android:id="@+id/personal_data_institution"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:bar_leftText="@string/personal_data_institution"
+        tools:bar_rightText="" />
+
+    <com.example.hang.ui.mine.utils.layout.SettingBar
+        android:id="@+id/personal_data_major"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:bar_leftText="@string/personal_data_major"
+        tools:bar_rightText="" />
+
+    <com.example.hang.ui.mine.utils.layout.SettingBar
+        android:id="@+id/personal_data_grade"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:bar_leftText="@string/personal_data_grade"
+        tools:bar_rightText="" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/personal_data_back"
+        style="@style/ButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/dp_40"
+        android:text="@string/common_back"
+        android:textColor="#212121"
+        tools:ignore="TextContrastCheck" />
+
+</LinearLayout>

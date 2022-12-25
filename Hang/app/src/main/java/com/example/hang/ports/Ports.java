@@ -15,6 +15,11 @@ public class Ports {
      * */
     public static String signUpUrl = api + "signup/";
     /*
+     * 通过用户名得到用户的详细信息
+     * url + nickname
+     * */
+    public static String userDetailUrl = api + "userdetail/";
+    /*
      * 修改用户信息：PUT
      * */
     public static String modifyDetailUrl = api + "modifydetail/";  // PUT 修改用户信息

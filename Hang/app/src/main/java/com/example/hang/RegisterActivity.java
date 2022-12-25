@@ -21,19 +21,19 @@ import java.io.IOException;
 import java.util.HashMap;
 
 public class RegisterActivity extends AppCompatActivity {
-    private EditText userNameInput;
-    private EditText passwordInput1;
-    private EditText passwordInput2;
-    private EditText studentIdInput;
-    private EditText institutionInput;
-    private EditText majorInput;
-    private EditText gradeInput;
-    private SubmitButton submitButton;
+    private EditText username_input;
+    private EditText password_input1;
+    private EditText password_input2;
+    private EditText student_id_input;
+    private EditText institution_input;
+    private EditText major_input;
+    private EditText grade_input;
+    private SubmitButton submit_button;
 
-    private String userName;
+    private String username;
     private String password1;
     private String password2;
-    private String studentId;
+    private String student_id;
     private String institution;
     private String major;
     private String grade;
@@ -49,30 +49,30 @@ public class RegisterActivity extends AppCompatActivity {
 
     private void doRegister() {
         //获取用户输入
-        userNameInput = findViewById(R.id.username_input);
-        passwordInput1 = findViewById(R.id.password_input1);
-        passwordInput2 = findViewById(R.id.password_input2);
-        studentIdInput = findViewById(R.id.student_id_input);
-        institutionInput = findViewById(R.id.institution_input);
-        majorInput = findViewById(R.id.major_input);
-        gradeInput = findViewById(R.id.grade_input);
-        submitButton = findViewById(R.id.register_btn_register);
+        username_input = findViewById(R.id.username_input);
+        password_input1 = findViewById(R.id.password_input1);
+        password_input2 = findViewById(R.id.password_input2);
+        student_id_input = findViewById(R.id.student_id_input);
+        institution_input = findViewById(R.id.institution_input);
+        major_input = findViewById(R.id.major_input);
+        grade_input = findViewById(R.id.grade_input);
+        submit_button = findViewById(R.id.register_btn_register);
 
-        submitButton.setOnClickListener(view -> {
+        submit_button.setOnClickListener(view -> {
             //开始登录，获取用户名和密码 getText().toString().trim();
-            userName = userNameInput.getText().toString().trim();
-            password1 = passwordInput1.getText().toString().trim();
-            password2 = passwordInput2.getText().toString().trim();
-            studentId = studentIdInput.getText().toString().trim();
-            institution = institutionInput.getText().toString().trim();
-            major = majorInput.getText().toString().trim();
-            grade = gradeInput.getText().toString().trim();
+            username = username_input.getText().toString().trim();
+            password1 = password_input1.getText().toString().trim();
+            password2 = password_input2.getText().toString().trim();
+            student_id = student_id_input.getText().toString().trim();
+            institution = institution_input.getText().toString().trim();
+            major = major_input.getText().toString().trim();
+            grade = grade_input.getText().toString().trim();
             RadioGroup radioGroup = findViewById(R.id.radioGroup);
             RadioButton radioButton1 = findViewById(R.id.register_btn_male);
             radioGroup.setOnCheckedChangeListener((group, checkedId) -> sex = radioButton1.isChecked());
 
             // TextUtils.isEmpty
-            if (TextUtils.isEmpty(userName)) {
+            if (TextUtils.isEmpty(username)) {
                 toast("请输入用户名");
             } else if (TextUtils.isEmpty(password1)) {
                 toast("请输入第一次密码");
@@ -93,10 +93,10 @@ public class RegisterActivity extends AppCompatActivity {
     private void sendPostRequest() {
         JSONObject jsonObject;
         HashMap<String, String> params = new HashMap<>();
-        params.put("nickname", userName);
+        params.put("nickname", username);
         params.put("password", password1);
         params.put("target", "安卓");
-        params.put("stuId", studentId);
+        params.put("stuId", student_id);
         params.put("institute", institution);
         params.put("major", major);
         params.put("grade", grade);
@@ -124,6 +124,6 @@ public class RegisterActivity extends AppCompatActivity {
 
     private void toast(String str) {
         Toast.makeText(RegisterActivity.this, str, Toast.LENGTH_SHORT).show();
-        submitButton.reset();
+        submit_button.reset();
     }
 }

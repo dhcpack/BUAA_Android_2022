@@ -87,6 +87,8 @@
     <string name="common_web_call_phone_allow">拨打</string>
     <string name="common_web_call_phone_reject">取消</string>
 
+    <string name="common_back">返回</string>
+
     <!-- 网络请求 -->
     <string name="http_loading">加载中&#8230;</string>
 
@@ -227,8 +229,10 @@
     <string name="personal_data_title">个人资料</string>
     <string name="personal_data_head">头像</string>
 
-    <string name="personal_data_id">用户ID</string>
-    <string name="personal_data_name">昵称</string>
+    <string name="personal_data_id">学号</string>
+    <string name="personal_data_institution">学院</string>
+    <string name="personal_data_major">专业</string>
+    <string name="personal_data_grade">年级</string>
     <string name="personal_data_name_hint">设置昵称</string>
 
     <string name="personal_data_address">地区</string>
@@ -266,4 +270,7 @@
     <!-- 拍照和拍摄 -->
     <string name="camera_launch_fail">无法启动相机</string>
     <string name="camera_image_error">目标地址错误</string>
+
+    <!-- 我的 -->
+    <string name="mine_fragment_enter_personal_data">"点我进入个人界面"</string>
 </resources>
