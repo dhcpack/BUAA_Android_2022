@@ -275,4 +275,5 @@
     <string name="mine_fragment_enter_personal_data">个人信息</string>
     <string name="mine_fragment_enter_settings">设置</string>
     <string name="mine_fragment_enter_remember_book">记忆本</string>
+    <string name="mine_fragment_enter_gen_report">学习报告</string>
 </resources>

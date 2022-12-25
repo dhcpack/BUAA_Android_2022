@@ -39,7 +39,7 @@
                 android:layout_height="@dimen/dp_100"
                 android:layout_gravity="end|center_vertical"
                 android:scaleType="centerCrop"
-                tools:src="@drawable/default_photo_ic" />
+                tools:src="@drawable/ic_default_photo" />
         </LinearLayout>
 
         <!--第一个方块-->
@@ -50,7 +50,7 @@
             android:layout_marginHorizontal="@dimen/dp_20"
             android:gravity="center_horizontal"
             android:orientation="horizontal"
-            android:background="@drawable/background_circle_corner">
+            android:background="@drawable/ic_background_circle_corner">
 
             <LinearLayout
                 android:layout_width="0dp"
@@ -66,7 +66,7 @@
                     android:layout_height="@dimen/dp_80"
                     android:layout_gravity="center_horizontal"
                     android:scaleType="centerCrop"
-                    tools:src="@drawable/remember_book_ic" />
+                    tools:src="@drawable/ic_bulb" />
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btn_mine_remember_book"
@@ -80,9 +80,24 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:layout_marginTop="@dimen/dp_10"
+                android:layout_marginTop="@dimen/dp_20"
                 android:gravity="center_horizontal"
                 android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/icon_mine_gen_report"
+                    android:layout_width="@dimen/dp_80"
+                    android:layout_height="@dimen/dp_80"
+                    android:layout_gravity="center_horizontal"
+                    android:scaleType="centerCrop"
+                    tools:src="@drawable/ic_share" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_mine_gen_report"
+                    style="@style/ButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/mine_fragment_enter_gen_report" />
             </LinearLayout>
         </LinearLayout>
 
@@ -94,7 +109,7 @@
             android:layout_marginHorizontal="@dimen/dp_20"
             android:gravity="center_horizontal"
             android:orientation="horizontal"
-            android:background="@drawable/background_circle_corner">
+            android:background="@drawable/ic_background_circle_corner">
 
             <LinearLayout
                 android:layout_width="0dp"
@@ -110,7 +125,7 @@
                     android:layout_height="@dimen/dp_80"
                     android:layout_gravity="center_horizontal"
                     android:scaleType="centerCrop"
-                    tools:src="@drawable/personal_info_ic" />
+                    tools:src="@drawable/ic_search" />
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btn_mine_personal_info"
@@ -134,7 +149,7 @@
                     android:layout_height="@dimen/dp_80"
                     android:layout_gravity="center_horizontal"
                     android:scaleType="centerCrop"
-                    tools:src="@drawable/personal_info_ic" />
+                    tools:src="@drawable/ic_info" />
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btn_mine_settings"
