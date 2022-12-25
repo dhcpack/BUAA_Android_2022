@@ -21,23 +21,23 @@
             android:id="@+id/tv_register_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dp_40"
+            android:layout_marginTop="@dimen/dp_20"
             android:text="@string/register_title"
             android:textColor="@color/black60"
             android:textSize="@dimen/sp_23" />
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dp_20"
-            android:text="@string/register_hint"
-            android:textColor="#757575"
-            android:textSize="@dimen/sp_14" />
+<!--        <androidx.appcompat.widget.AppCompatTextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="@dimen/dp_20"-->
+<!--            android:text="@string/register_hint"-->
+<!--            android:textColor="@color/black20"-->
+<!--            android:textSize="@dimen/sp_14" />-->
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dp_40"
+            android:layout_marginTop="@dimen/dp_10"
             android:gravity="center_vertical"
             android:orientation="horizontal">
 
@@ -47,7 +47,7 @@
                 android:layout_weight="1">
 
                 <com.example.hang.ui.mine.utils.view.RegexEditText
-                    android:id="@+id/et_register_phone"
+                    android:id="@+id/username_input"
                     style="@style/EditTextStyle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -63,31 +63,31 @@
                     android:layout_gravity="bottom" />
             </FrameLayout>
 
-            <com.example.hang.ui.mine.utils.view.CountdownView
-                android:id="@+id/cv_register_countdown"
-                style="@style/CountdownViewStyle"
-                android:textColor="#1976D2"
-                tools:ignore="TextContrastCheck,TextContrastCheck" />
+<!--            <com.example.hang.ui.mine.utils.view.CountdownView-->
+<!--                android:id="@+id/cv_register_countdown"-->
+<!--                style="@style/CountdownViewStyle"-->
+<!--                android:textColor="#1976D2"-->
+<!--                tools:ignore="TextContrastCheck,TextContrastCheck" />-->
         </LinearLayout>
 
-        <com.example.hang.ui.mine.utils.view.RegexEditText
-            android:id="@+id/et_register_code"
-            style="@style/EditTextStyle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dp_20"
-            android:hint="@string/common_code_input_hint"
-            android:inputType="textVisiblePassword"
-            android:maxLength="@integer/sms_code_length"
-            android:minHeight="48dp"
-            android:singleLine="true"
-            android:textColorHint="#757575"
-            app:regexType="number" />
+<!--        <com.example.hang.ui.mine.utils.view.RegexEditText-->
+<!--            android:id="@+id/et_register_code"-->
+<!--            style="@style/EditTextStyle"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="@dimen/dp_20"-->
+<!--            android:hint="@string/common_code_input_hint"-->
+<!--            android:inputType="textVisiblePassword"-->
+<!--            android:maxLength="@integer/sms_code_length"-->
+<!--            android:minHeight="48dp"-->
+<!--            android:singleLine="true"-->
+<!--            android:textColorHint="#757575"-->
+<!--            app:regexType="number" />-->
 
         <View style="@style/HorizontalLineStyle" />
 
         <com.example.hang.ui.mine.utils.view.PasswordEditText
-            android:id="@+id/et_register_password1"
+            android:id="@+id/password_input1"
             style="@style/EditTextStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -101,11 +101,11 @@
         <View style="@style/HorizontalLineStyle" />
 
         <com.example.hang.ui.mine.utils.view.PasswordEditText
-            android:id="@+id/et_register_password2"
+            android:id="@+id/password_input2"
             style="@style/EditTextStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_10"
             android:hint="@string/register_password_hint2"
             android:imeOptions="actionDone"
             android:maxLength="20"
@@ -113,14 +113,104 @@
             android:singleLine="true"
             android:textColorHint="#757575" />
 
+        <com.example.hang.ui.mine.utils.view.RegexEditText
+            android:id="@+id/student_id_input"
+            style="@style/EditTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            android:hint="@string/register_student_id_hint"
+            android:imeOptions="actionDone"
+            android:maxLength="20"
+            android:minHeight="48dp"
+            android:singleLine="true"
+            android:textColorHint="#757575" />
+
+        <com.example.hang.ui.mine.utils.view.RegexEditText
+            android:id="@+id/institution_input"
+            style="@style/EditTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            android:hint="@string/register_institution_hint"
+            android:imeOptions="actionDone"
+            android:maxLength="20"
+            android:minHeight="48dp"
+            android:singleLine="true"
+            android:textColorHint="#757575" />
+
+        <com.example.hang.ui.mine.utils.view.RegexEditText
+            android:id="@+id/major_input"
+            style="@style/EditTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            android:hint="@string/register_major_hint"
+            android:imeOptions="actionDone"
+            android:maxLength="20"
+            android:minHeight="48dp"
+            android:singleLine="true"
+            android:textColorHint="#757575" />
+
+        <com.example.hang.ui.mine.utils.view.RegexEditText
+            android:id="@+id/grade_input"
+            style="@style/EditTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            android:hint="@string/register_grade_hint"
+            android:imeOptions="actionDone"
+            android:maxLength="20"
+            android:minHeight="48dp"
+            android:singleLine="true"
+            android:textColorHint="#757575" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <RadioGroup
+                android:id="@+id/radioGroup"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@+id/register_btn_male"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:text="@string/common_male"
+                    android:button="@drawable/radiobutton_selector"
+                    android:checked="true" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="@dimen/dp_80"
+                    android:layout_height="match_parent" />
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@+id/register_btn_female"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:text="@string/common_female"
+                    android:button="@drawable/radiobutton_selector"
+                    android:enabled="true" />
+            </RadioGroup>
+        </LinearLayout>
+
         <View style="@style/HorizontalLineStyle" />
 
         <com.example.hang.ui.mine.utils.view.SubmitButton
-            android:id="@+id/btn_register_commit"
+            android:id="@+id/register_btn_register"
             style="@style/ButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginVertical="@dimen/dp_30"
+            android:layout_marginVertical="@dimen/dp_10"
             android:text="@string/register_title"
             android:textColor="#212121"
             tools:ignore="TextContrastCheck" />

@@ -1,11 +1,8 @@
 package com.example.hang;
 
 import android.content.Intent;
-import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -13,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.hang.ports.HttpUtil;
 import com.example.hang.ports.Ports;
+import com.example.hang.ui.mine.utils.view.SubmitButton;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -21,47 +19,42 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class LoginActivity extends AppCompatActivity {
-    private Button btn_login;//登录按钮
-    private Button btn_register;//注册按钮
-    private String userName, password, spPsw;//获取的用户名，密码，加密密码
+    private SubmitButton btn_login;//登录按钮
+    private SubmitButton btn_register;//注册按钮
+    private String userName, password;//获取的用户名，密码，加密密码
     private EditText user_input, password_input;//编辑框
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-//        setContentView(R.layout.activity_login_old);
+        //setContentView(R.layout.activity_login_old);
         //设置此界面为竖屏
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        //setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         init();
     }
 
     private void init() {
 
-        btn_login = findViewById(R.id.btn_login);
-        btn_register = findViewById(R.id.btn_register);
+        btn_login = findViewById(R.id.login_btn_login);
+        btn_register = findViewById(R.id.login_btn_register);
         user_input = findViewById(R.id.user_input);
         password_input = findViewById(R.id.password_input);
 
-        btn_login.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //开始登录，获取用户名和密码 getText().toString().trim();
-                userName = user_input.getText().toString().trim();
-                password = password_input.getText().toString().trim();
+        btn_login.setOnClickListener(v -> {
+            //开始登录，获取用户名和密码 getText().toString().trim();
+            userName = user_input.getText().toString().trim();
+            password = password_input.getText().toString().trim();
 
-                // TextUtils.isEmpty
-                if (TextUtils.isEmpty(userName)) {
-                    Toast.makeText(LoginActivity.this, "请输入用户名", Toast.LENGTH_SHORT).show();
-                    return;
-                } else if (TextUtils.isEmpty(password)) {
-                    Toast.makeText(LoginActivity.this, "请输入密码", Toast.LENGTH_SHORT).show();
-                    return;
+            // TextUtils.isEmpty
+            if (TextUtils.isEmpty(userName)) {
+                toast("请输入用户名");
+            } else if (TextUtils.isEmpty(password)) {
+                toast("请输入密码");
+            } else {
+                if (!HttpUtil.checkConnectNetwork(getApplicationContext())) {
+                    toast("请检查网络设置");
                 } else {
-                    if (!HttpUtil.checkConnectNetwork(getApplicationContext())) {
-                        Toast.makeText(LoginActivity.this, "请检查网络设置", Toast.LENGTH_SHORT).show();
-                        return;
-                    }
                     ArrayList<String> signIn = new ArrayList<>();
                     signIn.add(userName);
                     signIn.add(password);
@@ -72,44 +65,38 @@ public class LoginActivity extends AppCompatActivity {
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
+                    assert jsonObject != null;
                     if (jsonObject.has("error")) {
                         try {
                             Toast.makeText(LoginActivity.this, jsonObject.getString("error"), Toast.LENGTH_SHORT).show();
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
-                        return;
                     } else {
-                        Toast.makeText(LoginActivity.this, "登录成功", Toast.LENGTH_SHORT).show();
+                        toast("登录成功");
 
-//                        //保存登录状态，在界面保存登录的用户名 定义个方法 saveLoginStatus boolean 状态 , userName 用户名;
-//                        saveLoginStatus(true, userName);
+                        //保存登录状态，在界面保存登录的用户名 定义个方法 saveLoginStatus boolean 状态 , userName 用户名;
+                        //saveLoginStatus(true, userName);
                         //登录成功后关闭此页面进入主页
                         Intent data = new Intent();
-                        //datad.putExtra( ); name , value ;
+                        //data.putExtra( ); name , value ;
                         data.putExtra("isLogin", true);
                         //RESULT_OK为Activity系统常量，状态码为-1
                         // 表示此页面下的内容操作成功将data返回到上一页面，如果是用back返回过去的则不存在用setResult传递data值
-//                        setResult(RESULT_OK, data);
+                        //setResult(RESULT_OK, data);
                         //销毁登录界面
                         LoginActivity.this.finish();
                         //跳转到主界面，登录成功的状态传递到 MainActivity 中
                         startActivity(new Intent(LoginActivity.this, MainActivity.class));
-                        return;
                     }
-
-
                 }
             }
         });
-        btn_register.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //销毁登录界面
-                LoginActivity.this.finish();
-                //跳转到主界面，登录成功的状态传递到 RegisterActivity 中
-                startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
-            }
+        btn_register.setOnClickListener(view -> {
+            //销毁登录界面
+            LoginActivity.this.finish();
+            //跳转到主界面，登录成功的状态传递到 RegisterActivity 中
+            startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
         });
     }
 
@@ -145,6 +132,12 @@ public class LoginActivity extends AppCompatActivity {
 //            }
 //        }
 //    }
+
+    private void toast(String str) {
+        Toast.makeText(LoginActivity.this, str, Toast.LENGTH_SHORT).show();
+        btn_login.reset();
+        btn_register.reset();
+    }
 }
 
 

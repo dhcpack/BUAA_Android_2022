@@ -21,6 +21,9 @@
     <string name="common_minute">分</string>
     <string name="common_second">秒</string>
 
+    <string name="common_male">男</string>
+    <string name="common_female">女</string>
+
     <string name="common_crash_hint">应用出了点小意外，正在重新启动</string>
 
     <string name="common_network_error">当前网络不可用，请检查网络设置</string>
@@ -172,6 +175,11 @@
     <string name="register_hint">手机号仅用于登录和保护账号安全</string>
     <string name="register_password_hint1">设置6&#8211;18位登录密码</string>
     <string name="register_password_hint2">请再次输入一次密码</string>
+
+    <string name="register_student_id_hint">请输入学号</string>
+    <string name="register_institution_hint">请输入学院</string>
+    <string name="register_major_hint">请输入专业</string>
+    <string name="register_grade_hint">请输入年级</string>
 
     <!-- 设置 -->
     <string name="setting_title">设置</string>
