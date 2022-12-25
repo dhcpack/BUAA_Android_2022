@@ -25,6 +25,7 @@
 <!--            app:layout_constraintStart_toStartOf="parent"-->
 <!--            app:layout_constraintTop_toTopOf="parent" />-->
 
+        <!--头像-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -41,6 +42,51 @@
                 tools:src="@drawable/default_photo_ic" />
         </LinearLayout>
 
+        <!--第一个方块-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_150"
+            android:layout_marginTop="@dimen/dp_20"
+            android:layout_marginHorizontal="@dimen/dp_20"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:background="@drawable/background_circle_corner">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginTop="@dimen/dp_20"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/icon_mine_remember_book"
+                    android:layout_width="@dimen/dp_80"
+                    android:layout_height="@dimen/dp_80"
+                    android:layout_gravity="center_horizontal"
+                    android:scaleType="centerCrop"
+                    tools:src="@drawable/remember_book_ic" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_mine_remember_book"
+                    style="@style/ButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/mine_fragment_enter_remember_book" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginTop="@dimen/dp_10"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+            </LinearLayout>
+        </LinearLayout>
+
+        <!--第二个方块-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="@dimen/dp_150"
@@ -96,34 +142,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/mine_fragment_enter_settings" />
-            </LinearLayout>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/dp_150"
-            android:layout_marginTop="@dimen/dp_20"
-            android:layout_marginHorizontal="@dimen/dp_20"
-            android:gravity="center_horizontal"
-            android:orientation="horizontal"
-            android:background="@drawable/background_circle_corner">
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:layout_marginTop="@dimen/dp_20"
-                android:gravity="center_horizontal"
-                android:orientation="vertical">
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:layout_marginTop="@dimen/dp_20"
-                android:gravity="center_horizontal"
-                android:orientation="vertical">
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
