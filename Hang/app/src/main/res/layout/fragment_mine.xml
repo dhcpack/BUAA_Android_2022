@@ -34,44 +34,98 @@
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/iv_person_data_avatar"
-                android:layout_width="@dimen/dp_110"
-                android:layout_height="@dimen/dp_110"
+                android:layout_width="@dimen/dp_100"
+                android:layout_height="@dimen/dp_100"
                 android:layout_gravity="end|center_vertical"
                 android:layout_margin="@dimen/dp_20"
                 android:scaleType="centerCrop"
-                tools:src="@drawable/avatar_placeholder_ic" />
+                tools:src="@drawable/default_photo_ic" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="@dimen/dp_110"
+            android:layout_height="@dimen/dp_150"
             android:layout_marginTop="@dimen/dp_20"
+            android:layout_marginHorizontal="@dimen/dp_20"
             android:gravity="center_horizontal"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:background="@drawable/background_circle_corner">
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btn_mine_personal"
-                style="@style/ButtonStyle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/dp_30"
-                android:text="@string/mine_fragment_enter_personal_data" />
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginTop="@dimen/dp_20"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/icon_mine_personal_info"
+                    android:layout_width="@dimen/dp_80"
+                    android:layout_height="@dimen/dp_80"
+                    android:layout_gravity="center_horizontal"
+                    android:scaleType="centerCrop"
+                    tools:src="@drawable/personal_info_ic" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_mine_personal_info"
+                    style="@style/ButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/mine_fragment_enter_personal_data" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginTop="@dimen/dp_20"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/icon_mine_settings"
+                    android:layout_width="@dimen/dp_80"
+                    android:layout_height="@dimen/dp_80"
+                    android:layout_gravity="center_horizontal"
+                    android:scaleType="centerCrop"
+                    tools:src="@drawable/personal_info_ic" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_mine_settings"
+                    style="@style/ButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/mine_fragment_enter_settings" />
+            </LinearLayout>
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="@dimen/dp_110"
+            android:layout_height="@dimen/dp_200"
             android:layout_marginTop="@dimen/dp_20"
+            android:layout_marginHorizontal="@dimen/dp_20"
             android:gravity="center_horizontal"
-            android:orientation="horizontal">
-        </LinearLayout>
+            android:orientation="horizontal"
+            android:background="@drawable/background_circle_corner">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/dp_110"
-            android:layout_marginTop="@dimen/dp_20"
-            android:gravity="center_horizontal"
-            android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginTop="@dimen/dp_20"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginTop="@dimen/dp_20"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+            </LinearLayout>
         </LinearLayout>
     </LinearLayout>
 

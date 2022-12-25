@@ -82,7 +82,6 @@ public class LoginActivity extends AppCompatActivity {
                         Bundle bundle = new Bundle();
                         bundle.putString("username", username);
                         bundle.putString("password", password);
-                        bundle.putBoolean("isLogin", true);
                         intent.putExtras(bundle);
                         //intent.putExtra("isLogin", true);
                         //RESULT_OK为Activity系统常量，状态码为-1

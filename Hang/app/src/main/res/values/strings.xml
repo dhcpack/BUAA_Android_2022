@@ -272,5 +272,6 @@
     <string name="camera_image_error">目标地址错误</string>
 
     <!-- 我的 -->
-    <string name="mine_fragment_enter_personal_data">"点我进入个人界面"</string>
+    <string name="mine_fragment_enter_personal_data">个人信息</string>
+    <string name="mine_fragment_enter_settings">设置</string>
 </resources>
