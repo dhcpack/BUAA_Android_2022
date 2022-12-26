@@ -1,4 +1,4 @@
-from django.urls import re_path
+from django.urls import re_path, path
 from rest_framework.routers import DefaultRouter
 
 from user.views import *
@@ -11,6 +11,7 @@ urlpatterns = [
                   re_path("^signin/(?P<nickname>[_a-zA-Z0-9]+)/(?P<password>[_a-zA-Z0-9]+)/$", UserView.as_view()),
                   re_path("^signup/$", UserView.as_view()),
                   re_path("^modifydetail/$", UserView.as_view()),
+                  re_path("^userdetail/(?P<nickname>[_a-zA-Z0-9]+)/$", UserDetailView.as_view()),
 
                   re_path("^checkdetail/(?P<nickname>[_a-zA-Z0-9]+)/$", CheckView.as_view()),
                   re_path("^check/$", CheckView.as_view()),
@@ -18,7 +19,7 @@ urlpatterns = [
                   re_path("^getbooks/(?P<nickname>[_a-zA-Z0-9]+)/$", BookView.as_view()),
                   re_path("^addbook/$", BookView.as_view()),
                   re_path("^modifybook/$", BookView.as_view()),
-                  re_path("^deletebook/(?P<nickname>[_a-zA-Z0-9]+)/(?P<bookname>[\u4e00-\u9fa5_a-zA-Z0-9]+)/$",
+                  re_path("^deletebook/(?P<nickname>[_a-zA-Z0-9]+)/(?P<bookname>[（）()\u4e00-\u9fa5_a-zA-Z0-9]+)/$",
                           BookView.as_view()),
 
                   re_path("^getques/(?P<book_id>[\u4e00-\u9fa5_a-zA-Z0-9]+)/$",
@@ -57,4 +58,8 @@ urlpatterns = [
                   re_path("^getfile/(?P<path>[_a-zA-Z0-9]+)/(?P<type>[_a-zA-Z0-9]+)/$", FileView.as_view()),
                   re_path("^postfile/(?P<type>[_a-zA-Z0-9]+)/$", FileView.as_view()),
 
+                  re_path("^learningbook/(?P<nickname>[_a-zA-Z0-9]+)/$", LearningBookView.as_view()),
+                  re_path("^setbook/(?P<nickname>[_a-zA-Z0-9]+)/(?P<bookId>[0-9]+)/$", LearningBookView.as_view()),
+                  re_path("^setprocess/(?P<nickname>[_a-zA-Z0-9]+)/(?P<bookId>[0-9]+)/(?P<process>[0-9]+)/$", ProcessView.as_view()),
+                  path("getpublicbook/", PublicBookView.as_view()),
               ] + router.urls
