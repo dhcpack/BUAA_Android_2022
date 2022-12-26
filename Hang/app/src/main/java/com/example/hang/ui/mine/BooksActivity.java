@@ -49,7 +49,9 @@ public class BooksActivity extends AppCompatActivity {
         JSONArray jsonArray = null;
         try {
             String username = getIntent().getStringExtra("username");
-            jsonArray = (JSONArray) HttpUtil.httpGet(Ports.getBooksUrl + username, new ArrayList<>(),true);
+            ArrayList<String> params = new ArrayList<>();
+            params.add(username);
+            jsonArray = (JSONArray) HttpUtil.httpGet(Ports.getBooksUrl, params,true);
         } catch (IOException e) {
             e.printStackTrace();
         }
