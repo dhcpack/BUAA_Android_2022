@@ -33,7 +33,7 @@ public class BooksActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_books);
         //给链表添加数据
-        List<Map<String, Object>> list=getData();
+        List<Map<String, Object>> list = getData();
         //适配器，刚刚重写的！
         MyAdapter myAdapter = new MyAdapter(this, list);
         //设置适配器

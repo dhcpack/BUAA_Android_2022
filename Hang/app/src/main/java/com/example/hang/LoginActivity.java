@@ -68,7 +68,7 @@ public class LoginActivity extends AppCompatActivity {
                     assert jsonObject != null;
                     if (jsonObject.has("error")) {
                         try {
-                            Toast.makeText(LoginActivity.this, jsonObject.getString("error"), Toast.LENGTH_SHORT).show();
+                            toast(jsonObject.getString("error"));
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
