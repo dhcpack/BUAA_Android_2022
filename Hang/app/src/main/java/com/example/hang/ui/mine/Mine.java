@@ -16,6 +16,8 @@ import android.view.ViewGroup;
 
 import com.example.hang.R;
 
+import java.util.Set;
+
 public class Mine extends Fragment {
 
     private MineViewModel mViewModel;
@@ -44,6 +46,20 @@ public class Mine extends Fragment {
             Intent intent = new Intent(getActivity(), BooksActivity.class);
             intent.putExtra("username", username);
             //跳转到展示所有记忆本
+            startActivity(intent);
+        });
+        AppCompatButton btn_mine_gen_report = view.findViewById(R.id.btn_mine_gen_report);
+        btn_mine_gen_report.setOnClickListener(view2 -> {
+            Intent intent = new Intent(getActivity(), ReportActivity.class);
+            intent.putExtra("username", username);
+            //跳转到生成学习报告
+            startActivity(intent);
+        });
+        AppCompatButton btn_mine_settings = view.findViewById(R.id.btn_mine_settings);
+        btn_mine_settings.setOnClickListener(view2 -> {
+            Intent intent = new Intent(getActivity(), SettingsActivity.class);
+            intent.putExtra("username", username);
+            //跳转到设置
             startActivity(intent);
         });
         return view;

@@ -23,7 +23,7 @@
                 android:id="@+id/iv_person_data_avatar"
                 android:layout_width="@dimen/dp_100"
                 android:layout_height="@dimen/dp_100"
-                android:layout_gravity="end|center_vertical"
+                android:layout_gravity="center_horizontal"
                 android:scaleType="centerCrop"
                 android:src="@drawable/ic_default_photo" />
         </LinearLayout>
