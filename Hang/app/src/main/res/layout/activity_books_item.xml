@@ -32,7 +32,7 @@
                     android:layout_height="@dimen/dp_100"
                     android:layout_gravity="center_horizontal"
                     android:scaleType="centerCrop"
-                    tools:src="@drawable/ic_book" />
+                    android:src="@drawable/ic_book" />
 
                 <TextView
                     android:id="@+id/tv_title_book"

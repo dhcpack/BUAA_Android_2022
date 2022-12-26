@@ -1,15 +1,12 @@
 package com.example.hang.ui.mine;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 
-import com.example.hang.LoginActivity;
 import com.example.hang.R;
-import com.example.hang.RegisterActivity;
 import com.example.hang.ports.HttpUtil;
 import com.example.hang.ports.Ports;
 import com.example.hang.ui.mine.utils.layout.SettingBar;
@@ -19,8 +16,6 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
 
 public class PersonalDataActivity extends AppCompatActivity {
     private String username;

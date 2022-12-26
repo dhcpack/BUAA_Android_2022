@@ -16,8 +16,6 @@ import android.view.ViewGroup;
 
 import com.example.hang.R;
 
-import java.util.Objects;
-
 public class Mine extends Fragment {
 
     private MineViewModel mViewModel;
