@@ -3,6 +3,7 @@ package com.example.hang.ui.mine;
 import static android.app.UiModeManager.MODE_NIGHT_YES;
 
 import android.annotation.SuppressLint;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.TextView;
@@ -23,10 +24,16 @@ public class SettingsActivity extends AppCompatActivity {
         setTitleBar("设置");
         SwitchButton btn_turn_on_night_mode = findViewById(R.id.btn_turn_on_night_mode);
         btn_turn_on_night_mode.setOnCheckedChangeListener((button, checked) -> {
-            if (!btn_turn_on_night_mode.isChecked()) {
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-            } else {
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+            if (btn_turn_on_night_mode.isChecked()) {
+                int currentNightMode = getApplicationContext().getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
+                switch (currentNightMode) {
+                    case Configuration.UI_MODE_NIGHT_NO:
+                        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                        break;
+                    case Configuration.UI_MODE_NIGHT_YES:
+                        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+                        break;
+                }
             }
         });
     }
