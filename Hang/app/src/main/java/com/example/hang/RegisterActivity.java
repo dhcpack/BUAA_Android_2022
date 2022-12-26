@@ -3,6 +3,7 @@ package com.example.hang;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -28,7 +29,8 @@ public class RegisterActivity extends AppCompatActivity {
     private EditText institution_input;
     private EditText major_input;
     private EditText grade_input;
-    private SubmitButton submit_button;
+    private SubmitButton btn_register;
+    private SubmitButton btn_back_to_login;
 
     private String username;
     private String password1;
@@ -56,9 +58,10 @@ public class RegisterActivity extends AppCompatActivity {
         institution_input = findViewById(R.id.institution_input);
         major_input = findViewById(R.id.major_input);
         grade_input = findViewById(R.id.grade_input);
-        submit_button = findViewById(R.id.register_btn_register);
+        btn_register = findViewById(R.id.register_btn_register);
+        btn_back_to_login = findViewById(R.id.register_btn_login);
 
-        submit_button.setOnClickListener(view -> {
+        btn_register.setOnClickListener(view1 -> {
             //开始登录，获取用户名和密码 getText().toString().trim();
             username = username_input.getText().toString().trim();
             password1 = password_input1.getText().toString().trim();
@@ -88,6 +91,12 @@ public class RegisterActivity extends AppCompatActivity {
                 }
             }
         });
+        btn_back_to_login.setOnClickListener(view2 -> {
+            //销毁注册界面
+            RegisterActivity.this.finish();
+            //跳转到登录
+            startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
+        });
     }
 
     private void sendPostRequest() {
@@ -112,9 +121,9 @@ public class RegisterActivity extends AppCompatActivity {
                 }
             } else {
                 toast("注册成功");
-                //销毁登录界面
+                //销毁注册界面
                 RegisterActivity.this.finish();
-                //跳转到主界面，登录成功的状态传递到 MainActivity 中
+                //跳转到登录
                 startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
             }
         } catch (IOException e) {
@@ -124,6 +133,6 @@ public class RegisterActivity extends AppCompatActivity {
 
     private void toast(String str) {
         Toast.makeText(RegisterActivity.this, str, Toast.LENGTH_SHORT).show();
-        submit_button.reset();
+        btn_register.reset();
     }
 }

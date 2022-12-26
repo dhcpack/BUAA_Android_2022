@@ -9,12 +9,13 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <ListView
-            android:id="@+id/lv_books"
-            android:layout_width="match_parent"
-            android:dividerHeight="@dimen/dp_5"
-            android:layout_height="wrap_content">
-        </ListView>
+            <ListView
+                android:id="@+id/lv_books"
+                android:layout_width="match_parent"
+                android:scrollbars="vertical"
+                android:dividerHeight="@dimen/dp_5"
+                android:layout_height="wrap_content">
+            </ListView>
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
