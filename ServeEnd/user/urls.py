@@ -19,7 +19,7 @@ urlpatterns = [
                   re_path("^getbooks/(?P<nickname>[_a-zA-Z0-9]+)/$", BookView.as_view()),
                   re_path("^addbook/$", BookView.as_view()),
                   re_path("^modifybook/$", BookView.as_view()),
-                  re_path("^deletebook/(?P<nickname>[_a-zA-Z0-9]+)/(?P<bookname>[（）()\u4e00-\u9fa5_a-zA-Z0-9]+)/$",
+                  re_path("^deletebook/(?P<nickname>[_a-zA-Z0-9]+)/(?P<bookId>[\u4e00-\u9fa5_a-zA-Z0-9]+)/$",
                           BookView.as_view()),
 
                   re_path("^getques/(?P<book_id>[\u4e00-\u9fa5_a-zA-Z0-9]+)/$",

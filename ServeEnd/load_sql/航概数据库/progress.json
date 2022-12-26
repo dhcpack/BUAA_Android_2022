@@ -1,0 +1,74 @@
+[
+    {
+        "CHAPTER": 1,
+        "ID": 1,
+        "PROGRESS": 0,
+        "SUBJECT": "art"
+    },
+    {
+        "CHAPTER": 2,
+        "ID": 2,
+        "PROGRESS": 0,
+        "SUBJECT": "art"
+    },
+    {
+        "CHAPTER": 3,
+        "ID": 3,
+        "PROGRESS": 0,
+        "SUBJECT": "art"
+    },
+    {
+        "CHAPTER": 4,
+        "ID": 4,
+        "PROGRESS": 0,
+        "SUBJECT": "art"
+    },
+    {
+        "CHAPTER": 5,
+        "ID": 5,
+        "PROGRESS": 0,
+        "SUBJECT": "art"
+    },
+    {
+        "CHAPTER": 6,
+        "ID": 6,
+        "PROGRESS": 0,
+        "SUBJECT": "art"
+    },
+    {
+        "CHAPTER": 1,
+        "ID": 7,
+        "PROGRESS": 0,
+        "SUBJECT": "science"
+    },
+    {
+        "CHAPTER": 2,
+        "ID": 8,
+        "PROGRESS": 0,
+        "SUBJECT": "science"
+    },
+    {
+        "CHAPTER": 3,
+        "ID": 9,
+        "PROGRESS": 0,
+        "SUBJECT": "science"
+    },
+    {
+        "CHAPTER": 4,
+        "ID": 10,
+        "PROGRESS": 0,
+        "SUBJECT": "science"
+    },
+    {
+        "CHAPTER": 5,
+        "ID": 11,
+        "PROGRESS": 0,
+        "SUBJECT": "science"
+    },
+    {
+        "CHAPTER": 6,
+        "ID": 12,
+        "PROGRESS": 0,
+        "SUBJECT": "science"
+    }
+]

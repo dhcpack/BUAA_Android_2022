@@ -121,9 +121,9 @@ class BookView(View):
         serializer.save()
         return JsonResponse(serializer.data, status=HTTP_201_CREATED)
 
-    def delete(self, request, nickname, bookname):
+    def delete(self, request, nickname, bookId):
         try:
-            book = Book.objects.filter(nickname=nickname).get(bookname=bookname)
+            book = Book.objects.filter(nickname=nickname).get(id=bookId)
         except Book.DoesNotExist:
             return JsonResponse({'msg': '成功删除'}, status=HTTP_201_CREATED)
         book.delete()

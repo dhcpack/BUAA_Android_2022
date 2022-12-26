@@ -49,7 +49,7 @@ public class Ports {
     public static String modifyBookUrl = api + "modifybook/";
     /*
      * 删除记忆本：DELETE
-     * url + nickname + bookname
+     * url + nickname + bookId
      * */
     public static String deleteBookUrl = api + "deletebook/";
     /*
