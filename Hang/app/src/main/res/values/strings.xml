@@ -278,6 +278,10 @@
     <string name="mine_fragment_enter_remember_book">记忆本</string>
     <string name="mine_fragment_enter_gen_report">学习报告</string>
 
+    <!-- 记忆本 -->
+    <string name="book_add_content">添加</string>
+    <string name="book_view_content">查看</string>
+
     <string name="title_activity_learn_search">LearnSearchActivity</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
