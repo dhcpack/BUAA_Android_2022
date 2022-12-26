@@ -7,15 +7,15 @@
     android:orientation="vertical"
     tools:context=".ui.mine.PersonalDataActivity">
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/personal_data_title"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dp_20"
-        android:gravity="center_horizontal"
-        android:text="@string/personal_data_title"
-        android:textColor="@color/black60"
-        android:textSize="@dimen/sp_23" />
+<!--    <androidx.appcompat.widget.AppCompatTextView-->
+<!--        android:id="@+id/personal_data_title"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="@dimen/dp_20"-->
+<!--        android:gravity="center_horizontal"-->
+<!--        android:text="@string/personal_data_title"-->
+<!--        android:textColor="@color/black60"-->
+<!--        android:textSize="@dimen/sp_23" />-->
 
     <com.example.hang.ui.mine.utils.layout.SettingBar
         android:id="@+id/fl_person_data_avatar"
@@ -38,36 +38,38 @@
         android:id="@+id/personal_data_id"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dp_10"
-        android:background="@color/white"
+        android:layout_marginTop="@dimen/dp_5"
         app:bar_leftText="@string/personal_data_id" />
 
     <com.example.hang.ui.mine.utils.layout.SettingBar
         android:id="@+id/personal_data_institution"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_5"
         app:bar_leftText="@string/personal_data_institution" />
 
     <com.example.hang.ui.mine.utils.layout.SettingBar
         android:id="@+id/personal_data_major"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_5"
         app:bar_leftText="@string/personal_data_major" />
 
     <com.example.hang.ui.mine.utils.layout.SettingBar
         android:id="@+id/personal_data_grade"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_5"
         app:bar_leftText="@string/personal_data_grade" />
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/personal_data_back"
-        style="@style/ButtonStyle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginVertical="@dimen/dp_40"
-        android:text="@string/common_back"
-        android:textColor="#212121"
-        tools:ignore="TextContrastCheck" />
+<!--    <androidx.appcompat.widget.AppCompatButton-->
+<!--        android:id="@+id/personal_data_back"-->
+<!--        style="@style/ButtonStyle"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginVertical="@dimen/dp_40"-->
+<!--        android:text="@string/common_back"-->
+<!--        android:textColor="#212121"-->
+<!--        tools:ignore="TextContrastCheck" />-->
 
 </LinearLayout>

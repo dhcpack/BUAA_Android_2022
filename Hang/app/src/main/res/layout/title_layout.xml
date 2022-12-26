@@ -2,10 +2,9 @@
 <TextView xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/display_title"
     android:text=""
-    android:textSize="20sp"
+    android:textSize="@dimen/sp_20"
     android:textColor="#ffffff"
     android:gravity="center"
-    android:layout_gravity="center"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/common_accent_color">
