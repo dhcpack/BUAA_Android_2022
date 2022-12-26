@@ -203,11 +203,13 @@ public class Learn extends Fragment {
             dakaDays = Integer.parseInt(jsonObject.getString("totalDays"));
             lastCheckRecord = jsonObject.getString("lastCheckRecord");
             String nowDate = DateUtil.getNowTime();
-            System.out.println(nowDate.substring(0, 10));
-            System.out.println(lastCheckRecord.substring(0, 10));
-            if (nowDate.substring(0, 10).equals(lastCheckRecord.substring(0, 10))) {
-                //System.out.println("yi");
-                tv_check_state.setText("已");
+            //System.out.println(nowDate.substring(0, 10));
+            //System.out.println(lastCheckRecord.substring(0, 10));
+            if (dakaDays != 0) {
+                if (nowDate.substring(0, 10).equals(lastCheckRecord.substring(0, 10))) {
+                    //System.out.println("yi");
+                    tv_check_state.setText("已");
+                }
             }
         }
     }
