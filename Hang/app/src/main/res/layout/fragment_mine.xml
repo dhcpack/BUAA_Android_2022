@@ -69,11 +69,11 @@
                     tools:src="@drawable/ic_bulb" />
 
                 <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/btn_mine_remember_book"
+                    android:id="@+id/btn_mine_books"
                     style="@style/ButtonStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/mine_fragment_enter_remember_book" />
+                    android:text="@string/mine_fragment_enter_books" />
             </LinearLayout>
 
             <LinearLayout

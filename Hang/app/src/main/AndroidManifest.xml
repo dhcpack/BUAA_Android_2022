@@ -87,6 +87,11 @@
             android:name=".ui.mine.PersonalDataActivity"
             android:exported="false">
         </activity>
+
+        <activity
+            android:name=".ui.mine.BooksActivity"
+            android:exported="false">
+        </activity>
     </application>
 
 </manifest>

@@ -29,12 +29,14 @@ public class Mine extends Fragment {
                              @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_mine, container, false);
         AppCompatButton btn_enter_personal_data = view.findViewById(R.id.btn_mine_personal_info);
-        btn_enter_personal_data.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //跳转到个人资料
-                startActivity(new Intent(getActivity(), PersonalDataActivity.class));
-            }
+        btn_enter_personal_data.setOnClickListener(view1 -> {
+            //跳转到个人资料
+            startActivity(new Intent(getActivity(), PersonalDataActivity.class));
+        });
+        AppCompatButton btn_enter_books = view.findViewById(R.id.btn_mine_books);
+        btn_enter_books.setOnClickListener(view2 -> {
+            //跳转到展示所有记忆本
+            startActivity(new Intent(getActivity(), BooksActivity.class));
         });
         return view;
     }
