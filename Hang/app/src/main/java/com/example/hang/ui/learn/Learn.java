@@ -24,6 +24,7 @@ import com.example.hang.ports.HttpUtil;
 import com.example.hang.ports.Ports;
 import com.example.hang.ui.learn.util.DateUtil;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -48,17 +49,58 @@ public class Learn extends Fragment {
     private int dakaDays;
     private String lastCheckRecord;
 
+    //learning book
+    private String book_name;
+    private String book_tag;
+    private int process;
+    private int book_id;
+    private int quesNum = 0;    //题目总数
+    private int rest = 0;       //未掌握数量
+    private TextView tv_book_name;
+    private TextView tv_book_tag;
+    private TextView tv_percent;
+    private ArrayList<JSONObject> allQues = new ArrayList<>();
+    private TextView tv_ok_num;
+    private TextView tv_no_num;
+
     public static Learn newInstance() {
         return new Learn();
     }
 
-    @SuppressLint({"MissingInflatedId", "ResourceType"})
+    @SuppressLint({"MissingInflatedId", "ResourceType", "SetTextI18n"})
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_learn, container, false);
 
         username = ((MainActivity) requireActivity()).getIntent().getExtras().getString("username");
+
+        try {
+            getLearningBook();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        tv_book_name = v.findViewById(R.id.tv_book_name);
+        tv_book_tag = v.findViewById(R.id.tv_book_tag);
+        tv_book_name.setText(book_name);
+        tv_book_tag.setText(book_tag);
+        if (book_id != -1) {
+            try {
+                getAllQues();
+            } catch (JSONException | IOException e) {
+                e.printStackTrace();
+            }
+        }
+        tv_ok_num = v.findViewById(R.id.tv_okNum);
+        tv_no_num = v.findViewById(R.id.tv_noNum);
+        tv_ok_num.setText("已掌握\n    " + process);
+        tv_no_num.setText("未掌握\n    " + rest);
+        tv_percent = v.findViewById(R.id.tv_percent);
+        double p = 0;
+        if (quesNum != 0) {
+            p = (double) process / (double) quesNum;
+        }
+        tv_percent.setText("学习进度" + p + "%");
 
         tv_daka_days = v.findViewById(R.id.tv_daka_days);
         tv_check_state = v.findViewById(R.id.tv_check_state);
@@ -164,14 +206,56 @@ public class Learn extends Fragment {
             System.out.println(nowDate.substring(0, 10));
             System.out.println(lastCheckRecord.substring(0, 10));
             if (nowDate.substring(0, 10).equals(lastCheckRecord.substring(0, 10))) {
-                System.out.println("yi");
+                //System.out.println("yi");
                 tv_check_state.setText("已");
             }
         }
     }
 
-    public void getLearningBook() {
+    public void getLearningBook() throws JSONException {
+        ArrayList<String> user = new ArrayList<>();
+        user.add(username);
+        JSONObject jsonObject = null;
+        try {
+            jsonObject = (JSONObject) HttpUtil.httpGet(Ports.learningBookUrl, user, false);
+            System.out.println(jsonObject);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        assert jsonObject != null;
+        if (jsonObject.has("error")) {
+            book_name = "去添加记忆本吧~";
+            book_tag = "未开始学习";
+            process = 0;
+            book_id = -1;
+        } else {
+            book_name = jsonObject.getString("bookname");
+            book_tag = jsonObject.getString("tag");
+            process = Integer.parseInt(jsonObject.getString("process"));
+            book_id = Integer.parseInt(jsonObject.getString("id"));
+        }
+    }
 
+    private void getAllQues() throws JSONException, IOException {
+        ArrayList<String> id = new ArrayList<>();
+        id.add(String.valueOf(book_id));
+        JSONArray jsonArray = null;
+        try {
+            jsonArray = (JSONArray) HttpUtil.httpGet(Ports.getQuestionUrl, id, true);
+            System.out.println(jsonArray);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        assert jsonArray != null;
+        int l = jsonArray.length();
+        for (int i = 0; i < l; ++i) {
+            JSONObject jsonObject = (JSONObject) jsonArray.get(i);
+            if (!jsonObject.has("error")) {
+                allQues.add(jsonObject);
+            }
+        }
+        quesNum = allQues.size();
+        rest = quesNum - process;
     }
 
     private void toast(String str) {

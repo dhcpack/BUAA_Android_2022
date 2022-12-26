@@ -181,13 +181,13 @@ public class Ports {
      * 上传图片：POST
      * */
     public static String postPicUrl = api + "postimage/";
-    
+
     // 见接口文档
     // 设置为首页记忆本
     public static String setBookUrl = api + "setbook/";
 
     // 得到首页记忆本
-    public static String learningBookUrl = api + "learningbook";
+    public static String learningBookUrl = api + "learningbook/";
 
     // 设置学习进度
     public static String setProcessUrl = api + "setprocess/";
