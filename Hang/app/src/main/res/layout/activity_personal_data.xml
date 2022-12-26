@@ -31,7 +31,7 @@
             android:layout_gravity="end|center_vertical"
             android:layout_margin="@dimen/dp_20"
             android:scaleType="centerCrop"
-            tools:src="@drawable/ic_default_photo" />
+            android:src="@drawable/ic_default_photo" />
     </com.example.hang.ui.mine.utils.layout.SettingBar>
 
     <com.example.hang.ui.mine.utils.layout.SettingBar
@@ -40,29 +40,25 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/dp_10"
         android:background="@color/white"
-        app:bar_leftText="@string/personal_data_id"
-        tools:bar_rightText="20373300" />
+        app:bar_leftText="@string/personal_data_id" />
 
     <com.example.hang.ui.mine.utils.layout.SettingBar
         android:id="@+id/personal_data_institution"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:bar_leftText="@string/personal_data_institution"
-        tools:bar_rightText="计算机学院" />
+        app:bar_leftText="@string/personal_data_institution" />
 
     <com.example.hang.ui.mine.utils.layout.SettingBar
         android:id="@+id/personal_data_major"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:bar_leftText="@string/personal_data_major"
-        tools:bar_rightText="计算机科学与技术" />
+        app:bar_leftText="@string/personal_data_major" />
 
     <com.example.hang.ui.mine.utils.layout.SettingBar
         android:id="@+id/personal_data_grade"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:bar_leftText="@string/personal_data_grade"
-        tools:bar_rightText="大三" />
+        app:bar_leftText="@string/personal_data_grade" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/personal_data_back"

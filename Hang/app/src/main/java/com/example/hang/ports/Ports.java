@@ -187,7 +187,7 @@ public class Ports {
     public static String setBookUrl = api + "setbook/";
 
     // 得到首页记忆本
-    public static String learningBookUrl = api + "learningbook";
+    public static String learningBookUrl = api + "learningbook/";
 
     // 设置学习进度
     public static String setProcessUrl = api + "setprocess/";
