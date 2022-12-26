@@ -40,6 +40,8 @@ class Ques(models.Model):
     ans2 = models.CharField(max_length=1024, null=True)
     ans3 = models.CharField(max_length=1024, null=True)
     ans4 = models.CharField(max_length=1024, null=True)
+    review = models.IntegerField(default=0)
+    next_time = models.DateTimeField(default=None)
 
 
 class LearnRecord(models.Model):

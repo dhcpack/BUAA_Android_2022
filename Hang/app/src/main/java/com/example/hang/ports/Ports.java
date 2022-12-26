@@ -191,4 +191,28 @@ public class Ports {
 
     // 设置学习进度
     public static String setProcessUrl = api + "setprocess/";
+
+    // 得到首页记忆本各种题目数量
+    /*
+     * GET
+     * url + nickname
+     * isArray: false
+     * */
+    public static String getReviewCount = api + "getreviewcount/";
+
+    // 得到首页记忆本中各种题目的数量
+    /*
+     * GET
+     * url + nickname + 0 or 1 or 2
+     * （0待复习，1未学习，2已学习）
+     * isArray: true
+     * */
+    public static String getReviewQues = api + "getreviewques/";
+
+    // 题目设置为已学习
+    /*
+     * PUT
+     * url + quesId
+     * */
+    public static String reviewQues = api + "review/";
 }

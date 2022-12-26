@@ -185,6 +185,48 @@ class QuesView(View):
         return JsonResponse({'msg': '成功删除'}, status=HTTP_201_CREATED)
 
 
+class ReviewCountView(View):
+    def get(self, request, nickname):
+        book = Book.objects.filter(nickname=nickname).filter(isLearning=True)
+        if not book.exists():
+            return JsonResponse({'error': '没有正在学习的记忆本'}, status=HTTP_404_NOT_FOUND)
+        book = book.first()
+        dt = datetime.datetime(2000, 1, 1, 0, 0)
+        ques_to_review = Ques.objects.filter(book=book).filter(next_time__lte=datetime.datetime.now()).filter(next_time__gte=dt)
+        ques_not_learn = Ques.objects.filter(book=book).filter(next_time__lte=dt)
+        ques_learned = Ques.objects.filter(book=book).filter(next_time__gt=datetime.datetime.now())
+        return JsonResponse({'待复习': ques_to_review.count(), "未学习": ques_not_learn.count(), "已学习": ques_learned.count()}, safe=True,
+                            status=HTTP_200_OK)
+
+
+class ReviewView(View):
+    def get(self, request, nickname, type):
+        type = int(type)
+        book = Book.objects.filter(nickname=nickname).filter(isLearning=True)
+        if not book.exists():
+            return JsonResponse({'error': '没有正在学习的记忆本'}, status=HTTP_404_NOT_FOUND)
+        book = book.first()
+        dt = datetime.datetime(2000, 1, 1, 0, 0)
+        if type == 0:
+            ques_to_review = Ques.objects.filter(book=book).filter(next_time__lte=datetime.datetime.now()).filter(next_time__gte=dt)
+            return JsonResponse(QuesModelSerializer(instance=ques_to_review, many=True).data, safe=False, status=HTTP_200_OK)
+        elif type == 1:
+            ques_not_learn = Ques.objects.filter(book=book).filter(next_time__lte=dt)
+            return JsonResponse(QuesModelSerializer(instance=ques_not_learn, many=True).data, safe=False, status=HTTP_200_OK)
+        else:
+            ques_learned = Ques.objects.filter(book=book).filter(next_time__gt=datetime.datetime.now())
+            return JsonResponse(QuesModelSerializer(instance=ques_learned, many=True).data, safe=False, status=HTTP_200_OK)
+
+    def put(self, request, quesId):
+        try:
+            ques = Ques.objects.get(id=quesId)
+        except Ques.DoesNotExist:
+            return JsonResponse({'error': '题目不存在'}, status=HTTP_404_NOT_FOUND)
+        ques.next_time = datetime.datetime.now()
+        ques.save()
+        return JsonResponse({'msg': '设置成功'}, status=HTTP_201_CREATED)
+
+
 class RequestView(View):
     def get(self, request, nickname):
         try:
