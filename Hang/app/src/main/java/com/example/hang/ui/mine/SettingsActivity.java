@@ -23,10 +23,10 @@ public class SettingsActivity extends AppCompatActivity {
         setTitleBar("设置");
         SwitchButton btn_turn_on_night_mode = findViewById(R.id.btn_turn_on_night_mode);
         btn_turn_on_night_mode.setOnCheckedChangeListener((button, checked) -> {
-            if (btn_turn_on_night_mode.isChecked()) {
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-            } else {
+            if (!btn_turn_on_night_mode.isChecked()) {
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+            } else {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
             }
         });
     }
