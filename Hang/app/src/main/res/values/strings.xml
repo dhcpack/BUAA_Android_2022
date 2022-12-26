@@ -225,22 +225,6 @@
 
     <string name="phone_reset_commit_succeed">绑定成功</string>
 
-    <!-- 个人资料 -->
-    <string name="personal_data_title">个人资料</string>
-    <string name="personal_data_head">头像</string>
-
-    <string name="personal_data_id">学号</string>
-    <string name="personal_data_institution">学院</string>
-    <string name="personal_data_major">专业</string>
-    <string name="personal_data_grade">年级</string>
-    <string name="personal_data_name_hint">设置昵称</string>
-
-    <string name="personal_data_address">地区</string>
-    <string name="personal_data_address_hint">请选择</string>
-
-    <string name="personal_data_phone">手机号码</string>
-    <string name="personal_data_phone_hint">立即绑定</string>
-
     <!-- 浏览器 -->
     <string name="web_title">网页加载中&#8230;</string>
 
@@ -271,9 +255,29 @@
     <string name="camera_launch_fail">无法启动相机</string>
     <string name="camera_image_error">目标地址错误</string>
 
+    <!-- 个人资料 -->
+    <string name="personal_data_title">个人资料</string>
+    <string name="personal_data_head">头像</string>
+
+    <string name="personal_data_id">学号</string>
+    <string name="personal_data_institution">学院</string>
+    <string name="personal_data_major">专业</string>
+    <string name="personal_data_grade">年级</string>
+    <string name="personal_data_name_hint">设置昵称</string>
+
+    <string name="personal_data_address">地区</string>
+    <string name="personal_data_address_hint">请选择</string>
+
+    <string name="personal_data_phone">手机号码</string>
+    <string name="personal_data_phone_hint">立即绑定</string>
+
     <!-- 我的 -->
     <string name="mine_fragment_enter_personal_data">个人信息</string>
     <string name="mine_fragment_enter_settings">设置</string>
     <string name="mine_fragment_enter_remember_book">记忆本</string>
     <string name="mine_fragment_enter_gen_report">学习报告</string>
+
+    <!-- 记忆本 -->
+    <string name="book_add_content">添加</string>
+    <string name="book_view_content">查看</string>
 </resources>
