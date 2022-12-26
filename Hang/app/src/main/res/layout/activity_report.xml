@@ -127,6 +127,7 @@
                 android:id="@+id/tv_learning_percent"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="end"
                 android:gravity="end"
                 android:text="@string/report_learning_process"
                 android:textSize="@dimen/sp_25">
