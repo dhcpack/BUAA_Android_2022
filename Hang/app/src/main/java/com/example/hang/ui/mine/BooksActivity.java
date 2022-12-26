@@ -17,6 +17,8 @@ import com.example.hang.R;
 import com.example.hang.ports.HttpUtil;
 import com.example.hang.ports.Ports;
 
+import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
@@ -26,7 +28,6 @@ import java.util.List;
 import java.util.Map;
 
 public class BooksActivity extends AppCompatActivity {
-    private ListView lv_books;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,27 +38,36 @@ public class BooksActivity extends AppCompatActivity {
         //适配器，刚刚重写的！
         MyAdapter myAdapter = new MyAdapter(this, list);
         //设置适配器
+        ListView lv_books = findViewById(R.id.lv_books);
         lv_books.setAdapter(myAdapter);
+        lv_books.smoothScrollBy(30, 200);
     }
 
     //填充数据
     public List<Map<String, Object>> getData() {
-        JSONObject jsonObject;
+        JSONArray jsonArray = null;
         try {
-            jsonObject = (JSONObject) HttpUtil.httpGet(Ports.getBooksUrl, new ArrayList<>(),false);
+            jsonArray = (JSONArray) HttpUtil.httpGet(Ports.getBooksUrl, new ArrayList<>(),true);
         } catch (IOException e) {
             e.printStackTrace();
         }
         List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
-        for (int i = 0; i < 10; i++) {
-            Map<String, Object> map = new HashMap<>();
-            map.put("iv_icon_book_1", R.drawable.ic_book);
-            map.put("iv_icon_book_2", R.drawable.ic_book);
-            map.put("iv_icon_book_3", R.drawable.ic_book);
-            map.put("tv_book_title_1", "book_title_1");
-            map.put("tv_book_title_2", "book_title_2");
-            map.put("tv_book_title_3", "book_title_3");
-            list.add(map);
+        if (jsonArray != null) {
+            for (int i = 0; i < jsonArray.length(); i+=3) {
+                for (int j = 1; j <= 3; j++) {
+                    Map<String, Object> map = new HashMap<>();
+                    try {
+                        JSONObject jsonObject = (JSONObject) jsonArray.get(i + j - 1);
+                        String key = "iv_icon_book_" + j;
+                        map.put(key, R.drawable.ic_book);
+                        key = "tv_book_title_" + j;
+                        map.put(key, jsonObject.getString("bookname"));
+                        list.add(map);
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
         }
         return list;
     }
