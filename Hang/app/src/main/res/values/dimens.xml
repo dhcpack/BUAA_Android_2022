@@ -9,5 +9,6 @@
 
     <!-- 通用对话框圆角大小 -->
     <dimen name="dialog_ui_round_size">15dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
 
 </resources>

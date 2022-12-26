@@ -6,18 +6,267 @@
     android:layout_height="match_parent"
     tools:context=".ui.learn.Learn">
 
-    <TextView
-        android:id="@+id/text_learn"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:orientation="vertical"
+        android:paddingTop="1dp"
+        tools:ignore="UselessParent">
+
+        <ImageButton
+            android:id="@+id/ib_search"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="#FEFDFD"
+            android:paddingTop="0dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/iv_search"></ImageButton>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="186dp"
+            android:layout_marginLeft="@dimen/dp_12"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="@dimen/dp_12">
+
+            <ImageView
+                android:layout_width="@dimen/dp_500"
+                android:layout_height="600dp"
+                android:layout_alignParentEnd="true"
+                android:layout_gravity="center"
+                android:layout_marginEnd="0dp"
+                android:adjustViewBounds="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/color2">
+
+            </ImageView>
+
+            <TextView
+                android:id="@+id/tv_book_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:fontFamily="@font/open_sans_bold_italic"
+                android:paddingLeft="@dimen/dp_15"
+                android:paddingTop="@dimen/dp_16"
+                android:text="记忆本的名字"
+                android:textColor="#3F51B5"
+                android:textSize="@dimen/dp_25">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/tv_book_tag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:layout_marginTop="@dimen/dp_55"
+                android:text="记忆本的标签"
+                android:textColor="#673AB7"
+                android:textSize="@dimen/dp_18">
+
+            </TextView>
+
+            <Button
+                android:id="@+id/btn_show_items"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="@dimen/dp_12"
+                android:layout_marginEnd="14dp"
+                android:backgroundTint="#3F51B5"
+                android:text="@string/show_items">
+
+            </Button>
+
+            <TextView
+                android:id="@+id/tv_percent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="@dimen/dp_82"
+                android:layout_marginRight="@dimen/dp_20"
+                android:text="学习进度百分比%"
+                android:textSize="@dimen/dp_12">
+
+            </TextView>
+
+            <ProgressBar
+                android:id="@+id/progressbar_learn"
+                style="@android:style/Widget.ProgressBar.Horizontal"
+                android:layout_width="350dp"
+                android:layout_height="8dp"
+                android:layout_marginLeft="18dp"
+                android:layout_marginTop="100dp"
+                android:background="@drawable/bg_progressbar"
+                android:max="100"
+                android:progressDrawable="@drawable/bg_progressbar" />
+
+
+            <!--已掌握数量-->
+            <TextView
+                android:id="@+id/tv_okNum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:singleLine="false"
+                android:text="已掌握"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="@dimen/dp_40"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="@dimen/dp_70"
+                android:textSize="@dimen/dp_20"
+                android:textColor="#000000">
+
+            </TextView>
+
+            <!--未掌握数量-->
+            <TextView
+                android:id="@+id/tv_noNum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:singleLine="false"
+                android:text="未掌握"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="@dimen/dp_40"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/dp_70"
+                android:textSize="@dimen/dp_20"
+                android:textColor="#000000">
+
+            </TextView>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/btn_start_study"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/learn_study"
+                android:fontFamily="@font/open_sans_bold"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#C264E8"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/dp_15"
+                android:textSize="@dimen/dp_25"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="@dimen/dp_40">
+            </Button>
+
+            <Button
+                android:id="@+id/btn_learn_settings"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/learn_settings"
+                android:fontFamily="@font/open_sans_bold"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#C264E8"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/dp_15"
+                android:textSize="@dimen/dp_25"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/dp_40">
+            </Button>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/dp_10">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="已打卡 "
+                android:layout_gravity="bottom"
+                android:textSize="@dimen/dp_15"
+                android:textColor="#000000"
+                android:layout_marginLeft="@dimen/dp_150"
+                android:layout_marginBottom="0dp">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/tv_daka_days"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="361"
+                android:layout_gravity="bottom"
+
+                android:textSize="@dimen/dp_30"
+                android:textColor="#000000">
+
+            </TextView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" 天"
+                android:layout_gravity="bottom"
+
+                android:textSize="@dimen/dp_15"
+                android:textColor="#000000"
+                android:paddingBottom="0dp">
+
+            </TextView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="@dimen/dp_20">
+
+            <ImageButton
+                android:id="@+id/ib_daka"
+                android:layout_width="@dimen/dp_180"
+                android:layout_height="@dimen/dp_180"
+                android:layout_marginTop="@dimen/dp_5"
+                android:src="@drawable/daka"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                android:background="#FEFBFB"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:layout_marginRight="@dimen/dp_20">
+
+            </ImageButton>
+
+            <ImageButton
+                android:id="@+id/ib_look_books"
+                android:layout_width="@dimen/dp_170"
+                android:layout_height="@dimen/dp_150"
+                android:layout_marginTop="@dimen/dp_20"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:layout_marginRight="@dimen/dp_20"
+                android:layout_weight="1"
+                android:background="#FEFBFB"
+                android:scaleType="fitCenter"
+                android:src="@drawable/look_book">
+
+            </ImageButton>
+
+            <ImageButton
+                android:id="@+id/ib_create_book"
+                android:layout_width="@dimen/dp_200"
+                android:layout_height="@dimen/dp_200"
+                android:src="@drawable/create_book"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                android:background="#FEFBFB"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:layout_marginRight="@dimen/dp_20">
+
+            </ImageButton>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
 
 </FrameLayout>

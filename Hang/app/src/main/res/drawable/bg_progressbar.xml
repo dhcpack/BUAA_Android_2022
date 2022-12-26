@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--<item-->
+    <!--android:id="@android:id/background"-->
+    <!--android:drawable="@drawable/bg_stroke_blue_coners_30"></item>-->
+    <!--<item-->
+    <!--android:id="@android:id/progress">-->
+    <!--<scale-->
+    <!--android:drawable="@drawable/bg_solid_blue_coners_30"-->
+    <!--android:scaleWidth="100%">-->
+    <!--</scale>-->
+    <!--</item>-->
+
+
+    <!-- 这个是背景颜色 -->
+    <item android:id="@android:id/background">
+        <shape>
+
+            <!-- 这个是设置圆角还会直角，如果设置成0dip就是直角 -->
+            <corners android:radius="10dip" />
+            <!-- 设置背景的颜色，将startColor、centerColor、endColor都设置成同一个颜色值 -->
+            <!--
+            #878584
+                 如果你不用颜色值也可以，可以直接用图片来代替，在item中添加这个属性就可以了，其他的不需要
+                 android:drawable="@drawable/progressbar_bg"
+            -->
+            <gradient
+                android:angle="270"
+                android:centerColor="#B5B3B2"
+                android:centerY="0.75"
+                android:endColor="#B5B3B2"
+                android:startColor="#B5B3B2" />
+        </shape>
+    </item>
+    <item android:id="@android:id/progress">
+        <clip>
+            <shape>
+
+                <!-- 这个也是设置时圆角还是直角，左边的 -->
+                <corners android:radius="10dip" />
+                <!-- 设置进度的颜色，将startColor、centerColor、endColor都设置成同一个颜色值 -->
+                <gradient
+                    android:angle="270"
+                    android:centerColor="#AFEDFD"
+                    android:centerY="0.75"
+                    android:endColor="#AFEDFD"
+                    android:startColor="#AFEDFD" />
+            </shape>
+        </clip>
+    </item>
+</layer-list>
