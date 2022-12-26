@@ -44,6 +44,15 @@ class UserView(View):
         return JsonResponse(serializer.data, status=HTTP_201_CREATED)
 
 
+class UserDetailView(View):
+    def get(self, request, nickname):
+        try:
+            user = User.objects.get(nickname=nickname)
+        except User.DoesNotExist:
+            return JsonResponse({'error': '用户不存在'}, status=HTTP_404_NOT_FOUND)
+        return JsonResponse(data=UserModelSerializer(instance=user, many=False).data, status=HTTP_200_OK)
+
+
 class CheckView(View):
     def get(self, request, nickname):
         try:
@@ -119,6 +128,13 @@ class BookView(View):
             return JsonResponse({'msg': '成功删除'}, status=HTTP_201_CREATED)
         book.delete()
         return JsonResponse({'msg': '成功删除'}, status=HTTP_201_CREATED)
+
+
+class PublicBookView(View):
+    def get(self, request):
+        public_book = Book.objects.filter(public=True)
+        serializer = BookModelSerializer(instance=public_book, many=True)
+        return JsonResponse(serializer.data, safe=False, status=HTTP_200_OK)
 
 
 class QuesView(View):
@@ -371,3 +387,37 @@ class FileView(View):
             for content in file.chunks():
                 f.write(content)
         return JsonResponse({"path": backEndName}, status=HTTP_201_CREATED)
+
+
+class LearningBookView(View):
+    def get(self, request, nickname):
+        books = Book.objects.filter(nickname=nickname).filter(isLearning=True)
+        if books.exists():
+            serializer = BookModelSerializer(instance=books.first())
+            return JsonResponse(serializer.data, safe=True, status=HTTP_200_OK)
+        else:
+            return JsonResponse({"error": "未设置主页记忆本"}, status=HTTP_404_NOT_FOUND)
+
+    def put(self, request, nickname, bookId):
+        try:
+            book = Book.objects.filter(nickname=nickname).get(id=bookId)
+        except Book.DoesNotExist:
+            return JsonResponse({"error": "记忆本不存在"}, status=HTTP_404_NOT_FOUND)
+        former = Book.objects.filter(nickname=nickname).filter(isLearning=True)
+        for fb in former:
+            fb.isLearning = False
+            fb.save()
+        book.isLearning = True
+        book.save()
+        return JsonResponse({"msg": "设置成功"}, status=HTTP_201_CREATED)
+
+
+class ProcessView(View):
+    def put(self, request, nickname, bookId, process):
+        try:
+            book = Book.objects.filter(nickname=nickname).get(id=bookId)
+        except Book.DoesNotExist:
+            return JsonResponse({"error": "记忆本不存在"}, status=HTTP_404_NOT_FOUND)
+        book.process = process
+        book.save()
+        return JsonResponse({"msg": "设置成功"}, status=HTTP_201_CREATED)

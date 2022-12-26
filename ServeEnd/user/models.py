@@ -27,6 +27,8 @@ class Book(models.Model):
     pic = models.CharField(max_length=64, default="bookPic.png")
     tag = models.CharField(max_length=64, default="未分类")
     public = models.BooleanField(default=False)
+    process = models.IntegerField(default=0)
+    isLearning = models.BooleanField(default=False)
 
 
 class Ques(models.Model):
