@@ -27,14 +27,14 @@ public class PersonalDataActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_personal_data);
 
-        username = String.valueOf(getIntent().getBundleExtra("username"));
+        username = getIntent().getStringExtra("username");
         AppCompatButton btn_personal_data_back = findViewById(R.id.personal_data_back);
         btn_personal_data_back.setOnClickListener(view -> {
             JSONObject jsonObject;
             HashMap<String, String> params = new HashMap<>();
             params.put("nickname", username);
             try {
-                jsonObject = HttpUtil.httpPost(Ports.userDetailUrl, params);
+                jsonObject = HttpUtil.httpPost(Ports.userDetailUrl + username, params);
                 System.out.println(jsonObject);
                 if (jsonObject.has("error")) {
                     try {

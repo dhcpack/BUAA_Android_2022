@@ -11,6 +11,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
 import androidx.appcompat.widget.AppCompatImageView;
 
 import com.example.hang.R;
@@ -47,25 +48,23 @@ public class BooksActivity extends AppCompatActivity {
     public List<Map<String, Object>> getData() {
         JSONArray jsonArray = null;
         try {
-            jsonArray = (JSONArray) HttpUtil.httpGet(Ports.getBooksUrl, new ArrayList<>(),true);
+            String username = getIntent().getStringExtra("username");
+            jsonArray = (JSONArray) HttpUtil.httpGet(Ports.getBooksUrl + username, new ArrayList<>(),true);
         } catch (IOException e) {
             e.printStackTrace();
         }
         List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
         if (jsonArray != null) {
-            for (int i = 0; i < jsonArray.length(); i+=3) {
-                for (int j = 1; j <= 3; j++) {
-                    Map<String, Object> map = new HashMap<>();
-                    try {
-                        JSONObject jsonObject = (JSONObject) jsonArray.get(i + j - 1);
-                        String key = "iv_icon_book_" + j;
-                        map.put(key, R.drawable.ic_book);
-                        key = "tv_book_title_" + j;
-                        map.put(key, jsonObject.getString("bookname"));
-                        list.add(map);
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
+            for (int i = 0; i < jsonArray.length(); i++) {
+                Map<String, Object> map = new HashMap<>();
+                try {
+                    JSONObject jsonObject = (JSONObject) jsonArray.get(i);
+                    //map.put("iv_icon_book", jsonObject.getString("pic"));
+                    map.put("iv_icon_book", R.drawable.ic_book);
+                    map.put("tv_book_title", jsonObject.getString("bookname"));
+                    list.add(map);
+                } catch (JSONException e) {
+                    e.printStackTrace();
                 }
             }
         }
@@ -86,12 +85,10 @@ public class BooksActivity extends AppCompatActivity {
         }
         //这里定义了一个类，用来表示一个item里面包含的东西
         public static class Info {
-            private AppCompatImageView iv_icon_book_1;
-            private AppCompatImageView iv_icon_book_2;
-            private AppCompatImageView iv_icon_book_3;
-            private TextView tv_title_book_1;
-            private TextView tv_title_book_2;
-            private TextView tv_title_book_3;
+            private AppCompatImageView iv_icon_book;
+            private TextView tv_title_book;
+            private AppCompatButton btn_book_add_content;
+            private AppCompatButton btn_book_view_content;
         }
         //所有要返回的东西的数量（Id、信息等），都在data里面，从data里面取就好
         @Override
@@ -119,20 +116,14 @@ public class BooksActivity extends AppCompatActivity {
             // TODO Auto-generated method stub
             Info info = new Info();
             convertView = layoutInflater.inflate(R.layout.activity_books_item, null);
-            info.iv_icon_book_1 = convertView.findViewById(R.id.iv_icon_book_1);
-            info.iv_icon_book_2 = convertView.findViewById(R.id.iv_icon_book_2);
-            info.iv_icon_book_3 = convertView.findViewById(R.id.iv_icon_book_3);
-            info.tv_title_book_1 = convertView.findViewById(R.id.tv_title_book_1);
-            info.tv_title_book_2 = convertView.findViewById(R.id.tv_title_book_2);
-            info.tv_title_book_3 = convertView.findViewById(R.id.tv_title_book_3);
+            info.iv_icon_book = convertView.findViewById(R.id.iv_icon_book);
+            info.tv_title_book = convertView.findViewById(R.id.tv_title_book);
+            info.btn_book_add_content = convertView.findViewById(R.id.btn_book_add_content);
+            info.btn_book_view_content = convertView.findViewById(R.id.btn_book_view_content);
 
             //设置数据
-            info.iv_icon_book_1.setImageResource((Integer) data.get(position).get("iv_icon_book_1"));
-            info.iv_icon_book_2.setImageResource((Integer) data.get(position).get("iv_icon_book_1"));
-            info.iv_icon_book_3.setImageResource((Integer) data.get(position).get("iv_icon_book_1"));
-            info.tv_title_book_1.setText((String) data.get(position).get("tv_book_title_1"));
-            info.tv_title_book_2.setText((String) data.get(position).get("tv_book_title_2"));
-            info.tv_title_book_3.setText((String) data.get(position).get("tv_book_title_3"));
+            info.iv_icon_book.setImageResource((Integer) data.get(position).get("iv_icon_book"));
+            info.tv_title_book.setText((String) data.get(position).get("tv_book_title"));
             return convertView;
         }
 

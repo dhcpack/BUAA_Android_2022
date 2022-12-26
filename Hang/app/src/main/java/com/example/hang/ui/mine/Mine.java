@@ -16,6 +16,8 @@ import android.view.ViewGroup;
 
 import com.example.hang.R;
 
+import java.util.Objects;
+
 public class Mine extends Fragment {
 
     private MineViewModel mViewModel;
@@ -28,15 +30,23 @@ public class Mine extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_mine, container, false);
+
+        Bundle bundle = getActivity().getIntent().getExtras();
+        //System.out.println(bundle.getString("username"));
+        String username = bundle.getString("username");
         AppCompatButton btn_enter_personal_data = view.findViewById(R.id.btn_mine_personal_info);
         btn_enter_personal_data.setOnClickListener(view1 -> {
+            Intent intent = new Intent(getActivity(), PersonalDataActivity.class);
+            intent.putExtra("username", username);
             //跳转到个人资料
-            startActivity(new Intent(getActivity(), PersonalDataActivity.class));
+            startActivity(intent);
         });
         AppCompatButton btn_enter_books = view.findViewById(R.id.btn_mine_books);
         btn_enter_books.setOnClickListener(view2 -> {
+            Intent intent = new Intent(getActivity(), BooksActivity.class);
+            intent.putExtra("username", username);
             //跳转到展示所有记忆本
-            startActivity(new Intent(getActivity(), BooksActivity.class));
+            startActivity(intent);
         });
         return view;
     }
