@@ -15,7 +15,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_10"
             android:gravity="center_horizontal"
             android:orientation="vertical">
 
@@ -23,7 +23,7 @@
                 android:id="@+id/iv_person_data_avatar"
                 android:layout_width="@dimen/dp_100"
                 android:layout_height="@dimen/dp_100"
-                android:layout_gravity="center_horizontal"
+                android:gravity="center_horizontal"
                 android:scaleType="centerCrop"
                 android:src="@drawable/ic_default_photo" />
 
@@ -32,7 +32,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="@dimen/dp_5"
-                android:layout_gravity="center_horizontal"
+                android:gravity="center_horizontal"
                 android:scaleType="centerCrop">
             </TextView>
 
@@ -41,7 +41,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="@dimen/dp_5"
-                android:layout_gravity="center_horizontal"
+                android:gravity="center_horizontal"
                 android:scaleType="centerCrop">
             </TextView>
         </LinearLayout>
@@ -50,7 +50,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_10"
             android:gravity="center_horizontal"
             android:orientation="vertical">
 
@@ -59,7 +59,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="@dimen/dp_5"
-                android:layout_gravity="center_horizontal"
+                android:gravity="center_horizontal"
                 android:scaleType="centerCrop"
                 android:text="@string/report_check_title"
                 android:textSize="@dimen/sp_30">
@@ -70,7 +70,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="@dimen/dp_5"
-                android:layout_gravity="center_horizontal"
+                android:gravity="center_horizontal"
                 android:scaleType="centerCrop"
                 android:text="@string/report_check_days"
                 android:textSize="@dimen/sp_20">
@@ -81,7 +81,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="@dimen/dp_5"
-                android:layout_gravity="center_horizontal"
+                android:gravity="center_horizontal"
                 android:scaleType="centerCrop"
                 android:text="@string/report_check_last_record"
                 android:textSize="@dimen/sp_20">
@@ -92,7 +92,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_10"
             android:gravity="center_horizontal"
             android:orientation="vertical">
 
@@ -101,7 +101,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="@dimen/dp_5"
-                android:layout_gravity="center_horizontal"
+                android:gravity="center_horizontal"
                 android:scaleType="centerCrop"
                 android:text="@string/report_learning_title"
                 android:textSize="@dimen/sp_30">
@@ -111,7 +111,7 @@
                 android:id="@+id/iv_icon_book"
                 android:layout_width="@dimen/dp_100"
                 android:layout_height="@dimen/dp_120"
-                android:layout_gravity="center_horizontal"
+                android:gravity="center_horizontal"
                 android:scaleType="centerCrop"
                 android:src="@drawable/ic_book" />
 
@@ -119,7 +119,7 @@
                 android:id="@+id/tv_title_book"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
+                android:gravity="center_horizontal"
                 android:scaleType="centerCrop">
             </TextView>
 
@@ -127,7 +127,7 @@
                 android:id="@+id/tv_learning_percent"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="end"
+                android:gravity="end"
                 android:text="@string/report_learning_process"
                 android:textSize="@dimen/sp_25">
 

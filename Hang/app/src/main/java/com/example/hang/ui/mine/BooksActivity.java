@@ -144,7 +144,7 @@ public class BooksActivity extends AppCompatActivity {
             textView.setText(title);//设置标题名称，menuTitle为String字符串
             actionBar.setHomeButtonEnabled(true);//设置左上角的图标是否可以点击
             actionBar.setDisplayHomeAsUpEnabled(true);//给左上角图标的左边加上一个返回的图标
-            actionBar.setDisplayShowCustomEnabled(true);// 使自定义的普通View能在title栏显示，即actionBar.setCustomView能起作用
+            actionBar.setDisplayShowCustomEnabled(true);//使自定义的普通View能在title栏显示，即actionBar.setCustomView能起作用
         }
     }
 
