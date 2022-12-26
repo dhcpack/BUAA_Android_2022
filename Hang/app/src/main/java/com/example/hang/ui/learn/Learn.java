@@ -16,11 +16,20 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.hang.MainActivity;
 import com.example.hang.R;
+import com.example.hang.ports.HttpUtil;
+import com.example.hang.ports.Ports;
+import com.example.hang.ui.learn.util.DateUtil;
 
-import java.util.Objects;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Learn extends Fragment {
 
@@ -34,7 +43,10 @@ public class Learn extends Fragment {
     private ImageButton ib_look_books;
     private ImageButton ib_create_book;
     private TextView tv_daka_days;
+    private TextView tv_check_state;
     private String username;
+    private int dakaDays;
+    private String lastCheckRecord;
 
     public static Learn newInstance() {
         return new Learn();
@@ -47,6 +59,16 @@ public class Learn extends Fragment {
         View v = inflater.inflate(R.layout.fragment_learn, container, false);
 
         username = ((MainActivity) requireActivity()).getIntent().getExtras().getString("username");
+
+        tv_daka_days = v.findViewById(R.id.tv_daka_days);
+        tv_check_state = v.findViewById(R.id.tv_check_state);
+        tv_check_state.setText("未");
+        try {
+            getInitDakaDays();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        tv_daka_days.setText(String.valueOf(dakaDays));
 
         ib_search = v.findViewById(R.id.ib_search);
         ib_search.setOnClickListener(view -> {
@@ -68,12 +90,9 @@ public class Learn extends Fragment {
             Intent intent = new Intent(getActivity(), LearnSettingsActivity.class);
             startActivity(intent);
         });
-        tv_daka_days = v.findViewById(R.id.tv_daka_days);
-        tv_daka_days.setText("70");
+
         ib_daka = v.findViewById(R.id.ib_daka);
-        ib_daka.setOnClickListener(view -> {
-            //TODO
-        });
+        ib_daka.setOnClickListener(view -> daka());
         ib_look_books = v.findViewById(R.id.ib_look_books);
         ib_look_books.setOnClickListener(view -> {
             Intent intent = new Intent(getActivity(), SystemAllBooksActivity.class);
@@ -88,6 +107,75 @@ public class Learn extends Fragment {
             startActivity(intent);
         });
         return v;
+    }
+
+
+    public void daka() {
+        String nowDate = DateUtil.getNowTime();
+        if (nowDate.substring(0, 10).equals(lastCheckRecord.substring(0, 10))) {
+            toast("今日已打卡, 明天再来吧!");
+        } else {
+            dakaDays++;
+            tv_daka_days.setText(String.valueOf(dakaDays));
+            tv_check_state.setText("已");
+            HashMap<String, String> check = new HashMap<>();
+            check.put("nickname", username);
+            JSONObject jsonObject = null;
+            try {
+                jsonObject = (JSONObject) HttpUtil.httpPost(Ports.checkUrl, check);
+                System.out.println(jsonObject);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            assert jsonObject != null;
+            if (jsonObject.has("error")) {
+                try {
+                    toast(jsonObject.getString("error"));
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            } else {
+                toast("打卡成功, 再接再厉!");
+            }
+        }
+    }
+
+    public void getInitDakaDays() throws JSONException {
+        ArrayList<String> user = new ArrayList<>();
+        user.add(username);
+        JSONObject jsonObject = null;
+        try {
+            jsonObject = (JSONObject) HttpUtil.httpGet(Ports.checkDetail, user, false);
+            System.out.println(jsonObject);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        assert jsonObject != null;
+        if (jsonObject.has("error")) {
+            try {
+                toast(jsonObject.getString("error"));
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        } else {
+            dakaDays = Integer.parseInt(jsonObject.getString("totalDays"));
+            lastCheckRecord = jsonObject.getString("lastCheckRecord");
+            String nowDate = DateUtil.getNowTime();
+            System.out.println(nowDate.substring(0, 10));
+            System.out.println(lastCheckRecord.substring(0, 10));
+            if (nowDate.substring(0, 10).equals(lastCheckRecord.substring(0, 10))) {
+                System.out.println("yi");
+                tv_check_state.setText("已");
+            }
+        }
+    }
+
+    public void getLearningBook() {
+
+    }
+
+    private void toast(String str) {
+        Toast.makeText(getActivity(), str, Toast.LENGTH_SHORT).show();
     }
 
     @Override
