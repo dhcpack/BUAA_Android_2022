@@ -25,15 +25,11 @@ public class SettingsActivity extends AppCompatActivity {
         SwitchButton btn_turn_on_night_mode = findViewById(R.id.btn_turn_on_night_mode);
         btn_turn_on_night_mode.setOnCheckedChangeListener((button, checked) -> {
             if (btn_turn_on_night_mode.isChecked()) {
-                int currentNightMode = getApplicationContext().getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
-                switch (currentNightMode) {
-                    case Configuration.UI_MODE_NIGHT_NO:
-                        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-                        break;
-                    case Configuration.UI_MODE_NIGHT_YES:
-                        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-                        break;
-                }
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                btn_turn_on_night_mode.setChecked(true);
+            } else {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+                btn_turn_on_night_mode.setChecked(false);
             }
         });
     }
