@@ -225,6 +225,22 @@
 
     <string name="phone_reset_commit_succeed">绑定成功</string>
 
+    <!-- 个人资料 -->
+    <string name="personal_data_title">个人资料</string>
+    <string name="personal_data_head">头像</string>
+
+    <string name="personal_data_id">学号</string>
+    <string name="personal_data_institution">学院</string>
+    <string name="personal_data_major">专业</string>
+    <string name="personal_data_grade">年级</string>
+    <string name="personal_data_name_hint">设置昵称</string>
+
+    <string name="personal_data_address">地区</string>
+    <string name="personal_data_address_hint">请选择</string>
+
+    <string name="personal_data_phone">手机号码</string>
+    <string name="personal_data_phone_hint">立即绑定</string>
+
     <!-- 浏览器 -->
     <string name="web_title">网页加载中&#8230;</string>
 
@@ -255,21 +271,6 @@
     <string name="camera_launch_fail">无法启动相机</string>
     <string name="camera_image_error">目标地址错误</string>
 
-    <!-- 个人资料 -->
-    <string name="personal_data_title">个人资料</string>
-    <string name="personal_data_head">头像</string>
-
-    <string name="personal_data_id">学号</string>
-    <string name="personal_data_institution">学院</string>
-    <string name="personal_data_major">专业</string>
-    <string name="personal_data_grade">年级</string>
-    <string name="personal_data_name_hint">设置昵称</string>
-
-    <string name="personal_data_address">地区</string>
-    <string name="personal_data_address_hint">请选择</string>
-
-    <string name="personal_data_phone">手机号码</string>
-    <string name="personal_data_phone_hint">立即绑定</string>
 
     <!-- 我的 -->
     <string name="mine_fragment_enter_personal_data">个人信息</string>
@@ -277,7 +278,20 @@
     <string name="mine_fragment_enter_remember_book">记忆本</string>
     <string name="mine_fragment_enter_gen_report">学习报告</string>
 
-    <!-- 记忆本 -->
-    <string name="book_add_content">添加</string>
-    <string name="book_view_content">查看</string>
+    <string name="title_activity_learn_search">LearnSearchActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="title_activity_search">SearchActivity</string>
+    <string name="learn_study">开始学习</string>
+    <string name="learn_settings">学习设置</string>
+    <string name="show_items">查看列表</string>
+    <string name="book_name_max_length">记忆本名称不多于10字</string>
+    <string name="book_tag_max_length">记忆本标签不多于8字</string>
+
 </resources>
