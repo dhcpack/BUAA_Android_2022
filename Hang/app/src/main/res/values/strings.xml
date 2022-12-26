@@ -291,5 +291,7 @@
     <string name="learn_study">开始学习</string>
     <string name="learn_settings">学习设置</string>
     <string name="show_items">查看列表</string>
+    <string name="book_name_max_length">记忆本名称不多于10字</string>
+    <string name="book_tag_max_length">记忆本标签不多于8字</string>
 
 </resources>

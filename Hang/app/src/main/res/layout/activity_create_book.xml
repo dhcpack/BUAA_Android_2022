@@ -4,14 +4,51 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.learn.CreateBookActivity">
+    tools:context=".ui.learn.CreateBookActivity"
+    android:orientation="vertical">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <EditText
+        android:id="@+id/et_create_book_name"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="新建记忆本 TODO">
-    </TextView>
+        android:layout_marginTop="@dimen/dp_25"
+        android:hint="@string/book_name_max_length"
+        android:inputType="text"
+        android:textSize="@dimen/sp_25"
+        android:maxLength="10"
+        android:layout_marginLeft="@dimen/dp_15"
+        android:layout_marginRight="@dimen/dp_15"
+        >
 
-    
+    </EditText>
+
+    <EditText
+        android:id="@+id/et_create_book_tag"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_20"
+        android:hint="@string/book_tag_max_length"
+        android:inputType="text"
+        android:textSize="@dimen/sp_25"
+        android:maxLength="8"
+        android:layout_marginLeft="@dimen/dp_15"
+        android:layout_marginRight="@dimen/dp_15"
+        >
+
+    </EditText>
+
+    <Button
+        android:id="@+id/btn_create_book"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_60"
+        android:text="@string/common_confirm"
+        android:layout_marginTop="@dimen/dp_20"
+        android:textSize="@dimen/sp_18"
+        android:layout_marginLeft="@dimen/dp_20"
+        android:layout_marginRight="@dimen/dp_20"
+        android:backgroundTint="#D26BE4"
+        >
+
+    </Button>
 
 </LinearLayout>

@@ -22,11 +22,13 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Objects;
 
 
 public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
+    private String username;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +36,11 @@ public class MainActivity extends AppCompatActivity {
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        getSupportActionBar().hide();
+        Objects.requireNonNull(getSupportActionBar()).hide();
+
+        Bundle bundle = getIntent().getExtras();
+        //System.out.println(bundle.getString("username"));
+        username = bundle.getString("username");
 
         BottomNavigationView navView = findViewById(R.id.nav_view);
         // Passing each menu ID as a set of Ids because each
@@ -45,7 +51,6 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_main);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
-
 
 
         /*
@@ -262,6 +267,4 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
-
-
 }

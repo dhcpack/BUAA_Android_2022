@@ -17,7 +17,10 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import com.example.hang.MainActivity;
 import com.example.hang.R;
+
+import java.util.Objects;
 
 public class Learn extends Fragment {
 
@@ -31,6 +34,7 @@ public class Learn extends Fragment {
     private ImageButton ib_look_books;
     private ImageButton ib_create_book;
     private TextView tv_daka_days;
+    private String username;
 
     public static Learn newInstance() {
         return new Learn();
@@ -41,6 +45,9 @@ public class Learn extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_learn, container, false);
+
+        username = ((MainActivity) requireActivity()).getIntent().getExtras().getString("username");
+
         ib_search = v.findViewById(R.id.ib_search);
         ib_search.setOnClickListener(view -> {
             Intent intent = new Intent(getActivity(), LearnSearchActivity.class);
@@ -75,6 +82,9 @@ public class Learn extends Fragment {
         ib_create_book = v.findViewById(R.id.ib_create_book);
         ib_create_book.setOnClickListener(view -> {
             Intent intent = new Intent(getActivity(), CreateBookActivity.class);
+            Bundle b = new Bundle();
+            b.putString("username", username);
+            intent.putExtras(b);
             startActivity(intent);
         });
         return v;
