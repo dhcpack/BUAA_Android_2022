@@ -3,7 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     tools:context=".ui.mine.SettingsActivity">
 
@@ -13,14 +12,16 @@
         android:layout_marginTop="@dimen/dp_20"
         android:layout_marginHorizontal="@dimen/dp_10"
         android:orientation="horizontal"
-        tools:ignore="UselessParent">
+        tools:ignore="UselessParent"
+        android:id="@+id/linearLayout">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/settings_night_mode"
-            android:layout_gravity="start"
-            android:gravity="start"
+            android:textAlignment="viewStart"
+            android:layout_gravity="start|center_vertical"
+            android:gravity="start|center_vertical"
             android:textSize="@dimen/sp_20">
         </TextView>
 
@@ -28,7 +29,6 @@
             android:id="@+id/btn_turn_on_night_mode"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="end"
             android:checked="false" />
     </LinearLayout>
 
