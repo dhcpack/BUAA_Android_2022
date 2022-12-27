@@ -135,6 +135,8 @@ public class Learn extends Fragment {
         btn_start_study.setOnClickListener(view -> {
             if (book_id == -1) {
                 toast("还没有开始学习");
+            } else if (process == quesNum) {
+                toast("已经学完了, 去复习吧");
             } else {
                 Intent intent = new Intent(getActivity(), StartStudyActivity.class);
                 Bundle bundle = new Bundle();
@@ -151,7 +153,7 @@ public class Learn extends Fragment {
             } else if (needReviewNum == 0) {
                 toast("没有需要复习的内容");
             } else {
-                Intent intent = new Intent(getActivity(), StartStudyActivity.class);
+                Intent intent = new Intent(getActivity(), StartReviewActivity.class);
                 Bundle bundle = new Bundle();
                 bundle.putInt("book_id", book_id); // != -1
                 bundle.putString("user", username);

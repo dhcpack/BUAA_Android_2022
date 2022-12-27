@@ -29,8 +29,6 @@ import java.util.HashMap;
 public class MultiChoiceFragment extends Fragment {
 
     TextView question;
-    TextView answer;
-    ImageView imageView;
     CheckBox A;
     CheckBox B;
     CheckBox C;
@@ -62,9 +60,7 @@ public class MultiChoiceFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_multi_choice, container, false);
 
         question=view.findViewById(R.id.mutiple_question);
-        answer=view.findViewById(R.id.answer);
         button=view.findViewById(R.id.next_page);
-        imageView=view.findViewById(R.id.image_multiple);
         btn_learned=view.findViewById(R.id.btn_learned);
         A=view.findViewById(R.id.mutiple_A);
         B=view.findViewById(R.id.mutiple_B);

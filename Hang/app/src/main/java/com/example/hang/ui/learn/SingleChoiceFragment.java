@@ -29,8 +29,6 @@ import java.util.HashMap;
 public class SingleChoiceFragment extends Fragment {
 
     TextView question;
-    TextView answer;
-    ImageView imageView;
     RadioButton A;
     RadioButton B;
     RadioButton C;
@@ -65,9 +63,7 @@ public class SingleChoiceFragment extends Fragment {
         View view =  inflater.inflate(R.layout.fragment_single_choice, container, false);
 
         question=view.findViewById(R.id.single_question);
-        answer=view.findViewById(R.id.answer);
         button=view.findViewById(R.id.next_page);
-        imageView=view.findViewById(R.id.image_single);
         btn_learned=view.findViewById(R.id.btn_learned);
         A=view.findViewById(R.id.single_A);
         B=view.findViewById(R.id.single_B);
