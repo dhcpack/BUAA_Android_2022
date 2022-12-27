@@ -13,6 +13,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.hang.R;
@@ -93,8 +94,15 @@ public class Mine extends Fragment {
                 String username = userInfo.getString("nickname");
                 TextView tv_stu_id = view.findViewById(R.id.tv_stu_id);
                 TextView tv_username = view.findViewById(R.id.tv_username);
+                ImageView iv_person_data_avatar = view.findViewById(R.id.iv_person_data_avatar);
                 tv_stu_id.setText(stuId);
                 tv_username.setText(username);
+                String sex = userInfo.getString("sex");
+                if (sex.equals("true")) {
+                    iv_person_data_avatar.setImageResource(R.drawable.ic_default_avatar_male);
+                } else {
+                    iv_person_data_avatar.setImageResource(R.drawable.ic_default_avatar_female);
+                }
             } catch (JSONException e) {
                 e.printStackTrace();
             }

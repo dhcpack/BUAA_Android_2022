@@ -3,6 +3,7 @@ package com.example.hang.ui.mine.PersonalData;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.MenuItem;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.ActionBar;
@@ -25,6 +26,7 @@ public class PersonalDataActivity extends AppCompatActivity {
     private SettingBar sb_personal_data_institution;
     private SettingBar sb_personal_data_major;
     private SettingBar sb_personal_data_grade;
+    private ImageView iv_person_data_avatar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +39,7 @@ public class PersonalDataActivity extends AppCompatActivity {
         sb_personal_data_institution = findViewById(R.id.personal_data_institution);
         sb_personal_data_major = findViewById(R.id.personal_data_major);
         sb_personal_data_grade = findViewById(R.id.personal_data_grade);
+        iv_person_data_avatar = findViewById(R.id.iv_person_data_avatar);
 
         JSONObject jsonObject;
         ArrayList<String> params = new ArrayList<>();
@@ -49,6 +52,12 @@ public class PersonalDataActivity extends AppCompatActivity {
                 sb_personal_data_institution.setRightText(jsonObject.getString("institute"));
                 sb_personal_data_major.setRightText(jsonObject.getString("major"));
                 sb_personal_data_grade.setRightText(jsonObject.getString("grade"));
+                String sex = jsonObject.getString("sex");
+                if (sex.equals("true")) {
+                    iv_person_data_avatar.setImageResource(R.drawable.ic_default_avatar_male);
+                } else {
+                    iv_person_data_avatar.setImageResource(R.drawable.ic_default_avatar_female);
+                }
             } catch (JSONException e) {
                 e.printStackTrace();
             }

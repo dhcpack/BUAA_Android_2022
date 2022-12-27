@@ -21,6 +21,7 @@ import androidx.appcompat.widget.AppCompatImageView;
 import com.example.hang.R;
 import com.example.hang.ports.HttpUtil;
 import com.example.hang.ports.Ports;
+import com.example.hang.ui.learn.ShowItemsActivity;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -31,6 +32,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 public class MyBooksActivity extends AppCompatActivity {
     private ListView lv_books;
@@ -100,8 +102,8 @@ public class MyBooksActivity extends AppCompatActivity {
             private TextView tv_title_book;
             private AppCompatButton btn_book_add_content;
             private AppCompatButton btn_book_view_content;
-            private AppCompatButton book_load_public_books;
-            private String book_id;
+
+            private int book_id;
         }
         //所有要返回的东西的数量（Id、信息等），都在data里面，从data里面取就好
         @Override
@@ -137,25 +139,28 @@ public class MyBooksActivity extends AppCompatActivity {
             //设置数据
             info.iv_icon_book.setImageResource((Integer) data.get(position).get("book_icon"));
             info.tv_title_book.setText((String) data.get(position).get("book_title"));
-            info.book_id = (String) data.get(position).get("book_id");
-//            info.btn_book_add_content.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View view) {
-//                    //
-//                }
-//            });
-//            info.btn_book_view_content.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View view) {
-//                    //TODO
-//                }
-//            });
-//            info.book_load_public_books.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View view) {
-//                    //TODO
-//                }
-//            });
+            info.book_id = Integer.parseInt((String)
+                    Objects.requireNonNull(data.get(position).get("book_id")));
+            info.btn_book_add_content.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(context, AddQuestionActivity.class);
+                    Bundle bundle = new Bundle();
+                    bundle.putInt("book_id", info.book_id);
+                    intent.putExtras(bundle);
+                    context.startActivity(intent);
+                }
+            });
+            info.btn_book_view_content.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(context, ShowItemsActivity.class);
+                    Bundle bundle = new Bundle();
+                    bundle.putInt("book_id", info.book_id);
+                    intent.putExtras(bundle);
+                    context.startActivity(intent);
+                }
+            });
             return convertView;
         }
     }
