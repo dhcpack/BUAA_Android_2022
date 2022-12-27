@@ -215,4 +215,9 @@ public class Ports {
      * url + quesId
      * */
     public static String reviewQues = api + "review/";
+
+    /*
+     * OCR
+     * */
+    public static String ocrUrl = api + "ocr/";
 }

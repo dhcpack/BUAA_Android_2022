@@ -20,6 +20,7 @@ import java.io.ObjectOutputStream;
 import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.concurrent.TimeUnit;
 
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -350,6 +351,64 @@ public class HttpUtil {
                     e.printStackTrace();
                 }
             } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+
+    /*
+     * 上传文件
+     * */
+    /*
+     * POST
+     * */
+    public static String OCR(File file) throws IOException {
+        String url = Ports.ocrUrl;
+        OCRThread ocrThread = new OCRThread(file, url);
+        Thread thread = new Thread(ocrThread, "ocrThread");
+        thread.start();
+        try {
+            thread.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return ocrThread.res;
+    }
+
+    static final class OCRThread implements Runnable {
+        private final File file;
+        private final String url;
+        private final OkHttpClient okHttpClient;
+        private String res;
+
+        public OCRThread(File file, String url) {
+            okHttpClient = new OkHttpClient.Builder()
+                    .connectTimeout(100000, TimeUnit.SECONDS)//设置连接超时时间
+                    .readTimeout(200000, TimeUnit.SECONDS)//设置读取超时时间
+                    .build();
+
+            this.file = file;
+            this.url = url;
+        }
+
+        @Override
+        public void run() {
+            System.out.println(this.url);
+            // 构建请求体
+            RequestBody requestBody = new MultipartBody.Builder().setType(MultipartBody.FORM).addFormDataPart("file", "file", RequestBody.create(MediaType.parse("multipart/form-data"), file)).build();
+
+            //创造http请求
+            Request request = new Request.Builder()
+                    .url(this.url)
+                    .post(requestBody)
+                    .build();
+            Response response = null;
+            try {
+                response = okHttpClient.newCall(request).execute();
+                System.out.println(response.message());
+                this.res = new JSONObject(response.body().string()).getString("ocr");
+            } catch (IOException | JSONException e) {
                 e.printStackTrace();
             }
         }
