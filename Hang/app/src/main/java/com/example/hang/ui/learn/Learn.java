@@ -31,6 +31,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -136,7 +137,7 @@ public class Learn extends Fragment {
         btn_start_study.setOnClickListener(view -> {
             Intent intent = new Intent(getActivity(), StartStudyActivity.class);
             Bundle bundle = new Bundle();
-            bundle.putSerializable("arrayList", allQues);
+            bundle.putSerializable("arrayList", (Serializable) allQues);
             intent.putExtras(bundle);
             startActivity(intent);
         });
@@ -269,6 +270,7 @@ public class Learn extends Fragment {
                     jsonObject.getString("ans1"), jsonObject.getString("ans2"), jsonObject.getString("ans3"),  jsonObject.getString("ans4"),
                     jsonObject.getInt("review"), jsonObject.getString("next_time"), jsonObject.getString("nickname"), jsonObject.getInt("book") );
             allQues.add(listBean);
+
         }
         quesNum = allQues.size();
         System.out.println("all num: " + quesNum);

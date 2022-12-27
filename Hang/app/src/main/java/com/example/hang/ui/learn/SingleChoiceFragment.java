@@ -100,11 +100,12 @@ public class SingleChoiceFragment extends Fragment {
         });
 
         btn_learned.setOnClickListener(view1 -> {
-            HashMap<String, String> para = new HashMap<>();
+            /*HashMap<String, String> para = new HashMap<>();
             para.put("quesId", String.valueOf(nowQues.getId()));
+            System.out.println("debug: quesId " + para.get("quesId"));*/
             JSONObject jsonObject = null;
             try {
-                jsonObject = (JSONObject) HttpUtil.httpPut(Ports.reviewQues, para);
+                jsonObject = (JSONObject) HttpUtil.httpPut(Ports.reviewQues + nowQues.getId() + "/", new HashMap<>());
                 System.out.println(jsonObject);
             } catch (IOException e) {
                 e.printStackTrace();

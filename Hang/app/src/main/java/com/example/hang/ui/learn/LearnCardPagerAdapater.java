@@ -58,6 +58,7 @@ public class LearnCardPagerAdapater extends FragmentPagerAdapter {
         ListBean jo = allQues.get(position);
         int type = 1;
         type = jo.getType();
+        //System.out.println(jo.getId());
         if (type == 1) {
             fragment = new FillBlankFragment();
         } else if (type == 2) {
