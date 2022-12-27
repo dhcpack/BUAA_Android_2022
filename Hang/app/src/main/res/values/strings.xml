@@ -282,7 +282,7 @@
     <!-- 记忆本 -->
     <string name="book_add_content">添加</string>
     <string name="book_view_content">查看</string>
-    <string name="book_load_public_books">导入公开记忆本</string>
+    <string name="book_load_public_books">导入</string>
     <string name="book_add_content_question">请输入题目</string>
     <string name="book_add_content_answer">请输入答案</string>
     <string name="book_add_content_type">请选择题目类型</string>

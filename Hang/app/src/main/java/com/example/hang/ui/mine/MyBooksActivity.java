@@ -32,6 +32,7 @@ import java.util.List;
 import java.util.Map;
 
 public class MyBooksActivity extends AppCompatActivity {
+    private ListView lv_books;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,12 +40,13 @@ public class MyBooksActivity extends AppCompatActivity {
         setContentView(R.layout.activity_books);
 
         setTitleBar("我的记忆本");
-        //给链表添加数据
+        //设置ListView
+        //1.给链表添加数据
         List<Map<String, Object>> list = getData();
-        //适配器，刚刚重写的！
+        //2.适配器，刚刚重写的！
         MyBooksAdapter myBooksAdapter = new MyBooksAdapter(this, list);
-        //设置适配器
-        ListView lv_books = findViewById(R.id.lv_books);
+        //3.设置适配器
+        lv_books = findViewById(R.id.lv_books);
         lv_books.setAdapter(myBooksAdapter);
         lv_books.smoothScrollBy(30, 200);
     }

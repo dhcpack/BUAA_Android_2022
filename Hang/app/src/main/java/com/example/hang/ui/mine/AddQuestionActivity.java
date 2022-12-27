@@ -1,6 +1,7 @@
 package com.example.hang.ui.mine;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.InputType;
 import android.view.Gravity;
@@ -10,12 +11,23 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListPopupWindow;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.hang.LoginActivity;
 import com.example.hang.R;
+import com.example.hang.RegisterActivity;
+import com.example.hang.ports.HttpUtil;
+import com.example.hang.ports.Ports;
 import com.example.hang.ui.mine.utils.view.SubmitButton;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
+import java.util.HashMap;
 
 public class AddQuestionActivity extends AppCompatActivity {
     private EditText question_input;
@@ -26,7 +38,7 @@ public class AddQuestionActivity extends AppCompatActivity {
 
     private String question;
     private String answer;
-    private int type;
+    private String type;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -41,15 +53,39 @@ public class AddQuestionActivity extends AppCompatActivity {
         setTypeListPopupWindowListener();
         setTypeListener();
         btn_confirm = findViewById(R.id.btn_confirm);
-
-        btn_confirm.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                question = question_input.getText().toString().trim();
-                answer = answer_input.getText().toString().trim();
-                type = Integer.parseInt(type_input.getText().toString().trim());
-            }
+        btn_confirm.setOnClickListener(view -> {
+            question = question_input.getText().toString().trim();
+            answer = answer_input.getText().toString().trim();
+            type = type_input.getText().toString().trim();
+            sendPostRequest();
         });
+    }
+
+    private void sendPostRequest() {
+        JSONObject jsonObject;
+        HashMap<String, String> params = new HashMap<>();
+        params.put("type", type);
+        params.put("ques", question);
+        params.put("ans2", answer);
+        try {
+            jsonObject = HttpUtil.httpPost(Ports.addQuestionUrl, params);
+            System.out.println(jsonObject);
+            if (jsonObject.has("error")) {
+                try {
+                    toast(jsonObject.getString("error"));
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            } else {
+                toast("注册成功");
+                //销毁注册界面
+                AddQuestionActivity.this.finish();
+                //跳转到登录
+                startActivity(new Intent(AddQuestionActivity.this, LoginActivity.class));
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @SuppressLint({"ClickableViewAccessibility", "UseCompatLoadingForDrawables"})
@@ -105,5 +141,10 @@ public class AddQuestionActivity extends AppCompatActivity {
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    private void toast(String str) {
+        Toast.makeText(AddQuestionActivity.this, str, Toast.LENGTH_SHORT).show();
+        btn_confirm.reset();
     }
 }

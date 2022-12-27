@@ -33,7 +33,6 @@ import java.util.Map;
 
 public class SystemAllBooksActivity extends AppCompatActivity {
     private ListView lv_books;
-    private AppCompatButton btn_book_load_public_books;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,9 +40,6 @@ public class SystemAllBooksActivity extends AppCompatActivity {
         setContentView(R.layout.activity_books);
 
         setTitleBar("系统记忆本");
-        //设置Button
-        btn_book_load_public_books = findViewById(R.id.btn_book_load_public_books);
-        setLoadPublicBookListener();
         //设置ListView
         //1.给链表添加数据
         List<Map<String, Object>> list = getData();
@@ -53,15 +49,6 @@ public class SystemAllBooksActivity extends AppCompatActivity {
         lv_books = findViewById(R.id.lv_books);
         lv_books.setAdapter(SystemAllBooksAdapter);
         lv_books.smoothScrollBy(30, 200);
-    }
-
-    private void setLoadPublicBookListener() {
-        btn_book_load_public_books.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //TODO
-            }
-        });
     }
 
     //填充数据
@@ -110,6 +97,7 @@ public class SystemAllBooksActivity extends AppCompatActivity {
             private AppCompatImageView iv_icon_book;
             private TextView tv_title_book;
             private AppCompatButton btn_book_view_content;
+            private AppCompatButton book_load_public_books;
         }
         //所有要返回的东西的数量（Id、信息等），都在data里面，从data里面取就好
         @Override
@@ -145,7 +133,18 @@ public class SystemAllBooksActivity extends AppCompatActivity {
             //设置数据
             info.iv_icon_book.setImageResource((Integer) data.get(position).get("iv_icon_book"));
             info.tv_title_book.setText((String) data.get(position).get("tv_book_title"));
-            // TODO info.btn_book_view_content!!!!!!!!!
+            info.btn_book_view_content.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    //TODO
+                }
+            });
+            info.book_load_public_books.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    //TODO
+                }
+            });
             return convertView;
         }
     }
