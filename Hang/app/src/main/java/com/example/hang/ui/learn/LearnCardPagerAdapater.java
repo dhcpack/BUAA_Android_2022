@@ -26,12 +26,14 @@ public class LearnCardPagerAdapater extends FragmentPagerAdapter {
     public  int PAGER_COUNT = 0;
     private final ArrayList<ListBean> allQues;
     private final Context mContext;
+    private boolean readOnly;
 
-    public LearnCardPagerAdapater(FragmentManager fm, Context context, ArrayList<ListBean> allQues) {
+    public LearnCardPagerAdapater(FragmentManager fm, Context context, ArrayList<ListBean> allQues, boolean readonly) {
         super(fm);
         PAGER_COUNT = allQues.size();
         this.allQues = allQues;
         this.mContext = context;
+        this.readOnly = readonly;
     }
 
     @Override
@@ -62,7 +64,7 @@ public class LearnCardPagerAdapater extends FragmentPagerAdapter {
         if (type == 1) {
             fragment = new FillBlankFragment();
         } else if (type == 2) {
-            fragment = new SingleChoiceFragment(mContext, allQues.get(position));
+            fragment = new SingleChoiceFragment(mContext, allQues.get(position), readOnly);
         } else if (type == 3) {
             fragment = new MultiChoiceFragment();
         } else {

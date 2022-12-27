@@ -57,7 +57,7 @@ public class Learn extends Fragment {
     private String book_name;
     private String book_tag;
     private int process;
-    private int book_id;
+    private int book_id = -1;
     private int quesNum = 0;    //题目总数
     private int rest = 0;       //未掌握数量
     private TextView tv_book_name;
@@ -131,8 +131,15 @@ public class Learn extends Fragment {
         });
         btn_show_items = v.findViewById(R.id.btn_show_items);
         btn_show_items.setOnClickListener(view -> {
-            Intent intent = new Intent(getActivity(), ShowItemsActivity.class);
-            startActivity(intent);
+            if (book_id == -1) {
+                toast("还没有开始学习");
+            } else {
+                Intent intent = new Intent(getActivity(), ShowItemsActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putInt("book_id", book_id); // != -1
+                intent.putExtras(bundle);
+                startActivity(intent);
+            }
         });
         btn_start_study = v.findViewById(R.id.btn_start_study);
         btn_start_study.setOnClickListener(view -> {

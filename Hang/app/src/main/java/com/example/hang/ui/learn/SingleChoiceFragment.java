@@ -41,10 +41,12 @@ public class SingleChoiceFragment extends Fragment {
     String answerState="确定";
     Context context;
     Button btn_learned;
+    boolean readonly;
 
-    public SingleChoiceFragment(Context context, ListBean q) {
+    public SingleChoiceFragment(Context context, ListBean q, boolean readonly) {
         this.context = context;
         this.nowQues = q;
+        this.readonly = readonly;
     }
 
 
@@ -80,6 +82,13 @@ public class SingleChoiceFragment extends Fragment {
         C.setText("  C  " + ABCDans[2]);
         D.setText("  D  " + ABCDans[3]);
         correct = ABCDans[4];
+
+        if (readonly) { //查看状态
+            button.setText("只读,不应该出现");
+            button.setVisibility(View.GONE);
+            btn_learned.setVisibility(View.GONE);
+            setAns();
+        }
 
         button.setText(answerState);    //确定
         button.setOnClickListener(View -> {
@@ -123,6 +132,30 @@ public class SingleChoiceFragment extends Fragment {
         });
 
         return view;
+    }
+
+    public void setAns() {
+        if (correct.equals("A")) {
+            A.setChecked(true);
+            B.setEnabled(false);
+            C.setEnabled(false);
+            D.setEnabled(false);
+        } else if (correct.equals("B")) {
+            B.setChecked(true);
+            A.setEnabled(false);
+            C.setEnabled(false);
+            D.setEnabled(false);
+        } else if (correct.equals("C")) {
+            C.setChecked(true);
+            A.setEnabled(false);
+            B.setEnabled(false);
+            D.setEnabled(false);
+        } else {
+            D.setChecked(true);
+            A.setEnabled(false);
+            B.setEnabled(false);
+            C.setEnabled(false);
+        }
     }
 
     public Boolean check() {

@@ -34,18 +34,6 @@ public class StartStudyActivity extends AppCompatActivity {
 
         setTitleBar("开始记忆");
 
-        /*String menuTitle = "开始记忆";
-        ActionBar actionBar = getSupportActionBar();
-        if (actionBar != null) {
-            actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
-            actionBar.setCustomView(R.layout.title_layout);//设置标题样式
-            TextView textView = (TextView) actionBar.getCustomView().findViewById(R.id.display_title);//获取标题布局的textview
-            textView.setText(menuTitle);//设置标题名称，menuTitle为String字符串
-            actionBar.setHomeButtonEnabled(true);//设置左上角的图标是否可以点击
-            actionBar.setDisplayHomeAsUpEnabled(true);//给左上角图标的左边加上一个返回的图标
-            actionBar.setDisplayShowCustomEnabled(true);// 使自定义的普通View能在title栏显示，即actionBar.setCustomView能起作用
-        }*/
-
         Bundle bundle = getIntent().getExtras();
         allQues = (ArrayList<ListBean>) bundle.getSerializable("arrayList");
 
@@ -60,7 +48,7 @@ public class StartStudyActivity extends AppCompatActivity {
     }
 
     public void initPagerView() {
-        LearnCardPagerAdapater adapter = new LearnCardPagerAdapater(getSupportFragmentManager(), this, allQues);
+        LearnCardPagerAdapater adapter = new LearnCardPagerAdapater(getSupportFragmentManager(), this, allQues, false);
         vp_content = findViewById(R.id.vp_content);
         vp_content.setAdapter(adapter);
         vp_content.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
