@@ -7,6 +7,7 @@ from django.views import View
 from rest_framework.status import *
 from rest_framework.viewsets import ModelViewSet
 
+from tasks.Ebbinghaus import ebbinghausReviewTime
 from .serializers import *
 
 
@@ -222,7 +223,8 @@ class ReviewView(View):
             ques = Ques.objects.get(id=quesId)
         except Ques.DoesNotExist:
             return JsonResponse({'error': '题目不存在'}, status=HTTP_404_NOT_FOUND)
-        ques.next_time = datetime.datetime.now()
+        ques.next_time = ebbinghausReviewTime(ques.review)
+        ques.review = ques.review + 1
         ques.save()
         return JsonResponse({'msg': '设置成功'}, status=HTTP_201_CREATED)
 
