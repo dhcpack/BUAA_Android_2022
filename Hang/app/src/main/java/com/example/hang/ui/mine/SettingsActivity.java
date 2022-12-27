@@ -40,7 +40,6 @@ public class SettingsActivity extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
             actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
-            actionBar.setCustomView(R.layout.title_layout);//设置标题样式
             TextView tv = new TextView(this);
             tv.setText(title);
             tv.setTextSize(20);

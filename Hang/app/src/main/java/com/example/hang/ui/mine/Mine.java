@@ -57,7 +57,7 @@ public class Mine extends Fragment {
         });
         AppCompatButton btn_enter_books = view.findViewById(R.id.btn_mine_books);
         btn_enter_books.setOnClickListener(view2 -> {
-            Intent intent = new Intent(getActivity(), BooksActivity.class);
+            Intent intent = new Intent(getActivity(), MyBooksActivity.class);
             intent.putExtra("username", username);
             //跳转到展示所有记忆本
             startActivity(intent);

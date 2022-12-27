@@ -31,21 +31,21 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class BooksActivity extends AppCompatActivity {
+public class MyBooksActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_books);
-        setTitleBar("单词本");
 
+        setTitleBar("我的记忆本");
         //给链表添加数据
         List<Map<String, Object>> list = getData();
         //适配器，刚刚重写的！
-        MyAdapter myAdapter = new MyAdapter(this, list);
+        MyBooksAdapter myBooksAdapter = new MyBooksAdapter(this, list);
         //设置适配器
         ListView lv_books = findViewById(R.id.lv_books);
-        lv_books.setAdapter(myAdapter);
+        lv_books.setAdapter(myBooksAdapter);
         lv_books.smoothScrollBy(30, 200);
     }
 
@@ -78,13 +78,13 @@ public class BooksActivity extends AppCompatActivity {
         return list;
     }
 
-    public static class MyAdapter extends BaseAdapter {
+    public static class MyBooksAdapter extends BaseAdapter {
 
         private final List<Map<String, Object>> data;
         private final LayoutInflater layoutInflater;
         private final Context context;
 
-        public MyAdapter(Context context, List<Map<String, Object>> data) {
+        public MyBooksAdapter(Context context, List<Map<String, Object>> data) {
             //传入的data，就是我们要在listview中显示的信息
             this.context = context;
             this.data = data;
@@ -122,7 +122,7 @@ public class BooksActivity extends AppCompatActivity {
         public View getView(int position, View convertView, ViewGroup parent) {
             // TODO Auto-generated method stub
             Info info = new Info();
-            convertView = layoutInflater.inflate(R.layout.activity_books_item, null);
+            convertView = layoutInflater.inflate(R.layout.activity_my_books_item, null);
             info.iv_icon_book = convertView.findViewById(R.id.iv_icon_book);
             info.tv_title_book = convertView.findViewById(R.id.tv_title_book);
             info.btn_book_add_content = convertView.findViewById(R.id.btn_book_add_content);
@@ -131,6 +131,7 @@ public class BooksActivity extends AppCompatActivity {
             //设置数据
             info.iv_icon_book.setImageResource((Integer) data.get(position).get("iv_icon_book"));
             info.tv_title_book.setText((String) data.get(position).get("tv_book_title"));
+            // TODO info.btn_book_view_content!!!!!!!!!
             return convertView;
         }
     }
@@ -140,7 +141,6 @@ public class BooksActivity extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
             actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
-            actionBar.setCustomView(R.layout.title_layout);//设置标题样式
             TextView tv = new TextView(this);
             tv.setText(title);
             tv.setTextSize(20);
