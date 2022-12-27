@@ -1,12 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     style="@style/AppTheme"
-    android:id="@+id/display_title"
-    android:text=""
-    android:textSize="@dimen/sp_20"
-    android:textColor="#ffffff"
-    android:gravity="center"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-</TextView>
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:ignore="UselessParent">
+    <TextView
+        android:id="@+id/display_title"
+        android:text=""
+        android:textSize="@dimen/sp_20"
+        android:textColor="#ffffff"
+        android:textAlignment="center"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </TextView>
+</LinearLayout>

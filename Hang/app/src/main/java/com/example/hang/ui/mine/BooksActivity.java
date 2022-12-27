@@ -36,7 +36,7 @@ public class BooksActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_books);
-        setTitleBar("所有单词本");
+        setTitleBar("单词本");
 
         //给链表添加数据
         List<Map<String, Object>> list = getData();
