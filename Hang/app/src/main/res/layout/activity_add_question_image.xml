@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/white"
-    tools:context=".ui.mine.MyBooks.AddQuestionActivity">
+    tools:context=".ui.mine.myBooks.AddQuestionActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -36,23 +36,13 @@
             style="@style/HorizontalLineStyle"
             android:layout_gravity="bottom" />
 
-        <com.example.hang.ui.mine.utils.view.ClearEditText
-            android:id="@+id/answer_input"
-            style="@style/EditTextStyle"
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/image_input"
+            style="@style/ButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dp_20"
-            android:hint="@string/book_add_content_answer"
-            android:imeOptions="actionDone"
-            android:maxLength="20"
-            android:minHeight="48dp"
-            android:singleLine="true"
-            android:textColorHint="#757575"
-            app:regexType="anything" />
-
-        <View
-            style="@style/HorizontalLineStyle"
-            android:layout_gravity="bottom" />
+            android:layout_marginTop="@dimen/dp_30"
+            android:text="@string/upload_image" />
 
         <com.example.hang.ui.mine.utils.view.SubmitButton
             android:id="@+id/btn_confirm"

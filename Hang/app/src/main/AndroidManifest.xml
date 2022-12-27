@@ -95,31 +95,31 @@
             android:name=".RegisterActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.mine.PersonalData.PersonalDataActivity"
+            android:name=".ui.mine.personalData.PersonalDataActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.mine.MyBooks.MyBooksActivity"
+            android:name=".ui.mine.myBooks.MyBooksActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.mine.Report.ReportActivity"
+            android:name=".ui.mine.report.ReportActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.mine.Settings.SettingsActivity"
+            android:name=".ui.mine.settings.SettingsActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.mine.MyBooks.AddQuestionActivity"
+            android:name=".ui.mine.myBooks.AddQuestionActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.mine.MyBooks.AddQuestionFillBlankActivity"
+            android:name=".ui.mine.myBooks.AddQuestionFillBlankActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.mine.MyBooks.AddQuestionChooseOneActivity"
+            android:name=".ui.mine.myBooks.AddQuestionChooseOneActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.mine.MyBooks.AddQuestionChooseManyActivity"
+            android:name=".ui.mine.myBooks.AddQuestionChooseManyActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.mine.MyBooks.AddQuestionImageActivity"
+            android:name=".ui.mine.myBooks.AddQuestionImageActivity"
             android:exported="false" />
     </application>
 
