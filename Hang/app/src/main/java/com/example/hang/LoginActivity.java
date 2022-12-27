@@ -96,7 +96,7 @@ public class LoginActivity extends AppCompatActivity {
                         // 表示此页面下的内容操作成功将data返回到上一页面，如果是用back返回过去的则不存在用setResult传递data值
                         //setResult(RESULT_OK, intent);
                         //销毁登录界面
-                        LoginActivity.this.finish();
+                        finish();
                         //跳转到主界面，登录成功的状态传递到 MainActivity 中
                         startActivity(intent);
                     }
@@ -105,7 +105,7 @@ public class LoginActivity extends AppCompatActivity {
         });
         btn_register.setOnClickListener(view -> {
             //销毁登录界面
-            LoginActivity.this.finish();
+            finish();
             //跳转到主界面，登录成功的状态传递到 RegisterActivity 中
             startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
         });

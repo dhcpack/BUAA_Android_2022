@@ -1,24 +1,24 @@
-package com.example.hang.ui.mine;
+package com.example.hang.ui.mine.MyBooks;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.InputType;
 import android.view.Gravity;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListPopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.hang.LoginActivity;
 import com.example.hang.R;
-import com.example.hang.RegisterActivity;
 import com.example.hang.ports.HttpUtil;
 import com.example.hang.ports.Ports;
 import com.example.hang.ui.mine.utils.view.SubmitButton;
@@ -30,15 +30,15 @@ import java.io.IOException;
 import java.util.HashMap;
 
 public class AddQuestionActivity extends AppCompatActivity {
-    private EditText question_input;
-    private EditText answer_input;
     private EditText type_input;
     private ListPopupWindow type_list_popup_window;
     private SubmitButton btn_confirm;
 
-    private String question;
-    private String answer;
+    private String ques;
+    private String ans;
     private String type;
+
+    private ActivityResultLauncher<Intent> activityResultLauncher;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -47,26 +47,83 @@ public class AddQuestionActivity extends AppCompatActivity {
         setContentView(R.layout.activity_add_question);
 
         setTitleBar("添加题目");
-        question_input = findViewById(R.id.question_input);
-        answer_input = findViewById(R.id.answer_input);
         type_input = findViewById(R.id.type_input);
         setTypeListPopupWindowListener();
         setTypeListener();
         btn_confirm = findViewById(R.id.btn_confirm);
         btn_confirm.setOnClickListener(view -> {
-            question = question_input.getText().toString().trim();
-            answer = answer_input.getText().toString().trim();
             type = type_input.getText().toString().trim();
-            sendPostRequest();
+            switch (type) {
+                case "1":
+                    questionFillBlank();
+                    break;
+                case "2":
+                case "3":
+                    questionChoice();
+                    break;
+                case "4":
+                    questionImage();
+                    break;
+                default:
+                    break;
+            }
         });
+    }
+
+    private void questionChoice() {
+        Intent intent = new Intent(this, AddQuestionChoiceActivity.class);
+        activityResultLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), result -> {
+            if (result != null) {
+                Intent returnIntent = result.getData();
+                if (returnIntent != null && result.getResultCode() == Activity.RESULT_OK) {
+                    Bundle bundle = returnIntent.getExtras();
+                    ques = bundle.getString("ques");
+                    ans = bundle.getString("ans");
+                    sendPostRequest();
+                }
+            }
+        });
+        activityResultLauncher.launch(intent);
+    }
+
+    private void questionFillBlank() {
+        Intent intent = new Intent(this, AddQuestionFillBlankActivity.class);
+        activityResultLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), result -> {
+            if (result != null) {
+                Intent returnIntent = result.getData();
+                if (returnIntent != null && result.getResultCode() == Activity.RESULT_OK) {
+                    Bundle bundle = returnIntent.getExtras();
+                    ques = bundle.getString("ques");
+                    ans = bundle.getString("ans");
+                    sendPostRequest();
+                }
+            }
+        });
+        activityResultLauncher.launch(intent);
+    }
+
+    private void questionImage() {
+        Intent intent = new Intent(this, AddQuestionImageActivity.class);
+        activityResultLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), result -> {
+            if (result != null) {
+                Intent returnIntent = result.getData();
+                if (returnIntent != null && result.getResultCode() == Activity.RESULT_OK) {
+                    Bundle bundle = returnIntent.getExtras();
+                    ques = bundle.getString("ques");
+                    ans = bundle.getString("ans");
+                    sendPostRequest();
+                }
+            }
+        });
+        activityResultLauncher.launch(intent);
     }
 
     private void sendPostRequest() {
         JSONObject jsonObject;
         HashMap<String, String> params = new HashMap<>();
         params.put("type", type);
-        params.put("ques", question);
-        params.put("ans2", answer);
+        params.put("ques", ques);
+        params.put("ans" + type, ans);
         try {
             jsonObject = HttpUtil.httpPost(Ports.addQuestionUrl, params);
             System.out.println(jsonObject);
@@ -77,11 +134,11 @@ public class AddQuestionActivity extends AppCompatActivity {
                     e.printStackTrace();
                 }
             } else {
-                toast("注册成功");
-                //销毁注册界面
-                AddQuestionActivity.this.finish();
-                //跳转到登录
-                startActivity(new Intent(AddQuestionActivity.this, LoginActivity.class));
+                toast("添加题目成功");
+                //销毁当前界面
+                finish();
+                //跳转到记忆本界面
+                startActivity(new Intent(AddQuestionActivity.this, MyBooksActivity.class));
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -112,7 +169,8 @@ public class AddQuestionActivity extends AppCompatActivity {
         });
         type_list_popup_window.dismiss();
         type_list_popup_window.setOnDismissListener(() -> {
-            type_input.setCompoundDrawablesWithIntrinsicBounds(null, null, getResources().getDrawable(R.drawable.ic_arrows_bottom), null);
+            type_input.setCompoundDrawablesWithIntrinsicBounds(null, null,
+                    getResources().getDrawable(R.drawable.ic_arrows_bottom), null);
         });
     }
 

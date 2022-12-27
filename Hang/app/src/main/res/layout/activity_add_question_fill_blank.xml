@@ -18,18 +18,34 @@
         tools:layoutAnimation="@null">
 
         <com.example.hang.ui.mine.utils.view.RegexEditText
-            android:id="@+id/type_input"
+            android:id="@+id/question_input"
             style="@style/EditTextStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dp_20"
-            android:hint="@string/book_add_content_type"
+            android:hint="@string/book_add_content_question"
             android:imeOptions="actionDone"
             android:maxLength="20"
             android:minHeight="48dp"
             android:singleLine="true"
-            android:textColorHint="#757575"
-            android:drawableEnd="@drawable/ic_arrows_bottom"/>
+            android:textColorHint="#757575" />
+
+        <View
+            style="@style/HorizontalLineStyle"
+            android:layout_gravity="bottom" />
+
+        <com.example.hang.ui.mine.utils.view.RegexEditText
+            android:id="@+id/answer_input"
+            style="@style/EditTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20"
+            android:hint="@string/book_add_content_answer"
+            android:imeOptions="actionDone"
+            android:maxLength="20"
+            android:minHeight="48dp"
+            android:singleLine="true"
+            android:textColorHint="#757575" />
 
         <View
             style="@style/HorizontalLineStyle"
