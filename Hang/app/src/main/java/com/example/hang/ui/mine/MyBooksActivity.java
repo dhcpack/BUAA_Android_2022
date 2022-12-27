@@ -98,6 +98,7 @@ public class MyBooksActivity extends AppCompatActivity {
             private TextView tv_title_book;
             private AppCompatButton btn_book_add_content;
             private AppCompatButton btn_book_view_content;
+            private AppCompatButton book_load_public_books;
         }
         //所有要返回的东西的数量（Id、信息等），都在data里面，从data里面取就好
         @Override
@@ -133,7 +134,24 @@ public class MyBooksActivity extends AppCompatActivity {
             //设置数据
             info.iv_icon_book.setImageResource((Integer) data.get(position).get("iv_icon_book"));
             info.tv_title_book.setText((String) data.get(position).get("tv_book_title"));
-            // TODO info.btn_book_view_content!!!!!!!!!
+            info.btn_book_add_content.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    //TODO
+                }
+            });
+            info.btn_book_view_content.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    //TODO
+                }
+            });
+            info.book_load_public_books.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    //TODO
+                }
+            });
             return convertView;
         }
     }
