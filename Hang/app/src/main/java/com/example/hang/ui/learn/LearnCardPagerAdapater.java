@@ -34,6 +34,7 @@ public class LearnCardPagerAdapater extends FragmentPagerAdapter {
         this.allQues = allQues;
         this.mContext = context;
         this.readOnly = readonly;
+        System.out.println("adapter size " + PAGER_COUNT);
     }
 
     @Override

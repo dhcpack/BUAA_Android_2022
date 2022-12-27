@@ -129,11 +129,26 @@
                 android:singleLine="false"
                 android:text="未掌握"
                 android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
                 android:layout_marginTop="@dimen/dp_115"
-                android:layout_alignParentRight="true"
-                android:layout_marginRight="@dimen/dp_70"
                 android:textSize="@dimen/dp_20"
                 android:textColor="#000000">
+
+            </TextView>
+
+            <!--待复习数量-->
+            <TextView
+                android:id="@+id/tv_reviewNum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginTop="115dp"
+                android:layout_marginLeft="260dp"
+                android:singleLine="false"
+                android:text="待复习"
+                android:textColor="#000000"
+                android:textSize="@dimen/dp_20">
 
             </TextView>
 
@@ -159,7 +174,7 @@
             </Button>
 
             <Button
-                android:id="@+id/btn_learn_settings"
+                android:id="@+id/btn_start_review"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/learn_review"

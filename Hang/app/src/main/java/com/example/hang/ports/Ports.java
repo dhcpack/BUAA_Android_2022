@@ -200,7 +200,7 @@ public class Ports {
      * */
     public static String getReviewCount = api + "getreviewcount/";
 
-    // 得到首页记忆本中各种题目的数量
+    // 得到首页记忆本中各种类型题目
     /*
      * GET
      * url + nickname + 0 or 1 or 2

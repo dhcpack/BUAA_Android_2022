@@ -24,17 +24,13 @@ import com.example.hang.R;
 import com.example.hang.ports.HttpUtil;
 import com.example.hang.ports.Ports;
 import com.example.hang.ui.learn.util.DateUtil;
-import com.example.hang.ui.learn.util.ListBean;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 
 public class Learn extends Fragment {
 
@@ -43,7 +39,7 @@ public class Learn extends Fragment {
     private ImageButton ib_search;
     private Button btn_show_items;
     private Button btn_start_study;
-    private Button btn_learn_settings;
+    private Button btn_start_review;
     private ImageButton ib_daka;
     private ImageButton ib_look_books;
     private ImageButton ib_create_book;
@@ -60,12 +56,14 @@ public class Learn extends Fragment {
     private int book_id = -1;
     private int quesNum = 0;    //题目总数
     private int rest = 0;       //未掌握数量
+    private int needReviewNum = 0;
     private TextView tv_book_name;
     private TextView tv_book_tag;
     private TextView tv_percent;
-    private ArrayList<ListBean> allQues = new ArrayList<ListBean>();
+    //private ArrayList<ListBean> allQues = new ArrayList<ListBean>();
     private TextView tv_ok_num;
     private TextView tv_no_num;
+    private TextView tv_review_num;
 
     //进度条
     private ProgressBar progressBar;
@@ -91,28 +89,20 @@ public class Learn extends Fragment {
         tv_book_tag = v.findViewById(R.id.tv_book_tag);
         tv_book_name.setText(book_name);
         tv_book_tag.setText(book_tag);
+        progressBar = v.findViewById(R.id.progressbar_learn);
+        tv_ok_num = v.findViewById(R.id.tv_okNum);
+        tv_no_num = v.findViewById(R.id.tv_noNum);
+        tv_review_num = v.findViewById(R.id.tv_reviewNum);
+        tv_percent = v.findViewById(R.id.tv_percent);
         if (book_id != -1) {
             try {
                 getQuesNum();
-                getAllQues();
-            } catch (JSONException | IOException e) {
+                //getAllQues();
+            } catch (JSONException e) {
                 e.printStackTrace();
             }
         }
-        tv_ok_num = v.findViewById(R.id.tv_okNum);
-        tv_no_num = v.findViewById(R.id.tv_noNum);
-        tv_ok_num.setText("已掌握\n    " + process);
-        tv_no_num.setText("未掌握\n    " + rest);
-        tv_percent = v.findViewById(R.id.tv_percent);
-        double p = 0;
-        if (quesNum != 0) {
-            p = (double) process / (double) quesNum;
-        }
-        tv_percent.setText(String.format("学习进度%.2f", p) + "%");
 
-        progressBar = v.findViewById(R.id.progressbar_learn);
-        progressBar.setProgress(process);
-        progressBar.setMax(quesNum);
 
         tv_daka_days = v.findViewById(R.id.tv_daka_days);
         tv_check_state = v.findViewById(R.id.tv_check_state);
@@ -143,16 +133,31 @@ public class Learn extends Fragment {
         });
         btn_start_study = v.findViewById(R.id.btn_start_study);
         btn_start_study.setOnClickListener(view -> {
-            Intent intent = new Intent(getActivity(), StartStudyActivity.class);
-            Bundle bundle = new Bundle();
-            bundle.putSerializable("arrayList", (Serializable) allQues);
-            intent.putExtras(bundle);
-            startActivity(intent);
+            if (book_id == -1) {
+                toast("还没有开始学习");
+            } else {
+                Intent intent = new Intent(getActivity(), StartStudyActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putInt("book_id", book_id); // != -1
+                bundle.putString("user", username);
+                intent.putExtras(bundle);
+                startActivity(intent);
+            }
         });
-        btn_learn_settings = v.findViewById(R.id.btn_learn_settings);
-        btn_learn_settings.setOnClickListener(view -> {
-            Intent intent = new Intent(getActivity(), LearnSettingsActivity.class);
-            startActivity(intent);
+        btn_start_review = v.findViewById(R.id.btn_start_review);
+        btn_start_review.setOnClickListener(view -> {
+            if (book_id == -1) {
+                toast("还没有开始学习");
+            } else if (needReviewNum == 0) {
+                toast("没有需要复习的内容");
+            } else {
+                Intent intent = new Intent(getActivity(), StartStudyActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putInt("book_id", book_id); // != -1
+                bundle.putString("user", username);
+                intent.putExtras(bundle);
+                startActivity(intent);
+            }
         });
 
         ib_daka = v.findViewById(R.id.ib_daka);
@@ -208,11 +213,13 @@ public class Learn extends Fragment {
         ArrayList<String> user = new ArrayList<>();
         user.add(username);
         JSONObject jsonObject = null;
-        try {
-            jsonObject = (JSONObject) HttpUtil.httpGet(Ports.checkDetail, user, false);
-            System.out.println(jsonObject);
-        } catch (IOException e) {
-            e.printStackTrace();
+        while (jsonObject == null) {
+            try {
+                jsonObject = (JSONObject) HttpUtil.httpGet(Ports.checkDetail, user, false);
+                System.out.println(jsonObject);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
         assert jsonObject != null;
         if (jsonObject.has("error")) {
@@ -262,7 +269,7 @@ public class Learn extends Fragment {
         }
     }
 
-    public void getQuesNum() throws JSONException {
+    public void  getQuesNum() throws JSONException {
         ArrayList<String> user = new ArrayList<>();
         user.add(username);
         JSONObject o = null;
@@ -277,36 +284,40 @@ public class Learn extends Fragment {
         assert o != null;
         rest = o.getInt("未学习");
         process = o.getInt("已学习");
+        needReviewNum = o.getInt("待复习");
         quesNum = rest + process;
         //System.out.println("all num: " + quesNum);
+        progressBar.setProgress(process);
+        progressBar.setMax(quesNum);
+        setText();
     }
 
-    private void getAllQues() throws JSONException, IOException {
-        ArrayList<String> id = new ArrayList<>();
-        id.add(String.valueOf(book_id));
-        JSONArray jsonArray = null;
-        while (jsonArray == null) {
-            try {
-                jsonArray = (JSONArray) HttpUtil.httpGet(Ports.getQuestionUrl, id, true);
-                System.out.println(jsonArray);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+    private void setText() {
+        tv_ok_num.setText("已掌握\n    " + process);
+        tv_no_num.setText("未掌握\n    " + rest);
+        tv_review_num.setText("待复习\n    " + needReviewNum);
+        double p = 0;
+        if (quesNum != 0) {
+            p = (double) process / (double) quesNum;
         }
-        assert jsonArray != null;
-        int l = jsonArray.length();
-        for (int i = 0; i < l; ++i) {
-            JSONObject jsonObject = (JSONObject) jsonArray.get(i);
-            ListBean listBean = new ListBean(jsonObject.getInt("id"), jsonObject.getInt("type"), jsonObject.getString("ques"),
-                    jsonObject.getString("ans1"), jsonObject.getString("ans2"), jsonObject.getString("ans3"),  jsonObject.getString("ans4"),
-                    jsonObject.getInt("review"), jsonObject.getString("next_time"), jsonObject.getString("nickname"), jsonObject.getInt("book") );
-            allQues.add(listBean);
-
-        }
+        tv_percent.setText(String.format("学习进度%.2f", p) + "%");
+        progressBar.setProgress(process);
+        progressBar.setMax(quesNum);
     }
 
     private void toast(String str) {
         Toast.makeText(getActivity(), str, Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        try {
+            getQuesNum();
+            System.out.println("resume " + process);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override

@@ -10,6 +10,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.util.TypedValue;
 import android.view.Gravity;
+import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -74,6 +75,7 @@ public class ShowItemsActivity extends AppCompatActivity {
                     jsonObject.getInt("review"), jsonObject.getString("next_time"), jsonObject.getString("nickname"), jsonObject.getInt("book") );
             allQues.add(listBean);
         }
+        System.out.println("show items size" + allQues.size());
     }
 
     public void initPagerStrip() {
@@ -136,5 +138,14 @@ public class ShowItemsActivity extends AppCompatActivity {
 
     private void toast(String str) {
         Toast.makeText(ShowItemsActivity.this, str, Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+            finish();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
