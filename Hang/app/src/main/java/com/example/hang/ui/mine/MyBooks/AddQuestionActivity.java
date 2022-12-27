@@ -13,6 +13,8 @@ import android.widget.ListPopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.ActionBar;
@@ -50,16 +52,18 @@ public class AddQuestionActivity extends AppCompatActivity {
         type_input = findViewById(R.id.type_input);
         setTypeListPopupWindowListener();
         setTypeListener();
+        initActivityLauncher();
         btn_confirm = findViewById(R.id.btn_confirm);
         btn_confirm.setOnClickListener(view -> {
-            type = type_input.getText().toString().trim();
             switch (type) {
                 case "1":
                     questionFillBlank();
                     break;
                 case "2":
+                    questionChooseOne();
+                    break;
                 case "3":
-                    questionChoice();
+                    questionChooseMany();
                     break;
                 case "4":
                     questionImage();
@@ -70,51 +74,40 @@ public class AddQuestionActivity extends AppCompatActivity {
         });
     }
 
-    private void questionChoice() {
-        Intent intent = new Intent(this, AddQuestionChoiceActivity.class);
-        activityResultLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), result -> {
-            if (result != null) {
-                Intent returnIntent = result.getData();
-                if (returnIntent != null && result.getResultCode() == Activity.RESULT_OK) {
-                    Bundle bundle = returnIntent.getExtras();
-                    ques = bundle.getString("ques");
-                    ans = bundle.getString("ans");
-                    sendPostRequest();
+    private void initActivityLauncher() {
+        activityResultLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
+            @Override
+            public void onActivityResult(ActivityResult result) {
+                if (result != null) {
+                    Intent returnIntent = result.getData();
+                    if (returnIntent != null && result.getResultCode() == Activity.RESULT_OK) {
+                        Bundle bundle = returnIntent.getExtras();
+                        ques = bundle.getString("ques");
+                        ans = bundle.getString("ans");
+                        sendPostRequest();
+                    }
                 }
             }
         });
-        activityResultLauncher.launch(intent);
     }
 
     private void questionFillBlank() {
         Intent intent = new Intent(this, AddQuestionFillBlankActivity.class);
-        activityResultLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), result -> {
-            if (result != null) {
-                Intent returnIntent = result.getData();
-                if (returnIntent != null && result.getResultCode() == Activity.RESULT_OK) {
-                    Bundle bundle = returnIntent.getExtras();
-                    ques = bundle.getString("ques");
-                    ans = bundle.getString("ans");
-                    sendPostRequest();
-                }
-            }
-        });
+        activityResultLauncher.launch(intent);
+    }
+
+    private void questionChooseOne() {
+        Intent intent = new Intent(this, AddQuestionChooseOneActivity.class);
+        activityResultLauncher.launch(intent);
+    }
+
+    private void questionChooseMany() {
+        Intent intent = new Intent(this, AddQuestionChooseManyActivity.class);
         activityResultLauncher.launch(intent);
     }
 
     private void questionImage() {
         Intent intent = new Intent(this, AddQuestionImageActivity.class);
-        activityResultLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), result -> {
-            if (result != null) {
-                Intent returnIntent = result.getData();
-                if (returnIntent != null && result.getResultCode() == Activity.RESULT_OK) {
-                    Bundle bundle = returnIntent.getExtras();
-                    ques = bundle.getString("ques");
-                    ans = bundle.getString("ans");
-                    sendPostRequest();
-                }
-            }
-        });
         activityResultLauncher.launch(intent);
     }
 
@@ -135,10 +128,6 @@ public class AddQuestionActivity extends AppCompatActivity {
                 }
             } else {
                 toast("添加题目成功");
-                //销毁当前界面
-                finish();
-                //跳转到记忆本界面
-                startActivity(new Intent(AddQuestionActivity.this, MyBooksActivity.class));
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -158,16 +147,16 @@ public class AddQuestionActivity extends AppCompatActivity {
 
     @SuppressLint("UseCompatLoadingForDrawables")
     private void setTypeListPopupWindowListener() {
-        String[] list= { "填空题", "单选", "多选", "图片答案题"};
+        String[] list= { "填空题", "单选题", "多选题", "图片答案题"};
         type_list_popup_window = new ListPopupWindow(this);
         type_list_popup_window.setAdapter(new ArrayAdapter(this, android.R.layout.simple_list_item_1, list));
         type_list_popup_window.setAnchorView(type_input);
         type_list_popup_window.setModal(true);
         type_list_popup_window.setOnItemClickListener((adapterView, view, i, l) -> {
-            type_input.setText(i); // list[i]对应list中相应String
+            type_input.setText(list[i]);
+            type = String.valueOf(i + 1);
             type_list_popup_window.dismiss();
         });
-        type_list_popup_window.dismiss();
         type_list_popup_window.setOnDismissListener(() -> {
             type_input.setCompoundDrawablesWithIntrinsicBounds(null, null,
                     getResources().getDrawable(R.drawable.ic_arrows_bottom), null);

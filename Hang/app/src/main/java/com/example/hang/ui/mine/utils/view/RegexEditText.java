@@ -35,6 +35,8 @@ public class RegexEditText extends AppCompatEditText implements InputFilter {
     public static final String REGEX_NAME = "[[\\u4e00-\\u9fa5]|[a-zA-Z]|\\d]*";
     /** 非空格的字符（不能输入空格） */
     public static final String REGEX_NONNULL = "\\S+";
+    /** 任意字符（不能输入空格） */
+    public static final String REGEX_ANYTHING = "[\\s\\S]*";
 
     /** 正则表达式规则 */
     private Pattern mPattern;
@@ -78,6 +80,8 @@ public class RegexEditText extends AppCompatEditText implements InputFilter {
                 case 0x07:
                     setInputRegex(REGEX_NONNULL);
                     break;
+                case 0x08:
+                    setInputRegex(REGEX_ANYTHING);
                 default:
                     break;
             }

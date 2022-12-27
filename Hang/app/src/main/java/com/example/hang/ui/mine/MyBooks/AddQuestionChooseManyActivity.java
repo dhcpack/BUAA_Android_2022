@@ -5,7 +5,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.MenuItem;
+import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -15,17 +17,23 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.hang.R;
 import com.example.hang.ui.mine.utils.view.SubmitButton;
 
-public class AddQuestionChoiceActivity extends AppCompatActivity {
+import java.util.ArrayList;
+
+public class AddQuestionChooseManyActivity  extends AppCompatActivity {
     private EditText question_input;
-    private EditText answer_input;
     private EditText choiceA_input;
     private EditText choiceB_input;
     private EditText choiceC_input;
     private EditText choiceD_input;
+    private CheckBox btn_A;
+    private CheckBox btn_B;
+    private CheckBox btn_C;
+    private CheckBox btn_D;
     private SubmitButton btn_confirm;
 
     private String question;
-    private String answer;
+    private ArrayList<String> answerList;
+    private StringBuffer answer;
     private String choiceA;
     private String choiceB;
     private String choiceC;
@@ -36,25 +44,52 @@ public class AddQuestionChoiceActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_question_choose);
+        setContentView(R.layout.activity_add_question_choose_many);
 
         setTitleBar("添加题目");
         question_input = findViewById(R.id.question_input);
-        answer_input = findViewById(R.id.answer_input);
         choiceA_input = findViewById(R.id.book_add_content_choice_A);
         choiceB_input = findViewById(R.id.book_add_content_choice_B);
         choiceC_input = findViewById(R.id.book_add_content_choice_C);
         choiceD_input = findViewById(R.id.book_add_content_choice_D);
+        btn_A = findViewById(R.id.btn_A);
+        btn_B = findViewById(R.id.btn_B);
+        btn_C = findViewById(R.id.btn_C);
+        btn_D = findViewById(R.id.btn_D);
+        answerList = new ArrayList<>();
+        btn_A.setOnClickListener(view -> {
+            if (btn_A.isChecked()) {
+                answerList.add("A");
+            }
+        });
+        btn_B.setOnClickListener(view -> {
+            if (btn_B.isChecked()) {
+                answerList.add("B");
+            }
+        });
+        btn_C.setOnClickListener(view -> {
+            if (btn_C.isChecked()) {
+                answerList.add("C");
+            }
+        });
+        btn_D.setOnClickListener(view -> {
+            if (btn_D.isChecked()) {
+                answerList.add("D");
+            }
+        });
         btn_confirm = findViewById(R.id.btn_confirm);
         btn_confirm.setOnClickListener(view -> {
             question = question_input.getText().toString().trim();
-            answer = answer_input.getText().toString().trim();
             choiceA = choiceA_input.getText().toString().trim();
             choiceB = choiceB_input.getText().toString().trim();
             choiceC = choiceC_input.getText().toString().trim();
             choiceD = choiceD_input.getText().toString().trim();
             ques = question;
-            ans = choiceA + "%%%" + choiceB + "%%%" +choiceC + "%%%" + choiceD + "%%%" + answer;
+            answer = new StringBuffer(answerList.get(0));
+            for (int i = 1; i < answerList.size(); i++) {
+                answer.append("-").append(answerList.get(i));
+            }
+            ans = choiceA + "%%%" + choiceB + "%%%" +choiceC + "%%%" + choiceD + "%%%" + answer.toString();
             Intent intent = new Intent();
             Bundle bundle = new Bundle();
             bundle.putString("ques", ques);
@@ -94,7 +129,7 @@ public class AddQuestionChoiceActivity extends AppCompatActivity {
     }
 
     private void toast(String str) {
-        Toast.makeText(AddQuestionChoiceActivity.this, str, Toast.LENGTH_SHORT).show();
+        Toast.makeText(AddQuestionChooseManyActivity.this, str, Toast.LENGTH_SHORT).show();
         btn_confirm.reset();
     }
 }

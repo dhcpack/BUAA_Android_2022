@@ -42,7 +42,7 @@
             android:layout_height="wrap_content"
             android:layout_marginVertical="@dimen/dp_40"
             android:text="@string/common_confirm"
-            android:textColor="#212121"
+            android:textColor="@color/white"
             tools:ignore="TextContrastCheck" />
 
     </LinearLayout>

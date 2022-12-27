@@ -29,6 +29,8 @@
             <enum name="name" value="0x06" />
             <!-- 非空格字符 -->
             <enum name="nonnull" value="0x07" />
+            <!-- 任意字符 -->
+            <enum name="anything" value="0x08" />
         </attr>
     </declare-styleable>
 

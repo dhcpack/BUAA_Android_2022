@@ -20,7 +20,7 @@ import com.example.hang.R;
  *    time   : 2018/10/18
  *    desc   : 带清除按钮的 EditText
  */
-public final class ClearEditText extends RegexEditText
+public final class ClearEditText extends androidx.appcompat.widget.AppCompatEditText
         implements View.OnTouchListener,
         View.OnFocusChangeListener, TextWatcher {
 

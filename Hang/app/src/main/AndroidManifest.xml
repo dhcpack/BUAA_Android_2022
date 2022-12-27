@@ -110,10 +110,13 @@
             android:name=".ui.mine.MyBooks.AddQuestionActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.mine.MyBooks.AddQuestionChoiceActivity"
+            android:name=".ui.mine.MyBooks.AddQuestionFillBlankActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.mine.MyBooks.AddQuestionFillBlankActivity"
+            android:name=".ui.mine.MyBooks.AddQuestionChooseOneActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.mine.MyBooks.AddQuestionChooseManyActivity"
             android:exported="false" />
         <activity
             android:name=".ui.mine.MyBooks.AddQuestionImageActivity"

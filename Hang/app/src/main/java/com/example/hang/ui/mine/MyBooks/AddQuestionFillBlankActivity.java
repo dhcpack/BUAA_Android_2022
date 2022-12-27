@@ -26,7 +26,7 @@ public class AddQuestionFillBlankActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_question_choose);
+        setContentView(R.layout.activity_add_question_fill_blank);
 
         setTitleBar("添加题目");
         question_input = findViewById(R.id.question_input);
