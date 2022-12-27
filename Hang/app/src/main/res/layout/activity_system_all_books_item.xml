@@ -57,6 +57,7 @@
                 android:layout_marginVertical="@dimen/dp_5"
                 android:text="@string/book_view_content" />
 
+
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_book_load_public_books"
                 style="@style/ButtonStyle"

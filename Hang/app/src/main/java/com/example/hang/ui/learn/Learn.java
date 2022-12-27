@@ -167,6 +167,9 @@ public class Learn extends Fragment {
         ib_look_books = v.findViewById(R.id.ib_look_books);
         ib_look_books.setOnClickListener(view -> {
             Intent intent = new Intent(getActivity(), SystemAllBooksActivity.class);
+            Bundle bundle = new Bundle();
+            bundle.putString("username", username);
+            intent.putExtras(bundle);
             startActivity(intent);
         });
         ib_create_book = v.findViewById(R.id.ib_create_book);

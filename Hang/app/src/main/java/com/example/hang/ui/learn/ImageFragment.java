@@ -1,5 +1,7 @@
 package com.example.hang.ui.learn;
 
+import android.annotation.SuppressLint;
+import android.content.Context;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,60 +9,79 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.example.hang.R;
+import com.example.hang.ports.HttpUtil;
+import com.example.hang.ports.Ports;
+import com.example.hang.ui.learn.util.ListBean;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link ImageFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
+import java.util.HashMap;
+
 public class ImageFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    private final Context context;
+    private final ListBean nowQues;
+    private final boolean readonly;
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    ImageView iv_pic_ques;
+    Button btn_learned;
 
-    public ImageFragment() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment ImageFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static ImageFragment newInstance(String param1, String param2) {
-        ImageFragment fragment = new ImageFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
+    public ImageFragment(Context context, ListBean q, boolean readonly) {
+        this.context = context;
+        this.nowQues = q;
+        this.readonly = readonly;
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+        
     }
 
+    @SuppressLint("MissingInflatedId")
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_image, container, false);
+        View view = inflater.inflate(R.layout.fragment_image, container, false);
+
+        iv_pic_ques = view.findViewById(R.id.image_ques);
+        btn_learned = view.findViewById(R.id.btn_learned_img);
+
+        // TODO
+        iv_pic_ques.setImageResource(R.drawable.card2);
+
+        btn_learned.setOnClickListener(view1 -> {
+            JSONObject jsonObject = null;
+            try {
+                jsonObject = (JSONObject) HttpUtil.httpPut(Ports.reviewQues + nowQues.getId() + "/", new HashMap<>());
+                System.out.println(jsonObject);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            assert jsonObject != null;
+            if (jsonObject.has("error")) {
+                try {
+                    toast(jsonObject.getString("error"));
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            } else {
+                toast("设置成功, 记得按时复习");
+            }
+        });
+
+        return view;
+    }
+
+    private void toast(String str) {
+        Toast.makeText(getActivity(), str, Toast.LENGTH_SHORT).show();
     }
 }

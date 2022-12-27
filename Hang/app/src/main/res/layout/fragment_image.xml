@@ -5,50 +5,37 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F6F6F6"
+    android:layout_gravity="center_horizontal"
     >
+
     <LinearLayout
         android:layout_margin="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingBottom="50dp"
         android:orientation="vertical">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/blank_question"
-            android:textSize="24dp"
-            android:text="@string/default_question" />
 
-        <Button
-            android:background="@drawable/btn_bg"
-            android:id="@+id/show_hint"
-            android:layout_width="match_parent"
+        <ImageView
+            android:id="@+id/image_ques"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="23dp"
-            android:textColor="#ffffff"
-            android:text="提示一下"
-            android:layout_marginTop="@dimen/dp_30"/>
+            android:layout_marginTop="@dimen/dp_20"
+            android:layout_marginRight="@dimen/dp_20"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:scaleType="fitCenter"
+            android:src="@drawable/card2"
+            >
+
+        </ImageView>
 
         <Button
             android:background="@drawable/btn_bg"
-            android:id="@+id/btn_learned"
+            android:id="@+id/btn_learned_img"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="23dp"
             android:textColor="#ffffff"
             android:text="已掌握"
             android:layout_marginTop="@dimen/dp_30"/>
-
-        <TextView
-            android:id="@+id/tv_blank_answer"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dp_30"
-            android:singleLine="false"
-            android:text="啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊"
-            android:textAlignment="center"
-            android:textSize="25dp">
-
-        </TextView>
     </LinearLayout>
 </ScrollView>

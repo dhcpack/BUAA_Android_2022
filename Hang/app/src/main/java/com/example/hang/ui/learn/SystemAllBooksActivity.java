@@ -2,6 +2,7 @@ package com.example.hang.ui.learn;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -11,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,6 +22,7 @@ import androidx.appcompat.widget.AppCompatImageView;
 import com.example.hang.R;
 import com.example.hang.ports.HttpUtil;
 import com.example.hang.ports.Ports;
+import com.example.hang.ui.learn.util.ListBean;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -33,15 +36,17 @@ import java.util.Map;
 
 public class SystemAllBooksActivity extends AppCompatActivity {
     private ListView lv_books;
+    private String username;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_books);
 
-        setTitleBar("系统记忆本");
+        setTitleBar("公开记忆本");
         //设置ListView
         //1.给链表添加数据
+        username = getIntent().getExtras().getString("username");
         List<Map<String, Object>> list = getData();
         //2.适配器，刚刚重写的！
         SystemAllBooksAdapter SystemAllBooksAdapter = new SystemAllBooksAdapter(this, list);
@@ -55,10 +60,7 @@ public class SystemAllBooksActivity extends AppCompatActivity {
     public List<Map<String, Object>> getData() {
         JSONArray jsonArray = null;
         try {
-            String username = getIntent().getStringExtra("username");
-            ArrayList<String> params = new ArrayList<>();
-            params.add(username);
-            jsonArray = (JSONArray) HttpUtil.httpGet(Ports.getBooksUrl, params,true);
+            jsonArray = (JSONArray) HttpUtil.httpGet(Ports.getpublicbook, new ArrayList<>(),true);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -71,6 +73,8 @@ public class SystemAllBooksActivity extends AppCompatActivity {
                     //map.put("iv_icon_book", jsonObject.getString("pic"));
                     map.put("iv_icon_book", R.drawable.ic_book);
                     map.put("tv_book_title", jsonObject.getString("bookname"));
+                    map.put("book_id", jsonObject.getInt("id"));
+                    map.put("username", username);
                     list.add(map);
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -129,6 +133,7 @@ public class SystemAllBooksActivity extends AppCompatActivity {
             info.iv_icon_book = convertView.findViewById(R.id.iv_icon_book);
             info.tv_title_book = convertView.findViewById(R.id.tv_title_book);
             info.btn_book_view_content = convertView.findViewById(R.id.btn_book_view_content);
+            info.book_load_public_books = convertView.findViewById(R.id.btn_book_load_public_books);
 
             //设置数据
             info.iv_icon_book.setImageResource((Integer) data.get(position).get("iv_icon_book"));
@@ -136,16 +141,47 @@ public class SystemAllBooksActivity extends AppCompatActivity {
             info.btn_book_view_content.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    //TODO
+                    Intent intent = new Intent(context, ShowItemsActivity.class);
+                    Bundle bundle = new Bundle();
+                    Integer book_id = (Integer) data.get(position).get("book_id");
+                    bundle.putInt("book_id", book_id);
+                    intent.putExtras(bundle);
+                    context.startActivity(intent);
                 }
             });
             info.book_load_public_books.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    //TODO
+                    //importBookUrl
+                    ArrayList<String> para = new ArrayList<>();
+                    para.add((String) data.get(position).get("username"));
+                    para.add(String.valueOf((Integer)data.get(position).get("book_id")));
+                    JSONObject jo = null;
+                    //while (jo == null) {
+                        try {
+                            jo = (JSONObject) HttpUtil.httpGet(Ports.importBookUrl, para, false);
+                            System.out.println(jo);
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+
+                    assert jo != null;
+                    if (jo.has("error")) {
+                        try {
+                            toast(jo.getString("error"));
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    } else {
+                        toast("导入成功, 可以去个人主页查看");
+                    }
                 }
             });
             return convertView;
+        }
+
+        private void toast(String str) {
+            Toast.makeText(context, str, Toast.LENGTH_SHORT).show();
         }
     }
 
