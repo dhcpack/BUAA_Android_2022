@@ -166,7 +166,7 @@ public class RegisterActivity extends AppCompatActivity {
             } else {
                 toast("注册成功");
                 //销毁注册界面
-                RegisterActivity.this.finish();
+                finish();
                 //跳转到登录
                 startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
             }

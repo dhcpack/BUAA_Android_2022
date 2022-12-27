@@ -305,6 +305,8 @@
 
     <!-- 设置 -->
     <string name="settings_night_mode">深色模式</string>
+    <string name="settings_learning">学习设置</string>
+    <string name="settings_log_out">退出登录</string>
 
     <string name="title_activity_learn_search">LearnSearchActivity</string>
     <!-- Strings used for fragments for navigation -->
