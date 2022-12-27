@@ -3,6 +3,9 @@ package com.example.hang.ui.mine.utils.function;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.util.Log;
+import android.widget.Toast;
+
+import com.example.hang.RegisterActivity;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -19,7 +22,7 @@ public class BitMapUtils {
      * @param bitmap  picture to save
      */
 
-    public static void saveBitmap(String name, Bitmap bitmap, Context mContext) {
+    public static Boolean saveBitmap(String name, Bitmap bitmap, Context mContext) {
         Log.d("Save Bitmap", "Ready to save picture");
         //指定我们想要存储文件的地址
         String TargetPath = mContext.getFilesDir() + "/images/";
@@ -27,6 +30,7 @@ public class BitMapUtils {
         //判断指定文件夹的路径是否存在
         if (!FileUtils.fileIsExist(TargetPath)) {
             Log.d("Save Bitmap", "TargetPath isn't exist");
+            return false;
         } else {
             //如果指定文件夹创建成功，那么我们则需要进行图片存储操作
             File saveFile = new File(TargetPath, name);
@@ -41,6 +45,7 @@ public class BitMapUtils {
             } catch (IOException ex) {
                 ex.printStackTrace();
             }
+            return true;
         }
     }
 }

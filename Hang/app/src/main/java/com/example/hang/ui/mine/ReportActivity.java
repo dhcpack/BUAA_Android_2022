@@ -6,14 +6,13 @@ import static android.view.View.DRAWING_CACHE_QUALITY_LOW;
 
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
-import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
@@ -108,8 +107,13 @@ public class ReportActivity extends AppCompatActivity {
     private void generateImage(View view) {
         AppCompatButton btn_gen_report = findViewById(R.id.btn_gen_report);
         btn_gen_report.setOnClickListener(view1 -> {
-            Bitmap bitmap = getBitmap(view1);
-            BitMapUtils.saveBitmap("learningReport", bitmap, getApplicationContext());
+            Bitmap bitmap = getBitmap(view);
+            Boolean hasSucceed = BitMapUtils.saveBitmap("learningReport.png", bitmap, getApplicationContext());
+            if (hasSucceed) {
+                toast("生成图片成功，已保存");
+            } else {
+                toast("生成图片失败");
+            }
         });
     }
 
@@ -117,7 +121,7 @@ public class ReportActivity extends AppCompatActivity {
         if (null == view) {
             return null;
         }
-        Bitmap bitmap = null;
+        Bitmap bitmap;
 
         // 步骤一：获取视图的宽和高
         int width = view.getRight() - view.getLeft();
@@ -160,6 +164,10 @@ public class ReportActivity extends AppCompatActivity {
         canvas.setBitmap(null);
 
         return bitmap;
+    }
+
+    private void toast(String str) {
+        Toast.makeText(ReportActivity.this, str, Toast.LENGTH_SHORT).show();
     }
 
     public void setTitleBar(String title) {
