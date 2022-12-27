@@ -289,6 +289,7 @@
     <string name="report_check_last_record">上一次打卡时间</string>
     <string name="report_learning_title">正在学习</string>
     <string name="report_learning_process">学习进度百分比%</string>
+    <string name="report_gen_report">生成图片</string>
 
     <!-- 设置 -->
     <string name="settings_night_mode">深色模式</string>

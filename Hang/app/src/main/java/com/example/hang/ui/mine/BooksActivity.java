@@ -3,6 +3,7 @@ package com.example.hang.ui.mine;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -140,11 +141,16 @@ public class BooksActivity extends AppCompatActivity {
         if (actionBar != null) {
             actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
             actionBar.setCustomView(R.layout.title_layout);//设置标题样式
-            TextView textView = (TextView) actionBar.getCustomView().findViewById(R.id.display_title);//获取标题布局的textview
-            textView.setText(title);//设置标题名称，menuTitle为String字符串
+            TextView tv = new TextView(this);
+            tv.setText(title);
+            tv.setTextSize(20);
+            tv.setTextColor(this.getResources().getColor(R.color.white));
+            tv.setLayoutParams(new ActionBar.LayoutParams(ActionBar.LayoutParams.MATCH_PARENT, ActionBar.LayoutParams.MATCH_PARENT));
+            tv.setGravity(Gravity.CENTER);
             actionBar.setHomeButtonEnabled(true);//设置左上角的图标是否可以点击
             actionBar.setDisplayHomeAsUpEnabled(true);//给左上角图标的左边加上一个返回的图标
-            actionBar.setDisplayShowCustomEnabled(true);//使自定义的普通View能在title栏显示，即actionBar.setCustomView能起作用
+            actionBar.setDisplayShowCustomEnabled(true);// 使自定义的普通View能在title栏显示，即actionBar.setCustomView能起作用
+            actionBar.setCustomView(tv, new ActionBar.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT, ActionBar.LayoutParams.MATCH_PARENT, Gravity.CENTER));
         }
     }
 

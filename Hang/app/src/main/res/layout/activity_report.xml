@@ -7,7 +7,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginHorizontal="@dimen/dp_20"
+        android:layout_marginHorizontal="@dimen/dp_10"
         android:orientation="vertical"
         tools:ignore="UselessParent">
 
@@ -15,7 +15,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_5"
             android:gravity="center_horizontal"
             android:orientation="vertical">
 
@@ -51,7 +51,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_5"
             android:gravity="center_horizontal"
             android:orientation="vertical">
 
@@ -93,7 +93,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_5"
             android:gravity="center_horizontal"
             android:orientation="vertical">
 
@@ -143,6 +143,24 @@
                 android:background="@drawable/bg_progressbar"
                 android:max="100"
                 android:progressDrawable="@drawable/bg_progressbar" />
+        </LinearLayout>
+
+        <!--生成图片-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_gen_report"
+                style="@style/ButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/report_gen_report"
+                android:textColor="@color/white"
+                tools:ignore="TextContrastCheck" />
         </LinearLayout>
     </LinearLayout>
 
