@@ -62,9 +62,9 @@ public final class SimpleRatingBar extends View {
 
         TypedArray array = context.obtainStyledAttributes(attrs, R.styleable.SimpleRatingBar);
 
-        mNormalDrawable = ContextCompat.getDrawable(getContext(), array.getResourceId(R.styleable.SimpleRatingBar_normalDrawable, R.drawable.rating_star_off_ic));
-        mHalfDrawable = ContextCompat.getDrawable(getContext(), array.getResourceId(R.styleable.SimpleRatingBar_halfDrawable, R.drawable.rating_star_half_ic));
-        mFillDrawable = ContextCompat.getDrawable(getContext(), array.getResourceId(R.styleable.SimpleRatingBar_fillDrawable, R.drawable.rating_star_fill_ic));
+        mNormalDrawable = ContextCompat.getDrawable(getContext(), array.getResourceId(R.styleable.SimpleRatingBar_normalDrawable, R.drawable.ic_rating_star_off));
+        mHalfDrawable = ContextCompat.getDrawable(getContext(), array.getResourceId(R.styleable.SimpleRatingBar_halfDrawable, R.drawable.ic_rating_star_half));
+        mFillDrawable = ContextCompat.getDrawable(getContext(), array.getResourceId(R.styleable.SimpleRatingBar_fillDrawable, R.drawable.ic_rating_star_fill));
         // 两张图片的宽高不一致
         if (mNormalDrawable.getIntrinsicWidth() != mFillDrawable.getIntrinsicWidth() ||
                 mNormalDrawable.getIntrinsicWidth() != mHalfDrawable.getIntrinsicWidth() ||

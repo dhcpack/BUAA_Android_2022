@@ -26,14 +26,6 @@
             android:textColor="@color/black60"
             android:textSize="@dimen/sp_23" />
 
-<!--        <androidx.appcompat.widget.AppCompatTextView-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginTop="@dimen/dp_20"-->
-<!--            android:text="@string/register_hint"-->
-<!--            android:textColor="@color/black20"-->
-<!--            android:textSize="@dimen/sp_14" />-->
-
         <com.example.hang.ui.mine.utils.view.RegexEditText
             android:id="@+id/username_input"
             style="@style/EditTextStyle"
@@ -112,7 +104,8 @@
             android:maxLength="20"
             android:minHeight="48dp"
             android:singleLine="true"
-            android:textColorHint="#757575" />
+            android:textColorHint="#757575"
+            android:drawableEnd="@drawable/ic_arrows_bottom"/>
 
         <View
             style="@style/HorizontalLineStyle"
@@ -164,7 +157,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                tools:ignore="UselessParent">
 
                 <androidx.appcompat.widget.AppCompatRadioButton
                     android:id="@+id/register_btn_male"

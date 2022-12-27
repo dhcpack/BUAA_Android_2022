@@ -1,14 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.learn.FillBlankFragment">
-
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    android:background="#F6F6F6"
+    >
+    <LinearLayout
+        android:layout_margin="20dp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:paddingBottom="50dp"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/blank_question"
+            android:textSize="24dp"
+            android:text="@string/default_question" />
 
-</FrameLayout>
+        <Button
+            android:background="@drawable/btn_bg"
+            android:id="@+id/show_hint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="23dp"
+            android:textColor="#ffffff"
+            android:text="提示一下"
+            android:layout_marginTop="@dimen/dp_30"/>
+
+        <Button
+            android:background="@drawable/btn_bg"
+            android:id="@+id/btn_learned"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="23dp"
+            android:textColor="#ffffff"
+            android:text="已掌握"
+            android:layout_marginTop="@dimen/dp_30"/>
+
+        <TextView
+            android:id="@+id/tv_blank_answer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_30"
+            android:singleLine="false"
+            android:text="啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊"
+            android:textAlignment="center"
+            android:textSize="25dp">
+
+        </TextView>
+    </LinearLayout>
+</ScrollView>

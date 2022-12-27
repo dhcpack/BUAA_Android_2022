@@ -63,7 +63,7 @@ public class LearnCardPagerAdapater extends FragmentPagerAdapter {
         type = jo.getType();
         //System.out.println(jo.getId());
         if (type == 1) {
-            fragment = new FillBlankFragment();
+            fragment = new FillBlankFragment(mContext, allQues.get(position), readOnly);
         } else if (type == 2) {
             fragment = new SingleChoiceFragment(mContext, allQues.get(position), readOnly);
         } else if (type == 3) {

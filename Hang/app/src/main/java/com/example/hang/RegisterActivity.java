@@ -1,10 +1,14 @@
 package com.example.hang;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.InputType;
 import android.text.TextUtils;
-import android.view.View;
+
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.ListPopupWindow;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
@@ -27,6 +31,7 @@ public class RegisterActivity extends AppCompatActivity {
     private EditText password_input2;
     private EditText student_id_input;
     private EditText institution_input;
+    private ListPopupWindow institution_list_popup_window;
     private EditText major_input;
     private EditText grade_input;
     private SubmitButton btn_register;
@@ -56,6 +61,8 @@ public class RegisterActivity extends AppCompatActivity {
         password_input2 = findViewById(R.id.password_input2);
         student_id_input = findViewById(R.id.student_id_input);
         institution_input = findViewById(R.id.institution_input);
+        setInstitutionListPopupWindowListener();
+        setInstitutionListener();
         major_input = findViewById(R.id.major_input);
         grade_input = findViewById(R.id.grade_input);
         btn_register = findViewById(R.id.register_btn_register);
@@ -96,6 +103,43 @@ public class RegisterActivity extends AppCompatActivity {
             RegisterActivity.this.finish();
             //跳转到登录
             startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
+        });
+    }
+
+    @SuppressLint({"ClickableViewAccessibility", "UseCompatLoadingForDrawables"})
+    private void setInstitutionListener() {
+        institution_input.setInputType(InputType.TYPE_NULL);
+        institution_input.setOnTouchListener((view, event) -> {
+            institution_list_popup_window.show();
+            institution_input.setCompoundDrawablesWithIntrinsicBounds(null, null,
+                    getResources().getDrawable(R.drawable.ic_arrows_top), null);
+            return true;
+        });
+    }
+
+    @SuppressLint("UseCompatLoadingForDrawables")
+    private void setInstitutionListPopupWindowListener() {
+        String[] list= { "材料科学与工程学院", "电子信息学院", "自动化科学与电气工程学院", "能源与动力工程学院",
+                "航空科学与工程学院", "计算机学院", "机械工程及自动化学院", "经济管理学院",
+                "数学科学学院", "生物与医学工程学院", "人文社会科学学院", "外国语学院",
+                "交通科学与工程学院", "可靠性与系统工程学院", "宇航学院", "飞行学院",
+                "仪器科学与光电工程学院", "物理学院", "法学院", "软件学院",
+                "继续教育学院", "沈元学院", "中法工程师学院", "国际通用工程学院",
+                "新媒体艺术与设计学院", "化学学院", "马克思主义学院", "人文与社会科学高等研究院",
+                "空间与环境学院", "无人系统研究院", "航空发动机研究院", "体育部",
+                "国际交叉科学研究院", "北航学院", "医学科学与工程学院", "网络空间安全学院",
+                "集成电路科学与工程学院", "人工智能研究院", "能源科学技术创新研究院" };
+        institution_list_popup_window = new ListPopupWindow(this);
+        institution_list_popup_window.setAdapter(new ArrayAdapter(this, android.R.layout.simple_list_item_1, list));
+        institution_list_popup_window.setAnchorView(institution_input);
+        institution_list_popup_window.setModal(true);
+        institution_list_popup_window.setOnItemClickListener((adapterView, view, i, l) -> {
+            institution_input.setText(list[i]);
+            institution_list_popup_window.dismiss();
+        });
+        institution_list_popup_window.dismiss();
+        institution_list_popup_window.setOnDismissListener(() -> {
+            institution_input.setCompoundDrawablesWithIntrinsicBounds(null, null, getResources().getDrawable(R.drawable.ic_arrows_bottom), null);
         });
     }
 

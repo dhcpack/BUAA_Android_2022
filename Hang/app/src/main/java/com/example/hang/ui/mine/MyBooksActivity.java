@@ -3,6 +3,7 @@ package com.example.hang.ui.mine;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -30,21 +31,23 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class BooksActivity extends AppCompatActivity {
+public class MyBooksActivity extends AppCompatActivity {
+    private ListView lv_books;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_books);
-        setTitleBar("单词本");
 
-        //给链表添加数据
+        setTitleBar("我的记忆本");
+        //设置ListView
+        //1.给链表添加数据
         List<Map<String, Object>> list = getData();
-        //适配器，刚刚重写的！
-        MyAdapter myAdapter = new MyAdapter(this, list);
-        //设置适配器
-        ListView lv_books = findViewById(R.id.lv_books);
-        lv_books.setAdapter(myAdapter);
+        //2.适配器，刚刚重写的！
+        MyBooksAdapter myBooksAdapter = new MyBooksAdapter(this, list);
+        //3.设置适配器
+        lv_books = findViewById(R.id.lv_books);
+        lv_books.setAdapter(myBooksAdapter);
         lv_books.smoothScrollBy(30, 200);
     }
 
@@ -65,8 +68,8 @@ public class BooksActivity extends AppCompatActivity {
                 Map<String, Object> map = new HashMap<>();
                 try {
                     JSONObject jsonObject = (JSONObject) jsonArray.get(i);
-                    //map.put("iv_icon_book", jsonObject.getString("pic"));
-                    map.put("iv_icon_book", R.drawable.ic_book);
+                    map.put("iv_icon_book", jsonObject.getString("pic"));
+                    //map.put("iv_icon_book", R.drawable.ic_book);
                     map.put("tv_book_title", jsonObject.getString("bookname"));
                     list.add(map);
                 } catch (JSONException e) {
@@ -77,13 +80,13 @@ public class BooksActivity extends AppCompatActivity {
         return list;
     }
 
-    public static class MyAdapter extends BaseAdapter {
+    public static class MyBooksAdapter extends BaseAdapter {
 
         private final List<Map<String, Object>> data;
         private final LayoutInflater layoutInflater;
         private final Context context;
 
-        public MyAdapter(Context context, List<Map<String, Object>> data) {
+        public MyBooksAdapter(Context context, List<Map<String, Object>> data) {
             //传入的data，就是我们要在listview中显示的信息
             this.context = context;
             this.data = data;
@@ -95,6 +98,7 @@ public class BooksActivity extends AppCompatActivity {
             private TextView tv_title_book;
             private AppCompatButton btn_book_add_content;
             private AppCompatButton btn_book_view_content;
+            private AppCompatButton book_load_public_books;
         }
         //所有要返回的东西的数量（Id、信息等），都在data里面，从data里面取就好
         @Override
@@ -121,7 +125,7 @@ public class BooksActivity extends AppCompatActivity {
         public View getView(int position, View convertView, ViewGroup parent) {
             // TODO Auto-generated method stub
             Info info = new Info();
-            convertView = layoutInflater.inflate(R.layout.activity_books_item, null);
+            convertView = layoutInflater.inflate(R.layout.activity_my_books_item, null);
             info.iv_icon_book = convertView.findViewById(R.id.iv_icon_book);
             info.tv_title_book = convertView.findViewById(R.id.tv_title_book);
             info.btn_book_add_content = convertView.findViewById(R.id.btn_book_add_content);
@@ -130,6 +134,24 @@ public class BooksActivity extends AppCompatActivity {
             //设置数据
             info.iv_icon_book.setImageResource((Integer) data.get(position).get("iv_icon_book"));
             info.tv_title_book.setText((String) data.get(position).get("tv_book_title"));
+            info.btn_book_add_content.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    //TODO
+                }
+            });
+            info.btn_book_view_content.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    //TODO
+                }
+            });
+            info.book_load_public_books.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    //TODO
+                }
+            });
             return convertView;
         }
     }
@@ -139,12 +161,16 @@ public class BooksActivity extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
             actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
-            actionBar.setCustomView(R.layout.title_layout);//设置标题样式
-            TextView textView = (TextView) actionBar.getCustomView().findViewById(R.id.display_title);//获取标题布局的textview
-            textView.setText(title);//设置标题名称，menuTitle为String字符串
+            TextView tv = new TextView(this);
+            tv.setText(title);
+            tv.setTextSize(20);
+            tv.setTextColor(this.getResources().getColor(R.color.white));
+            tv.setLayoutParams(new ActionBar.LayoutParams(ActionBar.LayoutParams.MATCH_PARENT, ActionBar.LayoutParams.MATCH_PARENT));
+            tv.setGravity(Gravity.CENTER);
             actionBar.setHomeButtonEnabled(true);//设置左上角的图标是否可以点击
             actionBar.setDisplayHomeAsUpEnabled(true);//给左上角图标的左边加上一个返回的图标
-            actionBar.setDisplayShowCustomEnabled(true);//使自定义的普通View能在title栏显示，即actionBar.setCustomView能起作用
+            actionBar.setDisplayShowCustomEnabled(true);// 使自定义的普通View能在title栏显示，即actionBar.setCustomView能起作用
+            actionBar.setCustomView(tv, new ActionBar.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT, ActionBar.LayoutParams.MATCH_PARENT, Gravity.CENTER));
         }
     }
 
