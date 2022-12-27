@@ -15,7 +15,6 @@ import com.example.hang.ui.mine.utils.view.SubmitButton;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -49,7 +48,6 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void init() {
-
         btn_login = findViewById(R.id.login_btn_login);
         btn_register = findViewById(R.id.login_btn_register);
         user_input = findViewById(R.id.user_input);
@@ -81,7 +79,6 @@ public class LoginActivity extends AppCompatActivity {
                             e.printStackTrace();
                         }
                     }
-                    assert jsonObject != null;
                     if (jsonObject.has("error")) {
                         try {
                             toast(jsonObject.getString("error"));

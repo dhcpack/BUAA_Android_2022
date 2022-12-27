@@ -32,6 +32,8 @@ import java.util.List;
 import java.util.Map;
 
 public class SystemAllBooksActivity extends AppCompatActivity {
+    private ListView lv_books;
+    private AppCompatButton btn_book_load_public_books;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,14 +41,27 @@ public class SystemAllBooksActivity extends AppCompatActivity {
         setContentView(R.layout.activity_books);
 
         setTitleBar("系统记忆本");
-        //给链表添加数据
+        //设置Button
+        btn_book_load_public_books = findViewById(R.id.btn_book_load_public_books);
+        setLoadPublicBookListener();
+        //设置ListView
+        //1.给链表添加数据
         List<Map<String, Object>> list = getData();
-        //适配器，刚刚重写的！
+        //2.适配器，刚刚重写的！
         SystemAllBooksAdapter SystemAllBooksAdapter = new SystemAllBooksAdapter(this, list);
-        //设置适配器
-        ListView lv_books = findViewById(R.id.lv_books);
+        //3.设置适配器
+        lv_books = findViewById(R.id.lv_books);
         lv_books.setAdapter(SystemAllBooksAdapter);
         lv_books.smoothScrollBy(30, 200);
+    }
+
+    private void setLoadPublicBookListener() {
+        btn_book_load_public_books.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //TODO
+            }
+        });
     }
 
     //填充数据

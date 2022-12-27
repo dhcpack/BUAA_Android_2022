@@ -1,16 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginTop="@dimen/dp_20"
+    android:layout_marginHorizontal="@dimen/dp_20"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical">
 
-        <ListView
-            android:id="@+id/lv_books"
-            android:layout_width="match_parent"
-            android:scrollbars="vertical"
-            android:dividerHeight="@dimen/dp_5"
-            android:layout_height="wrap_content">
-        </ListView>
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_book_load_public_books"
+        style="@style/ButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/dp_40"
+        android:text="@string/book_load_public_books"
+        android:textColor="#212121"
+        tools:ignore="TextContrastCheck" />
+
+    <ListView
+        android:id="@+id/lv_books"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:dividerHeight="@dimen/dp_5"
+        android:scrollbars="vertical" />
 
 </LinearLayout>

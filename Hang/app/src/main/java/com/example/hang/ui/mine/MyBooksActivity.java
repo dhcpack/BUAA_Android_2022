@@ -66,8 +66,8 @@ public class MyBooksActivity extends AppCompatActivity {
                 Map<String, Object> map = new HashMap<>();
                 try {
                     JSONObject jsonObject = (JSONObject) jsonArray.get(i);
-                    //map.put("iv_icon_book", jsonObject.getString("pic"));
-                    map.put("iv_icon_book", R.drawable.ic_book);
+                    map.put("iv_icon_book", jsonObject.getString("pic"));
+                    //map.put("iv_icon_book", R.drawable.ic_book);
                     map.put("tv_book_title", jsonObject.getString("bookname"));
                     list.add(map);
                 } catch (JSONException e) {
