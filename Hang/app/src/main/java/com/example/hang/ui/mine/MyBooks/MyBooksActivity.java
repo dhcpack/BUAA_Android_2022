@@ -1,7 +1,8 @@
-package com.example.hang.ui.mine;
+package com.example.hang.ui.mine.MyBooks;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -68,9 +69,10 @@ public class MyBooksActivity extends AppCompatActivity {
                 Map<String, Object> map = new HashMap<>();
                 try {
                     JSONObject jsonObject = (JSONObject) jsonArray.get(i);
-                    map.put("iv_icon_book", jsonObject.getString("pic"));
-                    //map.put("iv_icon_book", R.drawable.ic_book);
-                    map.put("tv_book_title", jsonObject.getString("bookname"));
+                    //map.put("iv_icon_book", jsonObject.getString("pic"));
+                    map.put("book_icon", R.drawable.ic_book);
+                    map.put("book_title", jsonObject.getString("bookname"));
+                    map.put("book_id", jsonObject.getString("id"));
                     list.add(map);
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -98,6 +100,8 @@ public class MyBooksActivity extends AppCompatActivity {
             private TextView tv_title_book;
             private AppCompatButton btn_book_add_content;
             private AppCompatButton btn_book_view_content;
+            private AppCompatButton book_load_public_books;
+            private String book_id;
         }
         //所有要返回的东西的数量（Id、信息等），都在data里面，从data里面取就好
         @Override
@@ -131,9 +135,27 @@ public class MyBooksActivity extends AppCompatActivity {
             info.btn_book_view_content = convertView.findViewById(R.id.btn_book_view_content);
 
             //设置数据
-            info.iv_icon_book.setImageResource((Integer) data.get(position).get("iv_icon_book"));
-            info.tv_title_book.setText((String) data.get(position).get("tv_book_title"));
-            // TODO info.btn_book_view_content!!!!!!!!!
+            info.iv_icon_book.setImageResource((Integer) data.get(position).get("book_icon"));
+            info.tv_title_book.setText((String) data.get(position).get("book_title"));
+            info.book_id = (String) data.get(position).get("book_id");
+//            info.btn_book_add_content.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View view) {
+//                    //
+//                }
+//            });
+//            info.btn_book_view_content.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View view) {
+//                    //TODO
+//                }
+//            });
+//            info.book_load_public_books.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View view) {
+//                    //TODO
+//                }
+//            });
             return convertView;
         }
     }

@@ -284,6 +284,11 @@
     <string name="book_view_content">查看</string>
     <string name="book_load_public_books">导入</string>
     <string name="book_add_content_question">请输入题目</string>
+    <string name="book_add_content_choice_A">选项A</string>
+    <string name="book_add_content_choice_B">选项B</string>
+    <string name="book_add_content_choice_C">选项C</string>
+    <string name="book_add_content_choice_D">选项D</string>
+    <string name="book_add_content_answer_format">如有多个答案，请以\'-\'(减号)连接，如：B-C-D</string>
     <string name="book_add_content_answer">请输入答案</string>
     <string name="book_add_content_type">请选择题目类型</string>
 

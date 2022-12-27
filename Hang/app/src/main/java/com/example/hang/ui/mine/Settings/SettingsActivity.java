@@ -1,9 +1,5 @@
-package com.example.hang.ui.mine;
+package com.example.hang.ui.mine.Settings;
 
-import static android.app.UiModeManager.MODE_NIGHT_YES;
-
-import android.annotation.SuppressLint;
-import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.MenuItem;

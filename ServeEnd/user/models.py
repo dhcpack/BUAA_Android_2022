@@ -1,3 +1,5 @@
+import datetime
+
 from django.db import models
 
 
@@ -41,7 +43,7 @@ class Ques(models.Model):
     ans3 = models.CharField(max_length=1024, null=True)
     ans4 = models.CharField(max_length=1024, null=True)
     review = models.IntegerField(default=0)
-    next_time = models.DateTimeField(default=None)
+    next_time = models.DateTimeField(default=datetime.datetime(1999, 1, 1, 0, 0))
 
 
 class LearnRecord(models.Model):

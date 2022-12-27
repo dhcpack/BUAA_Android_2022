@@ -18,6 +18,10 @@ import android.widget.TextView;
 import com.example.hang.R;
 import com.example.hang.ports.HttpUtil;
 import com.example.hang.ports.Ports;
+import com.example.hang.ui.mine.MyBooks.MyBooksActivity;
+import com.example.hang.ui.mine.PersonalData.PersonalDataActivity;
+import com.example.hang.ui.mine.Report.ReportActivity;
+import com.example.hang.ui.mine.Settings.SettingsActivity;
 
 import org.json.JSONException;
 import org.json.JSONObject;

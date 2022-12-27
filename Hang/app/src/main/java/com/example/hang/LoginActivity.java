@@ -32,15 +32,10 @@ public class LoginActivity extends AppCompatActivity {
         //设置此界面为竖屏
         //setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         init();
+
 //        try {
-//            HttpUtil.getFile("userPic", "png", getApplicationContext());
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//        JSONObject jsonObject = null;
-//        try {
-//            jsonObject = (JSONObject) HttpUtil.postFile(new File(getApplicationContext().getFilesDir().getPath() + "/" + "userPic.png"), "png");
-//            System.out.println(jsonObject);
+//            String res = HttpUtil.OCR(new File(getApplicationContext().getFilesDir().getPath() + "/" + "hand.jpg"));
+//            System.out.println(res);
 //        } catch (IOException e) {
 //            e.printStackTrace();
 //        }
@@ -101,7 +96,7 @@ public class LoginActivity extends AppCompatActivity {
                         // 表示此页面下的内容操作成功将data返回到上一页面，如果是用back返回过去的则不存在用setResult传递data值
                         //setResult(RESULT_OK, intent);
                         //销毁登录界面
-                        LoginActivity.this.finish();
+                        finish();
                         //跳转到主界面，登录成功的状态传递到 MainActivity 中
                         startActivity(intent);
                     }
@@ -110,7 +105,7 @@ public class LoginActivity extends AppCompatActivity {
         });
         btn_register.setOnClickListener(view -> {
             //销毁登录界面
-            LoginActivity.this.finish();
+            finish();
             //跳转到主界面，登录成功的状态传递到 RegisterActivity 中
             startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
         });

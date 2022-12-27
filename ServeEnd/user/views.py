@@ -1,4 +1,3 @@
-import datetime
 import json
 import mimetypes
 
@@ -8,6 +7,8 @@ from rest_framework.status import *
 from rest_framework.viewsets import ModelViewSet
 
 from tasks.Ebbinghaus import ebbinghausReviewTime
+from tasks.OCR import OCR
+from tasks.Recommend import *
 from .serializers import *
 
 
@@ -367,6 +368,9 @@ class SearchBookView(View):
         if column == "tag":
             books = Book.objects.filter(public=True).filter(tag=cond)
             return JsonResponse(BookModelSerializer(instance=books, many=True).data, status=HTTP_200_OK, safe=False)
+        elif column == "name":
+            books = Book.objects.filter(public=True).filter(bookname__contains=cond)
+            return JsonResponse(BookModelSerializer(instance=books, many=True).data, status=HTTP_200_OK, safe=False)
         else:
             books = Book.objects.filter(public=True)
             return JsonResponse(BookModelSerializer(instance=books, many=True).data, status=HTTP_200_OK, safe=False)
@@ -376,6 +380,9 @@ class SearchPostView(View):
     def get(self, request, column, cond):
         if column == "tag":
             posts = Post.objects.filter(tag=cond)
+            return JsonResponse(PostModelSerializer(instance=posts, many=True).data, status=HTTP_200_OK, safe=False)
+        elif column == "name":
+            posts = Post.objects.filter(title__contains=cond)
             return JsonResponse(PostModelSerializer(instance=posts, many=True).data, status=HTTP_200_OK, safe=False)
         else:
             posts = Post.objects.all()
@@ -433,6 +440,17 @@ class FileView(View):
         return JsonResponse({"path": backEndName}, status=HTTP_201_CREATED)
 
 
+class OCRView(View):
+    def post(self, request):
+        file = request.FILES['file']
+        backEndName = datetime.datetime.now().strftime('%Y%m%d%H%I%S') + ".jpg"
+        with open("./static/" + backEndName, 'wb') as f:
+            for content in file.chunks():
+                f.write(content)
+        res = OCR(backEndName)
+        return JsonResponse({"ocr": res}, status=HTTP_201_CREATED)
+
+
 class LearningBookView(View):
     def get(self, request, nickname):
         books = Book.objects.filter(nickname=nickname).filter(isLearning=True)
@@ -465,3 +483,8 @@ class ProcessView(View):
         book.process = process
         book.save()
         return JsonResponse({"msg": "设置成功"}, status=HTTP_201_CREATED)
+
+
+class RecommendView(View):
+    def get(self, request):
+        load_books_data()

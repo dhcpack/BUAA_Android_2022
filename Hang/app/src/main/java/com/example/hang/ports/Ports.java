@@ -222,4 +222,9 @@ public class Ports {
      * url
      * */
     public static String getpublicbook = api + "getpublicbook/";
+
+    /*
+     * OCR
+     * */
+    public static String ocrUrl = api + "ocr/";
 }
