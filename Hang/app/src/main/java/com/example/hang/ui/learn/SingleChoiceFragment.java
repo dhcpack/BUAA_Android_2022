@@ -100,11 +100,8 @@ public class SingleChoiceFragment extends Fragment {
                     answerState = "回答错误";
                     button.setText("正确答案: " + correct);
                 }
-                A.setEnabled(false);
-                B.setEnabled(false);
-                C.setEnabled(false);
-                D.setEnabled(false);
                 button.setEnabled(false);
+                setAns();
             }
         });
 
