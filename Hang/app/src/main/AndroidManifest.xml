@@ -25,6 +25,13 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".StartReviewActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".PagerTabActivity"
             android:exported="false">
             <meta-data
@@ -40,13 +47,6 @@
         </activity>
         <activity
             android:name=".ui.learn.SystemAllBooksActivity"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".ui.learn.LearnSettingsActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

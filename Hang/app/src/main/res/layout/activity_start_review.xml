@@ -4,11 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.learn.ShowItemsActivity"
-    android:orientation="vertical">
+    tools:context=".ui.learn.StartReviewActivity">
 
     <androidx.viewpager.widget.ViewPager
-        android:id="@+id/vp_content_showItems"
+        android:id="@+id/vp_content_startReview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 

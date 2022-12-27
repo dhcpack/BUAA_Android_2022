@@ -5,13 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.PagerTabStrip;
 import androidx.viewpager.widget.ViewPager;
 
-import android.annotation.SuppressLint;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.TextView;
 
 import com.example.hang.R;
@@ -26,19 +24,18 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class StartStudyActivity extends AppCompatActivity {
-
+public class StartReviewActivity extends AppCompatActivity {
     private ViewPager vp_content;
     private ArrayList<ListBean> allQues = new ArrayList<>();
     private int book_id;
     private String username;
 
-    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_start_study);
-        setTitleBar("开始记忆");
+        setContentView(R.layout.activity_start_review);
+
+        setTitleBar("开始复习");
         // book id != -1
         book_id = getIntent().getExtras().getInt("book_id");
         username = getIntent().getExtras().getString("user");
@@ -56,7 +53,7 @@ public class StartStudyActivity extends AppCompatActivity {
     public void getLearnedQues() throws JSONException {
         ArrayList<String> para = new ArrayList<>();
         para.add(username);
-        para.add("1"); //未学习
+        para.add("0"); //待复习
         JSONArray jsonArray = null;
         while (jsonArray == null) {
             try {
@@ -75,7 +72,7 @@ public class StartStudyActivity extends AppCompatActivity {
                     jsonObject.getInt("review"), jsonObject.getString("next_time"), jsonObject.getString("nickname"), jsonObject.getInt("book") );
             allQues.add(listBean);
         }
-        System.out.println("show items size" + allQues.size());
+        //System.out.println("show items size" + allQues.size());
     }
 
     public void initPagerStrip() {
@@ -86,7 +83,7 @@ public class StartStudyActivity extends AppCompatActivity {
 
     public void initPagerView() {
         LearnCardPagerAdapater adapter = new LearnCardPagerAdapater(getSupportFragmentManager(), this, allQues, false);
-        vp_content = findViewById(R.id.vp_content);
+        vp_content = findViewById(R.id.vp_content_startReview);
         vp_content.setAdapter(adapter);
         vp_content.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             //翻页状态改变时触发，0-静止  1-正在滑动  2-滑动完毕

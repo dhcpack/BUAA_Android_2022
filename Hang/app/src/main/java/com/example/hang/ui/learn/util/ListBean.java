@@ -8,7 +8,7 @@ import org.json.JSONObject;
 
 import java.io.Serializable;
 
-public class ListBean implements Serializable, Parcelable {
+public class ListBean implements Serializable {
     private JSONObject jo;
     private int id;
     private int type;
@@ -48,17 +48,6 @@ public class ListBean implements Serializable, Parcelable {
     protected ListBean(Parcel in) {
     }
 
-    public static final Creator<ListBean> CREATOR = new Creator<ListBean>() {
-        @Override
-        public ListBean createFromParcel(Parcel in) {
-            return new ListBean(in);
-        }
-
-        @Override
-        public ListBean[] newArray(int size) {
-            return new ListBean[size];
-        }
-    };
 
     /*public String getString(String s) throws JSONException {
         return jo.getString(s);
@@ -128,12 +117,5 @@ public class ListBean implements Serializable, Parcelable {
         return jo;
     }
 
-    @Override
-    public int describeContents() {
-        return 0;
-    }
 
-    @Override
-    public void writeToParcel(Parcel parcel, int i) {
-    }
 }
