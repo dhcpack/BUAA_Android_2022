@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="true">
+        <shape xmlns:android="http://schemas.android.com/apk/res/android">
+            <!-- 矩形的圆角弧度 -->
+            <corners android:radius="15dp" />
+            <!-- 矩形的填充色 -->
+            <solid android:color="#1F70C0" />
+            <!-- 矩形的边框的宽度,每段虚线的长度，和两段虚线之间的颜色和颜色 -->
+
+        </shape>
+    </item>
+    <item>
+        <shape xmlns:android="http://schemas.android.com/apk/res/android">
+            <!-- 矩形的圆角弧度 -->
+            <corners android:radius="15dp" />
+            <!-- 矩形的填充色 -->
+            <solid android:color="#2CC9E9" />
+            <!-- 矩形的边框的宽度,每段虚线的长度，和两段虚线之间的颜色和颜色 -->
+
+        </shape>
+    </item>
+</selector>

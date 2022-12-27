@@ -15,6 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,6 +24,7 @@ import com.example.hang.R;
 import com.example.hang.ports.HttpUtil;
 import com.example.hang.ports.Ports;
 import com.example.hang.ui.learn.util.DateUtil;
+import com.example.hang.ui.learn.util.ListBean;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -31,6 +33,7 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 public class Learn extends Fragment {
 
@@ -59,9 +62,12 @@ public class Learn extends Fragment {
     private TextView tv_book_name;
     private TextView tv_book_tag;
     private TextView tv_percent;
-    private ArrayList<JSONObject> allQues = new ArrayList<>();
+    private ArrayList<ListBean> allQues = new ArrayList<ListBean>();
     private TextView tv_ok_num;
     private TextView tv_no_num;
+
+    //进度条
+    private ProgressBar progressBar;
 
     public static Learn newInstance() {
         return new Learn();
@@ -102,6 +108,10 @@ public class Learn extends Fragment {
         }
         tv_percent.setText("学习进度" + p + "%");
 
+        progressBar = v.findViewById(R.id.progressbar_learn);
+        progressBar.setProgress(process);
+        progressBar.setMax(quesNum);
+
         tv_daka_days = v.findViewById(R.id.tv_daka_days);
         tv_check_state = v.findViewById(R.id.tv_check_state);
         tv_check_state.setText("未");
@@ -125,6 +135,9 @@ public class Learn extends Fragment {
         btn_start_study = v.findViewById(R.id.btn_start_study);
         btn_start_study.setOnClickListener(view -> {
             Intent intent = new Intent(getActivity(), StartStudyActivity.class);
+            Bundle bundle = new Bundle();
+            bundle.putSerializable("arrayList", allQues);
+            intent.putExtras(bundle);
             startActivity(intent);
         });
         btn_learn_settings = v.findViewById(R.id.btn_learn_settings);
@@ -252,11 +265,13 @@ public class Learn extends Fragment {
         int l = jsonArray.length();
         for (int i = 0; i < l; ++i) {
             JSONObject jsonObject = (JSONObject) jsonArray.get(i);
-            if (!jsonObject.has("error")) {
-                allQues.add(jsonObject);
-            }
+            ListBean listBean = new ListBean(jsonObject.getInt("id"), jsonObject.getInt("type"), jsonObject.getString("ques"),
+                    jsonObject.getString("ans1"), jsonObject.getString("ans2"), jsonObject.getString("ans3"),  jsonObject.getString("ans4"),
+                    jsonObject.getInt("review"), jsonObject.getString("next_time"), jsonObject.getString("nickname"), jsonObject.getInt("book") );
+            allQues.add(listBean);
         }
         quesNum = allQues.size();
+        System.out.println("all num: " + quesNum);
         rest = quesNum - process;
     }
 
