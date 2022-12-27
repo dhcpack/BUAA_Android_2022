@@ -16,6 +16,7 @@ class User(models.Model):
     major = models.CharField(max_length=64)
     grade = models.CharField(max_length=16)
     sex = models.BooleanField(default=True)
+    recommends = models.CharField(max_length=256, default=None)
 
 
 class Check(models.Model):

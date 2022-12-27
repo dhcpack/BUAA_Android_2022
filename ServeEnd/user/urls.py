@@ -68,8 +68,7 @@ urlpatterns = [
                   re_path("^review/(?P<quesId>[0-9]+)/$", ReviewView.as_view()),
 
                   path("ocr/", OCRView.as_view()),
-
-                  path("recom/", RecommendView.as_view()),
-re_path("^search/(?P<quesId>[0-9]+)/$", ReviewView.as_view()),
+                  re_path("recom/(?P<nickname>[_a-zA-Z0-9]+)/$", RecommendView.as_view()),
+                  re_path("^search/(?P<quesId>[0-9]+)/$", ReviewView.as_view()),
 
               ] + router.urls
