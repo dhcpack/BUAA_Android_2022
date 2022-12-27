@@ -321,10 +321,12 @@
     <string name="learn_review">开始复习</string>
     <string name="show_items">查看列表</string>
     <string name="book_name_max_length">记忆本名称不多于10字</string>
-    <string name="book_tag_max_length">记忆本标签不多于8字</string>
+    <string name="book_tag_format">标签格式:学科/分类</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="default_question">0.这是默认的问题，如果看到这个问题说明程序bug了，建议重启啦</string>
     <string name="add_public">导入</string>
+    <string name="search_by_name">按名字查找</string>
+    <string name="search_by_tag">按标签查找</string>
 
 </resources>

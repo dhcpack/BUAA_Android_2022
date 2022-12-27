@@ -157,14 +157,14 @@ public class SystemAllBooksActivity extends AppCompatActivity {
                     para.add((String) data.get(position).get("username"));
                     para.add(String.valueOf((Integer)data.get(position).get("book_id")));
                     JSONObject jo = null;
-                    //while (jo == null) {
+                    while (jo == null) {
                         try {
                             jo = (JSONObject) HttpUtil.httpGet(Ports.importBookUrl, para, false);
                             System.out.println(jo);
                         } catch (IOException e) {
                             e.printStackTrace();
                         }
-
+                    }
                     assert jo != null;
                     if (jo.has("error")) {
                         try {

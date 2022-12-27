@@ -117,6 +117,9 @@ public class Learn extends Fragment {
         ib_search = v.findViewById(R.id.ib_search);
         ib_search.setOnClickListener(view -> {
             Intent intent = new Intent(getActivity(), LearnSearchActivity.class);
+            Bundle bundle = new Bundle();
+            bundle.putString("username", username);
+            intent.putExtras(bundle);
             startActivity(intent);
         });
         btn_show_items = v.findViewById(R.id.btn_show_items);
