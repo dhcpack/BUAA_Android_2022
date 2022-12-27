@@ -1,10 +1,14 @@
 package com.example.hang;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.InputType;
 import android.text.TextUtils;
-import android.view.View;
+
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.ListPopupWindow;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
@@ -56,6 +60,7 @@ public class RegisterActivity extends AppCompatActivity {
         password_input2 = findViewById(R.id.password_input2);
         student_id_input = findViewById(R.id.student_id_input);
         institution_input = findViewById(R.id.institution_input);
+        setInstitutionListener();
         major_input = findViewById(R.id.major_input);
         grade_input = findViewById(R.id.grade_input);
         btn_register = findViewById(R.id.register_btn_register);
@@ -97,6 +102,33 @@ public class RegisterActivity extends AppCompatActivity {
             //跳转到登录
             startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
         });
+    }
+
+    @SuppressLint({"ClickableViewAccessibility", "UseCompatLoadingForDrawables"})
+    private void setInstitutionListener() {
+        institution_input.setInputType(InputType.TYPE_NULL);
+        institution_input.setOnTouchListener((view, event) -> {
+            showListPopupWindow();
+            institution_input.setCompoundDrawablesWithIntrinsicBounds(null, null,
+                    getResources().getDrawable(R.drawable.ic_arrows_top), null);
+            return true;
+        });
+    }
+
+    @SuppressLint("UseCompatLoadingForDrawables")
+    private void showListPopupWindow(){
+        String[] list= { "item1", "item2", "item3", "item4"};
+        ListPopupWindow listPopupWindow= new ListPopupWindow(this);
+        listPopupWindow.setAdapter(new ArrayAdapter(this, android.R.layout.simple_list_item_1, list));
+        listPopupWindow.setAnchorView(institution_input);
+        listPopupWindow.setModal(true);
+        listPopupWindow.setOnDismissListener(() -> institution_input.setCompoundDrawablesWithIntrinsicBounds(null, null,
+                getResources().getDrawable(R.drawable.ic_arrows_bottom), null));
+        listPopupWindow.setOnItemClickListener((adapterView, view, i, l) -> {
+            institution_input.setText(list[i]);
+            listPopupWindow.dismiss();
+        });
+        listPopupWindow.show();
     }
 
     private void sendPostRequest() {

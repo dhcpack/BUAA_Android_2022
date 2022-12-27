@@ -235,9 +235,9 @@
     <string name="personal_data_major">专业</string>
     <string name="personal_data_grade">年级</string>
     <string name="personal_data_name_hint">设置昵称</string>
+    <string name="personal_data_institution_hint">请选择</string>
 
     <string name="personal_data_address">地区</string>
-    <string name="personal_data_address_hint">请选择</string>
 
     <string name="personal_data_phone">手机号码</string>
     <string name="personal_data_phone_hint">立即绑定</string>
