@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
+import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -66,7 +67,8 @@ public class CreateBookActivity extends AppCompatActivity {
         setContentView(R.layout.activity_create_book);
         username = getIntent().getExtras().getString("username");
         //System.out.println(username);
-        String menuTitle = "创建记忆本";
+        setTitleBar("创建记忆本");
+        /*String menuTitle = "创建记忆本";
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
             actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
@@ -76,7 +78,7 @@ public class CreateBookActivity extends AppCompatActivity {
             actionBar.setHomeButtonEnabled(true);//设置左上角的图标是否可以点击
             actionBar.setDisplayHomeAsUpEnabled(true);//给左上角图标的左边加上一个返回的图标
             actionBar.setDisplayShowCustomEnabled(true);// 使自定义的普通View能在title栏显示，即actionBar.setCustomView能起作用
-        }
+        }*/
         et_create_book_name = findViewById(R.id.et_create_book_name);
         et_create_book_tag = findViewById(R.id.et_create_book_tag);
         btn_create_book = findViewById(R.id.btn_create_book);
@@ -124,6 +126,31 @@ public class CreateBookActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    public void setTitleBar(String title) {
+        //设置顶部菜单栏
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+            actionBar.setCustomView(R.layout.title_layout);//设置标题样式
+            TextView tv = new TextView(this);
+            tv.setText(title);
+            tv.setTextSize(20);
+            tv.setTextColor(this.getResources().getColor(R.color.white));
+            tv.setLayoutParams(new ActionBar.LayoutParams(
+                    ActionBar.LayoutParams.MATCH_PARENT, ActionBar.LayoutParams.MATCH_PARENT));
+            tv.setGravity(Gravity.CENTER);
+//            TextView tv = actionBar.getCustomView().findViewById(R.id.display_title);//获取标题布局的textview
+//            tv.setText(title);//设置标题名称，menuTitle为String字符串
+            actionBar.setHomeButtonEnabled(true);//设置左上角的图标是否可以点击
+            actionBar.setDisplayHomeAsUpEnabled(true);//给左上角图标的左边加上一个返回的图标
+            actionBar.setDisplayShowCustomEnabled(true);// 使自定义的普通View能在title栏显示，即actionBar.setCustomView能起作用
+            actionBar.setCustomView(tv, new ActionBar.LayoutParams(
+                    ActionBar.LayoutParams.WRAP_CONTENT,
+                    ActionBar.LayoutParams.MATCH_PARENT,
+                    Gravity.CENTER));
+        }
     }
 
     private void toast(String str) {
