@@ -1,14 +1,19 @@
 package com.example.hang.ui.mine.settings;
 
+import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
+import androidx.appcompat.widget.AppCompatButton;
 
+import com.example.hang.LoginActivity;
 import com.example.hang.R;
 import com.example.hang.ui.mine.utils.view.SwitchButton;
 
@@ -28,6 +33,11 @@ public class SettingsActivity extends AppCompatActivity {
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
                 btn_turn_on_night_mode.setChecked(false);
             }
+        });
+        AppCompatButton btn_log_out = findViewById(R.id.btn_log_out);
+        btn_log_out.setOnClickListener(view -> {
+            finish();
+            startActivity(new Intent(SettingsActivity.this, LoginActivity.class));
         });
     }
 

@@ -59,7 +59,7 @@
         android:drawableEnd="@drawable/ic_arrows_right"/>
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/settings_log_out"
+        android:id="@+id/btn_log_out"
         style="@style/ButtonStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
