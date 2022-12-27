@@ -421,12 +421,12 @@ class FileView(View):
 
     def post(self, request, type):
         file = request.FILES['file']
-        if type == 'pic':
-            backEndName = datetime.datetime.now().strftime('%Y%m%d%H%I%S') + ".png"
-        elif type == 'mp3':
+        if type == 'mp3':
             backEndName = datetime.datetime.now().strftime('%Y%m%d%H%I%S') + ".mp3"
         elif type == 'mp4':
             backEndName = datetime.datetime.now().strftime('%Y%m%d%H%I%S') + ".mp4"
+        else:
+            backEndName = datetime.datetime.now().strftime('%Y%m%d%H%I%S') + "." + type
         with open("./static/" + backEndName, 'wb') as f:
             for content in file.chunks():
                 f.write(content)

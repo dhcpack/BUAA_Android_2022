@@ -15,6 +15,7 @@ import com.example.hang.ui.mine.utils.view.SubmitButton;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -32,6 +33,19 @@ public class LoginActivity extends AppCompatActivity {
         //设置此界面为竖屏
         //setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         init();
+//        try {
+//            HttpUtil.getFile("userPic", "png", getApplicationContext());
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//        JSONObject jsonObject = null;
+//        try {
+//            jsonObject = (JSONObject) HttpUtil.postFile(new File(getApplicationContext().getFilesDir().getPath() + "/" + "userPic.png"), "png");
+//            System.out.println(jsonObject);
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+
     }
 
     private void init() {

@@ -172,15 +172,15 @@ public class Ports {
      * */
     public static String importBookUrl = api + "importbook/";
     /*
-     * 导入公开记忆本：GET
-     * url + imagePath
+     * 得到文件：GET
+     * url
      * isArray: false
      * */
-    public static String getPicUrl = api + "getimage/";
+    public static String getFileUrl = api + "getfile/";
     /*
-     * 上传图片：POST
+     * 上传文件：POST
      * */
-    public static String postPicUrl = api + "postimage/";
+    public static String postFileUrl = api + "postfile/";
 
     // 见接口文档
     // 设置为首页记忆本

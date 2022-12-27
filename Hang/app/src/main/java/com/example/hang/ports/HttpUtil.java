@@ -2,18 +2,29 @@ package com.example.hang.ports;
 
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.os.Environment;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectOutputStream;
+import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import okhttp3.Call;
+import okhttp3.Callback;
 import okhttp3.MediaType;
+import okhttp3.MultipartBody;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.RequestBody;
@@ -228,4 +239,120 @@ public class HttpUtil {
             }
         }
     }
+
+    /*
+     * 上传文件
+     * */
+    /*
+     * POST
+     * */
+    public static JSONObject postFile(File file, String fileType) throws IOException {
+        String url = Ports.postFileUrl + fileType + "/";
+        PostFileRunnable postFileRunnable = new PostFileRunnable(file, url);
+        Thread thread = new Thread(postFileRunnable, "postThread");
+        thread.start();
+        try {
+            thread.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return postFileRunnable.jsonObject;
+    }
+
+    static final class PostFileRunnable implements Runnable {
+        private final File file;
+        private final String url;
+        private final OkHttpClient okHttpClient;
+        private JSONObject jsonObject;
+
+        public PostFileRunnable(File file, String url) {
+            okHttpClient = new OkHttpClient();
+            this.file = file;
+            this.url = url;
+        }
+
+        @Override
+        public void run() {
+            System.out.println(this.url);
+            // 构建请求体
+            RequestBody requestBody = new MultipartBody.Builder().setType(MultipartBody.FORM).addFormDataPart("file", "file", RequestBody.create(MediaType.parse("multipart/form-data"), file)).build();
+
+            //创造http请求
+            Request request = new Request.Builder()
+                    .url(this.url)
+                    .post(requestBody)
+                    .build();
+            Response response = null;
+            try {
+                response = okHttpClient.newCall(request).execute();
+                System.out.println(response.message());
+                this.jsonObject = new JSONObject(response.body().string());
+            } catch (IOException | JSONException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    /*
+     * 得到文件
+     * */
+    /*
+     * GET
+     * */
+    public static void getFile(String fileName, String fileType, Context context) throws IOException {
+        String url = Ports.getFileUrl + fileName + "/" + fileType + "/";
+        fileName += ".";
+        fileName += fileType;
+        GetFileRunnable getFileRunnable = new GetFileRunnable(url, fileName, context);
+        Thread thread = new Thread(getFileRunnable, "postThread");
+        thread.start();
+        try {
+            thread.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    static final class GetFileRunnable implements Runnable {
+        private final String url;
+        private final OkHttpClient okHttpClient;
+        private final Context context;
+        private final String fileName;
+
+        public GetFileRunnable(String url, String fileName, Context context) {
+            okHttpClient = new OkHttpClient();
+            this.url = url;
+            this.context = context;
+            this.fileName = fileName;
+        }
+
+        @Override
+        public void run() {
+            //创造http请求
+            Request request = new Request.Builder()
+                    .url(this.url)
+                    .build();
+            Response response = null;
+            try {
+                System.out.println(this.url);
+                response = okHttpClient.newCall(request).execute();
+                System.out.println(response.message());
+                File file = new File(this.context.getFilesDir().getPath() + "/" + fileName);
+                System.out.println(this.context.getFilesDir().getPath() + "/" + fileName);
+
+                Bitmap bitmap = BitmapFactory.decodeStream(response.body().byteStream());
+                try {
+                    FileOutputStream fos = new FileOutputStream(file);
+                    bitmap.compress(Bitmap.CompressFormat.JPEG, 100, fos);
+                    fos.flush();
+                    fos.close();
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
 }
