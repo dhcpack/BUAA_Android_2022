@@ -93,6 +93,7 @@ public class Learn extends Fragment {
         tv_book_tag.setText(book_tag);
         if (book_id != -1) {
             try {
+                getQuesNum();
                 getAllQues();
             } catch (JSONException | IOException e) {
                 e.printStackTrace();
@@ -107,7 +108,7 @@ public class Learn extends Fragment {
         if (quesNum != 0) {
             p = (double) process / (double) quesNum;
         }
-        tv_percent.setText("学习进度" + p + "%");
+        tv_percent.setText(String.format("学习进度%.2f", p) + "%");
 
         progressBar = v.findViewById(R.id.progressbar_learn);
         progressBar.setProgress(process);
@@ -232,11 +233,13 @@ public class Learn extends Fragment {
         ArrayList<String> user = new ArrayList<>();
         user.add(username);
         JSONObject jsonObject = null;
-        try {
-            jsonObject = (JSONObject) HttpUtil.httpGet(Ports.learningBookUrl, user, false);
-            System.out.println(jsonObject);
-        } catch (IOException e) {
-            e.printStackTrace();
+        while (jsonObject == null) {
+            try {
+                jsonObject = (JSONObject) HttpUtil.httpGet(Ports.learningBookUrl, user, false);
+                System.out.println(jsonObject);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
         assert jsonObject != null;
         if (jsonObject.has("error")) {
@@ -247,20 +250,41 @@ public class Learn extends Fragment {
         } else {
             book_name = jsonObject.getString("bookname");
             book_tag = jsonObject.getString("tag");
-            process = Integer.parseInt(jsonObject.getString("process"));
+            //process = Integer.parseInt(jsonObject.getString("process"));
             book_id = Integer.parseInt(jsonObject.getString("id"));
         }
+    }
+
+    public void getQuesNum() throws JSONException {
+        ArrayList<String> user = new ArrayList<>();
+        user.add(username);
+        JSONObject o = null;
+        while (o == null) {
+            try {
+                o = (JSONObject) HttpUtil.httpGet(Ports.getReviewCount, user, false);
+                System.out.println(o);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        assert o != null;
+        rest = o.getInt("未学习");
+        process = o.getInt("已学习");
+        quesNum = rest + process;
+        //System.out.println("all num: " + quesNum);
     }
 
     private void getAllQues() throws JSONException, IOException {
         ArrayList<String> id = new ArrayList<>();
         id.add(String.valueOf(book_id));
         JSONArray jsonArray = null;
-        try {
-            jsonArray = (JSONArray) HttpUtil.httpGet(Ports.getQuestionUrl, id, true);
-            System.out.println(jsonArray);
-        } catch (IOException e) {
-            e.printStackTrace();
+        while (jsonArray == null) {
+            try {
+                jsonArray = (JSONArray) HttpUtil.httpGet(Ports.getQuestionUrl, id, true);
+                System.out.println(jsonArray);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
         assert jsonArray != null;
         int l = jsonArray.length();
@@ -272,9 +296,6 @@ public class Learn extends Fragment {
             allQues.add(listBean);
 
         }
-        quesNum = allQues.size();
-        System.out.println("all num: " + quesNum);
-        rest = quesNum - process;
     }
 
     private void toast(String str) {

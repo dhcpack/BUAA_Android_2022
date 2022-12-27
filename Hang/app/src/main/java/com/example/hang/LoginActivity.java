@@ -59,11 +59,13 @@ public class LoginActivity extends AppCompatActivity {
                     signIn.add(username);
                     signIn.add(password);
                     JSONObject jsonObject = null;
-                    try {
-                        jsonObject = (JSONObject) HttpUtil.httpGet(Ports.signInUrl, signIn, false);
-                        System.out.println(jsonObject);
-                    } catch (IOException e) {
-                        e.printStackTrace();
+                    while (jsonObject == null) {
+                        try {
+                            jsonObject = (JSONObject) HttpUtil.httpGet(Ports.signInUrl, signIn, false);
+                            System.out.println(jsonObject);
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
                     }
                     assert jsonObject != null;
                     if (jsonObject.has("error")) {
