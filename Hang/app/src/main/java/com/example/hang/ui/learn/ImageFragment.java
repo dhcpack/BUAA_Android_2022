@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.hang.R;
@@ -29,6 +30,7 @@ public class ImageFragment extends Fragment {
     private final Context context;
     private final ListBean nowQues;
     private final boolean readonly;
+    private TextView tv_ques;
 
     ImageView iv_pic_ques;
     Button btn_learned;
@@ -52,9 +54,11 @@ public class ImageFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_image, container, false);
 
+        tv_ques = view.findViewById(R.id.tv_ques);
         iv_pic_ques = view.findViewById(R.id.image_ques);
         btn_learned = view.findViewById(R.id.btn_learned_img);
 
+        tv_ques.setText(nowQues.getQues());
         // TODO
         iv_pic_ques.setImageResource(R.drawable.card2);
 
