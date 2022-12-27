@@ -64,7 +64,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="@dimen/dp_5"
-                android:text="@string/book_load_public_books" />
+                android:text="@string/add_public" />
         </LinearLayout>
     </LinearLayout>
 

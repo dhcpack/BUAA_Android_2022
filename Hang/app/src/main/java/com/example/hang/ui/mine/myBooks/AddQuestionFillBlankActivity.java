@@ -1,4 +1,4 @@
-package com.example.hang.ui.mine.MyBooks;
+package com.example.hang.ui.mine.myBooks;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -15,7 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.hang.R;
 import com.example.hang.ui.mine.utils.view.SubmitButton;
 
-public class AddQuestionImageActivity extends AppCompatActivity {
+public class AddQuestionFillBlankActivity extends AppCompatActivity {
     private EditText question_input;
     private EditText answer_input;
     private SubmitButton btn_confirm;
@@ -26,7 +26,7 @@ public class AddQuestionImageActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_question_image);
+        setContentView(R.layout.activity_add_question_fill_blank);
 
         setTitleBar("添加题目");
         question_input = findViewById(R.id.question_input);
@@ -35,14 +35,21 @@ public class AddQuestionImageActivity extends AppCompatActivity {
         btn_confirm.setOnClickListener(view -> {
             question = question_input.getText().toString().trim();
             answer = answer_input.getText().toString().trim();
-            Intent intent = new Intent();
-            Bundle bundle = new Bundle();
-            bundle.putString("ques", question);
-            bundle.putString("ans", answer);
-            intent.putExtras(bundle);
-            setResult(Activity.RESULT_OK, intent);
-            toast("提交成功");
-            finish();
+            if (question.equals("")) {
+                toast("题目不能为空");
+            }
+            else if (answer.equals("")) {
+                toast("答案不能为空");
+            } else {
+                Intent intent = new Intent();
+                Bundle bundle = new Bundle();
+                bundle.putString("ques", question);
+                bundle.putString("ans", answer);
+                intent.putExtras(bundle);
+                setResult(Activity.RESULT_OK, intent);
+                toast("提交成功");
+                finish();
+            }
         });
     }
 
@@ -74,7 +81,7 @@ public class AddQuestionImageActivity extends AppCompatActivity {
     }
 
     private void toast(String str) {
-        Toast.makeText(AddQuestionImageActivity.this, str, Toast.LENGTH_SHORT).show();
+        Toast.makeText(AddQuestionFillBlankActivity.this, str, Toast.LENGTH_SHORT).show();
         btn_confirm.reset();
     }
 }

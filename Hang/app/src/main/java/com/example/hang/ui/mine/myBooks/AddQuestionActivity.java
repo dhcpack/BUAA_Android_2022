@@ -1,4 +1,4 @@
-package com.example.hang.ui.mine.MyBooks;
+package com.example.hang.ui.mine.myBooks;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -19,11 +19,11 @@ import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
 
 import com.example.hang.R;
 import com.example.hang.ports.HttpUtil;
 import com.example.hang.ports.Ports;
-import com.example.hang.ui.mine.utils.view.SubmitButton;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -34,7 +34,7 @@ import java.util.HashMap;
 public class AddQuestionActivity extends AppCompatActivity {
     private EditText type_input;
     private ListPopupWindow type_list_popup_window;
-    private SubmitButton btn_confirm;
+    private AppCompatButton btn_confirm;
 
     private String ques;
     private String ans;
@@ -192,6 +192,5 @@ public class AddQuestionActivity extends AppCompatActivity {
 
     private void toast(String str) {
         Toast.makeText(AddQuestionActivity.this, str, Toast.LENGTH_SHORT).show();
-        btn_confirm.reset();
     }
 }

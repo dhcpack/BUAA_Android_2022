@@ -1,11 +1,10 @@
-package com.example.hang.ui.mine.MyBooks;
+package com.example.hang.ui.mine.myBooks;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.MenuItem;
-import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.TextView;
@@ -17,23 +16,20 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.hang.R;
 import com.example.hang.ui.mine.utils.view.SubmitButton;
 
-import java.util.ArrayList;
-
-public class AddQuestionChooseManyActivity  extends AppCompatActivity {
+public class AddQuestionChooseOneActivity extends AppCompatActivity {
     private EditText question_input;
     private EditText choiceA_input;
     private EditText choiceB_input;
     private EditText choiceC_input;
     private EditText choiceD_input;
-    private CheckBox btn_A;
-    private CheckBox btn_B;
-    private CheckBox btn_C;
-    private CheckBox btn_D;
+    private RadioButton btn_A;
+    private RadioButton btn_B;
+    private RadioButton btn_C;
+    private RadioButton btn_D;
     private SubmitButton btn_confirm;
 
     private String question;
-    private ArrayList<String> answerList;
-    private StringBuffer answer;
+    private String answer;
     private String choiceA;
     private String choiceB;
     private String choiceC;
@@ -44,7 +40,7 @@ public class AddQuestionChooseManyActivity  extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_question_choose_many);
+        setContentView(R.layout.activity_add_question_choose_one);
 
         setTitleBar("添加题目");
         question_input = findViewById(R.id.question_input);
@@ -56,25 +52,24 @@ public class AddQuestionChooseManyActivity  extends AppCompatActivity {
         btn_B = findViewById(R.id.btn_B);
         btn_C = findViewById(R.id.btn_C);
         btn_D = findViewById(R.id.btn_D);
-        answerList = new ArrayList<>();
         btn_A.setOnClickListener(view -> {
             if (btn_A.isChecked()) {
-                answerList.add("A");
+                answer = "A";
             }
         });
         btn_B.setOnClickListener(view -> {
             if (btn_B.isChecked()) {
-                answerList.add("B");
+                answer = "B";
             }
         });
         btn_C.setOnClickListener(view -> {
             if (btn_C.isChecked()) {
-                answerList.add("C");
+                answer = "C";
             }
         });
         btn_D.setOnClickListener(view -> {
             if (btn_D.isChecked()) {
-                answerList.add("D");
+                answer = "D";
             }
         });
         btn_confirm = findViewById(R.id.btn_confirm);
@@ -84,20 +79,29 @@ public class AddQuestionChooseManyActivity  extends AppCompatActivity {
             choiceB = choiceB_input.getText().toString().trim();
             choiceC = choiceC_input.getText().toString().trim();
             choiceD = choiceD_input.getText().toString().trim();
-            ques = question;
-            answer = new StringBuffer(answerList.get(0));
-            for (int i = 1; i < answerList.size(); i++) {
-                answer.append("-").append(answerList.get(i));
+            if (question.equals("")) {
+                toast("题目不能为空");
             }
-            ans = choiceA + "%%%" + choiceB + "%%%" +choiceC + "%%%" + choiceD + "%%%" + answer.toString();
-            Intent intent = new Intent();
-            Bundle bundle = new Bundle();
-            bundle.putString("ques", ques);
-            bundle.putString("ans", ans);
-            intent.putExtras(bundle);
-            setResult(Activity.RESULT_OK, intent);
-            toast("提交成功");
-            finish();
+            else if (choiceA.equals("")) {
+                toast("选项A不能为空");
+            } else if (choiceB.equals("")) {
+                toast("选项B不能为空");
+            } else if (choiceC.equals("")) {
+                toast("选项C不能为空");
+            } else if (choiceD.equals("")) {
+                toast("选项D不能为空");
+            } else {
+                ques = question;
+                ans = choiceA + "%%%" + choiceB + "%%%" +choiceC + "%%%" + choiceD + "%%%" + answer;
+                Intent intent = new Intent();
+                Bundle bundle = new Bundle();
+                bundle.putString("ques", ques);
+                bundle.putString("ans", ans);
+                intent.putExtras(bundle);
+                setResult(Activity.RESULT_OK, intent);
+                toast("提交成功");
+                finish();
+            }
         });
     }
 
@@ -129,7 +133,7 @@ public class AddQuestionChooseManyActivity  extends AppCompatActivity {
     }
 
     private void toast(String str) {
-        Toast.makeText(AddQuestionChooseManyActivity.this, str, Toast.LENGTH_SHORT).show();
+        Toast.makeText(AddQuestionChooseOneActivity.this, str, Toast.LENGTH_SHORT).show();
         btn_confirm.reset();
     }
 }

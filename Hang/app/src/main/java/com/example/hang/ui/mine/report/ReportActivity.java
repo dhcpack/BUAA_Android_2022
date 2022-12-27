@@ -1,4 +1,4 @@
-package com.example.hang.ui.mine.Report;
+package com.example.hang.ui.mine.report;
 
 import static android.view.View.DRAWING_CACHE_QUALITY_AUTO;
 import static android.view.View.DRAWING_CACHE_QUALITY_HIGH;

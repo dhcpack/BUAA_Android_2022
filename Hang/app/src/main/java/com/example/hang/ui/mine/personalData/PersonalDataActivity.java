@@ -1,4 +1,4 @@
-package com.example.hang.ui.mine.PersonalData;
+package com.example.hang.ui.mine.personalData;
 
 import android.os.Bundle;
 import android.view.Gravity;

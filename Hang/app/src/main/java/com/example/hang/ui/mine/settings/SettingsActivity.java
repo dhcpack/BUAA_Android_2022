@@ -1,48 +1,33 @@
-package com.example.hang.ui.mine.MyBooks;
+package com.example.hang.ui.mine.settings;
 
-import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.MenuItem;
-import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
 import com.example.hang.R;
-import com.example.hang.ui.mine.utils.view.SubmitButton;
+import com.example.hang.ui.mine.utils.view.SwitchButton;
 
-public class AddQuestionFillBlankActivity extends AppCompatActivity {
-    private EditText question_input;
-    private EditText answer_input;
-    private SubmitButton btn_confirm;
-
-    private String question;
-    private String answer;
-
+public class SettingsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_question_fill_blank);
+        setContentView(R.layout.activity_settings);
 
-        setTitleBar("添加题目");
-        question_input = findViewById(R.id.question_input);
-        answer_input = findViewById(R.id.answer_input);
-        btn_confirm = findViewById(R.id.btn_confirm);
-        btn_confirm.setOnClickListener(view -> {
-            question = question_input.getText().toString().trim();
-            answer = answer_input.getText().toString().trim();
-            Intent intent = new Intent();
-            Bundle bundle = new Bundle();
-            bundle.putString("ques", question);
-            bundle.putString("ans", answer);
-            intent.putExtras(bundle);
-            setResult(Activity.RESULT_OK, intent);
-            toast("提交成功");
-            finish();
+        setTitleBar("设置");
+        SwitchButton btn_turn_on_night_mode = findViewById(R.id.btn_turn_on_night_mode);
+        btn_turn_on_night_mode.setOnCheckedChangeListener((button, checked) -> {
+            if (btn_turn_on_night_mode.isChecked()) {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                btn_turn_on_night_mode.setChecked(true);
+            } else {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+                btn_turn_on_night_mode.setChecked(false);
+            }
         });
     }
 
@@ -71,10 +56,5 @@ public class AddQuestionFillBlankActivity extends AppCompatActivity {
             return true;
         }
         return super.onOptionsItemSelected(item);
-    }
-
-    private void toast(String str) {
-        Toast.makeText(AddQuestionFillBlankActivity.this, str, Toast.LENGTH_SHORT).show();
-        btn_confirm.reset();
     }
 }
