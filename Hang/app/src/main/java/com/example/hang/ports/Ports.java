@@ -216,6 +216,13 @@ public class Ports {
      * */
     public static String reviewQues = api + "review/";
 
+    // 得到所有公开记忆本
+    /*
+     * GET
+     * url
+     * */
+    public static String getpublicbook = api + "getpublicbook/";
+
     /*
      * OCR
      * */

@@ -7,11 +7,62 @@
     tools:context=".ui.learn.LearnSearchActivity"
     android:orientation="vertical">
 
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/search_choicegroup"
+        android:layout_marginTop="@dimen/dp_20"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+        android:layout_marginLeft="@dimen/dp_50"
+        >
+
+        <RadioButton
+            android:id="@+id/rb_search_by_tag"
+            android:layout_margin="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:text="@string/search_by_tag"
+            android:checked="true"
+            />
+
+        <RadioButton
+            android:id="@+id/rb_search_by_name"
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:text="@string/search_by_name"
+            />
+    </RadioGroup>
+
     <SearchView
         android:id="@+id/sv_search"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:iconifiedByDefault="false">
+        android:iconifiedByDefault="false"
+        android:layout_marginTop="@dimen/dp_8"
+        android:queryHint="">
     </SearchView>
+
+    <TextView
+        android:id="@+id/tv_search_result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_20"
+        android:text="搜索结果"
+        android:textAlignment="center"
+        android:textSize="@dimen/dp_20">
+
+    </TextView>
+
+    <ListView
+        android:id="@+id/lv_search_books"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:dividerHeight="@dimen/dp_5"
+        android:scrollbars="vertical"
+        android:layout_marginTop="@dimen/dp_10"/>
 
 </LinearLayout>

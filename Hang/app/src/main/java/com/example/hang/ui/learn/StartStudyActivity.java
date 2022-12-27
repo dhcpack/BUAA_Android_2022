@@ -75,7 +75,7 @@ public class StartStudyActivity extends AppCompatActivity {
                     jsonObject.getInt("review"), jsonObject.getString("next_time"), jsonObject.getString("nickname"), jsonObject.getInt("book") );
             allQues.add(listBean);
         }
-        System.out.println("show items size" + allQues.size());
+        //System.out.println("show items size" + allQues.size());
     }
 
     public void initPagerStrip() {

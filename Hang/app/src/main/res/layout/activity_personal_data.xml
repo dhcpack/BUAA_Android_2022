@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ui.mine.PersonalDataActivity">
+    tools:context=".ui.mine.personalData.PersonalDataActivity">
 
     <com.example.hang.ui.mine.utils.layout.SettingBar
         android:id="@+id/fl_person_data_avatar"
@@ -21,7 +21,7 @@
             android:layout_gravity="end|center_vertical"
             android:layout_margin="@dimen/dp_20"
             android:scaleType="centerCrop"
-            android:src="@drawable/ic_default_photo" />
+            android:src="@drawable/ic_default_avatar_male" />
     </com.example.hang.ui.mine.utils.layout.SettingBar>
 
     <com.example.hang.ui.mine.utils.layout.SettingBar

@@ -27,7 +27,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/dp_20"
-        android:hint="@string/book_tag_max_length"
+        android:hint="@string/book_tag_format"
         android:inputType="text"
         android:textSize="@dimen/sp_25"
         android:maxLength="8"

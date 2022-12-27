@@ -282,10 +282,18 @@
     <!-- 记忆本 -->
     <string name="book_add_content">添加</string>
     <string name="book_view_content">查看</string>
-    <string name="book_load_public_books">导入</string>
+    <string name="book_add_content_type">请选择题目类型</string>
     <string name="book_add_content_question">请输入题目</string>
     <string name="book_add_content_answer">请输入答案</string>
-    <string name="book_add_content_type">请选择题目类型</string>
+    <string name="book_add_content_choice_A">选项A</string>
+    <string name="book_add_content_choice_B">选项B</string>
+    <string name="book_add_content_choice_C">选项C</string>
+    <string name="book_add_content_choice_D">选项D</string>
+    <string name="btn_A">A</string>
+    <string name="btn_B">B</string>
+    <string name="btn_C">C</string>
+    <string name="btn_D">D</string>
+    <string name="upload_image">上传图片</string>
 
     <!-- 学习报告 -->
     <string name="report_check_title">打卡记录</string>
@@ -297,6 +305,8 @@
 
     <!-- 设置 -->
     <string name="settings_night_mode">深色模式</string>
+    <string name="settings_learning">学习设置</string>
+    <string name="settings_log_out">退出登录</string>
 
     <string name="title_activity_learn_search">LearnSearchActivity</string>
     <!-- Strings used for fragments for navigation -->
@@ -312,9 +322,12 @@
     <string name="learn_review">开始复习</string>
     <string name="show_items">查看列表</string>
     <string name="book_name_max_length">记忆本名称不多于10字</string>
-    <string name="book_tag_max_length">记忆本标签不多于8字</string>
+    <string name="book_tag_format">标签格式:学科/分类</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="default_question">0.这是默认的问题，如果看到这个问题说明程序bug了，建议重启啦</string>
+    <string name="add_public">导入</string>
+    <string name="search_by_name">按名字查找</string>
+    <string name="search_by_tag">按标签查找</string>
 
 </resources>

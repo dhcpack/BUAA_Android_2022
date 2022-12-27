@@ -42,7 +42,7 @@
             android:hint="@string/common_name_input_hint"
             android:inputType="textVisiblePassword"
             android:singleLine="true"
-            app:regexType="name" />
+            app:regexType="anything" />
 
         <View
             style="@style/HorizontalLineStyle"

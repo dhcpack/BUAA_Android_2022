@@ -69,7 +69,7 @@ public class LearnCardPagerAdapater extends FragmentPagerAdapter {
         } else if (type == 3) {
             fragment = new MultiChoiceFragment(mContext, allQues.get(position), readOnly);
         } else {
-            fragment = new ImageFragment();
+            fragment = new ImageFragment(mContext, allQues.get(position), readOnly);
         }
         return fragment;
     }

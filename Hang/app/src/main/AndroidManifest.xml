@@ -31,13 +31,13 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-        <activity
+        <!--<activity
             android:name=".PagerTabActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
-        </activity>
+        </activity>-->
         <activity
             android:name=".ui.learn.CreateBookActivity"
             android:exported="false">
@@ -95,16 +95,31 @@
             android:name=".RegisterActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.mine.PersonalDataActivity"
+            android:name=".ui.mine.personalData.PersonalDataActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.mine.MyBooksActivity"
+            android:name=".ui.mine.myBooks.MyBooksActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.mine.ReportActivity"
+            android:name=".ui.mine.report.ReportActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.mine.SettingsActivity"
+            android:name=".ui.mine.settings.SettingsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.mine.myBooks.AddQuestionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.mine.myBooks.AddQuestionFillBlankActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.mine.myBooks.AddQuestionChooseOneActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.mine.myBooks.AddQuestionChooseManyActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.mine.myBooks.AddQuestionImageActivity"
             android:exported="false" />
     </application>
 

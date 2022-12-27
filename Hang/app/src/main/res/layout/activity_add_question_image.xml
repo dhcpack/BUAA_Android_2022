@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/white"
     tools:context=".ui.mine.myBooks.AddQuestionActivity">
 
@@ -17,25 +18,33 @@
         android:paddingHorizontal="@dimen/dp_40"
         tools:layoutAnimation="@null">
 
-        <com.example.hang.ui.mine.utils.view.RegexEditText
-            android:id="@+id/type_input"
+        <com.example.hang.ui.mine.utils.view.ClearEditText
+            android:id="@+id/question_input"
             style="@style/EditTextStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dp_20"
-            android:hint="@string/book_add_content_type"
+            android:hint="@string/book_add_content_question"
             android:imeOptions="actionDone"
             android:maxLength="20"
             android:minHeight="48dp"
             android:singleLine="true"
             android:textColorHint="#757575"
-            android:drawableEnd="@drawable/ic_arrows_bottom"/>
+            app:regexType="anything" />
 
         <View
             style="@style/HorizontalLineStyle"
             android:layout_gravity="bottom" />
 
         <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/image_input"
+            style="@style/ButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_30"
+            android:text="@string/upload_image" />
+
+        <com.example.hang.ui.mine.utils.view.SubmitButton
             android:id="@+id/btn_confirm"
             style="@style/ButtonStyle"
             android:layout_width="match_parent"

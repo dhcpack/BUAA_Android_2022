@@ -1,4 +1,4 @@
-package com.example.hang.ui.learn;
+package com.example.hang.ui.mine.myBooks;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -12,7 +12,6 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -22,7 +21,7 @@ import androidx.appcompat.widget.AppCompatImageView;
 import com.example.hang.R;
 import com.example.hang.ports.HttpUtil;
 import com.example.hang.ports.Ports;
-import com.example.hang.ui.learn.util.ListBean;
+import com.example.hang.ui.learn.ShowItemsActivity;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -33,26 +32,25 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
-public class SystemAllBooksActivity extends AppCompatActivity {
+public class MyBooksActivity extends AppCompatActivity {
     private ListView lv_books;
-    private String username;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_books);
 
-        setTitleBar("公开记忆本");
+        setTitleBar("我的记忆本");
         //设置ListView
         //1.给链表添加数据
-        username = getIntent().getExtras().getString("username");
         List<Map<String, Object>> list = getData();
         //2.适配器，刚刚重写的！
-        SystemAllBooksAdapter SystemAllBooksAdapter = new SystemAllBooksAdapter(this, list);
+        MyBooksAdapter myBooksAdapter = new MyBooksAdapter(this, list);
         //3.设置适配器
         lv_books = findViewById(R.id.lv_books);
-        lv_books.setAdapter(SystemAllBooksAdapter);
+        lv_books.setAdapter(myBooksAdapter);
         lv_books.smoothScrollBy(30, 200);
     }
 
@@ -60,7 +58,10 @@ public class SystemAllBooksActivity extends AppCompatActivity {
     public List<Map<String, Object>> getData() {
         JSONArray jsonArray = null;
         try {
-            jsonArray = (JSONArray) HttpUtil.httpGet(Ports.getpublicbook, new ArrayList<>(),true);
+            String username = getIntent().getStringExtra("username");
+            ArrayList<String> params = new ArrayList<>();
+            params.add(username);
+            jsonArray = (JSONArray) HttpUtil.httpGet(Ports.getBooksUrl, params,true);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -71,10 +72,9 @@ public class SystemAllBooksActivity extends AppCompatActivity {
                 try {
                     JSONObject jsonObject = (JSONObject) jsonArray.get(i);
                     //map.put("iv_icon_book", jsonObject.getString("pic"));
-                    map.put("iv_icon_book", R.drawable.ic_book);
-                    map.put("tv_book_title", jsonObject.getString("bookname"));
-                    map.put("book_id", jsonObject.getInt("id"));
-                    map.put("username", username);
+                    map.put("book_icon", R.drawable.ic_book);
+                    map.put("book_title", jsonObject.getString("bookname"));
+                    map.put("book_id", jsonObject.getString("id"));
                     list.add(map);
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -84,13 +84,13 @@ public class SystemAllBooksActivity extends AppCompatActivity {
         return list;
     }
 
-    public static class SystemAllBooksAdapter extends BaseAdapter {
+    public static class MyBooksAdapter extends BaseAdapter {
 
         private final List<Map<String, Object>> data;
         private final LayoutInflater layoutInflater;
         private final Context context;
 
-        public SystemAllBooksAdapter(Context context, List<Map<String, Object>> data) {
+        public MyBooksAdapter(Context context, List<Map<String, Object>> data) {
             //传入的data，就是我们要在listview中显示的信息
             this.context = context;
             this.data = data;
@@ -100,8 +100,10 @@ public class SystemAllBooksActivity extends AppCompatActivity {
         public static class Info {
             private AppCompatImageView iv_icon_book;
             private TextView tv_title_book;
+            private AppCompatButton btn_book_add_content;
             private AppCompatButton btn_book_view_content;
-            private AppCompatButton book_load_public_books;
+
+            private int book_id;
         }
         //所有要返回的东西的数量（Id、信息等），都在data里面，从data里面取就好
         @Override
@@ -127,61 +129,39 @@ public class SystemAllBooksActivity extends AppCompatActivity {
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
             // TODO Auto-generated method stub
-            SystemAllBooksActivity.SystemAllBooksAdapter.Info info = new
-                    SystemAllBooksActivity.SystemAllBooksAdapter.Info();
-            convertView = layoutInflater.inflate(R.layout.activity_system_all_books_item, null);
+            Info info = new Info();
+            convertView = layoutInflater.inflate(R.layout.activity_my_books_item, null);
             info.iv_icon_book = convertView.findViewById(R.id.iv_icon_book);
             info.tv_title_book = convertView.findViewById(R.id.tv_title_book);
+            info.btn_book_add_content = convertView.findViewById(R.id.btn_book_add_content);
             info.btn_book_view_content = convertView.findViewById(R.id.btn_book_view_content);
-            info.book_load_public_books = convertView.findViewById(R.id.btn_book_load_public_books);
 
             //设置数据
-            info.iv_icon_book.setImageResource((Integer) data.get(position).get("iv_icon_book"));
-            info.tv_title_book.setText((String) data.get(position).get("tv_book_title"));
+            info.iv_icon_book.setImageResource((Integer) data.get(position).get("book_icon"));
+            info.tv_title_book.setText((String) data.get(position).get("book_title"));
+            info.book_id = Integer.parseInt((String)
+                    Objects.requireNonNull(data.get(position).get("book_id")));
+            info.btn_book_add_content.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(context, AddQuestionActivity.class);
+                    Bundle bundle = new Bundle();
+                    bundle.putInt("book_id", info.book_id);
+                    intent.putExtras(bundle);
+                    context.startActivity(intent);
+                }
+            });
             info.btn_book_view_content.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     Intent intent = new Intent(context, ShowItemsActivity.class);
                     Bundle bundle = new Bundle();
-                    Integer book_id = (Integer) data.get(position).get("book_id");
-                    bundle.putInt("book_id", book_id);
+                    bundle.putInt("book_id", info.book_id);
                     intent.putExtras(bundle);
                     context.startActivity(intent);
                 }
             });
-            info.book_load_public_books.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    //importBookUrl
-                    ArrayList<String> para = new ArrayList<>();
-                    para.add((String) data.get(position).get("username"));
-                    para.add(String.valueOf((Integer)data.get(position).get("book_id")));
-                    JSONObject jo = null;
-                    while (jo == null) {
-                        try {
-                            jo = (JSONObject) HttpUtil.httpGet(Ports.importBookUrl, para, false);
-                            System.out.println(jo);
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                    assert jo != null;
-                    if (jo.has("error")) {
-                        try {
-                            toast(jo.getString("error"));
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-                    } else {
-                        toast("导入成功, 可以去个人主页查看");
-                    }
-                }
-            });
             return convertView;
-        }
-
-        private void toast(String str) {
-            Toast.makeText(context, str, Toast.LENGTH_SHORT).show();
         }
     }
 
