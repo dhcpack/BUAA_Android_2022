@@ -19,7 +19,7 @@ urlpatterns = [
                   re_path("^getbooks/(?P<nickname>[_a-zA-Z0-9]+)/$", BookView.as_view()),
                   re_path("^addbook/$", BookView.as_view()),
                   re_path("^modifybook/$", BookView.as_view()),
-                  re_path("^deletebook/(?P<nickname>[_a-zA-Z0-9]+)/(?P<bookname>[（）()\u4e00-\u9fa5_a-zA-Z0-9]+)/$",
+                  re_path("^deletebook/(?P<nickname>[_a-zA-Z0-9]+)/(?P<bookId>[\u4e00-\u9fa5_a-zA-Z0-9]+)/$",
                           BookView.as_view()),
 
                   re_path("^getques/(?P<book_id>[\u4e00-\u9fa5_a-zA-Z0-9]+)/$",
@@ -62,4 +62,9 @@ urlpatterns = [
                   re_path("^setbook/(?P<nickname>[_a-zA-Z0-9]+)/(?P<bookId>[0-9]+)/$", LearningBookView.as_view()),
                   re_path("^setprocess/(?P<nickname>[_a-zA-Z0-9]+)/(?P<bookId>[0-9]+)/(?P<process>[0-9]+)/$", ProcessView.as_view()),
                   path("getpublicbook/", PublicBookView.as_view()),
+
+                  re_path("^getreviewcount/(?P<nickname>[_a-zA-Z0-9]+)/$", ReviewCountView.as_view()),
+                  re_path("^getreviewques/(?P<nickname>[_a-zA-Z0-9]+)/(?P<type>[_a-zA-Z0-9]+)/$", ReviewView.as_view()),
+                  re_path("^review/(?P<quesId>[0-9]+)/$", ReviewView.as_view()),
+
               ] + router.urls

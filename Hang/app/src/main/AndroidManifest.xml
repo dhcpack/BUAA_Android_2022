@@ -93,6 +93,12 @@
         <activity
             android:name=".ui.mine.BooksActivity"
             android:exported="false" />
+        <activity
+            android:name=".ui.mine.ReportActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.mine.SettingsActivity"
+            android:exported="false" />
     </application>
 
 </manifest>

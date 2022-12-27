@@ -49,7 +49,7 @@ public class Ports {
     public static String modifyBookUrl = api + "modifybook/";
     /*
      * 删除记忆本：DELETE
-     * url + nickname + bookname
+     * url + nickname + bookId
      * */
     public static String deleteBookUrl = api + "deletebook/";
     /*
@@ -191,7 +191,6 @@ public class Ports {
 
     // 设置学习进度
     public static String setProcessUrl = api + "setprocess/";
-
 
     // 得到首页记忆本各种题目数量
     /*

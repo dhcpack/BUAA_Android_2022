@@ -15,17 +15,36 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_10"
             android:gravity="center_horizontal"
-            android:orientation="horizontal">
+            android:orientation="vertical">
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/iv_person_data_avatar"
                 android:layout_width="@dimen/dp_100"
                 android:layout_height="@dimen/dp_100"
-                android:layout_gravity="end|center_vertical"
+                android:layout_marginTop="@dimen/dp_5"
+                android:layout_gravity="center_horizontal"
                 android:scaleType="centerCrop"
                 android:src="@drawable/ic_default_photo" />
+
+            <TextView
+                android:id="@+id/tv_stu_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_5"
+                android:gravity="center_horizontal"
+                android:scaleType="centerCrop">
+            </TextView>
+
+            <TextView
+                android:id="@+id/tv_username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_5"
+                android:gravity="center_horizontal"
+                android:scaleType="centerCrop">
+            </TextView>
         </LinearLayout>
 
         <!--第一个方块-->
