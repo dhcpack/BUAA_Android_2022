@@ -55,7 +55,7 @@ public class Recommend extends Fragment {
                              @Nullable Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_recommend, container, false);
-        setTitleBar("为您推荐");
+        //setTitleBar("为您推荐");
         //获取传过来的数据
         Bundle bundle = getActivity().getIntent().getExtras();
         username = bundle.getString("username");
