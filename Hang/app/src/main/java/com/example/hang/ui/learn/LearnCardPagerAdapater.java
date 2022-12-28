@@ -91,6 +91,6 @@ public class LearnCardPagerAdapater extends FragmentPagerAdapter {
                 type = "图片题";
                 break;
         }
-        return position + " " + type;
+        return (position + 1) + " " + type;
     }
 }
