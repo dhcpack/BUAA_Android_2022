@@ -113,7 +113,10 @@ public class ReportActivity extends AppCompatActivity {
             try {
                 int total = Integer.parseInt(learnCount.getString("待复习")) + Integer.parseInt(learnCount.getString("未学习")) + Integer.parseInt(learnCount.getString("已学习"));
                 int learned = Integer.parseInt(learnCount.getString("已学习"));
-                double learningBookProcess = ((double) learned / total);
+                double learningBookProcess = 0;
+                if(total != 0){
+                    learningBookProcess = (double) learned / (double) total;
+                }
                 TextView tv_learning_percent = findViewById(R.id.tv_learning_percent);
                 @SuppressLint("DefaultLocale") String learningProcess = String.format("学习进度%.2f", learningBookProcess * 100) + "%";
                 tv_learning_percent.setText(learningProcess);

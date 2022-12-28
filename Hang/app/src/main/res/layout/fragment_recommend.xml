@@ -35,9 +35,8 @@
             android:textSize="22dp"
             android:drawableLeft="@drawable/ic_iconmonstr_thumb_10"
             android:drawablePadding="4.0dip"
-            android:paddingRight="10dp"
-            android:paddingBottom="12dp"/>
-
+            android:paddingLeft="@dimen/dp_5"
+            android:paddingRight="@dimen/dp_10" />
     </LinearLayout>
 
     <ListView
@@ -46,6 +45,7 @@
         android:layout_height="wrap_content"
         android:dividerHeight="@dimen/dp_5"
         android:scrollbars="vertical"
-        android:paddingTop="10dp"/>
+        android:paddingTop="0dp"
+        android:layout_marginTop="@dimen/dp_60"/>
 
 </FrameLayout>
