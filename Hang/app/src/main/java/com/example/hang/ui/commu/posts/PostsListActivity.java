@@ -170,7 +170,7 @@ public class PostsListActivity extends AppCompatActivity {
             //设置数据
             info.iv_pic_post.setImageResource((Integer) data.get(position).get("iv_pic_post"));
             info.tv_post_title.setText((String) data.get(position).get("tv_post_title"));
-            info.tv_post_tag.setText(((String) data.get(position).get("tv_post_tag")) + " " + TimeSpliter.splitTime((String) data.get(position).get("post_time")) + "发布");
+            info.tv_post_tag.setText(((String) data.get(position).get("tv_post_tag")) + " " + TimeSpliter.getDate((String) data.get(position).get("post_time")) + "发布");
             info.tv_favor_count.setText(String.valueOf(data.get(position).get("tv_post_favor")));
             info.tv_post_title.setOnClickListener(new View.OnClickListener() {
                 @Override

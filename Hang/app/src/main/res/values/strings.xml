@@ -336,6 +336,9 @@
     <string name="title_activity_recommend_book">RecommendBook</string>
 
     <string name="default_title">默认题目</string>
+    <string name="comment_hint">请输入您的评论</string>
+    <string name="comment">评论</string>
+
 
 
 </resources>

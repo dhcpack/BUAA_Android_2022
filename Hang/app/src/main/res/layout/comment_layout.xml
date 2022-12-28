@@ -6,36 +6,20 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dp_200"
+        android:layout_height="@dimen/dp_150"
         android:layout_marginHorizontal="@dimen/dp_5"
         android:layout_marginTop="@dimen/dp_20"
         android:gravity="center_horizontal"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/dp_30">
 
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_marginHorizontal="@dimen/dp_5"
             android:layout_marginTop="@dimen/dp_20"
             android:layout_weight="2"
             android:gravity="center"
             android:orientation="vertical">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_marginHorizontal="@dimen/dp_5"
-                android:layout_weight="2"
-                android:gravity="center"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/tv_post_title"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/sp_20" />
-            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -46,46 +30,29 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/tv_post_tag"
+                    android:id="@+id/tv_comment_user"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:textColor="@color/black"
-                    android:textSize="14sp" />
+                    android:textColor="@color/gray"
+                    android:textSize="@dimen/sp_15" />
             </LinearLayout>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_marginHorizontal="@dimen/dp_5"
-            android:layout_marginTop="@dimen/dp_20"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:orientation="vertical">
-
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/post_image"
-                android:layout_width="@dimen/dp_80"
-                android:layout_height="@dimen/dp_100"
-                android:layout_gravity="center_horizontal"
-                android:gravity="center"
-                android:scaleType="centerCrop"
-                android:src="@drawable/ic_book" />
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/dp_10"
-                android:gravity="center_horizontal"
+                android:layout_height="0dp"
+                android:layout_marginHorizontal="@dimen/dp_5"
+                android:layout_weight="2"
+                android:gravity="center"
                 android:orientation="vertical">
 
-
+                <TextView
+                    android:id="@+id/tv_comment_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp_20" />
             </LinearLayout>
         </LinearLayout>
-
-
     </LinearLayout>
 
 </LinearLayout>

@@ -7,7 +7,6 @@ import static android.view.View.DRAWING_CACHE_QUALITY_LOW;
 import android.annotation.SuppressLint;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
-import android.media.Image;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.MenuItem;
@@ -32,7 +31,6 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Locale;
 
 public class ReportActivity extends AppCompatActivity {
 
@@ -88,7 +86,7 @@ public class ReportActivity extends AppCompatActivity {
                 String checkDays;
                 String checkLastRecord;
                 if (check != null && !lastCheckRecord.equals("None")) {
-                    lastCheckRecord = TimeSpliter.splitTime(lastCheckRecord);
+                    lastCheckRecord = TimeSpliter.getDate(lastCheckRecord);
                     checkDays = "已打卡：" + totalDays + "天";
                     checkLastRecord = "上一次打卡时间：" + lastCheckRecord;
                 } else if (lastCheckRecord.equals("None")) {
