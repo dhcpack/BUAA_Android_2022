@@ -227,4 +227,9 @@ public class Ports {
      * OCR
      * */
     public static String ocrUrl = api + "ocr/";
+
+    /*
+    * 推荐
+    * */
+    public static String recommendUrl = api + "recom/";
 }

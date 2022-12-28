@@ -329,5 +329,6 @@
     <string name="add_public">导入</string>
     <string name="search_by_name">按名字查找</string>
     <string name="search_by_tag">按标签查找</string>
+    <string name="title_activity_recommend_book">RecommendBook</string>
 
 </resources>

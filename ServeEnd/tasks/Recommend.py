@@ -53,7 +53,7 @@ def process_book_data():
     }
     '''
     print("正在加载书籍数据...")
-    books = Book.objects.all()
+    books = Book.objects.filter(public=True)
     global TOP_TAGS, TOP_TAGS_INDEXS
     for book in books:
         TOP_TAGS.append(book.tag)
@@ -72,11 +72,11 @@ def load_user_data():
     users = User.objects.all()
     user_rating = []
     for user in users:
-        user_books = Book.objects.filter(nickname=user)
+        user_books = Book.objects.filter(nickname=user).filter(public=True)
         for book in user_books:  # 对拥有的记忆本评分10分
             user_rating.append([user.nickname, book.id, 10])
         user_institute = user.institute
-        all_books = Book.objects.all()
+        all_books = Book.objects.all().filter(public=True)
         for book in all_books:
             user_rating.append([user.nickname, book.id, 8 * string_similar(user_institute, book.bookname)])
         user_target = user.target
@@ -276,7 +276,7 @@ def recommend(profile):
 def recom(user: User):
     profile = {}
     profile['tags'] = [user.target, user.institute]
-    profile['books'] = [book.bookname for book in Book.objects.filter(nickname=user)]
+    profile['books'] = [book.bookname for book in Book.objects.filter(nickname=user).filter(public=True)]
     recommend_books, similar_users = recommend(profile)
     books_dict = BOOK_DETAILS
     users_dict = USER_DETAILS
