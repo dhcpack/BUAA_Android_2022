@@ -1,9 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.commu.posts.PostDetailActivity">
+    android:background="#F6F6F6">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/post_detail_title"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/default_title"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dp_28" />
+
+        <TextView
+            android:id="@+id/post_detail_tag"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/dp_5"
+            android:text="@string/default_title"
+            android:textSize="@dimen/dp_12" />
+
+        <TextView
+            android:id="@+id/post_detail_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20"
+            android:singleLine="false"
+            android:text="@string/default_title"
+            android:textSize="@dimen/dp_22">
+        </TextView>
+
+        <TextView
+            android:id="@+id/post_detail_favor_count"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="@dimen/dp_15"
+            android:text="点赞数"
+            android:drawableLeft="@drawable/ic_iconmonstr_thumb_10"
+            android:drawablePadding="4.0dip"
+            android:paddingLeft="@dimen/dp_260"
+            android:paddingRight="@dimen/dp_10" />
+
+        <ListView
+            android:id="@+id/post_detail_comments"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_60"
+            android:dividerHeight="@dimen/dp_5"
+            android:paddingTop="0dp"
+            android:scrollbars="vertical" />
+    </LinearLayout>
+
+
+
+</ScrollView>

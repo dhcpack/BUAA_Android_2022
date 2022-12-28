@@ -25,6 +25,7 @@ import com.example.hang.R;
 import com.example.hang.ports.HttpUtil;
 import com.example.hang.ports.Ports;
 import com.example.hang.ui.mine.utils.function.BitMapUtils;
+import com.example.hang.util.TimeSpliter;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -87,10 +88,7 @@ public class ReportActivity extends AppCompatActivity {
                 String checkDays;
                 String checkLastRecord;
                 if (check != null && !lastCheckRecord.equals("None")) {
-                    String[] strings = lastCheckRecord.split("T");
-                    lastCheckRecord = strings[0];
-                    strings = lastCheckRecord.split("-");
-                    lastCheckRecord = strings[0] + "年" + strings[1] + "月" + strings[2] + "日";
+                    lastCheckRecord = TimeSpliter.splitTime(lastCheckRecord);
                     checkDays = "已打卡：" + totalDays + "天";
                     checkLastRecord = "上一次打卡时间：" + lastCheckRecord;
                 } else if (lastCheckRecord.equals("None")) {

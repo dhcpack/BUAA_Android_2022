@@ -20,7 +20,7 @@ import androidx.appcompat.widget.AppCompatImageView;
 import com.example.hang.R;
 import com.example.hang.ports.HttpUtil;
 import com.example.hang.ports.Ports;
-import com.example.hang.ui.learn.SystemAllBooksActivity;
+import com.example.hang.util.TimeSpliter;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -92,6 +92,7 @@ public class PostsListActivity extends AppCompatActivity {
                     map.put("tv_post_content", jsonObject.getString("content"));
                     map.put("tv_post_tag", jsonObject.getString("tag"));
                     map.put("tv_post_favor", jsonObject.get("favor"));
+                    map.put("post_time", jsonObject.get("time"));
                     map.put("post_id", jsonObject.get("id"));
 
                     //                    map.put("book_id", jsonObject.getInt("id"));
@@ -169,7 +170,7 @@ public class PostsListActivity extends AppCompatActivity {
             //设置数据
             info.iv_pic_post.setImageResource((Integer) data.get(position).get("iv_pic_post"));
             info.tv_post_title.setText((String) data.get(position).get("tv_post_title"));
-            info.tv_post_tag.setText((String) data.get(position).get("tv_post_tag"));
+            info.tv_post_tag.setText(((String) data.get(position).get("tv_post_tag")) + " " + TimeSpliter.splitTime((String) data.get(position).get("post_time")) + "发布");
             info.tv_favor_count.setText(String.valueOf(data.get(position).get("tv_post_favor")));
             info.tv_post_title.setOnClickListener(new View.OnClickListener() {
                 @Override

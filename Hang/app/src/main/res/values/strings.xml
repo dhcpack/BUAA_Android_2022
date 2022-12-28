@@ -335,4 +335,7 @@
     <string name="search_by_tag">按标签查找</string>
     <string name="title_activity_recommend_book">RecommendBook</string>
 
+    <string name="default_title">默认题目</string>
+
+
 </resources>
