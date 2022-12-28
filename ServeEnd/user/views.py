@@ -548,7 +548,7 @@ class FriendProcessListView(View):
             user_set.add(uu)
             uf_list.append((get_process(uu), uu))
         uf_list.append((get_process(user), user))
-        uf_list.sort(reverse=True, key=lambda x:x[0])
+        uf_list.sort(reverse=True, key=lambda x: x[0])
         res = []
         for i in range(len(uf_list)):
             proc, uf = uf_list[i]
@@ -568,6 +568,20 @@ class AllFriendView(View):
                 continue
             res.append({"nickname": uu.nickname, "institute": uu.institute, "grade": uu.grade, "stuId": uu.stuId, "time": uf.time,
                         "sex": uu.sex})
+        return JsonResponse(data=res, safe=False, status=HTTP_200_OK)
+
+
+class AllApplicantView(View):
+    def get(self, request, nickname):
+        user = User.objects.get(nickname=nickname)
+        user_requests = Request.objects.filter(receiver_id=nickname)
+        user_set = set()
+        res = []
+        for uf in user_requests:
+            uu = User.objects.get(nickname=uf.sender.nickname)
+            if uu in user_set:
+                continue
+            res.append({"nickname": uu.nickname, "msg": uf.msg, "stuId": uu.stuId, "time": uf.time, "sex": uu.sex})
         return JsonResponse(data=res, safe=False, status=HTTP_200_OK)
 
 

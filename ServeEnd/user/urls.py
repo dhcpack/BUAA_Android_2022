@@ -73,6 +73,8 @@ urlpatterns = [
 
                   re_path("getchecklist/(?P<nickname>[_a-zA-Z0-9]+)/$", FriendCheckListView.as_view()),
                   re_path("getprocesslist/(?P<nickname>[_a-zA-Z0-9]+)/$", FriendProcessListView.as_view()),
+                  re_path("getallapplicants/(?P<nickname>[_a-zA-Z0-9]+)/$", AllApplicantView.as_view()),
+
                   re_path("getallfriends/(?P<nickname>[_a-zA-Z0-9]+)/$", AllFriendView.as_view()),
 
               ] + router.urls

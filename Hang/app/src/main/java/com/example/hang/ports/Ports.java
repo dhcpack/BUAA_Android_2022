@@ -238,4 +238,6 @@ public class Ports {
     public static String getProcessListUrl = api + "getprocesslist/";
 
     public static String getAllFriendsUrl = api + "getallfriends/";
+
+    public static String getAllApplicantsUrl = api + "getallapplicants/";
 }
