@@ -36,13 +36,28 @@
             style="@style/HorizontalLineStyle"
             android:layout_gravity="bottom" />
 
-        <androidx.appcompat.widget.AppCompatButton
+        <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/image_input"
-            style="@style/ButtonStyle"
+            android:layout_width="@dimen/dp_100"
+            android:layout_height="@dimen/dp_100"
+            android:layout_marginTop="@dimen/dp_30"
+            android:src="@drawable/ic_add_image" />
+
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dp_30"
-            android:text="@string/upload_image" />
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="@string/upload_image"
+            android:textSize="@dimen/sp_12"/>
+
+<!--        <androidx.appcompat.widget.AppCompatButton-->
+<!--            android:id="@+id/image_input"-->
+<!--            style="@style/ButtonStyle"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="@dimen/dp_30"-->
+<!--            android:text="@string/upload_image" />-->
 
         <com.example.hang.ui.mine.utils.view.SubmitButton
             android:id="@+id/btn_confirm"

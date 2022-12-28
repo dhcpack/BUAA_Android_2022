@@ -47,16 +47,16 @@
         </LinearLayout>
     </LinearLayout>
 
-    <com.example.hang.ui.mine.utils.view.ClearEditText
-        android:id="@+id/settings_learning"
-        style="@style/EditTextStyle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dp_20"
-        android:layout_marginHorizontal="@dimen/dp_30"
-        android:text="@string/settings_learning"
-        android:textSize="@dimen/sp_20"
-        android:drawableEnd="@drawable/ic_arrows_right"/>
+<!--    <com.example.hang.ui.mine.utils.view.ClearEditText-->
+<!--        android:id="@+id/settings_learning"-->
+<!--        style="@style/EditTextStyle"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="@dimen/dp_20"-->
+<!--        android:layout_marginHorizontal="@dimen/dp_30"-->
+<!--        android:text="@string/settings_learning"-->
+<!--        android:textSize="@dimen/sp_20"-->
+<!--        android:drawableEnd="@drawable/ic_arrows_right"/>-->
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_log_out"
