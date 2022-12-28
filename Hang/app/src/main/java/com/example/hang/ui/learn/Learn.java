@@ -293,7 +293,7 @@ public class Learn extends Fragment {
         rest = o.getInt("未学习");
         process = o.getInt("已学习");
         needReviewNum = o.getInt("待复习");
-        quesNum = rest + process;
+        quesNum = rest + process + needReviewNum;
         //System.out.println("all num: " + quesNum);
         progressBar.setProgress(process);
         progressBar.setMax(quesNum);
