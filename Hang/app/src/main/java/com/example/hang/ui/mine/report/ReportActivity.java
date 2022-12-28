@@ -4,6 +4,7 @@ import static android.view.View.DRAWING_CACHE_QUALITY_AUTO;
 import static android.view.View.DRAWING_CACHE_QUALITY_HIGH;
 import static android.view.View.DRAWING_CACHE_QUALITY_LOW;
 
+import android.annotation.SuppressLint;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.os.Bundle;
@@ -27,6 +28,7 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class ReportActivity extends AppCompatActivity {
     private String username;
@@ -67,10 +69,16 @@ public class ReportActivity extends AppCompatActivity {
 
     private void setCheck(ArrayList<String> params) {
         try {
-            JSONObject check = (JSONObject) HttpUtil.httpGet(Ports.checkUrl, params, false);
+            JSONObject check = (JSONObject) HttpUtil.httpGet(Ports.checkDetail, params, false);
             try {
                 int totalDays = check != null ? Integer.parseInt(check.getString("totalDays")) : 0;
                 String lastCheckRecord = check != null ? check.getString("lastCheckRecord") : "无";
+                if (check != null) {
+                    String[] strings = lastCheckRecord.split("T");
+                    lastCheckRecord = strings[0];
+                    strings = lastCheckRecord.split("-");
+                    lastCheckRecord = strings[0] + "年" + strings[1] + "月" + strings[2] + "日";
+                }
                 TextView tv_check_days = findViewById(R.id.tv_check_days);
                 TextView tv_check_last_record = findViewById(R.id.tv_check_last_record);
                 String checkDays = "已打卡：" + totalDays + "天";
@@ -90,11 +98,24 @@ public class ReportActivity extends AppCompatActivity {
             JSONObject learningBook = (JSONObject) HttpUtil.httpGet(Ports.learningBookUrl, params, false);
             try {
                 String learningBookTitle = learningBook.getString("bookname");
-                int learningBookProcess = Integer.parseInt(learningBook.getString("process"));
+//                int learningBookProcess = Integer.parseInt(learningBook.getString("process"));
                 TextView tv_title_book = findViewById(R.id.tv_title_book);
                 tv_title_book.setText(learningBookTitle);
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        try {
+            JSONObject learnCount = (JSONObject) HttpUtil.httpGet(Ports.getReviewCount, params, false);
+            try {
+                int total = Integer.parseInt(learnCount.getString("待复习")) + Integer.parseInt(learnCount.getString("未学习")) + Integer.parseInt(learnCount.getString("已学习"));
+                int learned = Integer.parseInt(learnCount.getString("已学习"));
+                double learningBookProcess = ((double) learned / total);
                 TextView tv_learning_percent = findViewById(R.id.tv_learning_percent);
-                String learningProcess = "学习进度" + learningBookProcess + "%";
+                @SuppressLint("DefaultLocale") String learningProcess = String.format("学习进度%.2f", learningBookProcess * 100) + "%";
                 tv_learning_percent.setText(learningProcess);
             } catch (JSONException e) {
                 e.printStackTrace();
@@ -145,7 +166,7 @@ public class ReportActivity extends AppCompatActivity {
         // 步骤二：生成bitmap
         bitmap = Bitmap.createBitmap(getResources().getDisplayMetrics(), width, height, quality);
         bitmap.setDensity(getResources().getDisplayMetrics().densityDpi);
-        if (opaque){
+        if (opaque) {
             bitmap.setHasAlpha(false);
         }
         boolean clear = view.getDrawingCacheBackgroundColor() != 0;
