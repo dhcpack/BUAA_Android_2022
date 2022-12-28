@@ -1,5 +1,5 @@
-//package com.example.hang.ui.mine.utils.function;
-//
+package com.example.hang.ui.mine.utils.function;
+
 //import android.content.Context;
 //import android.graphics.Bitmap;
 //import android.graphics.drawable.Drawable;
@@ -150,3 +150,5 @@
 //
 //}
 //
+public class GlideEngine {
+}
