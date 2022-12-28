@@ -7,46 +7,28 @@
     tools:context=".ui.recom.Recommend">
 
     <TextView
-        android:id="@+id/text_recommend"
+        android:id="@+id/post_post"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
+        android:drawableTop="@drawable/ic_iconmonstr_note_23"
+        android:text="去发帖"
         android:textAlignment="center"
+        android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dp_10"
-        android:gravity="center_horizontal"
-        android:orientation="vertical">
-
-        <TextView
-            android:id="@+id/recom_message"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:text="根据您的学习内容，为您推荐以下记忆本"
-            android:textSize="21dp"
-            android:textColor="@color/black"
-            android:drawableLeft="@drawable/ic_iconmonstr_thumb_10"
-            android:drawablePadding="4.0dip"
-            android:paddingLeft="@dimen/dp_5"
-            android:paddingRight="@dimen/dp_10" />
-    </LinearLayout>
-
     <ListView
-        android:id="@+id/reco_books"
+        android:id="@+id/posts"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_60"
         android:dividerHeight="@dimen/dp_5"
-        android:scrollbars="vertical"
         android:paddingTop="0dp"
-        android:layout_marginTop="@dimen/dp_60"/>
+        android:scrollbars="vertical" />
 
 </FrameLayout>

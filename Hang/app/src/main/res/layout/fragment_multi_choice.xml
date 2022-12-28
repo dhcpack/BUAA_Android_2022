@@ -16,6 +16,7 @@
             android:layout_height="match_parent"
             android:id="@+id/mutiple_question"
             android:textSize="24dp"
+            android:textColor="@color/black"
             android:text="@string/default_question" />
 
         <androidx.appcompat.widget.AppCompatCheckBox

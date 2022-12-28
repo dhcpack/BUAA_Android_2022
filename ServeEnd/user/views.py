@@ -384,6 +384,12 @@ class SearchPostView(View):
         elif column == "name":
             posts = Post.objects.filter(title__contains=cond)
             return JsonResponse(PostModelSerializer(instance=posts, many=True).data, status=HTTP_200_OK, safe=False)
+        elif column == "single":
+            try:
+                post = Post.objects.get(id=int(cond))
+            except Post.DoesNotExist:
+                return JsonResponse({'error': '帖子不存在'}, status=HTTP_404_NOT_FOUND)
+            return JsonResponse(PostModelSerializer(instance=post).data, status=HTTP_200_OK)
         else:
             posts = Post.objects.all()
             return JsonResponse(PostModelSerializer(instance=posts, many=True).data, status=HTTP_200_OK, safe=False)

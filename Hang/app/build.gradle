@@ -79,4 +79,13 @@ dependencies {
 //    implementation 'com.alibaba:fastjson:1.1.57.android'
 //    // GSON
 //    implementation 'com.google.code.gson:gson:2.8.6'
+
+    // 标题栏框架：https://github.com/getActivity/TitleBar
+    implementation 'com.github.getActivity:TitleBar:9.6'
+
+    // 吐司框架：https://github.com/getActivity/ToastUtils
+    implementation 'com.github.getActivity:ToastUtils:11.2'
+
+    implementation 'com.github.rhlff:NestedScrollWebView:v1.1.1'
 }
+
