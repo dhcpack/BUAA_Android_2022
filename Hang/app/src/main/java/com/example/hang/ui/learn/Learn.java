@@ -308,7 +308,7 @@ public class Learn extends Fragment {
         if (quesNum != 0) {
             p = (double) process / (double) quesNum;
         }
-        tv_percent.setText(String.format("学习进度%.2f", p) + "%");
+        tv_percent.setText(String.format("学习进度%.2f", p * 100) + "%");
         progressBar.setProgress(process);
         progressBar.setMax(quesNum);
     }
