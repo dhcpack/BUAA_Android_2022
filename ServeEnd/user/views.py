@@ -7,7 +7,7 @@ from rest_framework.status import *
 from rest_framework.viewsets import ModelViewSet
 
 from tasks.Ebbinghaus import ebbinghausReviewTime
-from tasks.OCR import OCR
+# from tasks.OCR import OCR
 from tasks.Recommend import *
 from .serializers import *
 
@@ -446,15 +446,15 @@ class FileView(View):
         return JsonResponse({"path": backEndName}, status=HTTP_201_CREATED)
 
 
-class OCRView(View):
-    def post(self, request):
-        file = request.FILES['file']
-        backEndName = datetime.datetime.now().strftime('%Y%m%d%H%I%S') + ".jpg"
-        with open("./static/" + backEndName, 'wb') as f:
-            for content in file.chunks():
-                f.write(content)
-        res = OCR(backEndName)
-        return JsonResponse({"ocr": res}, status=HTTP_201_CREATED)
+# class OCRView(View):
+#     def post(self, request):
+#         file = request.FILES['file']
+#         backEndName = datetime.datetime.now().strftime('%Y%m%d%H%I%S') + ".jpg"
+#         with open("./static/" + backEndName, 'wb') as f:
+#             for content in file.chunks():
+#                 f.write(content)
+#         res = OCR(backEndName)
+#         return JsonResponse({"ocr": res}, status=HTTP_201_CREATED)
 
 
 class LearningBookView(View):
@@ -500,6 +500,75 @@ class RecommendView(View):
         books = list(user.recommends.split("/"))
         books_obj = Book.objects.filter(bookname__in=books)
         return JsonResponse(BookModelSerializer(instance=books_obj, many=True).data, status=HTTP_200_OK, safe=False)
+
+
+class FriendCheckListView(View):
+    def get(self, request, nickname):
+        user = User.objects.get(nickname=nickname)
+        user_friend = Friends.objects.filter(nickname1=user)
+        uf_list = []
+        user_set = set()
+        for uf in user_friend:
+            uu = User.objects.get(nickname=uf.nickname2.nickname)
+            if uu in user_set:
+                continue
+            user_set.add(uu)
+            uf_list.append((int(uu.days), uu))
+        uf_list.append((int(user.days), user))
+        uf_list.sort(reverse=True)
+        res = []
+        for i in range(len(uf_list)):
+            days, uf = uf_list[i]
+            res.append({"nickname": uf.nickname, "days": days, "rank": i + 1, "sex": uf.sex})
+        return JsonResponse(data=res, safe=False, status=HTTP_200_OK)
+
+
+def get_process(user: User):
+    book = Book.objects.filter(nickname=user).filter(isLearning=True)
+    if not book.exists():
+        return 0.0;
+    book = book.first()
+    dt = datetime.datetime(2000, 1, 1, 0, 0)
+    ques_to_review = Ques.objects.filter(book=book).filter(next_time__lte=datetime.datetime.now()).filter(next_time__gte=dt)
+    ques_not_learn = Ques.objects.filter(book=book).filter(next_time__lte=dt)
+    ques_learned = Ques.objects.filter(book=book).filter(next_time__gt=datetime.datetime.now())
+    return ques_learned.count() / (ques_to_review.count() + ques_not_learn.count() + ques_learned.count())
+
+
+class FriendProcessListView(View):
+    def get(self, request, nickname):
+        user = User.objects.get(nickname=nickname)
+        user_friend = Friends.objects.filter(nickname1=user)
+        uf_list = []
+        user_set = set()
+        for uf in user_friend:
+            uu = User.objects.get(nickname=uf.nickname2.nickname)
+            if uu in user_set:
+                continue
+            user_set.add(uu)
+            uf_list.append((get_process(uu), uu))
+        uf_list.append((get_process(user), user))
+        uf_list.sort(reverse=True, key=lambda x:x[0])
+        res = []
+        for i in range(len(uf_list)):
+            proc, uf = uf_list[i]
+            res.append({"nickname": uf.nickname, "process": proc, "rank": i + 1, "sex": uf.sex})
+        return JsonResponse(data=res, safe=False, status=HTTP_200_OK)
+
+
+class AllFriendView(View):
+    def get(self, request, nickname):
+        user = User.objects.get(nickname=nickname)
+        user_friend = Friends.objects.filter(nickname1=user)
+        user_set = set()
+        res = []
+        for uf in user_friend:
+            uu = User.objects.get(nickname=uf.nickname2.nickname)
+            if uu in user_set:
+                continue
+            res.append({"nickname": uu.nickname, "institute": uu.institute, "grade": uu.grade, "stuId": uu.stuId, "time": uf.time,
+                        "sex": uu.sex})
+        return JsonResponse(data=res, safe=False, status=HTTP_200_OK)
 
 
 from apscheduler.schedulers.background import BackgroundScheduler

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_180"
+        android:layout_marginHorizontal="@dimen/dp_5"
+        android:layout_marginTop="@dimen/dp_20"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="@dimen/dp_5"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/friend_info_pic"
+                android:layout_width="@dimen/dp_120"
+                android:layout_height="@dimen/dp_120"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_default_avatar_male" />
+
+            <TextView
+                android:id="@+id/info_nickname"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_20"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="@dimen/dp_5"
+            android:layout_marginTop="@dimen/dp_20"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/friend_stu_id"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_20"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center" />
+
+            <TextView
+                android:id="@+id/friend_institute"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_20"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center" />
+
+            <TextView
+                android:id="@+id/friend_grade"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_20"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/friend_delete" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

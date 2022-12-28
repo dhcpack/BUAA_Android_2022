@@ -31,7 +31,7 @@
                 android:layout_height="@dimen/dp_80"
                 android:layout_gravity="center_horizontal"
                 android:scaleType="centerCrop"
-                android:src="@drawable/ic_iconmonstr_friend_4" />
+                android:src="@drawable/ic_pk" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_comu_friends"

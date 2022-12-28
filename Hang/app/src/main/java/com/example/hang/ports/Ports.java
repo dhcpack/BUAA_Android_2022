@@ -229,7 +229,13 @@ public class Ports {
     public static String ocrUrl = api + "ocr/";
 
     /*
-    * 推荐
-    * */
+     * 推荐
+     * */
     public static String recommendUrl = api + "recom/";
+
+    public static String getCheckListUrl = api + "getchecklist/";
+
+    public static String getProcessListUrl = api + "getprocesslist/";
+
+    public static String getAllFriendsUrl = api + "getallfriends/";
 }
