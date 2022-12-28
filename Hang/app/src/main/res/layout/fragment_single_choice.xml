@@ -25,51 +25,60 @@
             android:id="@+id/single_choicegroup"
             android:layout_marginTop="@dimen/dp_20">
 
-            <RadioButton
+            <androidx.appcompat.widget.AppCompatRadioButton
                 android:id="@+id/single_A"
                 android:layout_margin="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
-                android:text="A选项" />
+                android:text="A选项"
+                android:background="@null"
+                android:button="@drawable/radiobutton_selector"/>
 
-            <RadioButton
+            <androidx.appcompat.widget.AppCompatRadioButton
                 android:id="@+id/single_B"
                 android:layout_margin="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
-                android:text="B选项" />
+                android:text="B选项"
+                android:background="@null"
+                android:button="@drawable/radiobutton_selector"/>
 
-            <RadioButton
+            <androidx.appcompat.widget.AppCompatRadioButton
                 android:id="@+id/single_C"
                 android:layout_margin="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
-                android:text="C选项" />
+                android:text="C选项"
+                android:background="@null"
+                android:button="@drawable/radiobutton_selector"/>
 
-            <RadioButton
+            <androidx.appcompat.widget.AppCompatRadioButton
                 android:id="@+id/single_D"
                 android:layout_margin="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
-                android:text="D选项" />
+                android:text="D选项"
+                android:background="@null"
+                android:button="@drawable/radiobutton_selector" />
 
         </RadioGroup>
 
         <Button
-            android:background="@drawable/btn_bg"
+            style="@style/ButtonStyle"
             android:id="@+id/next_page"
             android:layout_width="match_parent"
+            android:layout_marginTop="@dimen/dp_20"
             android:layout_height="wrap_content"
             android:textSize="23dp"
             android:textColor="#ffffff"
             android:text="下一题" />
 
         <Button
-            android:background="@drawable/btn_bg"
+            style="@style/ButtonStyle"
             android:id="@+id/btn_learned"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

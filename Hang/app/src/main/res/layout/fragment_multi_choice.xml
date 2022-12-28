@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="#F6F6F6">
     <LinearLayout
         android:layout_margin="20dp"
@@ -18,49 +18,58 @@
             android:textSize="24dp"
             android:text="@string/default_question" />
 
-        <CheckBox
+        <androidx.appcompat.widget.AppCompatCheckBox
             android:id="@+id/mutiple_A"
             android:layout_margin="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="20dp"
-            android:text="CheckBox"/>
+            android:text="CheckBox"
+            android:background="@null"
+            app:buttonCompat="@drawable/checkbox_selector"/>
 
-        <CheckBox
+        <androidx.appcompat.widget.AppCompatCheckBox
             android:id="@+id/mutiple_B"
             android:layout_margin="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="20dp"
-            android:text="CheckBox" />
+            android:text="CheckBox"
+            android:background="@null"
+            app:buttonCompat="@drawable/checkbox_selector"/>
 
-        <CheckBox
+        <androidx.appcompat.widget.AppCompatCheckBox
             android:id="@+id/mutiple_C"
             android:layout_margin="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="20dp"
-            android:text="CheckBox" />
+            android:text="CheckBox"
+            android:background="@null"
+            app:buttonCompat="@drawable/checkbox_selector"/>
 
-        <CheckBox
+        <androidx.appcompat.widget.AppCompatCheckBox
             android:id="@+id/mutiple_D"
             android:layout_margin="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="20dp"
-            android:text="CheckBox" />
+            android:text="CheckBox"
+            android:background="@null"
+            app:buttonCompat="@drawable/checkbox_selector"/>
 
         <Button
-            android:background="@drawable/btn_bg"
+            style="@style/ButtonStyle"
             android:id="@+id/next_page"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20"
             android:textSize="23dp"
             android:textColor="#ffffff"
             android:text="下一题" />
 
         <Button
-            android:background="@drawable/btn_bg"
+            style="@style/ButtonStyle"
             android:id="@+id/btn_learned"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

@@ -27,7 +27,7 @@
             android:layout_width="wrap_content"
             android:layout_height="186dp"
             android:layout_marginLeft="@dimen/dp_12"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="@dimen/dp_10"
             android:layout_marginRight="@dimen/dp_12">
 
             <ImageView
@@ -160,6 +160,7 @@
             android:layout_height="wrap_content">
 
             <Button
+                style="@style/ButtonStyle"
                 android:id="@+id/btn_start_study"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -168,13 +169,14 @@
                 android:textColor="#FFFFFF"
                 android:backgroundTint="@color/common_accent_color"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="@dimen/dp_15"
-                android:textSize="@dimen/dp_25"
+                android:layout_marginTop="@dimen/dp_10"
+                android:textSize="@dimen/sp_25"
                 android:layout_alignParentLeft="true"
                 android:layout_marginLeft="@dimen/dp_40">
             </Button>
 
             <Button
+                style="@style/ButtonStyle"
                 android:id="@+id/btn_start_review"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -183,8 +185,8 @@
                 android:textColor="#FFFFFF"
                 android:backgroundTint="@color/common_accent_color"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="@dimen/dp_15"
-                android:textSize="@dimen/dp_25"
+                android:layout_marginTop="@dimen/dp_10"
+                android:textSize="@dimen/sp_25"
                 android:layout_alignParentRight="true"
                 android:layout_marginRight="@dimen/dp_40">
             </Button>
@@ -261,7 +263,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginBottom="@dimen/dp_20">
+            android:layout_marginBottom="@dimen/dp_15">
 
             <ImageButton
                 android:id="@+id/ib_daka"

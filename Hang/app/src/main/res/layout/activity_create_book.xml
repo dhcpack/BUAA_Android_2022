@@ -7,47 +7,56 @@
     tools:context=".ui.learn.CreateBookActivity"
     android:orientation="vertical">
 
-    <EditText
+    <com.example.hang.ui.mine.utils.view.ClearEditText
+        style="@style/EditTextStyle"
         android:id="@+id/et_create_book_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/dp_25"
         android:hint="@string/book_name_max_length"
         android:inputType="text"
-        android:textSize="@dimen/sp_25"
+        android:textSize="@dimen/sp_20"
         android:maxLength="10"
         android:layout_marginLeft="@dimen/dp_15"
         android:layout_marginRight="@dimen/dp_15"
         >
 
-    </EditText>
+    </com.example.hang.ui.mine.utils.view.ClearEditText>
 
-    <EditText
+    <View
+        style="@style/HorizontalLineStyle"
+        android:layout_gravity="bottom" />
+
+    <com.example.hang.ui.mine.utils.view.ClearEditText
+        style="@style/EditTextStyle"
         android:id="@+id/et_create_book_tag"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/dp_20"
         android:hint="@string/book_tag_format"
         android:inputType="text"
-        android:textSize="@dimen/sp_25"
+        android:textSize="@dimen/sp_20"
         android:maxLength="8"
         android:layout_marginLeft="@dimen/dp_15"
         android:layout_marginRight="@dimen/dp_15"
         >
 
-    </EditText>
+    </com.example.hang.ui.mine.utils.view.ClearEditText>
+
+    <View
+        style="@style/HorizontalLineStyle"
+        android:layout_gravity="bottom" />
 
     <Button
         android:id="@+id/btn_create_book"
+        style="@style/ButtonStyle"
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_60"
         android:text="@string/common_confirm"
         android:layout_marginTop="@dimen/dp_20"
         android:textSize="@dimen/sp_18"
         android:layout_marginLeft="@dimen/dp_20"
-        android:layout_marginRight="@dimen/dp_20"
-        android:backgroundTint="#D26BE4"
-        >
+        android:layout_marginRight="@dimen/dp_20">
 
     </Button>
 
