@@ -62,7 +62,7 @@ public class Recommend extends Fragment {
 
         // 得到推荐书籍
         List<Map<String, Object>> recommendList = getRecommendBooks(view);
-        RecommendAdapter recommendAdapter = new RecommendAdapter(this.getActivity(), recommendList);
+        RecommendAdapter recommendAdapter = new RecommendAdapter(this.getActivity(), recommendList, username);
         recommendBooks = view.findViewById(R.id.reco_books);
         recommendBooks.setAdapter(recommendAdapter);
         recommendBooks.smoothScrollBy(30, 200);
@@ -104,12 +104,14 @@ public class Recommend extends Fragment {
         private final List<Map<String, Object>> data;
         private final LayoutInflater layoutInflater;
         private final Context context;
+        private final String userName;
 
-        public RecommendAdapter(Context context, List<Map<String, Object>> data) {
+        public RecommendAdapter(Context context, List<Map<String, Object>> data, String userName) {
             //传入的data，就是我们要在listview中显示的信息
             this.context = context;
             this.data = data;
             this.layoutInflater = LayoutInflater.from(context);
+            this.userName = userName;
         }
 
         //这里定义了一个类，用来表示一个item里面包含的东西
@@ -139,6 +141,41 @@ public class Recommend extends Fragment {
             return position;
         }
 
+        private class ImportButton implements View.OnClickListener {
+            private String bookId;
+
+            public ImportButton(String bookId) {
+                this.bookId = bookId;
+            }
+
+            @Override
+            public void onClick(View view) {
+                //importBookUrl
+                ArrayList<String> para = new ArrayList<>();
+                para.add(userName);
+                para.add(bookId);
+                JSONObject jo = null;
+                while (jo == null) {
+                    try {
+                        jo = (JSONObject) HttpUtil.httpGet(Ports.importBookUrl, para, false);
+                        System.out.println(jo);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+                assert jo != null;
+                if (jo.has("error")) {
+                    try {
+                        toast(jo.getString("error"));
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                } else {
+                    toast("导入成功, 可以去个人主页查看");
+                }
+            }
+        }
+
         //跟activity中的onCreate()差不多，目的就是给item布局中的各个控件对应好，并添加数据
         @SuppressLint({"ViewHolder", "InflateParams"})
         @Override
@@ -160,40 +197,13 @@ public class Recommend extends Fragment {
                 public void onClick(View view) {
                     Intent intent = new Intent(context, ShowItemsActivity.class);
                     Bundle bundle = new Bundle();
-                    Integer book_id = (Integer) data.get(position).get("book_id");
+                    Integer book_id = Integer.parseInt((String) data.get(position).get("book_id"));
                     bundle.putInt("book_id", book_id);
                     intent.putExtras(bundle);
                     context.startActivity(intent);
                 }
             });
-            info.book_load_public_books.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    //importBookUrl
-                    ArrayList<String> para = new ArrayList<>();
-                    para.add((String) data.get(position).get("username"));
-                    para.add(String.valueOf((Integer) data.get(position).get("book_id")));
-                    JSONObject jo = null;
-                    while (jo == null) {
-                        try {
-                            jo = (JSONObject) HttpUtil.httpGet(Ports.importBookUrl, para, false);
-                            System.out.println(jo);
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                    assert jo != null;
-                    if (jo.has("error")) {
-                        try {
-                            toast(jo.getString("error"));
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-                    } else {
-                        toast("导入成功, 可以去个人主页查看");
-                    }
-                }
-            });
+            info.book_load_public_books.setOnClickListener(new ImportButton((String) data.get(position).get("book_id")));
             return convertView;
         }
 
