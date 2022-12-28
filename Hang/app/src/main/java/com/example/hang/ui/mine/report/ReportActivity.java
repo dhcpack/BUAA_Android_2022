@@ -7,10 +7,13 @@ import static android.view.View.DRAWING_CACHE_QUALITY_LOW;
 import android.annotation.SuppressLint;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
+import android.media.Image;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -31,7 +34,6 @@ import java.util.ArrayList;
 import java.util.Locale;
 
 public class ReportActivity extends AppCompatActivity {
-    private String username;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +41,7 @@ public class ReportActivity extends AppCompatActivity {
         setContentView(R.layout.activity_report);
 
         setTitleBar("学习报告");
-        username = getIntent().getStringExtra("username");
+        String username = getIntent().getStringExtra("username");
         ArrayList<String> params = new ArrayList<>();
         params.add(username);
         setUserInfo(params);
@@ -55,6 +57,13 @@ public class ReportActivity extends AppCompatActivity {
             try {
                 String stuId = userInfo.getString("stuId");
                 String username = userInfo.getString("nickname");
+                String sex = userInfo.getString("sex");
+                ImageView avatar = findViewById(R.id.iv_person_data_avatar);
+                if (sex.equals("true")) {
+                    avatar.setImageResource(R.drawable.ic_default_avatar_male);
+                } else {
+                    avatar.setImageResource(R.drawable.ic_default_avatar_female);
+                }
                 TextView tv_stu_id = findViewById(R.id.tv_stu_id);
                 TextView tv_username = findViewById(R.id.tv_username);
                 tv_stu_id.setText(stuId);
@@ -68,21 +77,29 @@ public class ReportActivity extends AppCompatActivity {
     }
 
     private void setCheck(ArrayList<String> params) {
+        TextView tv_check_days = findViewById(R.id.tv_check_days);
+        TextView tv_check_last_record = findViewById(R.id.tv_check_last_record);
         try {
             JSONObject check = (JSONObject) HttpUtil.httpGet(Ports.checkDetail, params, false);
             try {
                 int totalDays = check != null ? Integer.parseInt(check.getString("totalDays")) : 0;
                 String lastCheckRecord = check != null ? check.getString("lastCheckRecord") : "无";
-                if (check != null) {
+                String checkDays;
+                String checkLastRecord;
+                if (check != null && !lastCheckRecord.equals("None")) {
                     String[] strings = lastCheckRecord.split("T");
                     lastCheckRecord = strings[0];
                     strings = lastCheckRecord.split("-");
                     lastCheckRecord = strings[0] + "年" + strings[1] + "月" + strings[2] + "日";
+                    checkDays = "已打卡：" + totalDays + "天";
+                    checkLastRecord = "上一次打卡时间：" + lastCheckRecord;
+                } else if (lastCheckRecord.equals("None")) {
+                    checkDays = "还未开始打卡，快去打卡吧~";
+                    checkLastRecord = "";
+                } else {
+                    checkDays = "";
+                    checkLastRecord = "";
                 }
-                TextView tv_check_days = findViewById(R.id.tv_check_days);
-                TextView tv_check_last_record = findViewById(R.id.tv_check_last_record);
-                String checkDays = "已打卡：" + totalDays + "天";
-                String checkLastRecord = "上一次打卡时间：" + lastCheckRecord;
                 tv_check_days.setText(checkDays);
                 tv_check_last_record.setText(checkLastRecord);
             } catch (JSONException e) {
@@ -94,12 +111,12 @@ public class ReportActivity extends AppCompatActivity {
     }
 
     private void setLearning(ArrayList<String> params) {
+        ProgressBar progressBar = findViewById(R.id.progressbar_learn);
+        TextView tv_title_book = findViewById(R.id.tv_title_book);
         try {
             JSONObject learningBook = (JSONObject) HttpUtil.httpGet(Ports.learningBookUrl, params, false);
             try {
                 String learningBookTitle = learningBook.getString("bookname");
-//                int learningBookProcess = Integer.parseInt(learningBook.getString("process"));
-                TextView tv_title_book = findViewById(R.id.tv_title_book);
                 tv_title_book.setText(learningBookTitle);
             } catch (JSONException e) {
                 e.printStackTrace();
@@ -113,12 +130,12 @@ public class ReportActivity extends AppCompatActivity {
             try {
                 int total = Integer.parseInt(learnCount.getString("待复习")) + Integer.parseInt(learnCount.getString("未学习")) + Integer.parseInt(learnCount.getString("已学习"));
                 int learned = Integer.parseInt(learnCount.getString("已学习"));
-                double learningBookProcess = 0;
-                if(total != 0){
-                    learningBookProcess = (double) learned / (double) total;
-                }
+                double learningBookProcess = ((double) learned / total);
+                learningBookProcess = learningBookProcess * 100;
+                progressBar.setProgress((int) (learningBookProcess));
+                progressBar.setMax(100);
                 TextView tv_learning_percent = findViewById(R.id.tv_learning_percent);
-                @SuppressLint("DefaultLocale") String learningProcess = String.format("学习进度%.2f", learningBookProcess * 100) + "%";
+                @SuppressLint("DefaultLocale") String learningProcess = String.format("学习进度%.2f", learningBookProcess) + "%";
                 tv_learning_percent.setText(learningProcess);
             } catch (JSONException e) {
                 e.printStackTrace();
