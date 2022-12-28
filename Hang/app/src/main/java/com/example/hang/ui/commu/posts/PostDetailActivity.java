@@ -87,20 +87,37 @@ public class PostDetailActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (!favored) {
                     try {
+                        favor += 1;
                         HashMap<String, String> body = new HashMap<>();
                         body.put("nickname", writer);
-                        body.put("favor", String.valueOf(favor + 1));
+                        body.put("favor", String.valueOf(favor));
                         JSONObject ret = HttpUtil.httpPut(Ports.modifyPostUrl + postId + "/", body);
                         System.out.println(ret.toString());
-                        post_detail_favor.setText(String.valueOf(favor + 1));
+                        post_detail_favor.setText(String.valueOf(favor));
                         @SuppressLint("UseCompatLoadingForDrawables") Drawable favored = getResources().getDrawable(R.drawable.ic_iconmonstr_thumb_9);
                         favored.setBounds(0, 0, favored.getMinimumWidth(), favored.getMinimumHeight());
                         post_detail_favor.setCompoundDrawables(favored, null, null, null);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
+                    favored = true;
+                } else {
+                    try {
+                        favor -= 1;
+                        HashMap<String, String> body = new HashMap<>();
+                        body.put("nickname", writer);
+                        body.put("favor", String.valueOf(favor));
+                        JSONObject ret = HttpUtil.httpPut(Ports.modifyPostUrl + postId + "/", body);
+                        System.out.println(ret.toString());
+                        post_detail_favor.setText(String.valueOf(favor));
+                        @SuppressLint("UseCompatLoadingForDrawables") Drawable favored = getResources().getDrawable(R.drawable.ic_iconmonstr_thumb_10);
+                        favored.setBounds(0, 0, favored.getMinimumWidth(), favored.getMinimumHeight());
+                        post_detail_favor.setCompoundDrawables(favored, null, null, null);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                    favored = false;
                 }
-                favored = true;
             }
         });
 

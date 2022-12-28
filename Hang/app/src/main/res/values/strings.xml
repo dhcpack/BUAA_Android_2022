@@ -339,6 +339,10 @@
     <string name="comment_hint">请输入您的评论</string>
     <string name="comment">评论</string>
 
+    <string name="post_title_input_hint">请输入题目</string>
+    <string name="post_tag_input_hint">请输入标签</string>
+    <string name="post_content_input_hint">请输入正文</string>
+    <string name="post_confirm">发帖</string>
 
 
 </resources>

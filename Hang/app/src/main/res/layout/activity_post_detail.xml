@@ -61,10 +61,11 @@
             android:text="@string/comment" />
 
         <TextView
+            android:id="@+id/comment_split"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="@dimen/dp_60"
-            android:text="        ----------------- 热门评论 ----------------"
+            android:text="        ---------------- 热门评论 ----------------"
             android:textColor="@color/gray"
             android:textSize="@dimen/dp_13" />
 

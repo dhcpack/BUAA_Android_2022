@@ -38,6 +38,12 @@
             android:drawablePadding="4.0dip"
             android:paddingLeft="@dimen/dp_5"
             android:paddingRight="@dimen/dp_10" />
+
+        <View
+            style="@style/HorizontalLineStyle"
+            android:layout_gravity="bottom"
+            android:layout_marginTop="3dp"
+            android:layout_height="@dimen/dp_3"/>
     </LinearLayout>
 
     <ListView

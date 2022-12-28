@@ -13,7 +13,7 @@ public class TimeSpliter {
         String date = getDate(s);
         String[] strings = s.split("T");
         String time = strings[1];
-        strings = time.split("/.");
+        strings = time.split("\\.");
         return date + " " + strings[0];
     }
 }

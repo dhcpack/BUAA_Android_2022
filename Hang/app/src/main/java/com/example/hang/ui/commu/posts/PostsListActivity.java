@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -48,6 +49,11 @@ public class PostsListActivity extends AppCompatActivity {
         //1.给链表添加数据
         username = getIntent().getExtras().getString("username");
         List<Map<String, Object>> list = getData();
+
+        if(list.size() == 0){
+            TextView comment_split = findViewById(R.id.comment_split);
+            comment_split.setText("        ---------------还没有评论哦----------------");
+        }
 
         //2.适配器，刚刚重写的！
         PostsAdapter postsAdapter = new PostsAdapter(this, list);
@@ -191,6 +197,19 @@ public class PostsListActivity extends AppCompatActivity {
                     Bundle bundle = new Bundle();
                     Integer post_id = (Integer) data.get(position).get("post_id");
                     bundle.putInt("post_id", post_id);
+                    bundle.putString("username", (String) data.get(position).get("username"));
+                    intent.putExtras(bundle);
+                    context.startActivity(intent);
+                }
+            });
+            info.iv_pic_post.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(context, PostDetailActivity.class);
+                    Bundle bundle = new Bundle();
+                    Integer post_id = (Integer) data.get(position).get("post_id");
+                    bundle.putInt("post_id", post_id);
+                    bundle.putString("username", (String) data.get(position).get("username"));
                     intent.putExtras(bundle);
                     context.startActivity(intent);
                 }
