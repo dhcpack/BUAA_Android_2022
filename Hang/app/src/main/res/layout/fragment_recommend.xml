@@ -53,6 +53,6 @@
         android:layout_height="wrap_content"
         android:dividerHeight="@dimen/dp_5"
         android:scrollbars="vertical"
-        android:layout_marginTop="@dimen/dp_23"/>
+        android:layout_marginTop="@dimen/dp_73"/>
 
 </FrameLayout>

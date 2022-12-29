@@ -28,6 +28,7 @@ import com.example.hang.ui.commu.posts.PostsListActivity;
 import com.example.hang.ui.learn.ShowItemsActivity;
 import com.example.hang.ui.mine.myBooks.AddQuestionActivity;
 import com.example.hang.ui.mine.myBooks.MyBooksActivity;
+import com.example.hang.util.PostPicGetter;
 import com.example.hang.util.TimeSpliter;
 
 import org.json.JSONArray;
@@ -114,7 +115,7 @@ public class Communicate extends Fragment {
                 try {
                     JSONObject jsonObject = (JSONObject) jsonArray.get(i);
                     //map.put("iv_icon_book", jsonObject.getString("pic"));
-                    map.put("iv_pic_post", R.drawable.ic_book);
+                    map.put("iv_pic_post", PostPicGetter.getPostPic(jsonObject.getString("title")));
                     map.put("tv_post_title", jsonObject.getString("title"));
                     map.put("tv_post_content", jsonObject.getString("content"));
                     map.put("tv_post_tag", jsonObject.getString("tag"));
