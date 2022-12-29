@@ -290,11 +290,18 @@ public class Learn extends Fragment {
             }
         }
         assert o != null;
-        rest = o.getInt("未学习");
-        int learned = o.getInt("已学习");
-        needReviewNum = o.getInt("待复习");
-        quesNum = rest + learned + needReviewNum;
-        process = learned + needReviewNum;
+        if (o.has("error")) {
+            rest = 0;
+            needReviewNum = 0;
+            quesNum = 0;
+            process = 0;
+        } else {
+            rest = o.getInt("未学习");
+            int learned = o.getInt("已学习");
+            needReviewNum = o.getInt("待复习");
+            quesNum = rest + learned + needReviewNum;
+            process = learned + needReviewNum;
+        }
         progressBar.setProgress(process);
         progressBar.setMax(quesNum);
         setText();
