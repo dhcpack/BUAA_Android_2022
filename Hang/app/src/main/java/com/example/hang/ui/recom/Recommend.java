@@ -200,6 +200,7 @@ public class Recommend extends Fragment {
                     Bundle bundle = new Bundle();
                     Integer book_id = Integer.parseInt((String) data.get(position).get("book_id"));
                     bundle.putInt("book_id", book_id);
+                    bundle.putBoolean("hasDelete", false);
                     intent.putExtras(bundle);
                     context.startActivity(intent);
                 }
