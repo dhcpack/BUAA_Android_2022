@@ -107,7 +107,7 @@ public class ReportActivity extends AppCompatActivity {
     }
 
     private void setLearning(ArrayList<String> params) {
-        ProgressBar progressBar = findViewById(R.id.progressbar_learn);
+        ProgressBar progressBar = findViewById(R.id.progressbar_report);
         TextView tv_title_book = findViewById(R.id.tv_title_book);
         try {
             JSONObject learningBook = (JSONObject) HttpUtil.httpGet(Ports.learningBookUrl, params, false);
@@ -128,7 +128,7 @@ public class ReportActivity extends AppCompatActivity {
                 int learned = Integer.parseInt(learnCount.getString("已学习"));
                 double learningBookProcess = ((double) learned / total);
                 learningBookProcess = learningBookProcess * 100;
-                progressBar.setProgress((int) (learningBookProcess));
+                progressBar.setProgress(((int) learningBookProcess));
                 progressBar.setMax(100);
                 TextView tv_learning_percent = findViewById(R.id.tv_learning_percent);
                 @SuppressLint("DefaultLocale") String learningProcess = String.format("学习进度%.2f", learningBookProcess) + "%";
