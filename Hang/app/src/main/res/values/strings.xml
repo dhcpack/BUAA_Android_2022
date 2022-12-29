@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Hang</string>
+    <string name="app_name">航记</string>
     <string name="title_learn">学习</string>
     <string name="title_recommend">推荐</string>
     <string name="title_communicate">发现</string>
@@ -168,7 +168,7 @@
     <!-- 登录 -->
     <string name="login_register">注册</string>
     <string name="login_forget">忘记密码？</string>
-    <string name="login_text">登录</string>
+    <string name="login_text">登&#160;录</string>
 
     <string name="login_other">其他登录方式</string>
 
