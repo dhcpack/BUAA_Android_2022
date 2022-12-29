@@ -189,7 +189,7 @@ public class Learn extends Fragment {
 
     public void daka() {
         String nowDate = DateUtil.getNowTime();
-        if (nowDate.substring(0, 10).equals(lastCheckRecord.substring(0, 10))) {
+        if (!lastCheckRecord.equals("None") && nowDate.substring(0, 10).equals(lastCheckRecord.substring(0, 10))) {
             toast("今日已打卡, 明天再来吧!");
         } else {
             dakaDays++;

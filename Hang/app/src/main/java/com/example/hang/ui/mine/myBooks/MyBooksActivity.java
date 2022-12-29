@@ -24,6 +24,7 @@ import com.example.hang.RegisterActivity;
 import com.example.hang.ports.HttpUtil;
 import com.example.hang.ports.Ports;
 import com.example.hang.ui.learn.ShowItemsActivity;
+import com.example.hang.util.BookPicGetter;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -75,7 +76,7 @@ public class MyBooksActivity extends AppCompatActivity {
                 try {
                     JSONObject jsonObject = (JSONObject) jsonArray.get(i);
                     //map.put("iv_icon_book", jsonObject.getString("pic"));
-                    map.put("book_icon", R.drawable.ic_book2);
+                    map.put("book_icon", BookPicGetter.getBookPic(jsonObject.getString("bookname")));
                     map.put("book_title", jsonObject.getString("bookname"));
                     map.put("book_id", jsonObject.getString("id"));
                     list.add(map);

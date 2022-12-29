@@ -26,9 +26,9 @@
             android:layout_marginTop="@dimen/dp_20"
             android:hint="@string/book_add_content_question"
             android:imeOptions="actionDone"
-            android:maxLength="20"
+
             android:minHeight="48dp"
-            android:singleLine="true"
+            android:singleLine="false"
             android:textColorHint="#757575"
             app:regexType="anything" />
 
@@ -44,9 +44,9 @@
             android:layout_marginTop="@dimen/dp_20"
             android:hint="@string/book_add_content_answer"
             android:imeOptions="actionDone"
-            android:maxLength="20"
+
             android:minHeight="48dp"
-            android:singleLine="true"
+            android:singleLine="false"
             android:textColorHint="#757575"
             app:regexType="anything" />
 
