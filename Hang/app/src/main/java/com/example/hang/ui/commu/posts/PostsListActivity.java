@@ -50,10 +50,9 @@ public class PostsListActivity extends AppCompatActivity {
         //1.给链表添加数据
         username = getIntent().getExtras().getString("username");
         List<Map<String, Object>> list = getData();
-
         if(list.size() == 0){
             TextView comment_split = findViewById(R.id.comment_split);
-            comment_split.setText("        ---------------还没有评论哦----------------");
+            comment_split.setText("---------------还没有评论哦----------------");
         }
 
         //2.适配器，刚刚重写的！

@@ -1,27 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F4F4F4">
+    android:background="#F4F4F4"
+    android:orientation="vertical"
+    tools:ignore="UselessParent">
 
     <!--第一个方块-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_150"
-        android:layout_marginTop="@dimen/dp_20"
         android:layout_marginHorizontal="@dimen/dp_20"
-        android:gravity="center_horizontal"
-        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/dp_20"
         android:background="@drawable/ic_background_circle_corner"
-        android:baselineAligned="false">
+        android:baselineAligned="false"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
 
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"
             android:layout_marginTop="@dimen/dp_20"
+            android:layout_weight="1"
             android:gravity="center_horizontal"
             android:orientation="vertical">
 
@@ -45,8 +48,8 @@
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"
             android:layout_marginTop="@dimen/dp_20"
+            android:layout_weight="1"
             android:gravity="center_horizontal"
             android:orientation="vertical">
 
@@ -67,4 +70,24 @@
         </LinearLayout>
     </LinearLayout>
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+    <TextView
+        android:id="@+id/post_detail_favor_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_gravity="center"
+        android:drawablePadding="10.0dip"
+        android:gravity="center"
+        android:text="热贴推荐"
+        android:textSize="@dimen/sp_20"
+        app:drawableLeftCompat="@drawable/ic_iconmonstr_thumb_10" />
+
+    <ListView
+        android:id="@+id/posts"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_10"
+        android:dividerHeight="@dimen/dp_5"
+        android:paddingTop="0dp"
+        android:scrollbars="vertical" />
+</LinearLayout>
