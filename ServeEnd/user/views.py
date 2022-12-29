@@ -419,7 +419,7 @@ class ImportBookView(View):
         nbook = Book.objects.create(bookname=book.bookname, pic=book.pic, tag=book.tag, nickname=user)
         ques = Ques.objects.filter(book=book)
         for q in ques:
-            Ques.objects.create(type=q.type, ans1=q.ans1, ans2=q.ans2, ans3=q.ans3, ans4=q.ans4, book=nbook,
+            Ques.objects.create(type=q.type, ques=q.ques, ans1=q.ans1, ans2=q.ans2, ans3=q.ans3, ans4=q.ans4, book=nbook,
                                 nickname=user)
         return JsonResponse({"msg": "已导入"}, status=HTTP_200_OK)
 
