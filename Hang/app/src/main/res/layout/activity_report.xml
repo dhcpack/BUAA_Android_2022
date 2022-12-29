@@ -109,7 +109,7 @@
             </TextView>
 
             <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/iv_icon_book"
+                android:id="@+id/report_book"
                 android:layout_width="@dimen/dp_130"
                 android:layout_height="@dimen/dp_130"
                 android:gravity="center_horizontal"

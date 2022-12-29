@@ -7,6 +7,7 @@ import static android.view.View.DRAWING_CACHE_QUALITY_LOW;
 import android.annotation.SuppressLint;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.MenuItem;
@@ -24,6 +25,7 @@ import com.example.hang.R;
 import com.example.hang.ports.HttpUtil;
 import com.example.hang.ports.Ports;
 import com.example.hang.ui.mine.utils.function.BitMapUtils;
+import com.example.hang.util.BookPicGetter;
 import com.example.hang.util.TimeSpliter;
 
 import org.json.JSONException;
@@ -48,6 +50,8 @@ public class ReportActivity extends AppCompatActivity {
         setLearning(params);
         View view = this.getWindow().getDecorView();
         generateImage(view);
+
+
     }
 
     private void setUserInfo(ArrayList<String> params) {
@@ -109,11 +113,14 @@ public class ReportActivity extends AppCompatActivity {
     private void setLearning(ArrayList<String> params) {
         ProgressBar progressBar = findViewById(R.id.progressbar_report);
         TextView tv_title_book = findViewById(R.id.tv_title_book);
+        ImageView imageView = findViewById(R.id.report_book);
         try {
             JSONObject learningBook = (JSONObject) HttpUtil.httpGet(Ports.learningBookUrl, params, false);
             try {
                 String learningBookTitle = learningBook.getString("bookname");
                 tv_title_book.setText(learningBookTitle);
+                imageView.setImageResource((Integer) BookPicGetter.getBookPic(learningBookTitle));
+
             } catch (JSONException e) {
                 e.printStackTrace();
             }
