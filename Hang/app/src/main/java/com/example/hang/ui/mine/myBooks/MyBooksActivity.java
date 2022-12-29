@@ -79,6 +79,7 @@ public class MyBooksActivity extends AppCompatActivity {
                     map.put("book_icon", BookPicGetter.getBookPic(jsonObject.getString("bookname")));
                     map.put("book_title", jsonObject.getString("bookname"));
                     map.put("book_id", jsonObject.getString("id"));
+                    map.put("nickname", jsonObject.getString("nickname"));
                     list.add(map);
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -111,6 +112,7 @@ public class MyBooksActivity extends AppCompatActivity {
             private AppCompatButton btn_book_set_learning;
 
             private int book_id;
+            private String nickname;
         }
         //所有要返回的东西的数量（Id、信息等），都在data里面，从data里面取就好
         @Override
@@ -149,12 +151,14 @@ public class MyBooksActivity extends AppCompatActivity {
             info.tv_title_book.setText((String) data.get(position).get("book_title"));
             info.book_id = Integer.parseInt((String)
                     Objects.requireNonNull(data.get(position).get("book_id")));
+            info.nickname = (String) data.get(position).get("nickname");
             info.btn_book_add_content.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     Intent intent = new Intent(context, AddQuestionActivity.class);
                     Bundle bundle = new Bundle();
                     bundle.putInt("book_id", info.book_id);
+                    bundle.putString("nickname", info.nickname);
                     intent.putExtras(bundle);
                     context.startActivity(intent);
                 }

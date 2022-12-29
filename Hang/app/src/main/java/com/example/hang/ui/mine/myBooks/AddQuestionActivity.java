@@ -39,6 +39,8 @@ public class AddQuestionActivity extends AppCompatActivity {
     private String ques;
     private String ans;
     private String type;
+    private int book;
+    private String nickname;
 
     private ActivityResultLauncher<Intent> activityResultLauncher;
 
@@ -47,6 +49,9 @@ public class AddQuestionActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_question);
+
+        nickname = getIntent().getExtras().getString("nickname");
+        book = getIntent().getExtras().getInt(("book_id"));
 
         setTitleBar("添加题目");
         type_input = findViewById(R.id.type_input);
@@ -117,6 +122,8 @@ public class AddQuestionActivity extends AppCompatActivity {
         params.put("type", type);
         params.put("ques", ques);
         params.put("ans" + type, ans);
+        params.put("nickname", nickname);
+        params.put("book", String.valueOf(book));
         try {
             jsonObject = HttpUtil.httpPost(Ports.addQuestionUrl, params);
             System.out.println(jsonObject);
