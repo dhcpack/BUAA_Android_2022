@@ -195,7 +195,7 @@
             android:layout_height="wrap_content"
             android:layout_marginVertical="@dimen/dp_5"
             android:text="@string/register_title"
-            android:textColor="#212121"
+            android:textColor="@color/white"
             tools:ignore="TextContrastCheck" />
 
         <com.example.hang.ui.mine.utils.view.SubmitButton
@@ -205,7 +205,7 @@
             android:layout_height="wrap_content"
             android:layout_marginVertical="@dimen/dp_5"
             android:text="@string/register_back_to_login"
-            android:textColor="#212121"
+            android:textColor="@color/white"
             tools:ignore="TextContrastCheck" />
 
     </LinearLayout>
