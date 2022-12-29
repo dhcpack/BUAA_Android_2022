@@ -44,7 +44,7 @@ public class RegisterActivity extends AppCompatActivity {
     private String institution;
     private String major;
     private String grade;
-    private Boolean sex = false;
+    private Boolean sex = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
