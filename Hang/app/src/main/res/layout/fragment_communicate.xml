@@ -9,6 +9,35 @@
     android:orientation="vertical"
     tools:ignore="UselessParent">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_150"
+        android:layout_marginHorizontal="@dimen/dp_20"
+        android:layout_marginTop="@dimen/dp_20"
+        android:background="@drawable/ic_background"
+        android:baselineAligned="false"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_10"
+            android:text="Cease to struggle and you cease to live."
+            android:textSize="@dimen/sp_25">
+        </TextView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_10"
+            android:text="生命不止，奋斗不息。"
+            android:textSize="@dimen/sp_25">
+        </TextView>
+    </LinearLayout>
+
     <!--第一个方块-->
     <LinearLayout
         android:layout_width="match_parent"
@@ -42,7 +71,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/comu_fragment_enter_friends" />
-
         </LinearLayout>
 
         <LinearLayout
@@ -70,24 +98,16 @@
         </LinearLayout>
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/post_detail_favor_count"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/icon_scenery_background"
+        android:layout_width="@dimen/dp_130"
+        android:layout_height="@dimen/dp_130"
+        android:layout_marginHorizontal="@dimen/dp_20"
         android:layout_marginTop="@dimen/dp_20"
         android:layout_gravity="center"
-        android:drawablePadding="10.0dip"
-        android:gravity="center"
-        android:text="热贴推荐"
-        android:textSize="@dimen/sp_20"
-        app:drawableLeftCompat="@drawable/ic_iconmonstr_thumb_10" />
-
-    <ListView
-        android:id="@+id/posts"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dp_10"
-        android:dividerHeight="@dimen/dp_5"
-        android:paddingTop="0dp"
-        android:scrollbars="vertical" />
+        android:src="@drawable/ic_learning"
+        app:riv_corner_radius_bottom_left="10dp"
+        app:riv_corner_radius_bottom_right="10dp"
+        app:riv_corner_radius_top_left="10dp"
+        app:riv_corner_radius_top_right="10dp" />
 </LinearLayout>
