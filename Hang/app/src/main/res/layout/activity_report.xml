@@ -110,11 +110,11 @@
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/iv_icon_book"
-                android:layout_width="@dimen/dp_100"
-                android:layout_height="@dimen/dp_120"
+                android:layout_width="@dimen/dp_130"
+                android:layout_height="@dimen/dp_130"
                 android:gravity="center_horizontal"
                 android:scaleType="centerCrop"
-                android:src="@drawable/ic_book" />
+                android:src="@drawable/ic_book2" />
 
             <TextView
                 android:id="@+id/tv_title_book"

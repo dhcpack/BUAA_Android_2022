@@ -293,7 +293,7 @@ public class Learn extends Fragment {
         rest = o.getInt("未学习");
         int learned = o.getInt("已学习");
         needReviewNum = o.getInt("待复习");
-        quesNum = rest + process + needReviewNum;
+        quesNum = rest + learned + needReviewNum;
         process = learned + needReviewNum;
         progressBar.setProgress(process);
         progressBar.setMax(quesNum);
@@ -308,6 +308,9 @@ public class Learn extends Fragment {
         if (quesNum != 0) {
             p = (double) process / (double) quesNum;
         }
+        /*System.out.println("process " + process );
+        System.out.println("total " + quesNum);
+        System.out.println((double) process / (double) quesNum);*/
         tv_percent.setText(String.format("学习进度%.2f", p * 100) + "%");
         progressBar.setProgress(process);
         progressBar.setMax(quesNum);

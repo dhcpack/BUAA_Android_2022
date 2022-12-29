@@ -125,11 +125,13 @@ public class ReportActivity extends AppCompatActivity {
             JSONObject learnCount = (JSONObject) HttpUtil.httpGet(Ports.getReviewCount, params, false);
             try {
                 int total = Integer.parseInt(learnCount.getString("待复习")) + Integer.parseInt(learnCount.getString("未学习")) + Integer.parseInt(learnCount.getString("已学习"));
-                int learned = Integer.parseInt(learnCount.getString("已学习"));
-                double learningBookProcess = ((double) learned / total);
-                learningBookProcess = learningBookProcess * 100;
-                progressBar.setProgress(((int) learningBookProcess));
-                progressBar.setMax(100);
+                int learned = Integer.parseInt(learnCount.getString("已学习")) + Integer.parseInt(learnCount.getString("待复习"));
+                double learningBookProcess = ((double) learned / total) * 100;
+                /*System.out.println("learned " + learned);
+                System.out.println("total " + total);
+                System.out.println(learningBookProcess);*/
+                progressBar.setProgress(learned);
+                progressBar.setMax(total);
                 TextView tv_learning_percent = findViewById(R.id.tv_learning_percent);
                 @SuppressLint("DefaultLocale") String learningProcess = String.format("学习进度%.2f", learningBookProcess) + "%";
                 tv_learning_percent.setText(learningProcess);
