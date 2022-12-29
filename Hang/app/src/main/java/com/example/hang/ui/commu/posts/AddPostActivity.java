@@ -15,8 +15,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.hang.R;
+import com.example.hang.RegisterActivity;
 import com.example.hang.ports.HttpUtil;
 import com.example.hang.ports.Ports;
+import com.example.hang.ui.mine.utils.view.SubmitButton;
 
 import org.json.JSONObject;
 
@@ -26,6 +28,8 @@ import java.util.HashMap;
 
 public class AddPostActivity extends AppCompatActivity {
     private Context context;
+
+    private SubmitButton upload;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,24 +43,24 @@ public class AddPostActivity extends AppCompatActivity {
         EditText title = findViewById(R.id.post_title_input);
         EditText tag = findViewById(R.id.post_tag_input);
         EditText content = findViewById(R.id.post_content_input);
-        Button upload = findViewById(R.id.btn_send_post);
+        upload = findViewById(R.id.btn_send_post);
 
         upload.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String sTitle = title.getText().toString();
                 if (sTitle.length() == 0) {
-                    Toast.makeText(AddPostActivity.this, "请输入文章标题", Toast.LENGTH_SHORT).show();
+                    toast("请输入文章标题");
                     return;
                 }
                 String sTag = tag.getText().toString();
                 if (sTag.length() == 0) {
-                    Toast.makeText(AddPostActivity.this, "请输入文章标签", Toast.LENGTH_SHORT).show();
+                    toast("请输入文章标签");
                     return;
                 }
                 String sContent = content.getText().toString();
                 if (sContent.length() == 0) {
-                    Toast.makeText(AddPostActivity.this, "请输入文章正文", Toast.LENGTH_SHORT).show();
+                    toast("请输入文章正文");
                     return;
                 }
                 HashMap<String, String> body = new HashMap<>();
@@ -66,8 +70,7 @@ public class AddPostActivity extends AppCompatActivity {
                 body.put("content", sContent);
                 try {
                     JSONObject jsonObject = HttpUtil.httpPost(Ports.postUrl, body);
-                    Toast.makeText(AddPostActivity.this, "发帖成功", Toast.LENGTH_SHORT).show();
-
+                    toast("发帖成功");
 
                     Intent intent = new Intent(context, PostDetailActivity.class);
                     Bundle bundle = new Bundle();
@@ -107,5 +110,10 @@ public class AddPostActivity extends AppCompatActivity {
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    private void toast(String str) {
+        Toast.makeText(AddPostActivity.this, str, Toast.LENGTH_SHORT).show();
+        upload.reset();
     }
 }
