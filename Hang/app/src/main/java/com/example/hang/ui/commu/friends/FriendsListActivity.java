@@ -3,6 +3,7 @@ package com.example.hang.ui.commu.friends;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -51,8 +52,8 @@ public class FriendsListActivity extends AppCompatActivity {
         List<Map<String, Object>> processList = getProcessData();
 
         //2.适配器，刚刚重写的！
-        CheckAdapter checkAdapter = new CheckAdapter(this, checkList);
-        ProcessAdapter processAdapter = new ProcessAdapter(this, processList);
+        CheckAdapter checkAdapter = new CheckAdapter(this, checkList, username);
+        ProcessAdapter processAdapter = new ProcessAdapter(this, processList, username);
 
         //3.设置适配器
         friends_rank_list = findViewById(R.id.friends_rank);
@@ -73,7 +74,7 @@ public class FriendsListActivity extends AppCompatActivity {
                 setTitleBar("打卡天数排行榜");
                 friends_rank_list.setAdapter(checkAdapter);
                 friends_rank_list.smoothScrollBy(30, 200);
-                Toast.makeText(FriendsListActivity.this, "切换到打卡时间排行榜", Toast.LENGTH_SHORT).show();
+                Toast.makeText(FriendsListActivity.this, "切换到打卡天数排行榜", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -125,7 +126,11 @@ public class FriendsListActivity extends AppCompatActivity {
                     } else {
                         map.put("friend_check_pic", R.drawable.ic_default_avatar_female);
                     }
-                    map.put("nickname", jsonObject.getString("nickname"));
+                    if (jsonObject.getString("nickname").equals(username)) {
+                        map.put("nickname", jsonObject.getString("nickname"));
+                    } else {
+                        map.put("nickname", jsonObject.getString("nickname"));
+                    }
                     map.put("days", jsonObject.getInt("days"));
                     map.put("rank", jsonObject.getInt("rank"));
                     list.add(map);
@@ -142,12 +147,14 @@ public class FriendsListActivity extends AppCompatActivity {
         private final List<Map<String, Object>> data;
         private final LayoutInflater layoutInflater;
         private final Context context;
+        private final String username;
 
-        public CheckAdapter(Context context, List<Map<String, Object>> data) {
+        public CheckAdapter(Context context, List<Map<String, Object>> data, String username) {
             //传入的data，就是我们要在listview中显示的信息
             this.context = context;
             this.data = data;
             this.layoutInflater = LayoutInflater.from(context);
+            this.username = username;
         }
 
         //这里定义了一个类，用来表示一个item里面包含的东西
@@ -195,6 +202,11 @@ public class FriendsListActivity extends AppCompatActivity {
             info.check_nickname.setText((String) data.get(position).get("nickname"));
             info.check_time.setText("打卡天数: " + String.valueOf((Integer) data.get(position).get("days")));
             info.check_rank.setText("好友排名: " + String.valueOf((Integer) data.get(position).get("rank")));
+            if (((String) data.get(position).get("nickname")).equals(username)) {
+                info.check_nickname.setTextColor(Color.parseColor("#CC00FF"));
+                info.check_time.setTextColor(Color.parseColor("#CC00FF"));
+                info.check_rank.setTextColor(Color.parseColor("#CC00FF"));
+            }
             return convertView;
         }
 
@@ -241,12 +253,14 @@ public class FriendsListActivity extends AppCompatActivity {
         private final List<Map<String, Object>> data;
         private final LayoutInflater layoutInflater;
         private final Context context;
+        private final String username;
 
-        public ProcessAdapter(Context context, List<Map<String, Object>> data) {
+        public ProcessAdapter(Context context, List<Map<String, Object>> data, String username) {
             //传入的data，就是我们要在listview中显示的信息
             this.context = context;
             this.data = data;
             this.layoutInflater = LayoutInflater.from(context);
+            this.username = username;
         }
 
         //这里定义了一个类，用来表示一个item里面包含的东西
@@ -298,6 +312,12 @@ public class FriendsListActivity extends AppCompatActivity {
             info.progress_friend_bar.setProgress((int) ((double) data.get(position).get("progress") * 100));
             info.progress_friend_bar.setMax(100);
             info.process_rank.setText("好友排名: " + String.valueOf((Integer) data.get(position).get("rank")));
+            if (((String) data.get(position).get("nickname")).equals(username)) {
+                info.process_nickname.setTextColor(Color.parseColor("#CC00FF"));
+                info.process_value.setTextColor(Color.parseColor("#CC00FF"));
+                info.process_rank.setTextColor(Color.parseColor("#CC00FF"));
+            }
+
             return convertView;
         }
 

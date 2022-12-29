@@ -240,4 +240,6 @@ public class Ports {
     public static String getAllFriendsUrl = api + "getallfriends/";
 
     public static String getAllApplicantsUrl = api + "getallapplicants/";
+
+    public static String getAllUsersUrl = api + "getallusers/";
 }

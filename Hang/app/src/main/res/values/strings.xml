@@ -344,14 +344,16 @@
     <string name="post_content_input_hint">请输入正文</string>
     <string name="post_confirm">发帖</string>
 
-    <string name="friend_check_list">打卡时间排行</string>
+    <string name="friend_check_list">打卡天数排行</string>
     <string name="friend_learnrate_list">学习进度排行</string>
     <string name="friend_manage">好友管理</string>
     <string name="friend_delete">删除好友</string>
     <string name="title_activity_friend_management">FriendManagement</string>
 
     <string name="friend_list">好友列表</string>
-    <string name="friend_apply_list">好友申请列表</string>
+    <string name="friend_apply_list">申请列表</string>
+    <string name="friend_apply">添加好友</string>
+
 
 
 </resources>

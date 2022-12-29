@@ -515,7 +515,7 @@ class FriendCheckListView(View):
             user_set.add(uu)
             uf_list.append((int(uu.days), uu))
         uf_list.append((int(user.days), user))
-        uf_list.sort(reverse=True)
+        uf_list.sort(reverse=True, key=lambda x: x[0])
         res = []
         for i in range(len(uf_list)):
             days, uf = uf_list[i]
@@ -581,7 +581,24 @@ class AllApplicantView(View):
             uu = User.objects.get(nickname=uf.sender.nickname)
             if uu in user_set:
                 continue
-            res.append({"nickname": uu.nickname, "msg": uf.msg, "stuId": uu.stuId, "time": uf.time, "sex": uu.sex})
+            res.append({"nickname": uu.nickname, "institute": uu.institute, "grade": uu.grade, "stuId": uu.stuId, "time": uf.time,
+                        "sex": uu.sex})
+        return JsonResponse(data=res, safe=False, status=HTTP_200_OK)
+
+
+class AllUserView(View):
+    def get(self, request, nickname):
+        users = User.objects.all()
+        res = []
+        for user in users:
+            if user.nickname == nickname:
+                continue
+            if user.nickname == 'admin':
+                continue
+            if Friends.objects.filter(nickname1=nickname).filter(nickname2=user.nickname).exists():  # 已经是好友了
+                continue
+            res.append({"nickname": user.nickname, "institute": user.institute, "grade": user.grade, "stuId": user.stuId,
+                        "major": user.major, "sex": user.sex})
         return JsonResponse(data=res, safe=False, status=HTTP_200_OK)
 
 
