@@ -14,17 +14,24 @@
         <entry key="..\:/Users/ylhappy/Desktop/BUAA_Android_2022/Hang/app/src/main/res/drawable/ic_iconmonstr_thumb_10.xml" value="0.2265" />
         <entry key="..\:/Users/ylhappy/Desktop/BUAA_Android_2022/Hang/app/src/main/res/drawable/ic_mine_black_24dp.xml" value="0.116" />
         <entry key="..\:/Users/ylhappy/Desktop/BUAA_Android_2022/Hang/app/src/main/res/drawable/ic_recommend_black_24dp.xml" value="0.116" />
+        <entry key="..\:/Users/ylhappy/Desktop/BUAA_Android_2022/Hang/app/src/main/res/layout/activity_add_post.xml" value="0.22083333333333333" />
         <entry key="..\:/Users/ylhappy/Desktop/BUAA_Android_2022/Hang/app/src/main/res/layout/activity_add_question.xml" value="0.20652173913043478" />
+        <entry key="..\:/Users/ylhappy/Desktop/BUAA_Android_2022/Hang/app/src/main/res/layout/activity_add_question_choose_many.xml" value="0.23541666666666666" />
         <entry key="..\:/Users/ylhappy/Desktop/BUAA_Android_2022/Hang/app/src/main/res/layout/activity_add_question_choose_one.xml" value="0.20652173913043478" />
         <entry key="..\:/Users/ylhappy/Desktop/BUAA_Android_2022/Hang/app/src/main/res/layout/activity_add_question_fill_blank.xml" value="0.20652173913043478" />
         <entry key="..\:/Users/ylhappy/Desktop/BUAA_Android_2022/Hang/app/src/main/res/layout/activity_add_question_image.xml" value="0.20652173913043478" />
         <entry key="..\:/Users/ylhappy/Desktop/BUAA_Android_2022/Hang/app/src/main/res/layout/activity_books.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/ylhappy/Desktop/BUAA_Android_2022/Hang/app/src/main/res/layout/activity_create_book.xml" value="0.20652173913043478" />
+        <entry key="..\:/Users/ylhappy/Desktop/BUAA_Android_2022/Hang/app/src/main/res/layout/activity_friend_management.xml" value="0.264" />
+        <entry key="..\:/Users/ylhappy/Desktop/BUAA_Android_2022/Hang/app/src/main/res/layout/activity_friend_management2.xml" value="0.23541666666666666" />
+        <entry key="..\:/Users/ylhappy/Desktop/BUAA_Android_2022/Hang/app/src/main/res/layout/activity_friends_list.xml" value="0.264" />
         <entry key="..\:/Users/ylhappy/Desktop/BUAA_Android_2022/Hang/app/src/main/res/layout/activity_learn_search.xml" value="0.18478260869565216" />
         <entry key="..\:/Users/ylhappy/Desktop/BUAA_Android_2022/Hang/app/src/main/res/layout/activity_login.xml" value="0.11271529888551166" />
         <entry key="..\:/Users/ylhappy/Desktop/BUAA_Android_2022/Hang/app/src/main/res/layout/activity_main.xml" value="0.18478260869565216" />
         <entry key="..\:/Users/ylhappy/Desktop/BUAA_Android_2022/Hang/app/src/main/res/layout/activity_my_books_item.xml" value="0.20652173913043478" />
         <entry key="..\:/Users/ylhappy/Desktop/BUAA_Android_2022/Hang/app/src/main/res/layout/activity_personal_data.xml" value="0.20652173913043478" />
+        <entry key="..\:/Users/ylhappy/Desktop/BUAA_Android_2022/Hang/app/src/main/res/layout/activity_post_detail.xml" value="0.176" />
+        <entry key="..\:/Users/ylhappy/Desktop/BUAA_Android_2022/Hang/app/src/main/res/layout/activity_posts_list.xml" value="0.264" />
         <entry key="..\:/Users/ylhappy/Desktop/BUAA_Android_2022/Hang/app/src/main/res/layout/activity_recommend_books.xml" value="0.234375" />
         <entry key="..\:/Users/ylhappy/Desktop/BUAA_Android_2022/Hang/app/src/main/res/layout/activity_register.xml" value="0.20652173913043478" />
         <entry key="..\:/Users/ylhappy/Desktop/BUAA_Android_2022/Hang/app/src/main/res/layout/activity_report.xml" value="0.23541666666666666" />
@@ -33,13 +40,24 @@
         <entry key="..\:/Users/ylhappy/Desktop/BUAA_Android_2022/Hang/app/src/main/res/layout/activity_start_review.xml" value="0.20652173913043478" />
         <entry key="..\:/Users/ylhappy/Desktop/BUAA_Android_2022/Hang/app/src/main/res/layout/activity_start_study.xml" value="0.20652173913043478" />
         <entry key="..\:/Users/ylhappy/Desktop/BUAA_Android_2022/Hang/app/src/main/res/layout/activity_system_all_books_item.xml" value="0.23541666666666666" />
-        <entry key="..\:/Users/ylhappy/Desktop/BUAA_Android_2022/Hang/app/src/main/res/layout/fragment_communicate.xml" value="0.20652173913043478" />
+        <entry key="..\:/Users/ylhappy/Desktop/BUAA_Android_2022/Hang/app/src/main/res/layout/comment_layout.xml" value="0.23541666666666666" />
+        <entry key="..\:/Users/ylhappy/Desktop/BUAA_Android_2022/Hang/app/src/main/res/layout/common_layouy.xml" value="0.22083333333333333" />
+        <entry key="..\:/Users/ylhappy/Desktop/BUAA_Android_2022/Hang/app/src/main/res/layout/fragment_communicate.xml" value="0.264" />
+        <entry key="..\:/Users/ylhappy/Desktop/BUAA_Android_2022/Hang/app/src/main/res/layout/fragment_fill_blank.xml" value="0.23541666666666666" />
+        <entry key="..\:/Users/ylhappy/Desktop/BUAA_Android_2022/Hang/app/src/main/res/layout/fragment_learn.xml" value="0.23541666666666666" />
         <entry key="..\:/Users/ylhappy/Desktop/BUAA_Android_2022/Hang/app/src/main/res/layout/fragment_mine.xml" value="0.1" />
         <entry key="..\:/Users/ylhappy/Desktop/BUAA_Android_2022/Hang/app/src/main/res/layout/fragment_multi_choice.xml" value="0.23541666666666666" />
         <entry key="..\:/Users/ylhappy/Desktop/BUAA_Android_2022/Hang/app/src/main/res/layout/fragment_recommend.xml" value="0.264" />
-        <entry key="..\:/Users/ylhappy/Desktop/BUAA_Android_2022/Hang/app/src/main/res/layout/fragment_single_choice.xml" value="0.23541666666666666" />
+        <entry key="..\:/Users/ylhappy/Desktop/BUAA_Android_2022/Hang/app/src/main/res/layout/fragment_single_choice.xml" value="0.1" />
+        <entry key="..\:/Users/ylhappy/Desktop/BUAA_Android_2022/Hang/app/src/main/res/layout/friend_check_layout.xml" value="0.1" />
+        <entry key="..\:/Users/ylhappy/Desktop/BUAA_Android_2022/Hang/app/src/main/res/layout/friend_info_layout.xml" value="0.264" />
+        <entry key="..\:/Users/ylhappy/Desktop/BUAA_Android_2022/Hang/app/src/main/res/layout/friend_layout.xml" value="0.23541666666666666" />
+        <entry key="..\:/Users/ylhappy/Desktop/BUAA_Android_2022/Hang/app/src/main/res/layout/friend_process_layout.xml" value="0.1" />
+        <entry key="..\:/Users/ylhappy/Desktop/BUAA_Android_2022/Hang/app/src/main/res/layout/posts_layout.xml" value="0.1" />
         <entry key="..\:/Users/ylhappy/Desktop/BUAA_Android_2022/Hang/app/src/main/res/layout/sharp.xml" value="0.2171875" />
+        <entry key="..\:/Users/ylhappy/Desktop/BUAA_Android_2022/Hang/app/src/main/res/layout/title_layout.xml" value="0.18297101449275363" />
         <entry key="..\:/Users/ylhappy/Desktop/BUAA_Android_2022/Hang/app/src/main/res/menu/bottom_nav_menu.xml" value="0.1" />
+        <entry key="..\:/Users/ylhappy/Desktop/BUAA_Android_2022/Hang/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1345" />
         <entry key="..\:/Users/ylhappy/Desktop/Hang/app/src/main/res/drawable/ic_dashboard_black_24dp.xml" value="0.1" />
         <entry key="..\:/Users/ylhappy/Desktop/Hang/app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.1" />
         <entry key="..\:/Users/ylhappy/Desktop/Hang/app/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.1" />

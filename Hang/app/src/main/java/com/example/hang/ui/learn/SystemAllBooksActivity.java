@@ -22,7 +22,6 @@ import androidx.appcompat.widget.AppCompatImageView;
 import com.example.hang.R;
 import com.example.hang.ports.HttpUtil;
 import com.example.hang.ports.Ports;
-import com.example.hang.ui.learn.util.ListBean;
 
 import org.json.JSONArray;
 import org.json.JSONException;

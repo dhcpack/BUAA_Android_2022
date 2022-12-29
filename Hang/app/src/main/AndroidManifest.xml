@@ -24,10 +24,20 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31" >
         <activity
-            android:name=".RecommendBook"
-            android:exported="false"
-            android:label="@string/title_activity_recommend_book"
-            android:theme="@style/Theme.Hang.NoActionBar" />
+            android:name=".ui.commu.friends.FriendManagementActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.commu.posts.AddPostActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.commu.posts.PostDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.commu.posts.PostsListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.commu.friends.FriendsListActivity"
+            android:exported="false" />
         <activity
             android:name=".ui.learn.StartReviewActivity"
             android:exported="false" >

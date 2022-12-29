@@ -28,16 +28,22 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/mutiple_question"
+            android:id="@+id/recom_message"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:text="根据您的学习内容，为您推荐以下记忆本"
-            android:textSize="22dp"
+            android:textSize="21dp"
+            android:textColor="@color/black"
             android:drawableLeft="@drawable/ic_iconmonstr_thumb_10"
             android:drawablePadding="4.0dip"
-            android:paddingRight="10dp"
-            android:paddingBottom="12dp"/>
+            android:paddingLeft="@dimen/dp_5"
+            android:paddingRight="@dimen/dp_10" />
 
+        <View
+            style="@style/HorizontalLineStyle"
+            android:layout_gravity="bottom"
+            android:layout_marginTop="3dp"
+            android:layout_height="@dimen/dp_3"/>
     </LinearLayout>
 
     <ListView
@@ -46,6 +52,6 @@
         android:layout_height="wrap_content"
         android:dividerHeight="@dimen/dp_5"
         android:scrollbars="vertical"
-        android:paddingTop="10dp"/>
+        android:layout_marginTop="@dimen/dp_23"/>
 
 </FrameLayout>

@@ -277,7 +277,7 @@ public class Learn extends Fragment {
         }
     }
 
-    public void  getQuesNum() throws JSONException {
+    public void getQuesNum() throws JSONException {
         ArrayList<String> user = new ArrayList<>();
         user.add(username);
         JSONObject o = null;

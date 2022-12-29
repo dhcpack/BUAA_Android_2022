@@ -67,8 +67,15 @@ urlpatterns = [
                   re_path("^getreviewques/(?P<nickname>[_a-zA-Z0-9]+)/(?P<type>[_a-zA-Z0-9]+)/$", ReviewView.as_view()),
                   re_path("^review/(?P<quesId>[0-9]+)/$", ReviewView.as_view()),
 
-                  path("ocr/", OCRView.as_view()),
+                  # path("ocr/", OCRView.as_view()),
                   re_path("recom/(?P<nickname>[_a-zA-Z0-9]+)/$", RecommendView.as_view()),
                   re_path("^search/(?P<quesId>[0-9]+)/$", ReviewView.as_view()),
+
+                  re_path("getchecklist/(?P<nickname>[_a-zA-Z0-9]+)/$", FriendCheckListView.as_view()),
+                  re_path("getprocesslist/(?P<nickname>[_a-zA-Z0-9]+)/$", FriendProcessListView.as_view()),
+                  re_path("getallapplicants/(?P<nickname>[_a-zA-Z0-9]+)/$", AllApplicantView.as_view()),
+                  re_path("getallusers/(?P<nickname>[_a-zA-Z0-9]+)/$", AllUserView.as_view()),
+
+                  re_path("getallfriends/(?P<nickname>[_a-zA-Z0-9]+)/$", AllFriendView.as_view()),
 
               ] + router.urls

@@ -130,17 +130,18 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
                 android:gravity="end"
-                android:text="@string/report_learning_process"
+                android:text="@string/report_learning_process_default"
                 android:textSize="@dimen/sp_25">
 
             </TextView>
 
             <ProgressBar
-                android:id="@+id/progressbar_learn"
+                android:id="@+id/progressbar_report"
                 style="@android:style/Widget.ProgressBar.Horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/dp_15"
                 android:background="@drawable/bg_progressbar"
+                android:progress="0"
                 android:max="100"
                 android:progressDrawable="@drawable/bg_progressbar" />
         </LinearLayout>
