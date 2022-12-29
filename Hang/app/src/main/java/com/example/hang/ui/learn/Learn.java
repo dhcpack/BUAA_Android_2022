@@ -311,7 +311,7 @@ public class Learn extends Fragment {
         /*System.out.println("process " + process );
         System.out.println("total " + quesNum);
         System.out.println((double) process / (double) quesNum);*/
-        tv_percent.setText(String.format("学习进度%.2f", p * 100) + "%");
+        tv_percent.setText(String.format("学习进度%.2f", p * 100.0) + "%");
         progressBar.setProgress(process);
         progressBar.setMax(quesNum);
     }

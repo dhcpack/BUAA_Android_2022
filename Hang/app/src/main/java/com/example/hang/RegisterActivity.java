@@ -144,7 +144,7 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     private void sendPostRequest() {
-        JSONObject jsonObject;
+        JSONObject jsonObject = null;
         HashMap<String, String> params = new HashMap<>();
         params.put("nickname", username);
         params.put("password", password1);
@@ -154,24 +154,28 @@ public class RegisterActivity extends AppCompatActivity {
         params.put("major", major);
         params.put("grade", grade);
         params.put("sex", String.valueOf(sex));
-        try {
-            jsonObject = HttpUtil.httpPost(Ports.signUpUrl, params);
-            System.out.println(jsonObject);
-            if (jsonObject.has("error")) {
-                try {
-                    toast(jsonObject.getString("error"));
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-            } else {
-                toast("注册成功");
-                //销毁注册界面
-                finish();
-                //跳转到登录
-                startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
+        params.put("recommends", "hhh");
+        while (jsonObject == null) {
+            try {
+                jsonObject = HttpUtil.httpPost(Ports.signUpUrl, params);
+                System.out.println(jsonObject);
+            } catch (IOException e) {
+                e.printStackTrace();
             }
-        } catch (IOException e) {
-            e.printStackTrace();
+        }
+        assert jsonObject != null;
+        if (jsonObject.has("error")) {
+            try {
+                toast(jsonObject.getString("error"));
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        } else {
+            toast("注册成功");
+            //销毁注册界面
+            finish();
+            //跳转到登录
+            startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
         }
     }
 
