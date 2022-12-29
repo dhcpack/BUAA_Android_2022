@@ -78,5 +78,15 @@
             android:textColor="#ffffff"
             android:text="已掌握"
             android:layout_marginTop="@dimen/dp_20"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            style="@style/ButtonStyle"
+            android:id="@+id/btn_delete"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="23dp"
+            android:textColor="#ffffff"
+            android:text="@string/deleteQues"
+            android:layout_marginTop="@dimen/dp_20"/>
     </LinearLayout>
 </ScrollView>

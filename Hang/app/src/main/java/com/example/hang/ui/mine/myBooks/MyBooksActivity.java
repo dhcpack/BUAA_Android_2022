@@ -169,6 +169,7 @@ public class MyBooksActivity extends AppCompatActivity {
                     Intent intent = new Intent(context, ShowItemsActivity.class);
                     Bundle bundle = new Bundle();
                     bundle.putInt("book_id", info.book_id);
+                    bundle.putBoolean("hasDelete", true);
                     intent.putExtras(bundle);
                     context.startActivity(intent);
                 }

@@ -6,7 +6,6 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class DateUtil {
-
     @SuppressLint("SimpleDateFormat")
     public static String getNowTime() {
         @SuppressLint("SimpleDateFormat")

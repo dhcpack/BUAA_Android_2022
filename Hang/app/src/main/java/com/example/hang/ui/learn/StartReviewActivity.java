@@ -82,7 +82,7 @@ public class StartReviewActivity extends AppCompatActivity {
     }
 
     public void initPagerView() {
-        LearnCardPagerAdapater adapter = new LearnCardPagerAdapater(getSupportFragmentManager(), this, allQues, false);
+        LearnCardPagerAdapater adapter = new LearnCardPagerAdapater(getSupportFragmentManager(), this, allQues, false, false);
         vp_content = findViewById(R.id.vp_content_startReview);
         vp_content.setAdapter(adapter);
         vp_content.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {

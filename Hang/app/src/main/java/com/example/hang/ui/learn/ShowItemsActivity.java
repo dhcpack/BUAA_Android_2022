@@ -32,6 +32,7 @@ public class ShowItemsActivity extends AppCompatActivity {
     private ArrayList<ListBean> allQues = new ArrayList<>();
     private int book_id = -1;
     private ViewPager vp_content;
+    private boolean hasDelete = false;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -41,6 +42,7 @@ public class ShowItemsActivity extends AppCompatActivity {
         setTitleBar("查看列表");
         // book id != -1
         book_id = getIntent().getExtras().getInt("book_id");
+        hasDelete = getIntent().getExtras().getBoolean("hasDelete");
 
         try {
             getAllQues();
@@ -85,7 +87,7 @@ public class ShowItemsActivity extends AppCompatActivity {
     }
 
     public void initPagerView() {
-        LearnCardPagerAdapater adapter = new LearnCardPagerAdapater(getSupportFragmentManager(), this, allQues, true);
+        LearnCardPagerAdapater adapter = new LearnCardPagerAdapater(getSupportFragmentManager(), this, allQues, true, hasDelete);
         vp_content = findViewById(R.id.vp_content_showItems);
         vp_content.setAdapter(adapter);
         vp_content.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {

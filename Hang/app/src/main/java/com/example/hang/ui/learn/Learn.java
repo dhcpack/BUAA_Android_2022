@@ -130,6 +130,7 @@ public class Learn extends Fragment {
                 Intent intent = new Intent(getActivity(), ShowItemsActivity.class);
                 Bundle bundle = new Bundle();
                 bundle.putInt("book_id", book_id); // != -1
+                bundle.putBoolean("hasDelete", true);
                 intent.putExtras(bundle);
                 startActivity(intent);
             }

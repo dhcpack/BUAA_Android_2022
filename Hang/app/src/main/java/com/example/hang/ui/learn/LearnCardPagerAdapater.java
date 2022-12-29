@@ -27,14 +27,16 @@ public class LearnCardPagerAdapater extends FragmentPagerAdapter {
     private final ArrayList<ListBean> allQues;
     private final Context mContext;
     private boolean readOnly;
+    private boolean hasDelete = false;
 
-    public LearnCardPagerAdapater(FragmentManager fm, Context context, ArrayList<ListBean> allQues, boolean readonly) {
+    public LearnCardPagerAdapater(FragmentManager fm, Context context, ArrayList<ListBean> allQues, boolean readonly, boolean hasDelete) {
         super(fm);
         PAGER_COUNT = allQues.size();
         this.allQues = allQues;
         this.mContext = context;
         this.readOnly = readonly;
         System.out.println("adapter size " + PAGER_COUNT);
+        this.hasDelete = hasDelete;
     }
 
     @Override
@@ -63,11 +65,11 @@ public class LearnCardPagerAdapater extends FragmentPagerAdapter {
         type = jo.getType();
         //System.out.println(jo.getId());
         if (type == 1) {
-            fragment = new FillBlankFragment(mContext, allQues.get(position), readOnly);
+            fragment = new FillBlankFragment(mContext, allQues.get(position), readOnly, hasDelete);
         } else if (type == 2) {
-            fragment = new SingleChoiceFragment(mContext, allQues.get(position), readOnly);
+            fragment = new SingleChoiceFragment(mContext, allQues.get(position), readOnly, hasDelete);
         } else if (type == 3) {
-            fragment = new MultiChoiceFragment(mContext, allQues.get(position), readOnly);
+            fragment = new MultiChoiceFragment(mContext, allQues.get(position), readOnly, hasDelete);
         } else {
             fragment = new ImageFragment(mContext, allQues.get(position), readOnly);
         }

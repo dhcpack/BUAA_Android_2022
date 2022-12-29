@@ -22,6 +22,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class FillBlankFragment extends Fragment {
@@ -37,11 +38,14 @@ public class FillBlankFragment extends Fragment {
     int index = 0; // 0:提示一下  1:隐藏答案
     String[] btn_text = {"提示一下", "隐藏答案"};
     int[] ans_visibility = {View.GONE, View.VISIBLE};
+    private Button btn_delete;
+    boolean hasDelete = false;
 
-    public FillBlankFragment(Context context, ListBean q, boolean readonly) {
+    public FillBlankFragment(Context context, ListBean q, boolean readonly, boolean hasDelete) {
         this.context = context;
         this.nowQues = q;
         this.readonly = readonly;
+        this.hasDelete = hasDelete;
     }
 
     @Override
@@ -72,6 +76,38 @@ public class FillBlankFragment extends Fragment {
             btn_show_hint.setText(btn_text[index]);
             tv_answer.setVisibility(ans_visibility[index]);
         }
+
+        btn_delete=view.findViewById(R.id.btn_delete);
+        if (hasDelete) {
+            btn_delete.setVisibility(View.VISIBLE);
+        } else {
+            btn_delete.setVisibility(View.GONE);
+        }
+        btn_delete.setOnClickListener(view1 -> {
+            ArrayList<String> params = new ArrayList<>();
+            params.add(nowQues.getNickname());
+            params.add(String.valueOf(nowQues.getBook()));
+            params.add(String.valueOf(nowQues.getId()));
+            JSONObject jsonObject = null;
+            try {
+                jsonObject = (JSONObject) HttpUtil.httpDelete(Ports.deleteQuestionUrl, params);
+                System.out.println(jsonObject);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            assert jsonObject != null;
+            if (jsonObject.has("error")) {
+                try {
+                    toast(jsonObject.getString("error"));
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            } else {
+                toast("删除成功");
+                requireActivity().finish();
+            }
+
+        });
 
         btn_show_hint.setOnClickListener(v -> {
             index = 1 - index;

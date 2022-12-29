@@ -23,6 +23,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 
@@ -40,11 +41,14 @@ public class MultiChoiceFragment extends Fragment {
     Context context;
     Button btn_learned;
     boolean readonly;
+    boolean hasDelete = false;
+    private Button btn_delete;
 
-    public MultiChoiceFragment(Context context, ListBean q, boolean readonly) {
+    public MultiChoiceFragment(Context context, ListBean q, boolean readonly, boolean hasDelete) {
         this.context = context;
         this.nowQues = q;
         this.readonly = readonly;
+        this.hasDelete = hasDelete;
     }
 
     @Override
@@ -82,6 +86,38 @@ public class MultiChoiceFragment extends Fragment {
             btn_learned.setVisibility(View.GONE);
             setAns();
         }
+
+        btn_delete=view.findViewById(R.id.btn_delete);
+        if (hasDelete) {
+            btn_delete.setVisibility(View.VISIBLE);
+        } else {
+            btn_delete.setVisibility(View.GONE);
+        }
+        btn_delete.setOnClickListener(view1 -> {
+            ArrayList<String> params = new ArrayList<>();
+            params.add(nowQues.getNickname());
+            params.add(String.valueOf(nowQues.getBook()));
+            params.add(String.valueOf(nowQues.getId()));
+            JSONObject jsonObject = null;
+            try {
+                jsonObject = (JSONObject) HttpUtil.httpDelete(Ports.deleteQuestionUrl, params);
+                System.out.println(jsonObject);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            assert jsonObject != null;
+            if (jsonObject.has("error")) {
+                try {
+                    toast(jsonObject.getString("error"));
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            } else {
+                toast("删除成功");
+                requireActivity().finish();
+            }
+
+        });
 
         button.setText(answerState);    //确定
 

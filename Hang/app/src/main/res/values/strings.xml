@@ -354,7 +354,7 @@
     <string name="friend_list">好友列表</string>
     <string name="friend_apply_list">申请列表</string>
     <string name="friend_apply">添加好友</string>
-
+    <string name="deleteQues">删除题目</string>
 
 
 </resources>
