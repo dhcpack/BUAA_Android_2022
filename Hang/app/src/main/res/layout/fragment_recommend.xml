@@ -8,22 +8,10 @@
     android:orientation="vertical"
     tools:context=".ui.recom.Recommend">
 
-    <TextView
-        android:id="@+id/text_recommend"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="@dimen/dp_10"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_20"
         android:gravity="center_horizontal"
         android:orientation="vertical">
 
@@ -31,19 +19,17 @@
             android:id="@+id/recom_message"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:layout_marginHorizontal="@dimen/dp_10"
             android:text="根据您的学习内容，为您推荐以下记忆本"
-            android:textSize="21dp"
+            android:textSize="@dimen/sp_20"
             android:textColor="@color/black"
             android:drawableLeft="@drawable/ic_iconmonstr_thumb_10"
-            android:drawablePadding="4.0dip"
-            android:paddingLeft="@dimen/dp_5"
-            android:paddingRight="@dimen/dp_10" />
+            android:drawablePadding="10.0dip" />
 
         <View
             style="@style/HorizontalLineStyle"
             android:layout_gravity="bottom"
-            android:layout_marginTop="3dp"
-            android:paddingBottom="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_10"
             android:layout_height="@dimen/dp_3"/>
     </LinearLayout>
 
@@ -52,7 +38,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:dividerHeight="@dimen/dp_5"
-        android:scrollbars="vertical"
-        android:layout_marginTop="@dimen/dp_73"/>
+        android:scrollbars="vertical" />
 
 </LinearLayout>

@@ -22,7 +22,7 @@
                 style="@style/ButtonStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/dp_10"
+                android:layout_marginVertical="@dimen/dp_10"
                 android:text="@string/friend_check_list" />
         </LinearLayout>
 
@@ -40,7 +40,7 @@
                 style="@style/ButtonStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/dp_10"
+                android:layout_marginVertical="@dimen/dp_10"
                 android:text="@string/friend_learnrate_list" />
         </LinearLayout>
 
