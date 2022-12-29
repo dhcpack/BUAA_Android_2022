@@ -24,8 +24,8 @@
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/iv_icon_book"
-                android:layout_width="@dimen/dp_80"
-                android:layout_height="@dimen/dp_100"
+                android:layout_width="@dimen/dp_140"
+                android:layout_height="@dimen/dp_140"
                 android:layout_gravity="center_horizontal"
                 android:gravity="center"
                 android:scaleType="centerCrop"

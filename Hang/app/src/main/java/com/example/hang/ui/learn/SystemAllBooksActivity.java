@@ -70,7 +70,7 @@ public class SystemAllBooksActivity extends AppCompatActivity {
                 try {
                     JSONObject jsonObject = (JSONObject) jsonArray.get(i);
                     //map.put("iv_icon_book", jsonObject.getString("pic"));
-                    map.put("iv_icon_book", R.drawable.ic_book);
+                    map.put("iv_icon_book", R.drawable.ic_book2);
                     map.put("tv_book_title", jsonObject.getString("bookname"));
                     map.put("book_id", jsonObject.getInt("id"));
                     map.put("username", username);

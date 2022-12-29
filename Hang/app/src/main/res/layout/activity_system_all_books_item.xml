@@ -22,21 +22,23 @@
             android:gravity="center"
             android:orientation="vertical">
 
+            <!--80 100 centerCrop-->
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/iv_icon_book"
-                android:layout_width="@dimen/dp_80"
-                android:layout_height="@dimen/dp_100"
+                android:layout_width="@dimen/dp_140"
+                android:layout_height="@dimen/dp_140"
                 android:layout_gravity="center_horizontal"
                 android:gravity="center"
-                android:scaleType="centerCrop"
-                android:src="@drawable/ic_book" />
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_book2"/>
 
             <TextView
                 android:id="@+id/tv_title_book"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:gravity="center">
+                android:gravity="center"
+                android:text="测试">
             </TextView>
         </LinearLayout>
 

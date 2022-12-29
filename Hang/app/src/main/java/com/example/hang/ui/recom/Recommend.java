@@ -88,7 +88,7 @@ public class Recommend extends Fragment {
                 try {
                     JSONObject jsonObject = (JSONObject) recommendBooks.get(i);
                     System.out.println(jsonObject.toString());
-                    map.put("book_icon", R.drawable.ic_book);
+                    map.put("book_icon", R.drawable.ic_book2);
                     map.put("book_title", jsonObject.getString("bookname"));
                     map.put("book_id", jsonObject.getString("id"));
                     list.add(map);
