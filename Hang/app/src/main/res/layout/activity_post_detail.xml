@@ -35,8 +35,6 @@
             android:id="@+id/post_detail_content"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:gravity="center"
             android:layout_marginTop="@dimen/dp_20"
             android:singleLine="false"
             android:text="@string/default_title"

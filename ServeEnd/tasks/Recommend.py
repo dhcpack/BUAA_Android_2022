@@ -296,6 +296,7 @@ def recommendTask():
     users = User.objects.all()
     for user in users:
         res = recom(user)
+        res = list(set(res))
         user.recommends = "/".join(res)
         user.save()
         print(user.nickname, end=":")

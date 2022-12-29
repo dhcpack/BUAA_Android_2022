@@ -22,6 +22,7 @@ import androidx.appcompat.widget.AppCompatImageView;
 import com.example.hang.R;
 import com.example.hang.ports.HttpUtil;
 import com.example.hang.ports.Ports;
+import com.example.hang.util.BookPicGetter;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -70,7 +71,7 @@ public class SystemAllBooksActivity extends AppCompatActivity {
                 try {
                     JSONObject jsonObject = (JSONObject) jsonArray.get(i);
                     //map.put("iv_icon_book", jsonObject.getString("pic"));
-                    map.put("iv_icon_book", R.drawable.ic_book2);
+                    map.put("iv_icon_book", BookPicGetter.getBookPic(jsonObject.getString("bookname")));
                     map.put("tv_book_title", jsonObject.getString("bookname"));
                     map.put("book_id", jsonObject.getInt("id"));
                     map.put("username", username);

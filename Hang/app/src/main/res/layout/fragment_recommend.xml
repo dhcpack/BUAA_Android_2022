@@ -43,6 +43,7 @@
             style="@style/HorizontalLineStyle"
             android:layout_gravity="bottom"
             android:layout_marginTop="3dp"
+            android:paddingBottom="@dimen/dp_20"
             android:layout_height="@dimen/dp_3"/>
     </LinearLayout>
 
