@@ -284,8 +284,9 @@
     <string name="comu_fragment_enter_posts">广场</string>
 
     <!-- 记忆本 -->
-    <string name="book_add_content">添加</string>
-    <string name="book_view_content">查看</string>
+    <string name="book_add_content">添加题目</string>
+    <string name="book_view_content">查看题目</string>
+    <string name="book_set_learning">开始学习</string>
     <string name="book_add_content_type">请选择题目类型</string>
     <string name="book_add_content_question">请输入题目</string>
     <string name="book_add_content_answer">请输入答案</string>
@@ -330,7 +331,7 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="default_question">0.这是默认的问题，如果看到这个问题说明程序bug了，建议重启啦</string>
-    <string name="add_public">导入</string>
+    <string name="add_public">加入书库</string>
     <string name="search_by_name">按名字查找</string>
     <string name="search_by_tag">按标签查找</string>
     <string name="title_activity_recommend_book">RecommendBook</string>

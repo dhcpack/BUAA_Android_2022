@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,6 +20,7 @@ import androidx.appcompat.widget.AppCompatButton;
 import androidx.appcompat.widget.AppCompatImageView;
 
 import com.example.hang.R;
+import com.example.hang.RegisterActivity;
 import com.example.hang.ports.HttpUtil;
 import com.example.hang.ports.Ports;
 import com.example.hang.ui.learn.ShowItemsActivity;
@@ -35,6 +37,7 @@ import java.util.Map;
 import java.util.Objects;
 
 public class MyBooksActivity extends AppCompatActivity {
+    private String username;
     private ListView lv_books;
 
     @Override
@@ -47,7 +50,7 @@ public class MyBooksActivity extends AppCompatActivity {
         //1.给链表添加数据
         List<Map<String, Object>> list = getData();
         //2.适配器，刚刚重写的！
-        MyBooksAdapter myBooksAdapter = new MyBooksAdapter(this, list);
+        MyBooksAdapter myBooksAdapter = new MyBooksAdapter(this, list, username);
         //3.设置适配器
         lv_books = findViewById(R.id.lv_books);
         lv_books.setAdapter(myBooksAdapter);
@@ -58,7 +61,7 @@ public class MyBooksActivity extends AppCompatActivity {
     public List<Map<String, Object>> getData() {
         JSONArray jsonArray = null;
         try {
-            String username = getIntent().getStringExtra("username");
+            username = getIntent().getStringExtra("username");
             ArrayList<String> params = new ArrayList<>();
             params.add(username);
             jsonArray = (JSONArray) HttpUtil.httpGet(Ports.getBooksUrl, params,true);
@@ -89,12 +92,14 @@ public class MyBooksActivity extends AppCompatActivity {
         private final List<Map<String, Object>> data;
         private final LayoutInflater layoutInflater;
         private final Context context;
+        private String username;
 
-        public MyBooksAdapter(Context context, List<Map<String, Object>> data) {
+        public MyBooksAdapter(Context context, List<Map<String, Object>> data, String username) {
             //传入的data，就是我们要在listview中显示的信息
             this.context = context;
             this.data = data;
             this.layoutInflater = LayoutInflater.from(context);
+            this.username = username;
         }
         //这里定义了一个类，用来表示一个item里面包含的东西
         public static class Info {
@@ -102,6 +107,7 @@ public class MyBooksActivity extends AppCompatActivity {
             private TextView tv_title_book;
             private AppCompatButton btn_book_add_content;
             private AppCompatButton btn_book_view_content;
+            private AppCompatButton btn_book_set_learning;
 
             private int book_id;
         }
@@ -135,6 +141,7 @@ public class MyBooksActivity extends AppCompatActivity {
             info.tv_title_book = convertView.findViewById(R.id.tv_title_book);
             info.btn_book_add_content = convertView.findViewById(R.id.btn_book_add_content);
             info.btn_book_view_content = convertView.findViewById(R.id.btn_book_view_content);
+            info.btn_book_set_learning = convertView.findViewById(R.id.btn_book_set_learning);
 
             //设置数据
             info.iv_icon_book.setImageResource((Integer) data.get(position).get("book_icon"));
@@ -161,7 +168,28 @@ public class MyBooksActivity extends AppCompatActivity {
                     context.startActivity(intent);
                 }
             });
+            info.btn_book_set_learning.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    String url = Ports.setBookUrl + username + "/" + info.book_id + "/";
+                    try {
+                        JSONObject jsonObject = HttpUtil.httpPut(url, new HashMap<>());
+                        try {
+                            String returnValue = jsonObject.getString("msg");
+                            toast(returnValue);
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+            });
             return convertView;
+        }
+
+        private void toast(String str) {
+            Toast.makeText(context.getApplicationContext(), str, Toast.LENGTH_SHORT).show();
         }
     }
 
