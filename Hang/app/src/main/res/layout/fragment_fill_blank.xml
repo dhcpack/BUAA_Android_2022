@@ -19,8 +19,8 @@
             android:textSize="24dp"
             android:text="@string/default_question" />
 
-        <Button
-            android:background="@drawable/btn_bg"
+        <androidx.appcompat.widget.AppCompatButton
+            style="@style/ButtonStyle"
             android:id="@+id/show_hint"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -29,8 +29,8 @@
             android:text="提示一下"
             android:layout_marginTop="@dimen/dp_30"/>
 
-        <Button
-            android:background="@drawable/btn_bg"
+        <androidx.appcompat.widget.AppCompatButton
+            style="@style/ButtonStyle"
             android:id="@+id/btn_learned"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
