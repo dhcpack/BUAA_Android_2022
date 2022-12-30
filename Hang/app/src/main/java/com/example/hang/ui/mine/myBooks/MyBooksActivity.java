@@ -196,17 +196,32 @@ public class MyBooksActivity extends AppCompatActivity {
             info.btn_book_set_public.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    HashMap<String, String> params = new HashMap();
+                    HashMap<String, String> params = new HashMap<>();
                     params.put("nickname", username);
                     params.put("bookId", String.valueOf(info.book_id));
                     params.put("public", String.valueOf(true));
-                    try {
-                        JSONObject jsonObject = HttpUtil.httpPut(Ports.modifyBookUrl, params);
-                        if (jsonObject != null) {
-                            toast("设置成功！");
+                    String now = (String) info.btn_book_set_public.getText();
+                    if (now.equals("取消公开")) {
+                        params.put("public", String.valueOf(false));
+                        try {
+                            JSONObject jsonObject = HttpUtil.httpPut(Ports.modifyBookUrl, params);
+                            info.btn_book_set_public.setText("设为公开");
+                            if (jsonObject != null) {
+                                toast("设置成功！");
+                            }
+                        } catch (IOException e) {
+                            e.printStackTrace();
                         }
-                    } catch (IOException e) {
-                        e.printStackTrace();
+                    } else {
+                        try {
+                            JSONObject jsonObject = HttpUtil.httpPut(Ports.modifyBookUrl, params);
+                            info.btn_book_set_public.setText("取消公开");
+                            if (jsonObject != null) {
+                                toast("设置成功！");
+                            }
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
                     }
                 }
             });
