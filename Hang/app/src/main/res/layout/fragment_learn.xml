@@ -158,52 +158,56 @@
 
         </RelativeLayout>
 
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="horizontal">
 
             <Button
                 android:id="@+id/btn_start_study"
                 style="@style/ButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginLeft="@dimen/dp_40"
                 android:layout_marginTop="@dimen/dp_10"
+                android:layout_marginHorizontal="@dimen/dp_15"
                 android:backgroundTint="@color/common_accent_color"
                 android:fontFamily="@font/open_sans_bold"
                 android:text="@string/learn_study"
                 android:textColor="#FFFFFF"
-                android:textSize="@dimen/sp_25"></Button>
+                android:textSize="@dimen/sp_25" />
 
             <Button
                 android:id="@+id/btn_start_review"
                 style="@style/ButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="@dimen/dp_10"
-                android:layout_marginRight="@dimen/dp_40"
+                android:layout_marginHorizontal="@dimen/dp_15"
                 android:backgroundTint="@color/common_accent_color"
                 android:fontFamily="@font/open_sans_bold"
                 android:text="@string/learn_review"
                 android:textColor="#FFFFFF"
-                android:textSize="@dimen/sp_25"></Button>
-        </RelativeLayout>
+                android:textSize="@dimen/sp_25" />
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dp_10"
+            android:layout_gravity="center"
+            android:gravity="center"
             android:orientation="horizontal">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom"
-                android:layout_marginLeft="@dimen/dp_125"
+                android:gravity="center"
                 android:layout_marginBottom="0dp"
                 android:text="已打卡 "
                 android:textColor="#000000"
