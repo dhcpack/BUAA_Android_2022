@@ -65,7 +65,7 @@ public class MyBooksActivity extends AppCompatActivity {
             username = getIntent().getStringExtra("username");
             ArrayList<String> params = new ArrayList<>();
             params.add(username);
-            jsonArray = (JSONArray) HttpUtil.httpGet(Ports.getBooksUrl, params,true);
+            jsonArray = (JSONArray) HttpUtil.httpGet(Ports.getBooksUrl, params, true);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -80,6 +80,7 @@ public class MyBooksActivity extends AppCompatActivity {
                     map.put("book_title", jsonObject.getString("bookname"));
                     map.put("book_id", jsonObject.getString("id"));
                     map.put("nickname", jsonObject.getString("nickname"));
+                    map.put("public", jsonObject.getBoolean("public"));
                     list.add(map);
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -103,6 +104,7 @@ public class MyBooksActivity extends AppCompatActivity {
             this.layoutInflater = LayoutInflater.from(context);
             this.username = username;
         }
+
         //这里定义了一个类，用来表示一个item里面包含的东西
         public static class Info {
             private AppCompatImageView iv_icon_book;
@@ -115,6 +117,7 @@ public class MyBooksActivity extends AppCompatActivity {
             private int book_id;
             private String nickname;
         }
+
         //所有要返回的东西的数量（Id、信息等），都在data里面，从data里面取就好
         @Override
         public int getCount() {
@@ -154,6 +157,12 @@ public class MyBooksActivity extends AppCompatActivity {
             info.book_id = Integer.parseInt((String)
                     Objects.requireNonNull(data.get(position).get("book_id")));
             info.nickname = (String) data.get(position).get("nickname");
+            Boolean bool = (Boolean) data.get(position).get("public");
+            if (bool) {  // 公开
+                info.btn_book_set_public.setText("取消公开");
+            } else {
+                info.btn_book_set_public.setText("设为公开");
+            }
             info.btn_book_add_content.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {

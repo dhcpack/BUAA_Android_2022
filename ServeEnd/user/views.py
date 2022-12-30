@@ -114,7 +114,7 @@ class BookView(View):
         except User.DoesNotExist:
             return JsonResponse({'error': '用户不存在'}, status=HTTP_404_NOT_FOUND)
         try:
-            book = Book.objects.filter(nickname=data["nickname"]).get(bookname=data["bookname"])
+            book = Book.objects.filter(nickname=data["nickname"]).get(id=data["bookId"])
         except Book.DoesNotExist:
             return JsonResponse({'error': '记忆本不存在'}, status=HTTP_404_NOT_FOUND)
         serializer = BookModelSerializer(data=data, instance=book)
@@ -371,6 +371,12 @@ class SearchBookView(View):
         elif column == "name":
             books = Book.objects.filter(public=True).filter(bookname__contains=cond)
             return JsonResponse(BookModelSerializer(instance=books, many=True).data, status=HTTP_200_OK, safe=False)
+        elif column == "single":
+            try:
+                book = Book.objects.get(id=int(cond))
+            except Book.DoesNotExist:
+                return JsonResponse({'error': '记忆本不存在'}, status=HTTP_404_NOT_FOUND)
+            return JsonResponse(BookModelSerializer(instance=book).data, status=HTTP_200_OK)
         else:
             books = Book.objects.filter(public=True)
             return JsonResponse(BookModelSerializer(instance=books, many=True).data, status=HTTP_200_OK, safe=False)
@@ -498,7 +504,7 @@ class RecommendView(View):
         except User.DoesNotExist:
             return JsonResponse({'error': '用户不存在'}, status=HTTP_404_NOT_FOUND)
         books = list(user.recommends.split("/"))
-        books_obj = Book.objects.filter(bookname__in=books)
+        books_obj = Book.objects.filter(bookname__in=books).filter(public=True)
         return JsonResponse(BookModelSerializer(instance=books_obj, many=True).data, status=HTTP_200_OK, safe=False)
 
 
