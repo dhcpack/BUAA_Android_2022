@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.MenuItem;
-import com.alibaba.fastjson.JSON;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -27,6 +26,7 @@ import com.luck.picture.lib.config.SelectMimeType;
 import com.luck.picture.lib.entity.LocalMedia;
 import com.luck.picture.lib.interfaces.OnResultCallbackListener;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.File;
@@ -48,7 +48,8 @@ public class AddQuestionImageActivity extends AppCompatActivity {
 
     private String question;
     private String answer;
-    private String path;
+    private String pathInAndroid;
+    private String pathInBackEnd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,11 +63,11 @@ public class AddQuestionImageActivity extends AppCompatActivity {
         btn_confirm = findViewById(R.id.btn_confirm);
         btn_confirm.setOnClickListener(view -> {
             question = question_input.getText().toString().trim();
-            answer = path;
+            answer = pathInBackEnd;
             Intent intent = new Intent();
             Bundle bundle = new Bundle();
             bundle.putString("ques", question);
-            bundle.putString("ans", path);
+            bundle.putString("ans", pathInBackEnd);
             intent.putExtras(bundle);
             setResult(Activity.RESULT_OK, intent);
             toast("提交成功");
@@ -85,10 +86,9 @@ public class AddQuestionImageActivity extends AppCompatActivity {
                         Log.e("leo","绝对路径" + result.get(0).getRealPath());
                         Glide.with(AddQuestionImageActivity.this).load(result.get(0).getPath()).into(imageView);
                         // 将bitmap图片传入后端
-                        //path = result.get(0).getRealPath();
-                        path = result.get(0).getPath();
-                        imageUpLoad(path);
-                        SubmitPicture(path);
+                        pathInAndroid = result.get(0).getRealPath();
+                        imageUpLoad(pathInAndroid);
+                        SubmitPicture(pathInAndroid);
                     }
 
                     @Override
@@ -121,12 +121,7 @@ public class AddQuestionImageActivity extends AppCompatActivity {
 
             @Override
             public void onResponse(@NonNull Call call, @NonNull Response response) throws IOException {
-                assert response.body() != null;
-                Object model1 = JSON.parseObject(response.body().string());
-                //pmodel model1 = JSON.parseObject(response.body().string(), pmodel.class);
-                System.out.println(model1);
-                Log.e("leo",JSON.toJSONString(model1));
-                //pmodel model2 = JSON.parseObject(JSON.toJSONString(model), pmodel.class);
+                System.out.println(response.body().string());
             }
         });
     }
@@ -134,47 +129,17 @@ public class AddQuestionImageActivity extends AppCompatActivity {
 
     private void  SubmitPicture(String path){
         try {
-            JSONObject jsonObject = HttpUtil.postFile(new File(path), "pic");
-            if (jsonObject != null) {
+            File file = new File(path);
+            JSONObject jsonObject = HttpUtil.postFile(file, "jpg");
+            try {
+                pathInBackEnd = jsonObject.getString("path");
                 toast("上传成功！");
+            } catch (JSONException e) {
+                e.printStackTrace();
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
-//        String token="token（没有要求则无需写入）";
-//        RequestParams params = new RequestParams(url);
-//        params.addHeader("Authorization",token);
-//
-//        //设置表单传送
-//        params.setMultipart(true);
-//        params.addBodyParameter("file",new File(path));
-//        params.addParameter("fileType","PICTURE");
-//        x.http().post(params, new Callback.CommonCallback<String>() {
-//            @Override
-//            public void onSuccess(String result) {
-//                Log.e("leo","2222"+params);
-//                Toast.makeText(AddQuestionImageActivity.this, "上传成功!", Toast.LENGTH_SHORT).show();
-//                Log.e("leo","返回"+result);
-//                Object model = JSON.parseObject(result);
-//                System.out.println(model);
-//                //pmodel model = JSON.parseObject(result, pmodel.class);
-//                //PictureArr.add(model.getData().get(0).getUrl());
-//            }
-//
-//            @Override
-//            public void onError(Throwable ex, boolean isOnCallback) {
-//                Log.e("leo","失败"+ex.getMessage());
-//            }
-//
-//            @Override
-//            public void onCancelled(CancelledException cex) {
-//
-//            }
-//
-//            @Override
-//            public void onFinished() {
-//            }
-//        });
     }
 
     public void setTitleBar(String title) {

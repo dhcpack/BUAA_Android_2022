@@ -155,9 +155,4 @@ public class GlideEngine implements ImageEngine {
     public void resumeRequests(Context context) {
         Glide.with(context).resumeRequests();
     }
-
-
 }
-
-//public class GlideEngine {
-//}

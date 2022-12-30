@@ -2,6 +2,8 @@ package com.example.hang.ui.learn;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -22,7 +24,9 @@ import com.example.hang.ui.learn.util.ListBean;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.File;
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.util.HashMap;
 
 public class ImageFragment extends Fragment {
@@ -60,7 +64,20 @@ public class ImageFragment extends Fragment {
 
         tv_ques.setText(nowQues.getQues());
         // TODO
-        iv_pic_ques.setImageResource(R.drawable.card2);
+        //iv_pic_ques.setImageResource(R.drawable.card2);
+        String pic = nowQues.getAns4();
+        if (pic != null) {
+            String[] splits = pic.split("\\.");
+            if (splits.length == 2 && (splits[1].equals("jpg") || splits[1].equals("png"))) {
+                Bitmap bitmap = null;
+                try {
+                    bitmap = HttpUtil.getFile(splits[0], splits[1], getContext());
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                iv_pic_ques.setImageBitmap(bitmap);
+            }
+        }
 
         btn_learned.setOnClickListener(view1 -> {
             JSONObject jsonObject = null;
