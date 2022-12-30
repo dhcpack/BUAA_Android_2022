@@ -57,28 +57,27 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
-//    // PictureSelector 基础 (必须)
-//    implementation 'io.github.lucksiege:pictureselector:v3.10.7'
+    // PictureSelector 基础 (必须)
+    implementation 'io.github.lucksiege:pictureselector:v3.10.7'
 //    // 图片压缩 (按需引入)
 //    implementation 'io.github.lucksiege:compress:v3.0.5'
 //    // 图片裁剪 (按需引入)
 //    implementation 'io.github.lucksiege:ucrop:v3.0.5'
 //    // 自定义相机 (按需引入)
 //    implementation 'io.github.lucksiege:camerax:v3.0.5'
-//    //网络请求
-//    implementation 'org.xutils:xutils:3.8.4'
-//    // 加载网络图片 glide
-//    implementation 'com.github.bumptech.glide:glide:4.13.0'
-//    annotationProcessor 'com.github.bumptech.glide:compiler:4.13.0'
-//    implementation 'jp.wasabeef:glide-transformations:4.3.0'
-//    implementation 'com.github.LuckSiege.PictureSelector:picture_library:v2.6.0'
-//    // fastJson
-//    implementation 'com.alibaba:fastjson:1.1.54.android'
-//    implementation 'com.alibaba:fastjson:1.1.72.android'
-//    implementation 'com.alibaba:fastjson:1.2.31'
-//    implementation 'com.alibaba:fastjson:1.1.57.android'
-//    // GSON
-//    implementation 'com.google.code.gson:gson:2.8.6'
+    //网络请求
+    implementation 'org.xutils:xutils:3.8.4'
+    // 加载网络图片 glide
+    implementation 'com.github.bumptech.glide:glide:4.13.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.13.0'
+    implementation 'jp.wasabeef:glide-transformations:4.3.0'
+    // fastJson
+    implementation 'com.alibaba:fastjson:1.1.54.android'
+    implementation 'com.alibaba:fastjson:1.1.72.android'
+    implementation 'com.alibaba:fastjson:1.2.31'
+    implementation 'com.alibaba:fastjson:1.1.57.android'
+    // GSON
+    implementation 'com.google.code.gson:gson:2.8.6'
 
     // 标题栏框架：https://github.com/getActivity/TitleBar
     implementation 'com.github.getActivity:TitleBar:9.6'
