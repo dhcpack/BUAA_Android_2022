@@ -17,6 +17,7 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.bumptech.glide.Glide;
+import com.example.hang.ports.Ports;
 import com.example.hang.ui.mine.utils.function.GlideEngine;
 import com.example.hang.R;
 import com.example.hang.ui.mine.utils.view.SubmitButton;
@@ -106,7 +107,7 @@ public class AddQuestionImageActivity extends AppCompatActivity {
         final MultipartBody requestBody = builder.build();
         //构建请求
         final Request request = new Request.Builder()
-                .url("后端接口")//地址
+                .url(Ports.postFileUrl)//地址
                 .post(requestBody)//添加请求体
                 .build();
 
@@ -124,15 +125,14 @@ public class AddQuestionImageActivity extends AppCompatActivity {
                 System.out.println(model1);
                 Log.e("leo",JSON.toJSONString(model1));
                 //pmodel model2 = JSON.parseObject(JSON.toJSONString(model), pmodel.class);
-
             }
         });
     }
 
 
     private void  SubmitPicture(String path){
-        String url = "后端接口";
-        String token="token，没有要求则无需写入";
+        String url = Ports.postFileUrl;
+        String token="token（没有要求则无需写入）";
         RequestParams params = new RequestParams(url);
         params.addHeader("Authorization",token);
 
