@@ -287,6 +287,7 @@
     <string name="book_add_content">添加题目</string>
     <string name="book_view_content">查看题目</string>
     <string name="book_set_learning">开始学习</string>
+    <string name="book_set_public">设为公开</string>
     <string name="book_add_content_type">请选择题目类型</string>
     <string name="book_add_content_question">请输入题目</string>
     <string name="book_add_content_answer">请输入答案</string>

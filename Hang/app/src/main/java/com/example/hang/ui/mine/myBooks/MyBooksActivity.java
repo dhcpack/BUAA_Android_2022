@@ -110,6 +110,7 @@ public class MyBooksActivity extends AppCompatActivity {
             private AppCompatButton btn_book_add_content;
             private AppCompatButton btn_book_view_content;
             private AppCompatButton btn_book_set_learning;
+            private AppCompatButton btn_book_set_public;
 
             private int book_id;
             private String nickname;
@@ -145,6 +146,7 @@ public class MyBooksActivity extends AppCompatActivity {
             info.btn_book_add_content = convertView.findViewById(R.id.btn_book_add_content);
             info.btn_book_view_content = convertView.findViewById(R.id.btn_book_view_content);
             info.btn_book_set_learning = convertView.findViewById(R.id.btn_book_set_learning);
+            info.btn_book_set_public = convertView.findViewById(R.id.btn_book_set_public);
 
             //设置数据
             info.iv_icon_book.setImageResource((Integer) data.get(position).get("book_icon"));
@@ -185,6 +187,23 @@ public class MyBooksActivity extends AppCompatActivity {
                             toast(returnValue);
                         } catch (JSONException e) {
                             e.printStackTrace();
+                        }
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+            });
+            info.btn_book_set_public.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    HashMap<String, String> params = new HashMap();
+                    params.put("nickname", username);
+                    params.put("bookId", String.valueOf(info.book_id));
+                    params.put("public", String.valueOf(true));
+                    try {
+                        JSONObject jsonObject = HttpUtil.httpPut(Ports.modifyBookUrl, params);
+                        if (jsonObject != null) {
+                            toast("设置成功！");
                         }
                     } catch (IOException e) {
                         e.printStackTrace();
