@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">航概斩</string>
+    <string name="tab_menu_shouye">首页</string>
+    <string name="tab_menu_xuexi">学习</string>
+    <string name="tab_menu_bangzhu">帮助</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="default_question">0.这是默认的问题，如果看到这个问题说明程序bug了，建议重启啦</string>
+    <!-- TODO: Remove or change this placeholder text -->
+</resources>

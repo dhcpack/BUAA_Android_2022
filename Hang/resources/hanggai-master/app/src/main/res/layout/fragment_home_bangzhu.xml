@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Home_bangzhu"
+    android:background="#F6F6F6">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="50dp"
+        android:layout_margin="15dp"
+        android:orientation="vertical">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="这是一篇帮助文档（V1.0）:"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
+        android:textSize="26dp"
+        android:textColor="#000000">
+
+    </TextView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:lineSpacingExtra="5dp"
+        android:text="        因为上个学期我刷航概时体验极差，于是下定决心自己重写一个app。于是，就有了你们现在看到的这个啦，加入了收藏和错题重做功能，刷题更方便了。这是我第一次开发安卓应用，所以(很)可能会出一些bug，如果遇到了可以加我qq告诉我：1913769937我大概会解决？当然更欢迎直接帮我解决了。\n     ps:这个应用使用了我反编译获得的曾经航概1.05的数据库，如果原作者看到觉得不高兴的话非常抱歉。"
+        android:textSize="20dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="使用介绍："
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
+        android:textSize="26dp"
+        android:textColor="#000000"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:lineSpacingExtra="5dp"
+        android:text="      首页“理科文库”的右侧有一个开关可以切换文理科的题库，点“开始刷题”会从你上一次结束刷题的位置继续。模拟考试会随机出10-20道多选，60-80道单选，总分一百，考试时长35分钟。"
+        android:textSize="20dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="收藏和错题："
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
+        android:textSize="26dp"
+        android:textColor="#000000"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:lineSpacingExtra="5dp"
+        android:text="      在刷题页面右上角的星形按钮就是收藏键啦。错题会记录在学习页的错题库，但是只要你第二次做对了
+错题就会自动从错题库中删除，如果只是想要查看的话直接左右滑动翻页即可，这样不会保存做题的记录。"
+        android:textSize="20dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="刷题界面："
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
+        android:textSize="26dp"
+        android:textColor="#000000"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:lineSpacingExtra="5dp"
+        android:text="      刷题界面最上方记录了你当前的得分，单选一分，多选两分。只有点击下一题才会记录你的答案，答案正确会直接调到下一页，不对的话则会显示答案并留在这一页。还有，如果刷完一整个单元的题目会有成绩单哦，欢迎截图发到pyq  : )"
+        android:textSize="20dp"/>
+
+    <TextView
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="5dp"
+        android:lineSpacingExtra="5dp"
+        android:text="made by 19375319 马良 2020.3.1"
+        android:textSize="20dp"/>
+
+
+    </LinearLayout>
+</ScrollView>

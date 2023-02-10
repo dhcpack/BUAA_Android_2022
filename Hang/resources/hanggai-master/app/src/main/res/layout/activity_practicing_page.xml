@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PracticingPage">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:id="@+id/topbar">
+
+        <Button
+            android:id="@+id/goback"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@mipmap/fanhui"
+            style="?android:attr/borderlessButtonStyle">
+        </Button>
+
+        <Button
+            android:id="@+id/collect"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="100dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@mipmap/shoucang"
+            android:layout_alignParentRight="true"
+            style="?android:attr/borderlessButtonStyle">
+        </Button>
+        <TextView
+            android:id="@+id/score"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginRight="10dp"
+            android:text="0"
+            android:textStyle="bold"
+            android:textColor="#04ABFF"
+            android:textSize="40dp">
+        </TextView>
+        <Chronometer
+            android:id="@+id/chronometer"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="3dp"
+            android:textSize="26dp"
+            android:layout_alignParentRight="true">
+        </Chronometer>
+
+    </RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.8dp"
+        android:background="#353535">
+    </View>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="#F6F6F6">
+
+        <TextView
+            android:id="@+id/chapterlable"
+            android:layout_alignParentLeft="true"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:text="单元数未加载"
+            android:textSize="28dp">
+        </TextView>
+        <TextView
+            android:id="@+id/practicing_progress"
+            android:layout_toLeftOf="@+id/totalQnumber"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:text="0"
+            android:textStyle="bold"
+            android:textColor="#04ABFF"
+            android:textSize="35dp">
+        </TextView>
+        <TextView
+            android:id="@+id/totalQnumber"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="10dp"
+            android:text="/0"
+            android:textStyle="bold"
+            android:textSize="20dp">
+        </TextView>
+
+    </RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#808080">
+    </View>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/practice_vp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+    </androidx.viewpager.widget.ViewPager>
+</LinearLayout>

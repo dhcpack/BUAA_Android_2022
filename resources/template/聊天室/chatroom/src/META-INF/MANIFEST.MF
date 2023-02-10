@@ -1,3 +1,0 @@
-Manifest-Version: 1.0
-Main-Class: 多用户通信系统.QQClient.view.QQView
-

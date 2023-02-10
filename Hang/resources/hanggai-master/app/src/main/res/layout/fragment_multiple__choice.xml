@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F6F6F6"
+    tools:context=".Multiple_Choice">
+    <LinearLayout
+        android:layout_margin="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="50dp"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/mutiple_question"
+            android:textSize="24dp"
+            android:text="@string/default_question" />
+        <ImageView
+            android:id="@+id/image_multiple"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        </ImageView>
+
+        <CheckBox
+            android:id="@+id/mutiple_A"
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:text="CheckBox"/>
+
+        <CheckBox
+            android:id="@+id/mutiple_B"
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:text="CheckBox" />
+
+        <CheckBox
+            android:id="@+id/mutiple_C"
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:text="CheckBox" />
+
+        <CheckBox
+            android:id="@+id/mutiple_D"
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:text="CheckBox" />
+
+        <TextView
+            android:id="@+id/answer"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:textSize="25dp"></TextView>
+
+        <Button
+            android:background="@drawable/btn_bg"
+            android:id="@+id/next_page"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="23dp"
+            android:textColor="#ffffff"
+            android:text="下一题" />
+    </LinearLayout>
+</ScrollView>
