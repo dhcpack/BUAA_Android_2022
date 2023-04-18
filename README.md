@@ -14,9 +14,6 @@
 
 
 
-![](https://github.com/dhcpack/BUAA_Android_2022/blob/main/hj1.jpg)
+![](https://github.com/dhcpack/BUAA_Android_2022/blob/main/hj.jpg)
 
-![](https://github.com/dhcpack/BUAA_Android_2022/blob/main/hj2.jpg)
-
-![](https://github.com/dhcpack/BUAA_Android_2022/blob/main/hj3.jpg)
 
